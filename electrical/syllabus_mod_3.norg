@@ -1,0 +1,34 @@
+@document.meta
+title: syllabus_mod_3
+description: AC Circuits Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* AC Circuits
+
+** AC Circuits
+
+   - Phasor representation of sinusoidal quantities
+   - Trignometric, rectangular, polar and complex forms
+   - Analysis of simple AC circuits
+   - Purely resistive, inductive and capacitive circuits
+   - Inductive and capacitve reactance
+   - Concept of impedance
+   - Average power and power factor
+   - Analysis of RL, RC and RLC series circuits-active
+   - Reactive and apparent power
+   - Simple numerical problems
+
+** Three Phase AC Systems
+
+   - Generation of three phase voltages
+   - Advantages of three phase systems
+   - Star and delta connections (balanced only)
+   - Relation between line and phase voltages
+   - Line and phase currents
+   - Numerical problems
+

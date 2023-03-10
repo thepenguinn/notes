@@ -1,0 +1,60 @@
+@document.meta
+title: syllabus_mod_2
+description: Vector Integral Theorems Syllabus
+authors: Daniel 
+categories: syllabus
+created: 2023-03-03
+updated: 2023-03-09
+version: 1.0.0
+@end
+
+
+* Vector Integral Theorems
+
+  Text 1: 15.4, 15.5, 15.6, 15.7, 15.8
+
+** Green's Theorum
+
+   - For simply connected domains, without proof
+   - Evaluating line integrals
+   - Finding areas
+
+** Surface Integrals
+
+   - Over surfaces of the form:
+
+   @math
+   z = g(x,y)
+   @end
+   @math
+   y = g(x,z)
+   @end
+   @math
+   x = g(y,z)
+   @end
+
+** Flux Integrals
+
+   - Over surfaces of the form:
+
+   @math
+   z = g(x,y)
+   @end
+   @math
+   y = g(x,z)
+   @end
+   @math
+   x = g(y,z)
+   @end
+
+** Divergence Theorem
+
+   - Without proof
+   - Finding flux integrals
+
+** Stokes' Theorem
+
+   - Without proof
+   - Finding line integrals of vector fields
+   - Finding line integrals of work done
+

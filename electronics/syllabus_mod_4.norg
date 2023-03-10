@@ -1,0 +1,28 @@
+@document.meta
+title: syllabus_mod_4
+description: Introduction to Semiconductor Devices Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Introduction to Semiconductor Devices
+
+** Semicondutor Devices
+
+   - Evolution of electronics - vaccum tubes to nano electronics
+   - Resistors, capacitors and inductors (constructional features not
+	 required):
+   - Types and specifications
+   - Standard values and color coding
+   - PN junction diode:
+   - Principle of operation
+   - V-I characteristics
+   - Principle of avalanche breakdown
+   - Bipolar junction transistors:
+   - PNP and NPN structures
+   - Principle of operation
+   - Relation between current gains in CE, CB and CC
+   - Input and output characteristics of common emitter configuration

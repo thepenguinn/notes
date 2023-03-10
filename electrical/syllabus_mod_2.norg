@@ -1,0 +1,38 @@
+@document.meta
+title: syllabus_mod_2
+description: Elementary Concepts of Magnetic Circuits, Electromagnetic Induction and AC Fundamentals Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Elementary Concepts of Magnetic Circuits, Electromagnetic Induction and AC Fundamentals
+
+** Magnetic Circuits
+
+   - Basic terminology:
+   - MMF
+   - Field strength
+   - Flux density
+   - Reluctance
+   - Comparison between electric and magnetic circuits
+   - Series and parallel magnetic circuits with composite materials
+   - Numerical problems
+
+** Electromagnetic Induction
+
+   - Faraday's laws (problems)
+   - Lenz's law
+   - Statically induced and dynamically induced emfs
+   - Self-inductance and mutual inductiance
+   - Coefficient of coupling
+
+** Alternating Current Fundamentals
+
+   - Generation of alternating voltages
+   - Representation of sinusoidal waveforms
+   - Frequency, period, average, RMS values and form factor of
+	 waveforms
+   - Numerical problems

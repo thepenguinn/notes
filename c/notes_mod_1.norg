@@ -1,0 +1,35 @@
+@document.meta
+title: notes_mod_1
+description: Basics of Computer Hardware and Software Notes
+authors: Daniel
+categories: notes
+created: 2023-03-08
+updated: 2023-03-08
+version: 1.0.0
+@end
+
+
+* Basics of Computer Hardware and Software
+
+** Basics of Computer Architecture
+
+*** Processor
+	$ So whats a processor
+	this is a processor
+
+
+*** Memory
+
+*** Input And Output Devices
+
+** Application Software and System Software
+
+*** Compilers
+*** Interpreters
+*** High Level And Low Level Languages
+
+** Introduction to Structured Approach to Programming
+
+*** Flow Chart Algorithms
+*** Bubble Sort, Linear Search
+*** Pseudo Code

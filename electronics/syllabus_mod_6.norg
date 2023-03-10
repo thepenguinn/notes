@@ -1,0 +1,28 @@
+@document.meta
+title: syllabus_mod_6
+description: Introduction to Communication Systems Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-05
+updated: 2023-03-05
+version: 1.0.0
+@end
+
+* Introduction to Communication Systems
+
+** Evolution of Communication Systems
+
+   - Telegraphy to 5G
+
+** Radio Communication
+
+   - Principle of AM and FM
+   - Frequency bands used for various communication systems
+   - Block diagram of super heterodyne receiver
+   - Principle of antenna
+   - Radiation from accelerated charge
+
+** Mobile Communication
+
+   - Basic principles of cellular communications
+   - Principle and block diagram of GSM

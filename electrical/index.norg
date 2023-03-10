@@ -1,0 +1,39 @@
+@document.meta
+title: index
+description: Basics of Electrical Engineering Notes
+authors: Daniel
+categories: notes
+created: 2023-03-03
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Elementary Concepts of Electric Circuits
+
+** Syllabus
+
+   {:syllabus_mod_1:}[Module-1-S] syllabus
+
+   ---
+
+  {:notes_mod_1:}[Module-1-N] notes
+
+* Elementary Concepts of Magnetic Circuits, Electromagnetic Inductionand AC Fundamentals
+
+** Syllabus
+
+   {:syllabus_mod_2:}[Module-2-S] syllabus
+
+   ---
+
+  {:notes_mod_2:}[Module-2-N] notes
+
+* AC Circuits
+
+** Syllabus
+
+   {:syllabus_mod_3:}[Module-3-S] syllabus
+
+   ---
+
+  {:notes_mod_3:}[Module-3-N] notes

@@ -1,0 +1,43 @@
+@document.meta
+title: syllabus_mod_2
+description: Program Basics Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Program Basics
+
+** Basic Structure of C Program
+
+   - Character set
+   - Tokens
+   - Identifiers in C
+   - Varibles and Data types
+   - Constants
+   - Console IO Operations
+   - printf
+   - scanf
+
+** Operators and Expressions
+
+   - Expressions and arithmetic operators
+   - Relational and logical operators
+   - Conditional operator
+   - size of operator
+   - Assignment operators and bitwise operators
+   - Operators precedence
+
+** Control Flow Statements
+
+   - If statement
+   - Switch statement
+   - Unconditional branching using goto statement
+   - While loop
+   - Do while loop
+   - For loop
+   - Break and continue statements
+   - Simple programs covering control flow
+

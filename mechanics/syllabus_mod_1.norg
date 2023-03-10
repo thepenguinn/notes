@@ -1,0 +1,30 @@
+@document.meta
+title: syllabus_mod_1
+description: Module 1 Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Module 1
+
+** Engineering Mechanics
+
+   - Statics 
+   - Basic principles of statics
+   - Parallelogram law
+   - Equilibrium law
+   - Principles of superposition and transmissiblity
+   - Law of action and reaction (review)
+   - Free body diagrams
+
+** Concurrent Coplanar Forces
+
+   - Composition and resolution of forces
+   - Resultant and equilibrium equations
+   - Methods of projections
+   - Methods of moments
+   - Varignon's theorem of moments
+

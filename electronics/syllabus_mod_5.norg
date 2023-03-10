@@ -1,0 +1,28 @@
+@document.meta
+title: syllabus_mod_5
+description: Basic Electronic Ciruits and Instrumentation Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-05
+updated: 2023-03-05
+version: 1.0.0
+@end
+
+* Basic Electronic Circuits and Instrumentation
+
+** Basic Electronic Circuits
+
+   - Rectifiers and power supplies:
+   - Block diagram description of a DC power supply
+   - Working of a full wave bridge rectifier
+   - Capacitor filter (no analysis)
+   - Working of simple zener voltage regulator
+   - Amplifiers:
+   - Block diagram of public address system
+   - Circuit diagram and working of common emmiter (RC coupled)
+	 amplifier with its frequency response
+   - Concept of voltage divider biasing
+
+** Electronic Instrumentation
+
+   - Block diagram of an electronic instrumentation system

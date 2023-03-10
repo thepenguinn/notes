@@ -1,0 +1,29 @@
+@document.meta
+title: syllabus_mod_1
+description: Basics of Computer Hardware and Software Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Basics of Computer Hardware and Software
+
+** Basics of Computer Architecture
+
+   - Processor
+   - Memory
+   - Input and output devices
+
+** Application Software and System Software
+
+   - Compilers
+   - Interpreters
+   - High level and low level languages
+
+** Introduction to Structured Approach to Programming
+
+   - Flow chart Algorithms
+   - Bubble sort, linear search
+   - Pseudo code 

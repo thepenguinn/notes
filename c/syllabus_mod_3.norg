@@ -1,0 +1,24 @@
+@document.meta
+title: syllabus_mod_3
+description: Arrays and Strings Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-06
+version: 1.0.0
+@end
+
+* Arrays and Strings
+
+** Arrays Declaration and Initialization
+
+   - 1-dimensional array
+   - 2-dimensional array
+
+** String Processing
+
+   - In built string handling functions:
+   - strlen, strcpy, strcat and strcmp, puts, gets
+   - Linear search program
+   - Bubble sort program
+   - Simple programs covering arrays and strings

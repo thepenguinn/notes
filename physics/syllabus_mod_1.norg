@@ -1,0 +1,42 @@
+@document.meta
+title: syllabus_mod_1
+description: Oscillations and Waves Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Oscillations and Waves
+
+** Harmonic Oscillations
+
+   - Damped harmonic motion
+   - Derivation of differential equation and its solution
+   - Over damped case
+   - Critically damped case
+   - Under damped case
+   - Quality factor-expression
+
+** Forced Oscillations-Differential Equation
+
+   - Derivation of expressions for amplitude of forced oscillations
+   - Derivation of expressions for phase of forced oscillations
+
+** Amplitude Resonace
+
+   - Expression for resonant frequency
+   - Quality factor
+   - Sharpness of resonace
+   - Elecritcal analogy of mechanical oscillators
+
+** Wave Motion
+
+   - Derivation of one dimensional wave equation and its solution
+   - Three dimensional wave equation and its solution (no derivation)
+   - Distinction between transverse and longitudinal waves
+   - Transverse vibration in a stretched string
+   - Statement of laws of vibration
+
+

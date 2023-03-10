@@ -1,0 +1,34 @@
+@document.meta
+title: syllabus_mod_4
+description: Module 4 Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Module 4
+
+** Dynamics
+
+   - Rectilinear translation
+   - Equations of kinematics (review)
+
+** Kinetics
+
+   - Equations motion
+   - D'Alembert's principle
+   - Motion on horizontal and inclined surfaces
+   - Motion of connected bodies
+   - Impulse momentum equation and work energy equation 
+	 (concepts only)
+
+** Curvilinerar transilation
+
+   - Equations of kinematics
+   - Projectile Motion (review)
+   - kinetics
+   - Equation of motion
+   - Moment of momentum
+   - Work energy equation (concepts only)

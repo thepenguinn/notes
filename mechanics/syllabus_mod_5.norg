@@ -1,0 +1,29 @@
+@document.meta
+title: syllabus_mod_5
+description: Module 5 Syllabus
+authors: Daniel 
+categories: syllabus
+created: 2023-03-04
+updated: 2023-03-04
+version: 1.0.0
+@end
+
+* Module 5
+
+** Rotation
+
+   - Kinematics of rotation
+   - Equation of motion for a rigid body rotating about a fixed axis
+   - Rotaion under a constant moment
+
+** Plane Motion of Rigid Body
+
+   - Instantaneous centre of rotation (concept only)
+
+** Simple Harmonic Motion
+
+   - Free vibration
+   - Degree of freedom
+   - Undamped free vibration of spring mass system
+   - Effect of damping (concept only)
+
