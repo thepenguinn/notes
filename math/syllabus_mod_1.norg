@@ -4,7 +4,7 @@ description: Calculus of Vector Functions Syllabus
 authors: Daniel
 categories: syllabus
 created: 2023-03-03
-updated: 2023-03-04
+updated: 2023-03-14
 version: 1.0.0
 @end
 
@@ -32,5 +32,5 @@ version: 1.0.0
    - Line integrals of vector fields
    - Work as line integral
    - Conservative vector fields
-   - Independenc of path and potential function (Results without proof)
+   - Independence of path and potential function (Results without proof)
 
