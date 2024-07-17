@@ -1,36 +1,13 @@
 @document.meta
-title: index
-description: my notes
+title: Notes
+description: notes
 authors: Daniel
 categories: notes
-created: 2023-02-22
-updated: 2023-03-10
+created: 2024-07-17T12:17:31+0530
+updated: 2024-07-17T12:24:12+0530
 version: 1.0.0
 @end
 
-* My notes
-
-  {:math/index:}[Math] notes
-  {:physics/index:}[Physics]notes
-  {:mechanics/index:}[Mechanics]
-  {:c/index:}[C programming] notes
-  {:electrical/index:}[Electrical] notes
-  {:electronics/index:}[Electronics] notes
-
-
-
-* TODO
-
-** ( ) Math Module One
-   | Tue Mar 8 2023
-** ( ) Physics Module One
-   | Tue Mar 10 2023
-** ( ) Mechanics Module One
-   | Tue Mar 11 2023
-** ( ) Electrical Module One
-   | Tue Mar 12 2023
-** ( ) Electronics Module Three
-   | Tue Mar 12 2023
-
-
-
+* S3
+* S4
+* S5
