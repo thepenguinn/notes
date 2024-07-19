@@ -1,13 +1,23 @@
 @document.meta
-title: Notes
-description: notes
+title: All of my Notes
+description: all of my notes ( notes )
 authors: Daniel
-categories: notes
+categories: [
+    notes
+]
 created: 2024-07-17T12:17:31+0530
-updated: 2024-07-17T12:24:12+0530
+updated: 2024-07-19T06:04:02+0530
 version: 1.0.0
 @end
 
 * S3
+
+  {:s3/index:}[S3 Notes]
+
 * S4
+
+  {:s4/index:}[S4 Notes]
+
 * S5
+
+  {:s5/index:}[S5 Notes]
