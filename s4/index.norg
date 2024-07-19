@@ -1,0 +1,19 @@
+@document.meta
+title: S4 Notes
+description: s4 notes
+authors: Daniel
+categories: [
+    notes
+]
+created: 2024-07-17T12:37:00+0530
+updated: 2024-07-17T21:25:00+0530
+version: 1.1.1
+@end
+
+* Notes
+
+  {:acsl/index:}[Analog Circuits and Simulation Lab] notes
+  {:mcl/index:}[Microcontroller Lab] notes
+  {:ac/index:}[Analog Circuits] notes
+  {:ss/index:}[Signals and Systemss] notes
+  {:cam/index:}[Computer Architecture and Microcontrollers] notes
