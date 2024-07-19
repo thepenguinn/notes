@@ -1,0 +1,99 @@
+@document.meta
+title: Scientific Computation Lab
+description: Scientific Computation Lab Notes
+authors: Daniel
+categories: notes
+created: 2023-08-14
+updated: 2023-08-22
+version: 1.1.1
+@end
+
+* Experiment 1. Familiarization of the Computing Tool
+
+** Syllabus
+
+   {:syllabus_mod_1:}[Module-1-S] syllabus
+
+   ---
+
+  {:notes_mod_1:}[Module-1-N] notes
+
+* Experiment 2. Familiarization of Scientific Computing
+
+** Syllabus
+
+   {:syllabus_mod_2:}[Module-2-S] syllabus
+
+   ---
+
+  {:notes_mod_2:}[Module-2-N] notes
+
+* Experiment 3. Realization of Arrays and Matrices
+
+** Syllabus
+
+   {:syllabus_mod_3:}[Module-3-S] syllabus
+
+   ---
+
+  {:notes_mod_3:}[Module-3-N] notes
+
+* Experiment 4. Numerical Differentiation and Integration
+
+** Syllabus
+
+   {:syllabus_mod_4:}[Module-4-S] syllabus
+
+   ---
+
+  {:notes_mod_4:}[Module-4-N] notes
+
+* Experiment 5. Solution of Ordinary Differential Equations
+
+** Syllabus
+
+   {:syllabus_mod_5:}[Module-5-S] syllabus
+
+   ---
+
+  {:notes_mod_5:}[Module-5-N] notes
+
+* Experiment 6. Simple Data Visualization
+
+** Syllabus
+
+   {:syllabus_mod_6:}[Module-6-S] syllabus
+
+   ---
+
+  {:notes_mod_6:}[Module-6-N] notes
+
+* Experiment 7. Simple Data Analysis with Spreadsheets
+
+** Syllabus
+
+   {:syllabus_mod_7:}[Module-7-S] syllabus
+
+   ---
+
+  {:notes_mod_7:}[Module-7-N] notes
+
+* Experiment 8. Convergnce of Fourier Series
+
+** Syllabus
+
+   {:syllabus_mod_8:}[Module-8-S] syllabus
+
+   ---
+
+  {:notes_mod_8:}[Module-8-N] notes
+
+* Experiment 9. Coin Toss and the Level Crossing Problem
+
+** Syllabus
+
+   {:syllabus_mod_9:}[Module-9-S] syllabus
+
+   ---
+
+  {:notes_mod_9:}[Module-9-N] notes

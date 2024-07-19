@@ -1,0 +1,26 @@
+@document.meta
+title: syllabus_mod_3
+description: Module 3 Syllabus
+authors: Daniel
+categories:
+created: 2023-08-14
+updated: 2023-08-14
+version: 1.1.1
+@end
+
+* Module 3
+
+  - PN junctions
+  - Contact potential
+  - Electrical field
+  - Potential and charge distribution at the junction
+  - Biasing and energy band diagram
+  - Ideal diode equation
+  - Metal semiconductor contacts
+  - Electron affinity and work function
+  - Ohmic and rectifying contacts
+  - Current voltage characteristics
+  - Bipolar junction transistor
+  - Current components
+  - Transistor action
+  - Base width modulation

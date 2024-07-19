@@ -1,0 +1,19 @@
+@document.meta
+title: syllabus_mod_6
+description: Experiment 6. Simple Data Visualization Syllbus
+authors: Daniel
+categories: syllabus
+created: 2023-08-22
+updated: 2023-08-22
+version: 1.1.1
+@end
+
+* Experiment 6. Simple Data Visualization
+
+  - Draw stem plots, line plots, box plots, bar plots and scatter plots with random data.
+  - Plot the histogram of a random data.
+  - Create legends in plots.
+  - Realize a vector $t = [-10,10]$ with increment $0.01$ as an array.
+  - Implement and plot the functions
+  -- $f(t) = \cos t$
+  -- $f(t) = \cos t \cos 5t + \cos 5t$

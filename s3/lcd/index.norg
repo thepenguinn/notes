@@ -1,0 +1,59 @@
+@document.meta
+title: Logic Circuit Design
+description: Logic Circuit Design Notes
+authors: Daniel
+categories: notes
+created: 2023-08-14
+updated: 2024-07-17T11:49:52+0530
+version: 1.1.1
+@end
+
+* Number Systems and Codes
+
+** Syllabus
+
+   {:syllabus_mod_1:}[Module-1-S] syllabus
+
+   ---
+
+  {:notes_mod_1:}[Module-1-N] notes
+
+* Boolean Postulates and Fundamental Gates
+
+** Syllabus
+
+   {:syllabus_mod_2:}[Module-2-S] syllabus
+
+   ---
+
+  {:notes_mod_2:}[Module-2-N] notes
+
+* Combinatorial and Arithmetic Circuits
+
+** Syllabus
+
+   {:syllabus_mod_3:}[Module-3-S] syllabus
+
+   ---
+
+  {:notes_mod_3:}[Module-3-N] notes
+
+* Sequential Logic Circuits
+
+** Syllabus
+
+   {:syllabus_mod_4:}[Module-4-S] syllabus
+
+   ---
+
+  {:notes_mod_4:}[Module-4-N] notes
+
+* Logic Families and its Characteristics
+
+** Syllabus
+
+   {:syllabus_mod_5:}[Module-5-S] syllabus
+
+   ---
+
+  {:notes_mod_5:}[Module-5-N] notes

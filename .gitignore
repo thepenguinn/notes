@@ -1,4 +1,5 @@
 *.md
 *.sdr
 *.epub
-*/ebook/
+*.pdf
+*/**/ebook/

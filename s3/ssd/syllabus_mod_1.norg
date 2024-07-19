@@ -1,0 +1,22 @@
+@document.meta
+title: syllabus_mod_1
+description: Module 1 Syllabus
+authors: Daniel
+categories:
+created: 2023-08-14
+updated: 2023-09-03
+version: 1.1.1
+@end
+
+* Module 1
+
+  - Elemental and compound semiconductors
+  - Intrinsic and Extrinsic semiconductors
+  - Concept of effectve mass
+  - Fermions-Fermi Dirac distribution
+  - Fermi level
+  - Doping and Energy band diagram
+  - Equilibrium concentration of electrons and holes
+  - Excess carriers in semiconductors
+  - Generation and recombination mechanism of exess carriers
+  - Quasi Fermi levels

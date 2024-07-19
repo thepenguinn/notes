@@ -1,0 +1,40 @@
+@document.meta
+title: syllabus_mod_4
+description: Experiment 4. Numerical Differentiation and Integration Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-22
+updated: 2023-08-22
+version: 1.1.1
+@end
+
+* Experiment 4. Numerical Differentiation and Integration
+
+  - Realize the functions $\sin t$, $\cos t$, $\sinh t$ and $\cosh t$ for the $t = [0, 10]$ with increment $0.01$
+  - Compute the first and second derivatives of these functions using built-in tools such as $grad$.
+  - Plot the derivatives over the respective functions and apperciate.
+  - Familiarize the numerical integration tools in the language you use.
+  - Realize the function
+
+  @math
+  f(t) = 4t^2 + 3
+  @end
+
+  > and plot it for the vector $t = [-5,5]$ wiht increment $0.01$
+
+  - Use general integration tool to compute
+
+  @math
+  \int_{-2}^{2} f(t) dt
+  @end
+
+  - Repeat the above steps with Trapezoidal and Simpson method and compare the results.
+  - Compute
+
+  @math
+  \dfrac{1}{\sqrt{2\pi}}
+  \int_{0}^{\infty}
+  e^{-\frac{x^{2}}{2}} dx
+  @end
+
+  > using the above three methods

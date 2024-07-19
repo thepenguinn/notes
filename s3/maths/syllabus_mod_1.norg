@@ -1,0 +1,23 @@
+@document.meta
+title: syllabus_mod_1
+description: Partial Differential Equations Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-09-21
+updated: 2023-09-21
+version: 1.1.1
+@end
+
+* Partial Differential Equations Syllabus
+
+  - Partial differential equations
+  - Formation of partial differential equations
+  -- Elimination of arbitrary constants
+  -- Elimination of arbitrary functions
+  - Solutions of a partial differential equations
+  - Equations solvable by direct integration
+  - Linear equations of the first order
+  -- Lagrange's linear equation
+  - Non-linear equations of the first order
+  -- Charpit's method
+  - Solution of equation by method of seperation of variables

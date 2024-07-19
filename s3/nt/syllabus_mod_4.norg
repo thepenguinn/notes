@@ -1,0 +1,19 @@
+@document.meta
+title: syllabus_mod_4
+description: Network Functions Syllabus
+authors: Daniel
+categories:
+created: 2023-08-14
+updated: 2023-08-14
+version: 1.1.1
+@end
+
+* Network Functions
+
+  - Network functions for the single port and two port network
+  - Properties of driving point and transfer functions
+  - Significance of poles and zeros of network functions
+  - Time domain response from pole and zero plot
+  - Impule function and response
+  - Network functions in the sinusoidal steady state
+  - Magnitude and phase response

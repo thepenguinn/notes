@@ -1,0 +1,60 @@
+@document.meta
+title: syllabus_mod_2
+description: PART B Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-22
+updated: 2023-08-22
+version: 1.1.1
+@end
+
+* PART B
+
+** Experiment 1. Realization of Logic Gates and Familiarization of FPGAs
+
+   - Familiarization of a small FPGA board and its ports and interface.
+   - Create the /.pcf/ files for your FPGA board.
+   - Familiarization of the basic syntax of *verilog*.
+   - Development of verilog modules for basic gates, synthesis and implementaion in the above FPGA to verify the truth tables.
+   - Verify the universality and non associativity of NAND and NOR gates by uploading the corresponding verilog files to the FPGA boards.
+
+** Experiment 2. Adders in Verilog
+
+   - Development of verilog modules for half adder in 3 modeling styles (dataflow/structural/behavioural).
+   - Development of verilog modules for full adder in structural modeling using half adder.
+
+** Experiment 3. Mux and Demux in Verilog
+
+   - Development of verilog modules for a $4 \times 1$ *MUX*.
+   - Development of verilog modules for a $1 \times 4$ *DEMUX*.
+
+** Experiment 4. Flipflops and Counters
+
+   - Development of verilog modules for *SR*, *JK*, and *D* flipflops.
+   - Development of verilog modules for a binary /Decade/\//Johnson/\//Ring/ Counters.
+
+** Experiment 5. Multiplexer and Logic Implementation in FPGA
+
+   - Make a gate level design of an $8:1$ multiplexer, write to FPGA and test its functionality.
+   - Use the above module to realize the logic function $f(A, B, C) = \sum m(0,1,3,7)$ and test it.
+   - Use the same $8:1$ multiplexer to realize the logic function $f(A,B,C,D) = \sum m(0,1,3,7,10,12)$ by partitionaing the truth table properly and test it.
+
+** Experiment 6. Flip-Flops and their Conversion in FPGA
+
+   - Make gate level designs of *JK*, *JK Master Slave*, *T* and *D* flip flops, implement and test them on the FPGA board.
+   - Implement  and test the conversion such as *T* to *D*, *D* to *T*, *JK* to *T* and *JK* to *D*.
+
+** Experiment 7. Asynchronous and Synchronous Counters in FPGA
+
+   - Make a design of a 4-bit up down ripple counter using *T* flip flops in the previous experiment, implement and test them on the FPGA board.
+   - Make a design of a 4-bit up down synchronous counter using *T* flip flops in the previous experiment, implement and test them on the FPGA board.
+
+** Experiment 8. Universal Shift Register in FPGA
+
+   - Make a design of a 4-bit universal shift register using *D* flip flops in the previous experiment, implement and test them on the FPGA board.
+   - Implement *Ring* and *Johnson* counters with it.
+
+** Experiment 9. BCD to Seven Segment Decoder in FPGA
+
+   - Make a gate level design of a seven segment decoder, write to FPGA and test its functionality.
+   - Test it with switches and seven segment display. Use output ports for connection to the display.

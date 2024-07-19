@@ -1,0 +1,16 @@
+@document.meta
+title: syllabus_mod_7
+description: Experiment 7. Simple Data Analysis with Spreadsheets Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-22
+updated: 2023-08-22
+version: 1.1.1
+@end
+
+* Experiment 7. Simple Data Analysis with Spreadsheets
+
+  - Display an electrical signal on DSO and export it as a /.csv/ file.
+  - Read this /.csv/ or /.xls/ file as an array and plot it.
+  - Compute the mean and standard deviation of the signal.
+  - Plot its histogram with an appropriate bin size.

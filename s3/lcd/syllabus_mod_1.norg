@@ -1,0 +1,27 @@
+@document.meta
+title: syllabus_mod_1
+description: Number Systems and Codes Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-14
+updated: 2023-08-16
+version: 1.1.1
+@end
+
+* Number Systems and Codes
+
+  - Binary and hexadecimal number systems
+  - Methods of base conversions
+  - Binary and hexadecimal arithmetic
+  - Representation of signed numbers
+  - Fixed and floating point numbers
+  - Binary coded decimal codes
+  - Gray codes
+  - Excess 3 codes
+  - Alphanumberic codes
+  - ASCII
+  - Basics of verilog - basic language elements:
+  - Identifiers
+  - Data objects
+  - Scalar data types
+  - Operators

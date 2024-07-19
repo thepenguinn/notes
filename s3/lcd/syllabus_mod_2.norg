@@ -1,0 +1,23 @@
+@document.meta
+title: syllabus_mod_2
+description: Boolean Postulates and Fundamental Gates Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-14
+updated: 2023-08-15
+version: 1.1.1
+@end
+
+* Boolean Postulates and Fundamental Gates
+
+  - Boolean postulates and laws
+  - Logic functions and Gates
+  - De-Morgans's theorems
+  - Principle of duality
+  - Minimization of boolean expressions
+  - Sum of products (SOP)
+  - Product of sums (POS)
+  - Canonical forms
+  - Karnaugh map minimization
+  - Modeling in verilog
+  - Implementaion of gates with simple verilog codes

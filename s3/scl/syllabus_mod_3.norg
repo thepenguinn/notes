@@ -1,0 +1,42 @@
+@document.meta
+title: syllabus_mod_3
+description: Experiment 3. Realization of Arrays and Matrices Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-17
+updated: 2023-09-07
+version: 1.1.1
+@end
+
+* Experiment 3. Realization of Arrays and Matrices
+
+  - Realize one dimenional array of real and complex numbers
+  - stem and continous plots of real arrays using /matplotlib/ / *GUI* s   / /charts/
+  - Realization of two dimensional arrays and matrices and their visualizations with /imshow/ / /matshow/ / /charts/
+  - Inverse of a square matrix and the solution of the matrix equation
+
+  @math
+  [\textbf{A}] [\textbf{X}] = [\textbf{b}]
+  @end
+
+  > where *A* is an $N \times N$ matrix and *X* and *b* are $N \times 1$ vectors.
+
+  - Computation of the rank($\rho$) and eigen values ($\lambda_i$) of *A*
+  - Approximate *A* for $N = 1000$ with the help of singular value decomposition of *A* as
+
+  @math
+  \tilde{\textbf{A}} = \sum_{i=0}^{r} \lambda_i U_i V_i^T
+  @end
+
+  > where $U_i$ and $V_i$ are the singular vectors and $\lambda_i$ are the eigen values with
+  > $\lambda_i < \lambda_i$ for $i > j$. One may use the built-in functions for singular
+  > value decomposition.
+
+  - Plot the absolute error($\gamma$) between $\textbf{A}$ and $\tilde{\textbf{A}}$ as
+
+  @math
+  \gamma = \sum_{i=1}^{N} \sum_{j=1}^{N}
+  {\big | a_{i,j} - \tilde{a}_{i,j} \big |}^2
+  @end
+
+  > aganist $r$ for $r = 10, 50, 75, 100, 250, 500, 750$ and appreciate the plot.

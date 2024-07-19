@@ -1,0 +1,25 @@
+@document.meta
+title: syllabus_mod_1
+description: PART A Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-22
+updated: 2023-08-22
+version: 1.1.1
+@end
+
+* PART A
+
+  - Realization of functions using basic and universal gates (*SOP* and *POS* forms).
+  - Design and Reaslization of half/full adder and subtractor using basic gates and universal gates.
+  - 4 bit adder/subtractor and *BCD* adder using *7483*.
+  - Study of Flip Flops: *SR*, *D*, *T*, *JK* and *Master Slave JK FF* using *NAND* gates
+  - Asynchronous Counter: 3 bit up/down counter.
+  - Asynchronous Counter: Realization of Mod N counter.
+  - Synchronous Counter: Realization 4 bit up/down counter.
+  - Synchronous Counter: Realization of Mod N counter.
+  - Ring counter and Johnson Counter (using *FF* and *7495*).
+  - Realization of counter using ICs (*7490*, *7492*, *7493*)
+  - Multiplexers and De-multiplexers using gates and ICs (*74150*, *74154*)
+  - Realization of combinational circuits using *MUX* and *DEMUX*.
+  - Random Sequence generator using *LFSR*.

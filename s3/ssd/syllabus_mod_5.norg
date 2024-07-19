@@ -1,0 +1,24 @@
+@document.meta
+title: syllabus_mod_5
+description: Module 5 Syllabus
+authors: Daniel
+categories:
+created: 2023-08-14
+updated: 2023-08-14
+version: 1.1.1
+@end
+
+* Module 5
+
+  - MOSFET scaling
+  - Need for scaling
+  - Constant voltage scaling and constant field scaling
+  - Sub-threshold conduction in MOS
+  - Short channel effects
+  - Channel modulation
+  - Drain induced barrier lowering
+  - Velocity saturation
+  - Threshold voltage variations
+  - Hot carrier effects
+  - Non-Planar MOSFETs
+  - Fin FET: structure, operation and advantages

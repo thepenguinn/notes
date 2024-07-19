@@ -1,0 +1,26 @@
+@document.meta
+title: syllabus_mod_5
+description: Logic Families and its Characteristics Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-14
+updated: 2023-08-16
+version: 1.1.1
+@end
+
+* Logic Families and its Characteristics
+
+  - TTL
+  - ECL
+  - CMOS
+  - Electrical characteristics of logic gates
+  - Logic levels and noise margins
+  - Fan-out
+  - Propagation delay
+  - Transition time
+  - Power consumption and power delay product
+  - TTL inverter - circuit description and operation
+  - CMOS inverter - circuit description and operation
+  - Structure and operations of TTL and CMOS gates
+  - NAND in TTL and CMOS
+  - NAND and NOR in CMOS

@@ -1,0 +1,18 @@
+@document.meta
+title: S3 Notes
+description: s3 notes
+authors: Daniel
+categories: notes
+created: 2023-08-14
+updated: 2024-07-17T12:38:01+0530
+version: 1.1.1
+@end
+
+* Notes
+
+  {:ssd/index:}[Solid State Devices] notes
+  {:scl/index:}[Scientific Computation Lab] notes
+  {:nt/index:}[Network Theory] notes
+  {:ldl/index:}[Logic Design Lab] notes
+  {:lcd/index:}[Logic Circuit Design] notes
+  {:maths/index:}[Maths] notes

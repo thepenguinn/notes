@@ -1,0 +1,38 @@
+@document.meta
+title: syllabus_mod_5
+description: Experiment 5. Solution of Ordinary Differential Equations Syllabus
+authors: Daniel
+categories: syllabus
+created: 2023-08-22
+updated: 2023-08-22
+version: 1.1.1
+@end
+
+* Experiment 5. Solution of Ordinary Differential Equations
+
+  - Solve the first order differential equation
+
+  @math
+  \dfrac{dx}{dt} + 2x = 0
+  @end
+
+  > with the inital condition $x(0) = 1$
+
+  - Solve for the current transient through an RC network (with $RC = 3$) that is driven by
+  -- $5 \! V \textbf{DC}$
+  -- the signal $5e^{-t}U(t)$
+
+  > and plot the solutions.
+
+  - Solve the second order differential equation
+
+  @math
+  \dfrac{d^{2}x}{dt^{2}} +
+  2\dfrac{dx}{dt} +
+  2x = e^{-t}
+  @end
+
+  - Solve the current transient throught a series *RLC* circuit with $R = 1 \omega$, $L = 1mH$ and $C = 1 \mu F$ that is driven by
+
+  -- $5 \! V \textbf{DC}$
+  -- the signal $5e^{-t}U(t)$
