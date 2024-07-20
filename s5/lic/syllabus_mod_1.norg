@@ -1,0 +1,37 @@
+@document.meta
+title: Module 1
+description: module 1 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-19T06:23:08+0530
+updated: 2024-07-20T22:49:39+0530
+version: 1.1.1
+@end
+
+* Module 1
+
+** Operational Amplifiers ( Op Amps )
+
+   - The 741 Op Amp
+   - Block diagram
+   - Ideal op-amp parameters
+   - Typical parameter values for 741
+   - Equivalent circuit
+   - Open loop configurations
+   - Voltage transfer curve
+   - Frequency response curve
+
+** Differential Amplifiers
+
+   - Differential amplifier configurations using BJT
+   - DC analysis - transfer characteristics
+   - AC analysis - differential and common mode gains
+   - CMRR
+   - Input and output resistance
+   - Voltage gain
+   - Constant current bias
+   - Constant current source
+   - Concept of current mirror - the two transistor current mirror
+   - Wilson and Widler current mirrors
