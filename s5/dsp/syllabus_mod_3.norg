@@ -1,0 +1,30 @@
+@document.meta
+title: Module 3
+description: module 3 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T05:14:06+0530
+updated: 2024-07-21T05:19:17+0530
+version: 1.1.1
+@end
+
+* Module 3
+
+  - Design of FIR filters
+  -- Symmetric FIR filters
+  -- Anti-symmetric FIR filters
+  - Design of linear phase FIR filters using
+  -- Window methods
+  --- Rectangular
+  --- Hamming
+  --- Hanning
+  -- Frequency sampling methods
+  - Comparision of design methods for linear phase FIR filters
+  - Design of IIR digital filters from analog filters
+  -- Butterworth
+  - IIR filter design by:
+  -- Impulse invariance
+  -- Bilinear transformation
+  - Frequency transformations in th analog and digital domain

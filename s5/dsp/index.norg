@@ -1,0 +1,62 @@
+@document.meta
+title: Digital Signal Processing
+description: digital signal processing ( syllabus, and notes )
+authors: Daniel
+categories: [
+    syllabus
+    notes
+]
+created: 2024-07-21T05:00:56+0530
+updated: 2024-07-21T05:03:08+0530
+version: 1.1.1
+@end
+
+* Module 1
+
+** Syllabus
+
+   {:syllabus_mod_1:}[Module 1] syllabus
+
+   ---
+
+  {:notes_mod_1:}[Module 1] notes
+
+* Module 2
+
+** Syllabus
+
+   {:syllabus_mod_2:}[Module 2] syllabus
+
+   ---
+
+  {:notes_mod_2:}[Module 2] notes
+
+* Module 3
+
+** Syllabus
+
+   {:syllabus_mod_3:}[Module 3] syllabus
+
+   ---
+
+  {:notes_mod_3:}[Module 3] notes
+
+* Module 4
+
+** Syllabus
+
+   {:syllabus_mod_4:}[Module 4] syllabus
+
+   ---
+
+  {:notes_mod_4:}[Module 4] notes
+
+* Module 5
+
+** Syllabus
+
+   {:syllabus_mod_5:}[Module 5] syllabus
+
+   ---
+
+  {:notes_mod_5:}[Module 5] notes
