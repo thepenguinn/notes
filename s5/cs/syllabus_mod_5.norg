@@ -1,0 +1,26 @@
+@document.meta
+title: Module 5
+description: module 5 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T06:07:52+0530
+updated: 2024-07-21T06:11:22+0530
+version: 1.1.1
+@end
+
+* Module 5
+
+** State Variable of Analysis of Linear Dynamic Systems
+
+   - State variables
+   - State equations
+   - State variable representation of electrical and mechanical systems
+   - Dynamic equations
+   - Merits for higher order differential equations and solution
+   - Transfer function from state variable representation
+   - Solutions of the state equations
+   - State transition matrix
+   - Concept of controllability and observability
+   -- Techniques to test them - Kalman's Test

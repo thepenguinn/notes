@@ -1,0 +1,28 @@
+@document.meta
+title: Module 2
+description: module 2 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T05:58:12+0530
+updated: 2024-07-21T06:02:38+0530
+version: 1.1.1
+@end
+
+* Module 2
+
+** Time Domain Analysis of Control Systems
+
+   - Standard test signals
+   - Time response specifications
+   - Time response of first and second order systems to:
+   -- Unit step input
+   -- Ramp input
+   - Time domain specifications
+   - Steady state error and static error coefficients
+
+** Frequency Domain Analysis
+
+   - Frequency domain specifications
+   - Correlation between time and frequency responses

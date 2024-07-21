@@ -1,0 +1,37 @@
+@document.meta
+title: Module 1
+description: module 1 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T05:53:32+0530
+updated: 2024-07-21T06:12:58+0530
+version: 1.1.1
+@end
+
+* Module 1
+
+** Introduction
+
+   - Baic components of a control system
+   - Open-loop control systems
+   - Closed-loop control systems
+   - Examples of control systems
+
+** Feedback and its Effect
+
+   - Types of feedback control systems
+   - Linear versus nonlinear control systems
+   - Time invariant versus time varying systems
+
+** Mathematical Modelling of Control Systems
+
+   - Electrical systems and mechanical systems
+
+** Transfer Function from Block Diagrams and Signal Flow Graphs
+
+   - Impulse response
+   -- Relation with transfer function of linear systems
+   - Block diagram representation and reduction methods
+   - Signal flow graph and Mason's gain formula

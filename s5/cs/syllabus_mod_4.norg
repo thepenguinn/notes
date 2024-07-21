@@ -1,0 +1,27 @@
+@document.meta
+title: Module 4
+description: module 4 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T06:05:26+0530
+updated: 2024-07-21T06:07:47+0530
+version: 1.1.1
+@end
+
+* Module 4
+
+** Nyquist Stability Criterion
+
+   - fundamentals and analysis
+
+** Relative Stabilty
+
+   - Gain margin and phase margin
+   - Stability analysis with bode plot
+
+** Design of Compensators
+
+   - Need of compensators
+   - Design of lag and lead compensators using bode plots
