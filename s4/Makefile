@@ -1,12 +1,19 @@
 # just a makefile to build epub files
 
-build: ss/signals_and_systems_syllabus.epub
+EPUB = ss/signals_and_systems_syllabus.epub \
+	   ac/analog_circuits_syllabus.epub
+
+build: $(EPUB)
 
 sync: build
 	kdb sync
 
+ac/analog_circuits_syllabus.epub: ac/*.norg
+	epubconv --no-sync ac
+	cp $@ ${LOCAL_KINDLE_DIR}/home/imstupid/ac
+
 ss/signals_and_systems_syllabus.epub: ss/*.norg
 	epubconv --no-sync ss
-	cp ss/signals_and_systems_syllabus.epub ${LOCAL_KINDLE_DIR}/home/imstupid/ss
+	cp $@ ${LOCAL_KINDLE_DIR}/home/imstupid/ss
 
-.PHONY: sync
+.PHONY: sync build

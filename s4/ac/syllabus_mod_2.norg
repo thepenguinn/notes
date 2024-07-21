@@ -1,0 +1,28 @@
+@document.meta
+title: Module 2
+description: module 2 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T16:03:29+0530
+updated: 2024-07-21T16:07:36+0530
+version: 1.1.1
+@end
+
+* Module 2
+
+** BJT Amplifier
+
+   - RC coupled amplifier ( CE configuration )
+   -- Need of various components
+   -- And design
+   -- Concept of AC load lines
+   -- Voltage gain
+   -- Frequency response
+   - Small signal analysis of CE configuration using small signal hybrid-pi model for:
+   -- Mid frequency
+   -- Low frequency
+   - High frequency equivalent circuits of BJT
+   - Miller effect
+   - Analysis of high frequency response of CE amplifier

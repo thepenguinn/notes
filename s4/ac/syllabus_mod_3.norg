@@ -1,0 +1,29 @@
+@document.meta
+title: Module 3
+description: something else
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T16:07:51+0530
+updated: 2024-07-21T16:12:04+0530
+version: 1.1.1
+@end
+
+* Module 3
+
+** MOSFET Amplifiers
+
+   - MOSFET circuits at DC
+   - MOSFET as an amplifier
+   - Biasing of discrete MOSFET amplifier
+   - Small signal equivalent circuit
+   - Small signal voltage and current gain
+   - Input and output impedance of CS configuration
+   - CS stage with current source load
+   - CS stage with diode-connected load
+
+** Multistage Amplifiers
+
+   - Effects of cascading on gain and bandwidth
+   - Cascode amplifier

@@ -1,0 +1,31 @@
+@document.meta
+title: Module 5
+description: module 5 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T16:18:30+0530
+updated: 2024-07-21T16:23:43+0530
+version: 1.1.1
+@end
+
+* Module 5
+
+** Power Amplifiers
+
+   - Classification
+   - Transformer coupled class A power amplifiers
+   - Push pull class B power amplifiers
+   - Push pull class AB power amplifiers
+   - Complementary-symmetry class B power amplifiers
+   - Complementary-symmetry class AB power amplifiers
+   - Efficiency and distortion
+
+** Regulated Power Supplies
+
+   - Shunt voltage regulator
+   - Series voltage regulator
+   - Short circuit protection
+   - Fold back protection
+   - Output current boosting

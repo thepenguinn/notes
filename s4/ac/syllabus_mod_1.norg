@@ -1,0 +1,36 @@
+@document.meta
+title: Module 1
+description: module 1 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T15:59:13+0530
+updated: 2024-07-21T16:03:19+0530
+version: 1.1.1
+@end
+
+* Module 1
+
+** Wave Shaping Circuits
+
+   - First order RC differentiating circuit
+   - First order RC integrating circuit
+   - First order low pass filter
+   - First order hight pass filter
+   - Diode clipping circuits
+   -- Positive biased clipper
+   -- Negative biased clipper
+   - Diode clamping circuit
+   -- Positive biased clipper
+   -- Negative biased clipper
+
+** Transistor Biasing
+
+   - Need
+   - Operating point
+   - Concept of DC load line
+   - Fixed bias
+   - Self bias
+   - Voltage divider bias
+   - Bias stabilization
