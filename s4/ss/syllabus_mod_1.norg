@@ -1,0 +1,24 @@
+@document.meta
+title: Module 1
+description: module 1 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T15:00:40+0530
+updated: 2024-07-21T15:03:04+0530
+version: 1.1.1
+@end
+
+* Module 1
+
+  - Elementry signals
+  - Continuous time signals and systems
+  - Discrete time signals and systems
+  - Signal operations
+  - Differential equation representation
+  - Difference equation representation
+  - Continous time LTI systems
+  - Discrete time LTI systems
+  - Correlation between signals
+  - Orthogonality of signals

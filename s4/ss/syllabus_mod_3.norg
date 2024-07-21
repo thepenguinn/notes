@@ -1,0 +1,21 @@
+@document.meta
+title: Module 3
+description: module 3 ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T15:04:31+0530
+updated: 2024-07-21T15:08:03+0530
+version: 1.1.1
+@end
+
+* Module 3
+
+  - Analysis of LTI systems using Laplace and Fourier transforms
+  - Concept of transfer function
+  - Frequency response
+  - Magnitude and phase response
+  - Sampling of continuous time signals
+  - Sampling theorem for low pass signals
+  - Aliasing
