@@ -1,0 +1,23 @@
+@document.meta
+title: Module 1 Analog Communication
+description: module 1 analog communication ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T05:31:55+0530
+updated: 2024-07-21T05:33:46+0530
+version: 1.1.1
+@end
+
+* Module 1 Analog Communication
+
+  - Block diagram of a communication system
+  - Need for analog modulation
+  - Amplitude modulation
+  - Equation and spectrum of AM signal
+  - DSB-SC and SSB systems
+  - Block diagram of SSB transmitter and receiver
+  - Frequency and phase modulation
+  - Narrow and wide band FM and their spectra
+  - FM transmitter and receiver

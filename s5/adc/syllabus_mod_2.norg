@@ -1,0 +1,25 @@
+@document.meta
+title: Module 2 Review of Random Variable and Random Processes
+description: module 2 review of random variable and random processes ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T05:34:32+0530
+updated: 2024-07-21T05:39:10+0530
+version: 1.1.1
+@end
+
+* Module 2 Review of Random Variable and Random Processes
+
+  - Review of random variables
+  -- Discrete
+  -- Continuous
+  - CDF
+  - PDF
+  - Statistical averages ( Only definitions, computations and significance )
+  - Entropy
+  - Differential entropy
+  - Differential entropy of a gaussian RV
+  - Conditional entropy
+  - Mutual information

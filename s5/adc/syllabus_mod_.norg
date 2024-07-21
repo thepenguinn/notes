@@ -1,0 +1,21 @@
+@document.meta
+title: Module 5 Digital Modulation Schemes
+description: module 5 digital modulation schemes ( syllabus )
+authors: Daniel
+categories: [
+    syllabus
+]
+created: 2024-07-21T05:47:35+0530
+updated: 2024-07-21T05:50:52+0530
+version: 1.1.1
+@end
+
+* Module 5 Digital Modulation schemes
+
+  - Digital modulation schemes
+  - Baseband BPSK system and the signal constellation
+  - BPSK transmitter and receiver
+  - Base band QPSK system and signal constellation
+  - Plots of BER vs SNR with analysis
+  - QPSK transmitter and receiver
+  - Quadrature amplitude modulation and signal constellation
