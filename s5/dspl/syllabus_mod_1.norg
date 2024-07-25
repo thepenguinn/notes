@@ -1,0 +1,30 @@
+@document.meta
+title: Simulation of Signals
+description: simulation of signals ( lab, and syllabus )
+authors: Daniel
+categories: [
+    lab
+    syllabus
+]
+created: 2024-07-25T19:32:42+0530
+updated: 2024-07-25T19:48:03+0530
+version: 1.1.1
+@end
+
+* Simulation of Signals
+
+  - Discrete time impulse signal
+  - Discrete time pulse signal
+  - Discrete time bipolar pulse signal
+  - Discrete time ramp signal
+  - Discrete time triangluar signal
+  - Yet another discrete time signal
+  - Complex exponential sequence
+  - Yet another sequence
+  - Many more discrete sequences
+  - Discrete time sinosoids
+  - Continuous time signals
+  - Rectified sine wave
+  - Random signals
+  - More random signals
+  - Sine wave corrupted with noise
