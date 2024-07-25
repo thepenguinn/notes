@@ -1,0 +1,49 @@
+@document.meta
+title: Simulation of Signals
+description: simulation of signals ( lab, and notes )
+authors: Daniel
+categories: [
+    lab
+    notes
+]
+created: 2024-07-25T19:48:22+0530
+updated: 2024-07-26T04:55:49+0530
+version: 1.1.1
+@end
+
+* Discrete time impulse signal
+
+  Generate and plot a discrete-time impulse
+
+  #tangle discreteTimeImpulse.py
+  @code python
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  n = np.arange(-5, 6)
+  x = np.zeros_like(n)
+
+  x[ n == 0 ] = 1
+
+  plt.stem(n, x)
+  plt.xticks(n)
+
+  plt.savefig("plot/discreteTimeImpulse.svg")
+  @end
+
+  {plot/discreteTimeImpulse.svg}[Plot]
+
+* Discrete time pulse signal
+* Discrete time bipolar pulse signal
+* Discrete time ramp signal
+* Discrete time triangluar signal
+* Yet another discrete time signal
+* Complex exponential sequence
+* Yet another sequence
+* Many more discrete sequences
+* Discrete time sinosoids
+* Continuous time signals
+* Rectified sine wave
+* Random signals
+* More random signals
+* Sine wave corrupted with noise
