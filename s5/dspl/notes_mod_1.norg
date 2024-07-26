@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-26T04:55:49+0530
+updated: 2024-07-26T05:46:50+0530
 version: 1.1.1
 @end
 
@@ -34,6 +34,35 @@ version: 1.1.1
   {plot/discreteTimeImpulse.svg}[Plot]
 
 * Discrete time pulse signal
+
+  Generate a discrete-time pulse signal
+
+  @math
+  u(x) =
+  \begin{cases}
+  1    & \text{if} 0 \leq n \leq 4 \\
+  0    & \text{otherwise}
+  \end{cases}
+  @end
+
+  #tangle discreteTimePulse.py
+  @code python
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  n = np.arange(-5, 6)
+  x = np.zeros_like(n)
+
+  x[(n >= 0) & (n <= 4)] = 1
+
+  plt.stem(n, x)
+  plt.xticks(n)
+
+  plt.savefig("plot/discreteTimePulse.svg")
+  @end
+
+  {plot/discreteTimePulse.svg}[Plot]
+
 * Discrete time bipolar pulse signal
 * Discrete time ramp signal
 * Discrete time triangluar signal
