@@ -115,6 +115,27 @@ version: 1.1.1
   {plot/discreteTimeRamp.svg}[Plot]
 
 * Discrete time triangluar signal
+
+  Generate a triangluar signal
+
+  #tangle discreteTimeTri.py
+  @code python
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  a = np.arange(6)
+  b = np.arange(4, -1, -1)
+
+  x = np.concatenate([a, b])
+
+  plt.stem(x)
+  plt.xticks(np.arange(11))
+
+  plt.savefig("plot/discreteTimeTri.svg")
+  @end
+
+  {plot/discreteTimeTri.svg}[Plot]
+
 * Yet another discrete time signal
 * Complex exponential sequence
 * Yet another sequence
