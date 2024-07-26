@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-26T05:46:50+0530
+updated: 2024-07-26T05:48:55+0530
 version: 1.1.1
 @end
 
@@ -64,6 +64,36 @@ version: 1.1.1
   {plot/discreteTimePulse.svg}[Plot]
 
 * Discrete time bipolar pulse signal
+
+  Generate and stem the discrete-time bipolar pulse signal
+
+  @math
+  u(t) =
+  \begin{cases}
+  -1  & \text{if} -3 \leq n < 0 \\
+  1   & \text{if} 0 \leq n < 3
+  \end{cases}
+  @end
+
+  #tangle discreteTimeBipolar.py
+  @code python
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  n = np.arange(-5, 6)
+  x = np.zeros_like(n)
+
+  x[(n >= -3) & (n < 0)] = -1
+  x[(n >= 0) & (n < 3)] = 1
+
+  plt.stem(n, x)
+  plt.xticks(n)
+
+  plt.savefig("plot/discreteTimeBipolar.svg")
+  @end
+
+  {plot/discreteTimeBipolar.svg}[Plot]
+
 * Discrete time ramp signal
 * Discrete time triangluar signal
 * Yet another discrete time signal
