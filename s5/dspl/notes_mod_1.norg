@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-26T20:15:59+0530
+updated: 2024-07-27T05:04:43+0530
 version: 1.1.1
 @end
 
@@ -416,4 +416,40 @@ version: 1.1.1
   {plot/randomSignals.svg}[Plot]
 
 * More random signals
+
+  Likewise, a random signal $x[n]$ of length $N$ with samples normally
+  distributed with zero mean and unity standard deviation can be generated
+  by using the following command `x = np.random.normal(0.0, 1.0, N)`
+
+  Generate and display a Gaussian random signal of length $75$  whose elements
+  are normally distributed with zero mean and a variance of $3$. And verify
+  the results with `np.mean()` and `np.var()`
+
+  #tangle morRandomSignals.py
+  @code python
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  x = np.random.normal(0.0, np.sqrt(3), 75)
+
+  plt.stem(x)
+
+  print("Mean of the random signal: " + str(np.mean(x)))
+  print("Variance of the random signal: " + str(np.var(x)))
+
+  plt.savefig("plot/morRandomSignals.svg")
+  @end
+
+
+** Output
+
+   @code
+   Mean of the random signal: -0.07172024390303954
+   Variance of the random signal: 3.1310506880406743
+   @end
+
+   ---
+
+  {plot/morRandomSignals.svg}[Plot]
+
 * Sine wave corrupted with noise
