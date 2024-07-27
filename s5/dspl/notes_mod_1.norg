@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-27T07:45:51+0530
+updated: 2024-07-27T08:08:07+0530
 version: 1.1.1
 @end
 
@@ -31,7 +31,7 @@ version: 1.1.1
   plt.savefig("plot/discreteTimeImpulse.svg")
   @end
 
-  {plot/discreteTimeImpulse.svg}[Plot]
+  {plot/discreteTimeImpulse.svg}[Discrete Time Impulse Signal]
 
 * Discrete Time Pulse Signal
 
@@ -61,7 +61,7 @@ version: 1.1.1
   plt.savefig("plot/discreteTimePulse.svg")
   @end
 
-  {plot/discreteTimePulse.svg}[Plot]
+  {plot/discreteTimePulse.svg}[Discrete Time Pulse Signal]
 
 * Discrete Time Bipolar Pulse Signal
 
@@ -92,7 +92,7 @@ version: 1.1.1
   plt.savefig("plot/discreteTimeBipolar.svg")
   @end
 
-  {plot/discreteTimeBipolar.svg}[Plot]
+  {plot/discreteTimeBipolar.svg}[Discrete Time Bipolar Pulse Signal]
 
 * Discrete Time Ramp Signal
 
@@ -112,7 +112,7 @@ version: 1.1.1
   plt.savefig("plot/discreteTimeRamp.svg")
   @end
 
-  {plot/discreteTimeRamp.svg}[Plot]
+  {plot/discreteTimeRamp.svg}[Discrete Time Ramp Signal]
 
 * Discrete Time Triangluar Signal
 
@@ -134,7 +134,7 @@ version: 1.1.1
   plt.savefig("plot/discreteTimeTri.svg")
   @end
 
-  {plot/discreteTimeTri.svg}[Plot]
+  {plot/discreteTimeTri.svg}[Discrete Time Triangluar Signal]
 
 * Yet Another Discrete Time Signal
 
@@ -149,10 +149,10 @@ version: 1.1.1
   x = np.array([2, -1, 4, 1])
   plt.stem(x)
 
-  plt.savefig("yetAnotherDiscreteTimeSignal.svg")
+  plt.savefig("plot/yetAnotherDiscreteTimeSignal.svg")
   @end
 
-  {yetAnotherDiscreteTimeSignal.svg}[Plot]
+  {plot/yetAnotherDiscreteTimeSignal.svg}[Yet Another Discrete Time Signal]
 
 * Complex Exponential Sequence
 
@@ -189,7 +189,7 @@ version: 1.1.1
   plt.savefig("plot/complexExpSeq.svg")
   @end
 
-  {plot/complexExpSeq.svg}[Plot]
+  {plot/complexExpSeq.svg}[Complex Exponential Sequence]
 
 * Yet Another Sequence
 
@@ -215,9 +215,9 @@ version: 1.1.1
   plt.savefig("plot/yetAnotherSeq.svg")
   @end
 
-  {plot/yetAnotherSeq.svg}[Plot]
+  {plot/yetAnotherSeq.svg}[Yet Another Sequence]
 
-* Many More Discrete Sequences
+* Many more Discrete Sequences
 
   Generate $50$ samples of the following discrete time sequences and display
   using stem:
@@ -289,7 +289,7 @@ version: 1.1.1
   plt.savefig("plot/manyMoreSeq.svg")
   @end
 
-  {plot/manyMoreSeq.svg}[Plot]
+  {plot/manyMoreSeq.svg}[Many more Discrete Sequences]
 
 * Discrete Time Sinosoids
 
@@ -341,7 +341,7 @@ version: 1.1.1
   plt.savefig("plot/discreteTimeSinusoids.svg")
   @end
 
-  {plot/discreteTimeSinusoids.svg}[Plot]
+  {plot/discreteTimeSinusoids.svg}[Discrete Time Sinosoids]
 
 * Continuous Time Signals
 
@@ -365,7 +365,7 @@ version: 1.1.1
   plt.savefig("plot/continousTimeSignals.svg")
   @end
 
-  {plot/continousTimeSignals.svg}[Plot]
+  {plot/continousTimeSignals.svg}[Continuous Time Signals]
 
 * Rectified Sine Wave
 
@@ -391,7 +391,7 @@ version: 1.1.1
   plt.savefig("plot/rectifiedSine.svg")
   @end
 
-  {plot/rectifiedSine.svg}[Plot]
+  {plot/rectifiedSine.svg}[Rectified Sine Wave]
 
 * Random Signals
 
@@ -413,7 +413,7 @@ version: 1.1.1
   plt.savefig("plot/randomSignals.svg")
   @end
 
-  {plot/randomSignals.svg}[Plot]
+  {plot/randomSignals.svg}[Random Signals]
 
 * More Random Signals
 
@@ -450,7 +450,7 @@ version: 1.1.1
 
    ---
 
-  {plot/morRandomSignals.svg}[Plot]
+  {plot/morRandomSignals.svg}[More Random Signals]
 
 * Sine Wave Corrupted with Noise
 
@@ -489,4 +489,4 @@ version: 1.1.1
   plt.savefig("plot/corruptedSineWave.svg")
   @end
 
-  {plot/corruptedSineWave.svg}[Plot]
+  {plot/corruptedSineWave.svg}[Sine Wave Corrupted with Noise]
