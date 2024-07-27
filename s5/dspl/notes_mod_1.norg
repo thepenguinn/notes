@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-27T08:08:07+0530
+updated: 2024-07-27T08:59:23+0530
 version: 1.1.1
 @end
 
@@ -15,23 +15,27 @@ version: 1.1.1
 
   Generate and plot a discrete-time impulse
 
-  #tangle discreteTimeImpulse.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  n = np.arange(-5, 6)
-  x = np.zeros_like(n)
+   #tangle discreteTimeImpulse.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  x[ n == 0 ] = 1
+   n = np.arange(-5, 6)
+   x = np.zeros_like(n)
 
-  plt.stem(n, x)
-  plt.xticks(n)
+   x[ n == 0 ] = 1
 
-  plt.savefig("plot/discreteTimeImpulse.svg")
-  @end
+   plt.stem(n, x)
+   plt.xticks(n)
 
-  {plot/discreteTimeImpulse.svg}[Discrete Time Impulse Signal]
+   plt.savefig("plot/discreteTimeImpulse.svg")
+   @end
+
+** Plots
+
+   {plot/discreteTimeImpulse.svg}[Discrete Time Impulse Signal]
 
 * Discrete Time Pulse Signal
 
@@ -45,23 +49,27 @@ version: 1.1.1
   \end{cases}
   @end
 
-  #tangle discreteTimePulse.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  n = np.arange(-5, 6)
-  x = np.zeros_like(n)
+   #tangle discreteTimePulse.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  x[(n >= 0) & (n <= 4)] = 1
+   n = np.arange(-5, 6)
+   x = np.zeros_like(n)
 
-  plt.stem(n, x)
-  plt.xticks(n)
+   x[(n >= 0) & (n <= 4)] = 1
 
-  plt.savefig("plot/discreteTimePulse.svg")
-  @end
+   plt.stem(n, x)
+   plt.xticks(n)
 
-  {plot/discreteTimePulse.svg}[Discrete Time Pulse Signal]
+   plt.savefig("plot/discreteTimePulse.svg")
+   @end
+
+** Plots
+
+   {plot/discreteTimePulse.svg}[Discrete Time Pulse Signal]
 
 * Discrete Time Bipolar Pulse Signal
 
@@ -75,84 +83,100 @@ version: 1.1.1
   \end{cases}
   @end
 
-  #tangle discreteTimeBipolar.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  n = np.arange(-5, 6)
-  x = np.zeros_like(n)
+   #tangle discreteTimeBipolar.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  x[(n >= -3) & (n < 0)] = -1
-  x[(n >= 0) & (n < 3)] = 1
+   n = np.arange(-5, 6)
+   x = np.zeros_like(n)
 
-  plt.stem(n, x)
-  plt.xticks(n)
+   x[(n >= -3) & (n < 0)] = -1
+   x[(n >= 0) & (n < 3)] = 1
 
-  plt.savefig("plot/discreteTimeBipolar.svg")
-  @end
+   plt.stem(n, x)
+   plt.xticks(n)
 
-  {plot/discreteTimeBipolar.svg}[Discrete Time Bipolar Pulse Signal]
+   plt.savefig("plot/discreteTimeBipolar.svg")
+   @end
+
+** Plots
+
+   {plot/discreteTimeBipolar.svg}[Discrete Time Bipolar Pulse Signal]
 
 * Discrete Time Ramp Signal
 
   Generate and plot a discrete-time ramp signal
 
-  #tangle discreteTimeRamp.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  n = np.arange(0, 11)
-  x = n.copy()
+   #tangle discreteTimeRamp.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  plt.stem(n, x)
-  plt.xticks(n)
+   n = np.arange(0, 11)
+   x = n.copy()
 
-  plt.savefig("plot/discreteTimeRamp.svg")
-  @end
+   plt.stem(n, x)
+   plt.xticks(n)
 
-  {plot/discreteTimeRamp.svg}[Discrete Time Ramp Signal]
+   plt.savefig("plot/discreteTimeRamp.svg")
+   @end
+
+** Plots
+
+   {plot/discreteTimeRamp.svg}[Discrete Time Ramp Signal]
 
 * Discrete Time Triangluar Signal
 
   Generate a triangluar signal
 
-  #tangle discreteTimeTri.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  a = np.arange(6)
-  b = np.arange(4, -1, -1)
+   #tangle discreteTimeTri.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  x = np.concatenate([a, b])
+   a = np.arange(6)
+   b = np.arange(4, -1, -1)
 
-  plt.stem(x)
-  plt.xticks(np.arange(11))
+   x = np.concatenate([a, b])
 
-  plt.savefig("plot/discreteTimeTri.svg")
-  @end
+   plt.stem(x)
+   plt.xticks(np.arange(11))
 
-  {plot/discreteTimeTri.svg}[Discrete Time Triangluar Signal]
+   plt.savefig("plot/discreteTimeTri.svg")
+   @end
+
+** Plots
+
+   {plot/discreteTimeTri.svg}[Discrete Time Triangluar Signal]
 
 * Yet Another Discrete Time Signal
 
   Plot the discrete-time signal $x[n] = \{2, -1, 4, 1\}$ using `plt.stem()`.
   Use `np.array` to create `x`
 
-  #tangle yetAnotherDiscreteTimeSignal.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  x = np.array([2, -1, 4, 1])
-  plt.stem(x)
+   #tangle yetAnotherDiscreteTimeSignal.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  plt.savefig("plot/yetAnotherDiscreteTimeSignal.svg")
-  @end
+   x = np.array([2, -1, 4, 1])
+   plt.stem(x)
 
-  {plot/yetAnotherDiscreteTimeSignal.svg}[Yet Another Discrete Time Signal]
+   plt.savefig("plot/yetAnotherDiscreteTimeSignal.svg")
+   @end
+
+** Plots
+
+   {plot/yetAnotherDiscreteTimeSignal.svg}[Yet Another Discrete Time Signal]
 
 * Complex Exponential Sequence
 
@@ -165,31 +189,35 @@ version: 1.1.1
   Display both the real and imaginary parts of the signal from $n=0$ to $n=40$
   using `plt.subplot()`
 
-  #tangle complexExpSeq.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  def comp_exp_func (n):
-      return np.exp( (-1 / 12) + (1j * np.pi / 6 * n) )
+   #tangle complexExpSeq.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  t = np.arange(0, 41)
-  x = comp_exp_func(t)
+   def comp_exp_func (n):
+   return np.exp( (-1 / 12) + (1j * np.pi / 6 * n) )
 
-  plt.figure(figsize = (10, 16))
+   t = np.arange(0, 41)
+   x = comp_exp_func(t)
 
-  plt.subplot(2, 1, 1)
-  plt.stem(t, x.real, label = "Real part")
-  plt.legend()
+   plt.figure(figsize = (10, 16))
 
-  plt.subplot(2, 1, 2)
-  plt.stem(t, x.imag, label = "Imaginary part")
-  plt.legend()
+   plt.subplot(2, 1, 1)
+   plt.stem(t, x.real, label = "Real part")
+   plt.legend()
 
-  plt.savefig("plot/complexExpSeq.svg")
-  @end
+   plt.subplot(2, 1, 2)
+   plt.stem(t, x.imag, label = "Imaginary part")
+   plt.legend()
 
-  {plot/complexExpSeq.svg}[Complex Exponential Sequence]
+   plt.savefig("plot/complexExpSeq.svg")
+   @end
+
+** Plots
+
+   {plot/complexExpSeq.svg}[Complex Exponential Sequence]
 
 * Yet Another Sequence
 
@@ -199,23 +227,27 @@ version: 1.1.1
   x[n] = (0.95)^{n}\cos(0.1 \pi n)
   @end
 
-  #tangle yetAnotherSeq.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  def yet_another_func(n):
-      return (0.95 ** n) * np.cos(0.1 * np.pi * n)
+   #tangle yetAnotherSeq.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  t = np.arange(0, 51)
-  x = yet_another_func(t)
+   def yet_another_func(n):
+   return (0.95 ** n) * np.cos(0.1 * np.pi * n)
 
-  plt.stem(t, x)
+   t = np.arange(0, 51)
+   x = yet_another_func(t)
 
-  plt.savefig("plot/yetAnotherSeq.svg")
-  @end
+   plt.stem(t, x)
 
-  {plot/yetAnotherSeq.svg}[Yet Another Sequence]
+   plt.savefig("plot/yetAnotherSeq.svg")
+   @end
+
+** Plots
+
+   {plot/yetAnotherSeq.svg}[Yet Another Sequence]
 
 * Many more Discrete Sequences
 
@@ -242,54 +274,58 @@ version: 1.1.1
   x[n] = 2n(0.9)^{n}
   @end
 
-  #tangle manyMoreSeq.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  def func_a (n):
-      return 20 * (0.9 ** n)
+   #tangle manyMoreSeq.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  def func_b (n):
-      return 0.2 * (1.2 ** n)
+   def func_a (n):
+   return 20 * (0.9 ** n)
 
-  def func_c (n):
-      return (-0.8 ** n)
+   def func_b (n):
+   return 0.2 * (1.2 ** n)
 
-  def func_d (n):
-      return -4 * (0.8 ** n)
+   def func_c (n):
+   return (-0.8 ** n)
 
-  def func_e (n):
-      return 2 * n * (0.9 ** n)
+   def func_d (n):
+   return -4 * (0.8 ** n)
 
-  t = np.arange(0, 51)
-  a = func_a(t)
-  b = func_b(t)
-  c = func_c(t)
-  d = func_d(t)
-  e = func_e(t)
+   def func_e (n):
+   return 2 * n * (0.9 ** n)
 
-  plt.figure(figsize = (10, 20))
+   t = np.arange(0, 51)
+   a = func_a(t)
+   b = func_b(t)
+   c = func_c(t)
+   d = func_d(t)
+   e = func_e(t)
 
-  plt.subplot(5, 1, 1)
-  plt.stem(t, a)
+   plt.figure(figsize = (10, 20))
 
-  plt.subplot(5, 1, 2)
-  plt.stem(t, b)
+   plt.subplot(5, 1, 1)
+   plt.stem(t, a)
 
-  plt.subplot(5, 1, 3)
-  plt.stem(t, c)
+   plt.subplot(5, 1, 2)
+   plt.stem(t, b)
 
-  plt.subplot(5, 1, 4)
-  plt.stem(t, d)
+   plt.subplot(5, 1, 3)
+   plt.stem(t, c)
 
-  plt.subplot(5, 1, 5)
-  plt.stem(t, e)
+   plt.subplot(5, 1, 4)
+   plt.stem(t, d)
 
-  plt.savefig("plot/manyMoreSeq.svg")
-  @end
+   plt.subplot(5, 1, 5)
+   plt.stem(t, e)
 
-  {plot/manyMoreSeq.svg}[Many more Discrete Sequences]
+   plt.savefig("plot/manyMoreSeq.svg")
+   @end
+
+** Plots
+
+   {plot/manyMoreSeq.svg}[Many more Discrete Sequences]
 
 * Discrete Time Sinosoids
 
@@ -308,40 +344,44 @@ version: 1.1.1
   x_{3}[n] = \sin(2.2 \pi n)
   @end
 
-  #tangle discreteTimeSinusoids.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  def func_a (n):
-      return np.sin(0.2 * np.pi * n)
+   #tangle discreteTimeSinusoids.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  def func_b (n):
-      return np.sin(1.8 * np.pi * n)
+   def func_a (n):
+   return np.sin(0.2 * np.pi * n)
 
-  def func_c (n):
-      return np.sin(2.2 * np.pi * n)
+   def func_b (n):
+   return np.sin(1.8 * np.pi * n)
 
-  t = np.arange(0, 51)
-  a = func_a(t)
-  b = func_b(t)
-  c = func_c(t)
+   def func_c (n):
+   return np.sin(2.2 * np.pi * n)
 
-  plt.figure(figsize = (10, 20))
+   t = np.arange(0, 51)
+   a = func_a(t)
+   b = func_b(t)
+   c = func_c(t)
 
-  plt.subplot(3, 1, 1)
-  plt.stem(t, a)
+   plt.figure(figsize = (10, 20))
 
-  plt.subplot(3, 1, 2)
-  plt.stem(t, b)
+   plt.subplot(3, 1, 1)
+   plt.stem(t, a)
 
-  plt.subplot(3, 1, 3)
-  plt.stem(t, c)
+   plt.subplot(3, 1, 2)
+   plt.stem(t, b)
 
-  plt.savefig("plot/discreteTimeSinusoids.svg")
-  @end
+   plt.subplot(3, 1, 3)
+   plt.stem(t, c)
 
-  {plot/discreteTimeSinusoids.svg}[Discrete Time Sinosoids]
+   plt.savefig("plot/discreteTimeSinusoids.svg")
+   @end
+
+** Plots
+
+   {plot/discreteTimeSinusoids.svg}[Discrete Time Sinosoids]
 
 * Continuous Time Signals
 
@@ -349,23 +389,27 @@ version: 1.1.1
   necessarily discrete, we can simulate a continuous time signal by sampling at
   a high rate and graphing it as a continuous curve using `plt.plot()`.
 
-  #tangle continousTimeSignals.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  t = np.arange(0, 1, 0.02)
-  x = np.sin(2 * np.pi * 1 * t)
-  y = np.sin(2 * np.pi * 2 * t)
+   #tangle continousTimeSignals.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  plt.plot(t, x, label = "1 Hz")
-  plt.plot(t, y, label = "2 Hz")
-  plt.legend()
+   t = np.arange(0, 1, 0.02)
+   x = np.sin(2 * np.pi * 1 * t)
+   y = np.sin(2 * np.pi * 2 * t)
 
-  plt.savefig("plot/continousTimeSignals.svg")
-  @end
+   plt.plot(t, x, label = "1 Hz")
+   plt.plot(t, y, label = "2 Hz")
+   plt.legend()
 
-  {plot/continousTimeSignals.svg}[Continuous Time Signals]
+   plt.savefig("plot/continousTimeSignals.svg")
+   @end
+
+** Plots
+
+   {plot/continousTimeSignals.svg}[Continuous Time Signals]
 
 * Rectified Sine Wave
 
@@ -375,23 +419,27 @@ version: 1.1.1
   x(t) = \sin(t) \quad \text{; from } -2\pi \text{ to } 2\pi
   @end
 
-  #tangle rectifiedSine.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  t = np.arange(-2 * np.pi, 2 * np.pi, 0.02)
-  s = np.sin(t)
-  rs = np.abs(s)
+   #tangle rectifiedSine.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  plt.plot(t, s, label = "Non Rectified")
-  plt.plot(t, rs, label = "Rectified")
-  plt.legend()
+   t = np.arange(-2 * np.pi, 2 * np.pi, 0.02)
+   s = np.sin(t)
+   rs = np.abs(s)
 
-  plt.savefig("plot/rectifiedSine.svg")
-  @end
+   plt.plot(t, s, label = "Non Rectified")
+   plt.plot(t, rs, label = "Rectified")
+   plt.legend()
 
-  {plot/rectifiedSine.svg}[Rectified Sine Wave]
+   plt.savefig("plot/rectifiedSine.svg")
+   @end
+
+** Plots
+
+   {plot/rectifiedSine.svg}[Rectified Sine Wave]
 
 * Random Signals
 
@@ -400,20 +448,24 @@ version: 1.1.1
   `x = np.random.random_sample(N)`. Generate and display a random signal of length
   $100$ whose elements are distributed in the interval $[-2,2)$.
 
-  #tangle randomSignals.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  x = np.random.random_sample(100)
-  x = (x * 4) - 2
+   #tangle randomSignals.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  plt.stem(x)
+   x = np.random.random_sample(100)
+   x = (x * 4) - 2
 
-  plt.savefig("plot/randomSignals.svg")
-  @end
+   plt.stem(x)
 
-  {plot/randomSignals.svg}[Random Signals]
+   plt.savefig("plot/randomSignals.svg")
+   @end
+
+** Plots
+
+   {plot/randomSignals.svg}[Random Signals]
 
 * More Random Signals
 
@@ -425,68 +477,74 @@ version: 1.1.1
   are normally distributed with zero mean and a variance of $3$. And verify
   the results with `np.mean()` and `np.var()`
 
-  #tangle morRandomSignals.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  x = np.random.normal(0.0, np.sqrt(3), 75)
+   #tangle morRandomSignals.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  plt.stem(x)
+   x = np.random.normal(0.0, np.sqrt(3), 75)
 
-  print("Mean of the random signal: " + str(np.mean(x)))
-  print("Variance of the random signal: " + str(np.var(x)))
+   plt.stem(x)
 
-  plt.savefig("plot/morRandomSignals.svg")
-  @end
+   print("Mean of the random signal: " + str(np.mean(x)))
+   print("Variance of the random signal: " + str(np.var(x)))
+
+   plt.savefig("plot/morRandomSignals.svg")
+   @end
 
 
 ** Output
 
    @code
-   Mean of the random signal: -0.07172024390303954
-   Variance of the random signal: 3.1310506880406743
+   Mean of the random signal: 0.4496177781111343
+   Variance of the random signal: 2.578405718860434
    @end
 
-   ---
+** Plots
 
-  {plot/morRandomSignals.svg}[More Random Signals]
+   {plot/morRandomSignals.svg}[More Random Signals]
 
 * Sine Wave Corrupted with Noise
 
   Generate and plot a sinewave corrupted with zero mean Gaussian noise. And
   plot the noisy signal for various values of std dev for the noise.
 
-  #tangle corruptedSineWave.py
-  @code python
-  import numpy as np
-  import matplotlib.pyplot as plt
+** Python Implementation
 
-  def corrupt_signal(sig, sdev):
-      noise = np.random.normal(0, sdev, sig.size)
-      return sig + noise
+   #tangle corruptedSineWave.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
 
-  sdevs = [0.2, 0.7, 1.3]
+   def corrupt_signal(sig, sdev):
+   noise = np.random.normal(0, sdev, sig.size)
+   return sig + noise
 
-  t = np.arange(0, 2, 0.01)
-  signal = np.sin(2 * np.pi * t)
+   sdevs = [0.2, 0.7, 1.3]
 
-  plt.figure(figsize = (10, 20))
+   t = np.arange(0, 2, 0.01)
+   signal = np.sin(2 * np.pi * t)
 
-  plt.subplot(len(sdevs) + 1, 1, 1)
-  plt.plot(t, signal, label = "Original signal")
-  plt.legend()
+   plt.figure(figsize = (10, 20))
 
-  for i in range(len(sdevs)):
-      noisy_signal = corrupt_signal(signal, sdevs[i])
-      plt.subplot(len(sdevs) + 1, 1, i + 2)
-      plt.plot(
-          t, noisy_signal,
-          label = "Corrupted signal with gaussian noise of " + str(sdevs[i]) + " sdev"
-      )
-      plt.legend()
+   plt.subplot(len(sdevs) + 1, 1, 1)
+   plt.plot(t, signal, label = "Original signal")
+   plt.legend()
 
-  plt.savefig("plot/corruptedSineWave.svg")
-  @end
+   for i in range(len(sdevs)):
+   noisy_signal = corrupt_signal(signal, sdevs[i])
+   plt.subplot(len(sdevs) + 1, 1, i + 2)
+   plt.plot(
+   t, noisy_signal,
+   label = "Corrupted signal with gaussian noise of " + str(sdevs[i]) + " sdev"
+   )
+   plt.legend()
 
-  {plot/corruptedSineWave.svg}[Sine Wave Corrupted with Noise]
+   plt.savefig("plot/corruptedSineWave.svg")
+   @end
+
+** Plots
+
+   {plot/corruptedSineWave.svg}[Sine Wave Corrupted with Noise]
