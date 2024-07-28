@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-27T10:17:32+0530
+updated: 2024-07-28T13:43:32+0530
 version: 1.1.1
 @end
 
@@ -520,7 +520,7 @@ version: 1.1.1
 
    def corrupt_signal(sig, sdev):
        noise = np.random.normal(0, sdev, sig.size)
-   return sig + noise
+       return sig + noise
 
    sdevs = [0.2, 0.7, 1.3]
 
@@ -535,12 +535,12 @@ version: 1.1.1
 
    for i in range(len(sdevs)):
        noisy_signal = corrupt_signal(signal, sdevs[i])
-   plt.subplot(len(sdevs) + 1, 1, i + 2)
-   plt.plot(
-       t, noisy_signal,
-       label = "Corrupted signal with gaussian noise of " + str(sdevs[i]) + " sdev"
-   )
-   plt.legend()
+       plt.subplot(len(sdevs) + 1, 1, i + 2)
+       plt.plot(
+           t, noisy_signal,
+           label = "Corrupted signal with gaussian noise of " + str(sdevs[i]) + " sdev"
+       )
+       plt.legend()
 
    plt.savefig("plot/corruptedSineWave.svg")
    @end
