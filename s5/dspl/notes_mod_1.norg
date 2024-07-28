@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-28T13:43:32+0530
+updated: 2024-07-28T13:46:03+0530
 version: 1.1.1
 @end
 
@@ -30,12 +30,12 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimeImpulse.svg")
+   plt.savefig("plot/discreteTimeImpulse.pdf")
    @end
 
 ** Plots
 
-   {plot/discreteTimeImpulse.svg}[Discrete Time Impulse Signal]
+   {plot/discreteTimeImpulse.pdf}[Discrete Time Impulse Signal]
 
 * Discrete Time Pulse Signal
 
@@ -44,8 +44,8 @@ version: 1.1.1
   @math
   u(x) =
   \begin{cases}
-  1    & \text{if} 0 \leq n \leq 4 \\
-  0    & \text{otherwise}
+  \; 1    & \text{; if}\; 0 \leq n \leq 4 \\
+  \; 0    & \text{; otherwise}
   \end{cases}
   @end
 
@@ -64,12 +64,12 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimePulse.svg")
+   plt.savefig("plot/discreteTimePulse.pdf")
    @end
 
 ** Plots
 
-   {plot/discreteTimePulse.svg}[Discrete Time Pulse Signal]
+   {plot/discreteTimePulse.pdf}[Discrete Time Pulse Signal]
 
 * Discrete Time Bipolar Pulse Signal
 
@@ -78,8 +78,8 @@ version: 1.1.1
   @math
   u(t) =
   \begin{cases}
-  -1  & \text{if} -3 \leq n < 0 \\
-  1   & \text{if} 0 \leq n < 3
+  -1            & \text{; if} -3 \leq n < 0 \\
+  \hfill 1  & \text{; if} \hfill 0 \leq n < 3
   \end{cases}
   @end
 
@@ -99,12 +99,12 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimeBipolar.svg")
+   plt.savefig("plot/discreteTimeBipolar.pdf")
    @end
 
 ** Plots
 
-   {plot/discreteTimeBipolar.svg}[Discrete Time Bipolar Pulse Signal]
+   {plot/discreteTimeBipolar.pdf}[Discrete Time Bipolar Pulse Signal]
 
 * Discrete Time Ramp Signal
 
@@ -123,12 +123,12 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimeRamp.svg")
+   plt.savefig("plot/discreteTimeRamp.pdf")
    @end
 
 ** Plots
 
-   {plot/discreteTimeRamp.svg}[Discrete Time Ramp Signal]
+   {plot/discreteTimeRamp.pdf}[Discrete Time Ramp Signal]
 
 * Discrete Time Triangluar Signal
 
@@ -149,12 +149,12 @@ version: 1.1.1
    plt.stem(x)
    plt.xticks(np.arange(11))
 
-   plt.savefig("plot/discreteTimeTri.svg")
+   plt.savefig("plot/discreteTimeTri.pdf")
    @end
 
 ** Plots
 
-   {plot/discreteTimeTri.svg}[Discrete Time Triangluar Signal]
+   {plot/discreteTimeTri.pdf}[Discrete Time Triangluar Signal]
 
 * Yet Another Discrete Time Signal
 
@@ -171,19 +171,19 @@ version: 1.1.1
    x = np.array([2, -1, 4, 1])
    plt.stem(x)
 
-   plt.savefig("plot/yetAnotherDiscreteTimeSignal.svg")
+   plt.savefig("plot/yetAnotherDiscreteTimeSignal.pdf")
    @end
 
 ** Plots
 
-   {plot/yetAnotherDiscreteTimeSignal.svg}[Yet Another Discrete Time Signal]
+   {plot/yetAnotherDiscreteTimeSignal.pdf}[Yet Another Discrete Time Signal]
 
 * Complex Exponential Sequence
 
   Generate the complex exponential sequence:
 
   @math
-  x[n] = e^{( -\dfrac{1}{12} + j\dfrac{\pi}{6}n )}
+  x[n] = e^{\bigg( -\dfrac{1}{12} + \dfrac{j \pi n}{6} \bigg)}
   @end
 
   Display both the real and imaginary parts of the signal from $n=0$ to $n=40$
@@ -212,12 +212,12 @@ version: 1.1.1
    plt.stem(t, x.imag, label = "Imaginary part")
    plt.legend()
 
-   plt.savefig("plot/complexExpSeq.svg")
+   plt.savefig("plot/complexExpSeq.pdf")
    @end
 
 ** Plots
 
-   {plot/complexExpSeq.svg}[Complex Exponential Sequence]
+   {plot/complexExpSeq.pdf}[Complex Exponential Sequence]
 
 * Yet Another Sequence
 
@@ -242,12 +242,12 @@ version: 1.1.1
 
    plt.stem(t, x)
 
-   plt.savefig("plot/yetAnotherSeq.svg")
+   plt.savefig("plot/yetAnotherSeq.pdf")
    @end
 
 ** Plots
 
-   {plot/yetAnotherSeq.svg}[Yet Another Sequence]
+   {plot/yetAnotherSeq.pdf}[Yet Another Sequence]
 
 * Many more Discrete Sequences
 
@@ -320,12 +320,12 @@ version: 1.1.1
    plt.subplot(5, 1, 5)
    plt.stem(t, e)
 
-   plt.savefig("plot/manyMoreSeq.svg")
+   plt.savefig("plot/manyMoreSeq.pdf")
    @end
 
 ** Plots
 
-   {plot/manyMoreSeq.svg}[Many more Discrete Sequences]
+   {plot/manyMoreSeq.pdf}[Many more Discrete Sequences]
 
 * Discrete Time Sinosoids
 
@@ -376,12 +376,12 @@ version: 1.1.1
    plt.subplot(3, 1, 3)
    plt.stem(t, c)
 
-   plt.savefig("plot/discreteTimeSinusoids.svg")
+   plt.savefig("plot/discreteTimeSinusoids.pdf")
    @end
 
 ** Plots
 
-   {plot/discreteTimeSinusoids.svg}[Discrete Time Sinosoids]
+   {plot/discreteTimeSinusoids.pdf}[Discrete Time Sinosoids]
 
 * Continuous Time Signals
 
@@ -404,19 +404,23 @@ version: 1.1.1
    plt.plot(t, y, label = "2 Hz")
    plt.legend()
 
-   plt.savefig("plot/continousTimeSignals.svg")
+   plt.savefig("plot/continousTimeSignals.pdf")
    @end
 
 ** Plots
 
-   {plot/continousTimeSignals.svg}[Continuous Time Signals]
+   {plot/continousTimeSignals.pdf}[Continuous Time Signals]
 
 * Rectified Sine Wave
 
   Generate and plot a sine wave and the full wave rectified version:
 
   @math
-  x(t) = \sin(t) \quad \text{; from } -2\pi \text{ to } 2\pi
+  x(t) =
+  \begin{cases}
+  \; \sin(t) & \text{; if} \; -2\pi \leq t \leq 2\pi \\
+  \hfill 0   & \text{; otherwise}
+  \end{cases}
   @end
 
 ** Python Implementation
@@ -434,12 +438,12 @@ version: 1.1.1
    plt.plot(t, rs, label = "Rectified")
    plt.legend()
 
-   plt.savefig("plot/rectifiedSine.svg")
+   plt.savefig("plot/rectifiedSine.pdf")
    @end
 
 ** Plots
 
-   {plot/rectifiedSine.svg}[Rectified Sine Wave]
+   {plot/rectifiedSine.pdf}[Rectified Sine Wave]
 
 * Random Signals
 
@@ -460,12 +464,12 @@ version: 1.1.1
 
    plt.stem(x)
 
-   plt.savefig("plot/randomSignals.svg")
+   plt.savefig("plot/randomSignals.pdf")
    @end
 
 ** Plots
 
-   {plot/randomSignals.svg}[Random Signals]
+   {plot/randomSignals.pdf}[Random Signals]
 
 * More Random Signals
 
@@ -479,7 +483,7 @@ version: 1.1.1
 
 ** Python Implementation
 
-   #tangle morRandomSignals.py
+   #tangle moreRandomSignals.py
    @code python
    import numpy as np
    import matplotlib.pyplot as plt
@@ -491,20 +495,20 @@ version: 1.1.1
    print("Mean of the random signal: " + str(np.mean(x)))
    print("Variance of the random signal: " + str(np.var(x)))
 
-   plt.savefig("plot/morRandomSignals.svg")
+   plt.savefig("plot/moreRandomSignals.pdf")
    @end
 
 
 ** Output
 
    @code
-   Mean of the random signal: 0.4496177781111343
-   Variance of the random signal: 2.578405718860434
+   Mean of the random signal: -0.004406140399603042
+   Variance of the random signal: 2.550808884443705
    @end
 
 ** Plots
 
-   {plot/morRandomSignals.svg}[More Random Signals]
+   {plot/moreRandomSignals.pdf}[More Random Signals]
 
 * Sine Wave Corrupted with Noise
 
@@ -542,9 +546,9 @@ version: 1.1.1
        )
        plt.legend()
 
-   plt.savefig("plot/corruptedSineWave.svg")
+   plt.savefig("plot/corruptedSineWave.pdf")
    @end
 
 ** Plots
 
-   {plot/corruptedSineWave.svg}[Sine Wave Corrupted with Noise]
+   {plot/corruptedSineWave.pdf}[Sine Wave Corrupted with Noise]
