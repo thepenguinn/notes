@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-28T22:46:45+0530
+updated: 2024-07-28T22:54:18+0530
 version: 1.1.1
 @end
 
@@ -78,8 +78,9 @@ version: 1.1.1
   @math
   u(t) =
   \begin{cases}
-  -1            & \text{; if} -3 \leq n < 0 \\
-  \hfill 1  & \text{; if} \hfill 0 \leq n < 3
+  -1        & \text{; if} -3 \leq n < 0 \\
+  \hfill 1  & \text{; if} \hfill 0 \leq n < 3 \\
+  \hfill 0  & \text{; otherwise}
   \end{cases}
   @end
 
