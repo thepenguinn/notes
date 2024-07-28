@@ -9,4 +9,4 @@ x = np.concatenate([a, b])
 plt.stem(x)
 plt.xticks(np.arange(11))
 
-plt.savefig("plot/discreteTimeTri.pdf")
+plt.savefig("../plot/discreteTimeTri.pdf")

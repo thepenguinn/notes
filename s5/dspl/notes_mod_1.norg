@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-28T13:46:03+0530
+updated: 2024-07-28T22:46:45+0530
 version: 1.1.1
 @end
 
@@ -30,7 +30,7 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimeImpulse.pdf")
+   plt.savefig("../plot/discreteTimeImpulse.pdf")
    @end
 
 ** Plots
@@ -64,7 +64,7 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimePulse.pdf")
+   plt.savefig("../plot/discreteTimePulse.pdf")
    @end
 
 ** Plots
@@ -99,7 +99,7 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimeBipolar.pdf")
+   plt.savefig("../plot/discreteTimeBipolar.pdf")
    @end
 
 ** Plots
@@ -123,7 +123,7 @@ version: 1.1.1
    plt.stem(n, x)
    plt.xticks(n)
 
-   plt.savefig("plot/discreteTimeRamp.pdf")
+   plt.savefig("../plot/discreteTimeRamp.pdf")
    @end
 
 ** Plots
@@ -149,7 +149,7 @@ version: 1.1.1
    plt.stem(x)
    plt.xticks(np.arange(11))
 
-   plt.savefig("plot/discreteTimeTri.pdf")
+   plt.savefig("../plot/discreteTimeTri.pdf")
    @end
 
 ** Plots
@@ -171,7 +171,7 @@ version: 1.1.1
    x = np.array([2, -1, 4, 1])
    plt.stem(x)
 
-   plt.savefig("plot/yetAnotherDiscreteTimeSignal.pdf")
+   plt.savefig("../plot/yetAnotherDiscreteTimeSignal.pdf")
    @end
 
 ** Plots
@@ -212,7 +212,7 @@ version: 1.1.1
    plt.stem(t, x.imag, label = "Imaginary part")
    plt.legend()
 
-   plt.savefig("plot/complexExpSeq.pdf")
+   plt.savefig("../plot/complexExpSeq.pdf")
    @end
 
 ** Plots
@@ -242,7 +242,7 @@ version: 1.1.1
 
    plt.stem(t, x)
 
-   plt.savefig("plot/yetAnotherSeq.pdf")
+   plt.savefig("../plot/yetAnotherSeq.pdf")
    @end
 
 ** Plots
@@ -320,7 +320,7 @@ version: 1.1.1
    plt.subplot(5, 1, 5)
    plt.stem(t, e)
 
-   plt.savefig("plot/manyMoreSeq.pdf")
+   plt.savefig("../plot/manyMoreSeq.pdf")
    @end
 
 ** Plots
@@ -376,7 +376,7 @@ version: 1.1.1
    plt.subplot(3, 1, 3)
    plt.stem(t, c)
 
-   plt.savefig("plot/discreteTimeSinusoids.pdf")
+   plt.savefig("../plot/discreteTimeSinusoids.pdf")
    @end
 
 ** Plots
@@ -404,7 +404,7 @@ version: 1.1.1
    plt.plot(t, y, label = "2 Hz")
    plt.legend()
 
-   plt.savefig("plot/continousTimeSignals.pdf")
+   plt.savefig("../plot/continousTimeSignals.pdf")
    @end
 
 ** Plots
@@ -438,7 +438,7 @@ version: 1.1.1
    plt.plot(t, rs, label = "Rectified")
    plt.legend()
 
-   plt.savefig("plot/rectifiedSine.pdf")
+   plt.savefig("../plot/rectifiedSine.pdf")
    @end
 
 ** Plots
@@ -464,7 +464,7 @@ version: 1.1.1
 
    plt.stem(x)
 
-   plt.savefig("plot/randomSignals.pdf")
+   plt.savefig("../plot/randomSignals.pdf")
    @end
 
 ** Plots
@@ -495,7 +495,7 @@ version: 1.1.1
    print("Mean of the random signal: " + str(np.mean(x)))
    print("Variance of the random signal: " + str(np.var(x)))
 
-   plt.savefig("plot/moreRandomSignals.pdf")
+   plt.savefig("../plot/moreRandomSignals.pdf")
    @end
 
 
@@ -546,7 +546,7 @@ version: 1.1.1
        )
        plt.legend()
 
-   plt.savefig("plot/corruptedSineWave.pdf")
+   plt.savefig("../plot/corruptedSineWave.pdf")
    @end
 
 ** Plots

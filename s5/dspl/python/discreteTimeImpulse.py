@@ -9,4 +9,4 @@ x[ n == 0 ] = 1
 plt.stem(n, x)
 plt.xticks(n)
 
-plt.savefig("plot/discreteTimeImpulse.pdf")
+plt.savefig("../plot/discreteTimeImpulse.pdf")

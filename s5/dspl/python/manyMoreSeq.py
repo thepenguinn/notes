@@ -40,4 +40,4 @@ plt.stem(t, d)
 plt.subplot(5, 1, 5)
 plt.stem(t, e)
 
-plt.savefig("plot/manyMoreSeq.pdf")
+plt.savefig("../plot/manyMoreSeq.pdf")

@@ -6,4 +6,4 @@ x = (x * 4) - 2
 
 plt.stem(x)
 
-plt.savefig("plot/randomSignals.pdf")
+plt.savefig("../plot/randomSignals.pdf")

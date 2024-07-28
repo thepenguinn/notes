@@ -10,4 +10,4 @@ x[(n >= 0) & (n < 3)] = 1
 plt.stem(n, x)
 plt.xticks(n)
 
-plt.savefig("plot/discreteTimeBipolar.pdf")
+plt.savefig("../plot/discreteTimeBipolar.pdf")

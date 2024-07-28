@@ -9,4 +9,4 @@ plt.plot(t, x, label = "1 Hz")
 plt.plot(t, y, label = "2 Hz")
 plt.legend()
 
-plt.savefig("plot/continousTimeSignals.pdf")
+plt.savefig("../plot/continousTimeSignals.pdf")

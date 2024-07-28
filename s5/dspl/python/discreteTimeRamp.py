@@ -7,4 +7,4 @@ x = n.copy()
 plt.stem(n, x)
 plt.xticks(n)
 
-plt.savefig("plot/discreteTimeRamp.pdf")
+plt.savefig("../plot/discreteTimeRamp.pdf")

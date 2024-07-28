@@ -8,4 +8,4 @@ plt.stem(x)
 print("Mean of the random signal: " + str(np.mean(x)))
 print("Variance of the random signal: " + str(np.var(x)))
 
-plt.savefig("plot/morRandomSignals.pdf")
+plt.savefig("../plot/moreRandomSignals.pdf")

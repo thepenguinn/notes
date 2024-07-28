@@ -9,4 +9,4 @@ x = yet_another_func(t)
 
 plt.stem(t, x)
 
-plt.savefig("plot/yetAnotherSeq.pdf")
+plt.savefig("../plot/yetAnotherSeq.pdf")

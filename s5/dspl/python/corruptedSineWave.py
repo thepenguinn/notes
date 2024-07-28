@@ -25,4 +25,4 @@ for i in range(len(sdevs)):
     )
     plt.legend()
 
-plt.savefig("plot/corruptedSineWave.pdf")
+plt.savefig("../plot/corruptedSineWave.pdf")

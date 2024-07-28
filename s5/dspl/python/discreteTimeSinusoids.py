@@ -26,4 +26,4 @@ plt.stem(t, b)
 plt.subplot(3, 1, 3)
 plt.stem(t, c)
 
-plt.savefig("plot/discreteTimeSinusoids.pdf")
+plt.savefig("../plot/discreteTimeSinusoids.pdf")

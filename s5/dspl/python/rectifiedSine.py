@@ -9,4 +9,4 @@ plt.plot(t, s, label = "Non Rectified")
 plt.plot(t, rs, label = "Rectified")
 plt.legend()
 
-plt.savefig("plot/rectifiedSine.pdf")
+plt.savefig("../plot/rectifiedSine.pdf")

@@ -17,4 +17,4 @@ plt.subplot(2, 1, 2)
 plt.stem(t, x.imag, label = "Imaginary part")
 plt.legend()
 
-plt.savefig("plot/complexExpSeq.pdf")
+plt.savefig("../plot/complexExpSeq.pdf")
