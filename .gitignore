@@ -2,5 +2,7 @@
 *.sdr
 *.epub
 *.pdf
+*.svg
 */**/ebook/
 *.tstp
+_minted*/
