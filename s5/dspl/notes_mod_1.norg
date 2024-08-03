@@ -7,13 +7,13 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-07-28T22:54:18+0530
+updated: 2024-08-02T20:10:18+0530
 version: 1.1.1
 @end
 
 * Discrete Time Impulse Signal
 
-  Generate and plot a discrete-time impulse
+  Generate and plot a discrete-time impulse signal.
 
 ** Python Implementation
 
@@ -39,7 +39,7 @@ version: 1.1.1
 
 * Discrete Time Pulse Signal
 
-  Generate a discrete-time pulse signal
+  Generate a discrete-time pulse signal:
 
   @math
   u(x) =
@@ -73,7 +73,7 @@ version: 1.1.1
 
 * Discrete Time Bipolar Pulse Signal
 
-  Generate and stem the discrete-time bipolar pulse signal
+  Generate and stem the discrete-time bipolar pulse signal:
 
   @math
   u(t) =
@@ -109,7 +109,7 @@ version: 1.1.1
 
 * Discrete Time Ramp Signal
 
-  Generate and plot a discrete-time ramp signal
+  Generate and plot a discrete-time ramp signal.
 
 ** Python Implementation
 
@@ -133,7 +133,7 @@ version: 1.1.1
 
 * Discrete Time Triangluar Signal
 
-  Generate a triangluar signal
+  Generate a triangluar signal.
 
 ** Python Implementation
 
@@ -160,7 +160,7 @@ version: 1.1.1
 * Yet Another Discrete Time Signal
 
   Plot the discrete-time signal $x[n] = \{2, -1, 4, 1\}$ using `plt.stem()`.
-  Use `np.array` to create `x`
+  Use `np.array` to create `x`.
 
 ** Python Implementation
 
@@ -188,7 +188,7 @@ version: 1.1.1
   @end
 
   Display both the real and imaginary parts of the signal from $n=0$ to $n=40$
-  using `plt.subplot()`
+  using `plt.subplot()`.
 
 ** Python Implementation
 
@@ -476,11 +476,11 @@ version: 1.1.1
 
   Likewise, a random signal $x[n]$ of length $N$ with samples normally
   distributed with zero mean and unity standard deviation can be generated
-  by using the following command `x = np.random.normal(0.0, 1.0, N)`
+  by using the following command `x = np.random.normal(0.0, 1.0, N)`.
 
   Generate and display a Gaussian random signal of length $75$  whose elements
   are normally distributed with zero mean and a variance of $3$. And verify
-  the results with `np.mean()` and `np.var()`
+  the results with `np.mean()` and `np.var()`.
 
 ** Python Implementation
 
