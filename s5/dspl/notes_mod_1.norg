@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-08-04T06:38:09+0530
+updated: 2024-08-04T07:00:12+0530
 version: 1.1.1
 @end
 
@@ -126,8 +126,8 @@ version: 1.1.1
   @math
   x[n] =
   \begin{cases}
-  n         & \text{; if} n \geq 0 \\
-  \hfill 0  & \text{; if} n < 0
+  n         & \text{; if} \; n \geq 0 \\
+  \hfill 0  & \text{; if} \; n < 0
   \end{cases}
   @end
 
