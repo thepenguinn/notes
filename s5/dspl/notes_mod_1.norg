@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-08-04T05:42:01+0530
+updated: 2024-08-04T06:38:09+0530
 version: 1.1.1
 @end
 
@@ -160,7 +160,7 @@ version: 1.1.1
   Generate a triangluar signal.
 
   @math
-  x[n] = {0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0}
+  x[n] = \{0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0\}
   @end
 
 ** Python Implementation
@@ -480,17 +480,38 @@ version: 1.1.1
 
    #tangle rectifiedSine.py
    @code python
-   # TODO: reimplement this
    import numpy as np
    import matplotlib.pyplot as plt
 
-   t = np.arange(-2 * np.pi, 2 * np.pi, 0.02)
-   s = np.sin(t)
-   rs = np.abs(s)
+   t = np.linspace(-2 * np.pi, 2 * np.pi, 300)
+   x = np.sin(t)
 
-   plt.plot(t, s, label = "Non Rectified")
-   plt.plot(t, rs, label = "Rectified")
-   plt.legend()
+   plt.figure(figsize = (6, 11))
+
+   labels = [
+       "$- 2 \\pi$", "$- \\dfrac{3 \\pi}{2}$", "$- \\pi$",
+       "$0$",
+       "$\\pi$", "$\\dfrac{3 \\pi}{2}$", "$2 \\pi$"
+   ]
+   values = np.linspace(-2 * np.pi, 2 * np.pi, len(labels))
+
+   plt.subplot(2, 1, 1)
+   plt.plot(t, x)
+
+   plt.title("Sine Wave")
+   plt.xticks(values, labels)
+
+   plt.xlabel("$t$")
+   plt.ylabel("$\\sin (t)$")
+
+   plt.subplot(2, 1, 2)
+   plt.plot(t, abs(x))
+
+   plt.title("Full Rectified Sine Wave")
+   plt.xticks(values, labels)
+
+   plt.xlabel("$t$")
+   plt.ylabel("$x(t)$")
 
    plt.savefig("../plot/rectifiedSine.pdf")
    @end
@@ -562,8 +583,8 @@ version: 1.1.1
 ** Output
 
    @code
-   Mean of the random signal: 0.2013993561477227
-   Variance of the random signal: 2.6317317720296223
+   Mean of the random signal: -0.215593824766468
+   Variance of the random signal: 3.0995927615919574
    @end
 
 ** Plots
