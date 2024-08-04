@@ -6,4 +6,7 @@ x = (x * 4) - 2
 
 plt.stem(x)
 
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
 plt.savefig("../plot/randomSignals.pdf")

@@ -7,6 +7,10 @@ x = np.zeros_like(n)
 x[ n == 0 ] = 1
 
 plt.stem(n, x)
+
+plt.xlabel("$n$")
+plt.ylabel("$x[n]$")
+
 plt.xticks(n)
 
 plt.savefig("../plot/discreteTimeImpulse.pdf")

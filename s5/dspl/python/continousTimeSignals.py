@@ -7,6 +7,10 @@ y = np.sin(2 * np.pi * 2 * t)
 
 plt.plot(t, x, label = "1 Hz")
 plt.plot(t, y, label = "2 Hz")
+
+plt.xlabel("$t$")
+plt.ylabel("$\\sin (2 \\pi f t)$")
+
 plt.legend()
 
 plt.savefig("../plot/continousTimeSignals.pdf")

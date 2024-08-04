@@ -20,10 +20,19 @@ plt.figure(figsize = (10, 20))
 plt.subplot(3, 1, 1)
 plt.stem(t, a)
 
+plt.xlabel("$n$")
+plt.ylabel("$x_{1}[n] = \\sin(0.2 \\pi n)$")
+
 plt.subplot(3, 1, 2)
 plt.stem(t, b)
 
+plt.xlabel("$n$")
+plt.ylabel("$x_{2}[n] = \\sin(1.8 \\pi n)$")
+
 plt.subplot(3, 1, 3)
 plt.stem(t, c)
+
+plt.xlabel("$n$")
+plt.ylabel("$x_{3}[n] = \\sin(2.2 \\pi n)$")
 
 plt.savefig("../plot/discreteTimeSinusoids.pdf")

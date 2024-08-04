@@ -7,6 +7,10 @@ b = np.arange(4, -1, -1)
 x = np.concatenate([a, b])
 
 plt.stem(x)
+
+plt.xlabel("$n$")
+plt.ylabel("$x[n]$")
+
 plt.xticks(np.arange(11))
 
 plt.savefig("../plot/discreteTimeTri.pdf")

@@ -9,4 +9,7 @@ x = yet_another_func(t)
 
 plt.stem(t, x)
 
+plt.xlabel("$n$")
+plt.ylabel("$x[n]$")
+
 plt.savefig("../plot/yetAnotherSeq.pdf")

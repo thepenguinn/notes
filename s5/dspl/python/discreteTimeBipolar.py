@@ -8,6 +8,10 @@ x[(n >= -3) & (n < 0)] = -1
 x[(n >= 0) & (n < 3)] = 1
 
 plt.stem(n, x)
+
+plt.xlabel("$n$")
+plt.ylabel("$x[n]$")
+
 plt.xticks(n)
 
 plt.savefig("../plot/discreteTimeBipolar.pdf")
