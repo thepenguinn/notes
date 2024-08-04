@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-07-25T19:48:22+0530
-updated: 2024-08-04T07:00:12+0530
+updated: 2024-08-04T09:39:46+0530
 version: 1.1.1
 @end
 
@@ -488,12 +488,13 @@ version: 1.1.1
 
    plt.figure(figsize = (6, 11))
 
+   values = np.arange(- 2 * np.pi, 2.5 * np.pi, np.pi / 2)
+
    labels = [
-       "$- 2 \\pi$", "$- \\dfrac{3 \\pi}{2}$", "$- \\pi$",
+       "$- 2 \\pi$", "$- \\dfrac{3 \\pi}{2}$", "$- \\pi$", "$- \\dfrac{\\pi}{2}$",
        "$0$",
-       "$\\pi$", "$\\dfrac{3 \\pi}{2}$", "$2 \\pi$"
+       "$\\dfrac{\\pi}{2}$", "$\\pi$", "$\\dfrac{3 \\pi}{2}$", "$2 \\pi$"
    ]
-   values = np.linspace(-2 * np.pi, 2 * np.pi, len(labels))
 
    plt.subplot(2, 1, 1)
    plt.plot(t, x)
@@ -579,12 +580,11 @@ version: 1.1.1
    plt.savefig("../plot/moreRandomSignals.pdf")
    @end
 
-
 ** Output
 
    @code
-   Mean of the random signal: -0.215593824766468
-   Variance of the random signal: 3.0995927615919574
+   Mean of the random signal: -0.0148829771748769
+   Variance of the random signal: 2.5605317118401776
    @end
 
 ** Plots
