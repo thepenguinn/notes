@@ -1,0 +1,26 @@
+@document.meta
+title: Discrete Fourier Transform
+description: discrete fourier transform ( lab, and notes )
+authors: Daniel
+categories: [
+    lab
+    notes
+]
+created: 2024-08-06T04:43:03+0530
+updated: 2024-08-06T04:48:20+0530
+version: 1.1.1
+@end
+
+* Introduction
+* Computing DFT Matrix Using Loops
+* Computing DFT Matrix Using Matrix Method
+* Computing DFt Matrix Using Direct Evaluation of DFT Equation
+* Comparing The Computation Time for Each Method
+* Computing a 64 Point DFT
+* Circular Convolution Using Concentric Circles
+* Above with Unequally Sized Functions
+* More Circular Convolution
+* Verifying Circular Convolution with Property
+* Circular Convolution Using Matrix Method
+* Parseval'S Relations
+* Verifying Parseval'S Relation For a Sequence.
