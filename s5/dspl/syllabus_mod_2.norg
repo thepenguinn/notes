@@ -1,17 +1,17 @@
 @document.meta
-title: DFT
-description: dft ( lab, and syllabus )
+title: Discrete Fourier Transform
+description: discrete fourier transform ( lab, and syllabus )
 authors: Daniel
 categories: [
     lab
     syllabus
 ]
 created: 2024-08-04T09:48:05+0530
-updated: 2024-08-06T04:36:05+0530
+updated: 2024-08-06T04:40:50+0530
 version: 1.1.1
 @end
 
-* DFT
+* Discrete Fourier Transform
 
   - Introduction
   - Computing DFT matrix using loops
