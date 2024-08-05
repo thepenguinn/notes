@@ -1,0 +1,28 @@
+@document.meta
+title: DFT
+description: dft ( lab, and syllabus )
+authors: Daniel
+categories: [
+    lab
+    syllabus
+]
+created: 2024-08-04T09:48:05+0530
+updated: 2024-08-06T04:36:05+0530
+version: 1.1.1
+@end
+
+* DFT
+
+  - Introduction
+  - Computing DFT matrix using loops
+  - Computing DFT matrix using matrix method
+  - Computing DFt matrix using direct evaluation of DFT equation
+  - Comparing the computation time for each method
+  - Computing a 64 point DFT
+  - Circular convolution using concentric circles
+  - Above with unequally sized functions
+  - More circular convolution
+  - Verifying circular convolution with property
+  - Circular convolution using matrix method
+  - Parseval's relations
+  - Verifying Parseval's relation for a sequence.

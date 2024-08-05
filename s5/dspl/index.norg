@@ -7,7 +7,7 @@ categories: [
     syllabus
 ]
 created: 2024-07-25T18:59:02+0530
-updated: 2024-07-25T19:31:34+0530
+updated: 2024-07-29T19:44:07+0530
 version: 1.1.1
 @end
 
@@ -20,3 +20,13 @@ version: 1.1.1
    ---
 
   {:notes_mod_1:}[Simulation of Signals] notes
+
+* Discrete Fourier Transform
+
+** Syllabus
+
+   {:syllabus_mod_2:}[Discrete Fourier Transform] syllabus
+
+   ---
+
+  {:notes_mod_2:}[Discrete Fourier Transform] notes
