@@ -111,14 +111,14 @@ version: 1.1.1
 
   We can generate the DFT matrix in a straightforward manner using two for loops:
 
-  #tangle dftMatrixTwoLoop.py
+  #tangle dftMatrixTwoLoopMethod.py
   @code python
   # pass
   @end
 
   One for loop can be eliminated if we define `k` as an array:
 
-  #tangle dftMatrixOneLoop.py
+  #tangle dftMatrixOneLoopMethod.py
   @code python
   # pass
   @end
@@ -135,6 +135,15 @@ version: 1.1.1
   @end
 
 * Computing DFt Matrix Using Direct Evaluation of DFT Equation
+
+  Compute the DFT of the sequence in above section by direct evaluation of the
+  DFT equation.
+
+  #tangle dftMatrixEquationMethod.py
+  @code python
+  # pass
+  @end
+
 * Comparing The Computation Time for Each Method
 * Computing a 64 Point DFT
 * Circular Convolution Using Concentric Circles
