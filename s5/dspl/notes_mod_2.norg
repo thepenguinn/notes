@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-07T04:03:58+0530
+updated: 2024-08-07T04:17:37+0530
 version: 1.1.1
 @end
 
@@ -211,6 +211,25 @@ version: 1.1.1
   @end
 
 * Verifying Circular Convolution with Property
+
+  If $y[n]$ is the $N$ point circular convolution of the sequences $g[n]$ and
+  $h[n]$ defined as $y[n] = g[n] \\otimes h[n]$, then $Y[k] = G[k] \\cdot H[k]$,
+  where $Y[k]$, $G[k]$, $H[k]$ are the $N$ point DFTs of $y[n]$, $g[n]$ and $h[n]$.
+  We can use this property to compute circular convolution as:
+
+  @math
+  y[n] = \mbox{IDFT}\big\{ G[k] \cdot H[k] \big\}
+  @end
+
+  Use this property to verify your circular convolution result in the previous part.
+  Use `fft.fft()` and `fft.ifft()` functions in the `scipy` module to compute the DFTs
+  and IDFT.
+
+  #tangle circConvWithProperty.py
+  @code python
+  # pass
+  @end
+
 * Circular Convolution Using Matrix Method
 * Parseval'S Relations
 * Verifying Parseval'S Relation For a Sequence.
