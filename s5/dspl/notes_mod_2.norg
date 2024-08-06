@@ -145,6 +145,15 @@ version: 1.1.1
   @end
 
 * Comparing The Computation Time for Each Method
+
+  Compare the computation time for the three methods using the `%%timeit` cell
+  magic in Jupyter notebook.
+
+  #tangle dftMatrixTiming.py
+  @code python
+  # pass
+  @end
+
 * Computing a 64 Point DFT
 * Circular Convolution Using Concentric Circles
 * Above with Unequally Sized Functions
