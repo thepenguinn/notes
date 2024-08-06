@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-07T03:57:20+0530
+updated: 2024-08-07T04:00:12+0530
 version: 1.1.1
 @end
 
@@ -190,6 +190,16 @@ version: 1.1.1
   @end
 
 * Above with Unequally Sized Functions
+
+  The above implementation raises an exception when the sequences are not of the same
+  length. Modify the function such that if the two sequences are not of the same length,
+  the shorter sequence is padded with zeros and circular convolution is computed.
+
+  #tangle circConvWithPadding.py
+  @code python
+  # pass
+  @end
+
 * More Circular Convolution
 * Verifying Circular Convolution with Property
 * Circular Convolution Using Matrix Method
