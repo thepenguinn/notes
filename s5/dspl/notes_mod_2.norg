@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-06T20:18:50+0530
+updated: 2024-08-07T03:03:06+0530
 version: 1.1.1
 @end
 
@@ -108,6 +108,21 @@ version: 1.1.1
   matrix $D_{N}$ is arranged.
 
 * Computing DFT Matrix Using Loops
+
+  We can generate the DFT matrix in a straightforward manner using two for loops:
+
+  #tangle dftMatrixTwoLoop.py
+  @code python
+  # pass
+  @end
+
+  One for loop can be eliminated if we define `k` as an array:
+
+  #tangle dftMatrixOneLoop.py
+  @code python
+  # pass
+  @end
+
 * Computing DFT Matrix Using Matrix Method
 * Computing DFt Matrix Using Direct Evaluation of DFT Equation
 * Comparing The Computation Time for Each Method
