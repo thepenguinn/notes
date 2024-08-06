@@ -124,6 +124,16 @@ version: 1.1.1
   @end
 
 * Computing DFT Matrix Using Matrix Method
+
+  Compute the DFT of the sequence $x[n] = {1, 2, 3, 4}$ using the matrix method.
+  And verify the answer using the `scipy.fft.fft()` function which implements
+  the fast FFT algorithm for DFT computation:
+
+  #tangle dftMatrixMatrixMethod.py
+  @code python
+  # pass
+  @end
+
 * Computing DFt Matrix Using Direct Evaluation of DFT Equation
 * Comparing The Computation Time for Each Method
 * Computing a 64 Point DFT
