@@ -155,6 +155,15 @@ version: 1.1.1
   @end
 
 * Computing a 64 Point DFT
+
+  Compute a $64$ point DFT matrix and plot it's real and imaginary parts using
+  `plt.imshow(D.real)` and `plt.imshow(D.imag)`.
+
+  #tangle dftMatrixSixtyFourPoint.py
+  @code python
+  # pass
+  @end
+
 * Circular Convolution Using Concentric Circles
 * Above with Unequally Sized Functions
 * More Circular Convolution
