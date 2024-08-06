@@ -7,11 +7,99 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-06T04:48:20+0530
+updated: 2024-08-06T19:30:23+0530
 version: 1.1.1
 @end
 
 * Introduction
+
+  The DFT $X[k]$ of a finite length sequence $x[n]$ defined for $n = 0 \\ldots N-1$
+  can be obtained by sampling its DTFT,
+
+  @math
+  X(e^{j\omega})
+  @end
+
+  on the $\\omega$ axis between $0 \\leq \\omega < 2 \\pi$ at
+
+  @math
+  \omega_{k} = \dfrac{2 \pi k}{N}
+  \; \bigg|_{ k = 0 \ldots N - 1 }
+  @end
+
+  ie,
+
+  @math
+  \mbox{ DFT }\{x[n]\} = X[k] =
+  X(e^{ j \omega })
+  \; \bigg|_{ \omega = \dfrac{ 2 \pi k }{ N }} =
+  \sum_{ n = 0 }^{ N - 1 } x[n] \; e^{\bigg( - \dfrac{ j 2 \pi k n }{ N } \bigg)}
+  @end
+
+  Using the commonly used notation,
+
+  @math
+  X[k] =
+  \sum_{ n = 0 }^{ N - 1 } x[n] \; W_{N}^{kn}
+  \; \bigg|_{ k = 0 \ldots N - 1 }
+  @end
+
+  where
+
+  @math
+  W_{N} = e^{\bigg(\dfrac{ - j 2 \pi }{N}\bigg)}
+  @end
+
+  It is possible to view the DFT equation as a linear transformation on the sequence $x[n]$
+  as,
+
+  @math
+  X = D_{N} \cdot x
+  @end
+
+  where $X$ is the vector composed of $N$ DFT samples,
+
+  @math
+  X = \big[
+  X[0], X[1], \ldots X[N - 1]
+  \big]^{T}
+  @end
+
+  where $x$ is the vector of $N$ input samples,
+
+  @math
+  x = \big[
+  x[0], x[1], \ldots x[N - 1]
+  \big]^{T}
+  @end
+
+  $D_{N}$ is the $N \\times N$ DFT matrix given by,
+
+  @math
+  D_{N} =
+  \begin{pNiceMatrix}[columns-width=auto]
+  1      &               1 &               1 & \ldots &                      1 \\
+  1      &       W_{N}^{1} &       W_{N}^{2} & \ldots &        W_{N}^{(N - 1)} \\
+  1      &       W_{N}^{2} &       W_{N}^{4} & \ldots &      W_{N}^{2 (N - 1)} \\
+  \vdots &          \vdots &          \vdots &  \cdot &                 \vdots \\
+  1      & W_{N}^{(N - 1)} & W_{N}^{(N - 1)} & \ldots & W_{N}^{(N - 1)(N - 1)} \\
+  \end{pNiceMatrix}
+  @end
+
+  To understand how this is correct, consider a general linear transformation of the form
+  $y = Ax$. We can write this matrix equation in scalar form as $y_{i} = \\sum_{j} a_{ij} x_{j}$.
+  If we rearrange the DFT equation as,
+
+  @math
+  X[k] =
+  \sum_{n = 0}^{N - 1}
+  W_{N}^{kn} \; x[n]
+  @end
+
+  we see that the two are similar in form. Just as the $(i, j)\\mbox{th}$ element of $A$ is $a_{ij}$,
+  the $(k, n)\\mbox{th}$ element (counting from 0) of $D_{N}$ is $W_{N}^{kn}$. This is exactly how the
+  matrix $D_{N}$ is arranged.
+
 * Computing DFT Matrix Using Loops
 * Computing DFT Matrix Using Matrix Method
 * Computing DFt Matrix Using Direct Evaluation of DFT Equation
