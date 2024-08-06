@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-06T19:30:23+0530
+updated: 2024-08-06T20:18:50+0530
 version: 1.1.1
 @end
 
@@ -30,21 +30,26 @@ version: 1.1.1
   ie,
 
   @math
-  \mbox{ DFT }\{x[n]\} = X[k] =
+  \mbox{ DFT }\{x[n]\} \quad = \quad
+  X[k] \quad = \quad
   X(e^{ j \omega })
-  \; \bigg|_{ \omega = \dfrac{ 2 \pi k }{ N }} =
+  \; \bigg|_{ \omega = \dfrac{ 2 \pi k }{ N }} \quad = \quad
   \sum_{ n = 0 }^{ N - 1 } x[n] \; e^{\bigg( - \dfrac{ j 2 \pi k n }{ N } \bigg)}
   @end
 
   Using the commonly used notation,
 
   @math
-  X[k] =
-  \sum_{ n = 0 }^{ N - 1 } x[n] \; W_{N}^{kn}
+  \mathbf{X[k]} =
+  \sum_{ n = 0 }^{ N - 1 } \mathbf{x[n]} \; \mathbf{W_{N}}^{kn}
   \; \bigg|_{ k = 0 \ldots N - 1 }
   @end
 
-  where
+  Where:
+
+  - $\\mathbf{x[n]}$: is the sequence
+  - $\\mathbf{X[K]}$: is the DFT
+  - $\\mathbf{W_{N}}$: is
 
   @math
   W_{N} = e^{\bigg(\dfrac{ - j 2 \pi }{N}\bigg)}
@@ -54,10 +59,12 @@ version: 1.1.1
   as,
 
   @math
-  X = D_{N} \cdot x
+  \mathbf{ X = D_{N} \cdot x }
   @end
 
-  where $X$ is the vector composed of $N$ DFT samples,
+  Where:
+
+  - $\\mathbf{X}$: is the vector composed of $N$ DFT samples,
 
   @math
   X = \big[
@@ -65,7 +72,7 @@ version: 1.1.1
   \big]^{T}
   @end
 
-  where $x$ is the vector of $N$ input samples,
+  - $\\mathbf{x}$: is the vector of $N$ input samples,
 
   @math
   x = \big[
@@ -73,7 +80,7 @@ version: 1.1.1
   \big]^{T}
   @end
 
-  $D_{N}$ is the $N \\times N$ DFT matrix given by,
+  - $\\mathbf{D_{N}}$: is the $N \\times N$ DFT matrix given by,
 
   @math
   D_{N} =
