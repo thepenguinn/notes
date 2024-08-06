@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-07T04:48:43+0530
+updated: 2024-08-07T04:50:41+0530
 version: 1.1.1
 @end
 
@@ -265,4 +265,19 @@ version: 1.1.1
   @end
 
 * Parseval'S Relations
+
+  If $G[k]$ denotes the $N$ point DFT of the length $N$ sequence $g[n]$, then:
+
+  @math
+  \sum_{n = 0}^{N - 1} \lvert g[n] \rvert^{2} =
+  \dfrac{1}{N} \sum_{k = 0}^{N - 1} \lvert G[k] \rvert^{2}
+  @end
+
+  The code below verifies the relation for a sequence $g[n]$:
+
+  #tangle parsevalsRelation.py
+  @code python
+  # pass
+  @end
+
 * Verifying Parseval'S Relation For a Sequence.
