@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-07T05:12:29+0530
+updated: 2024-08-15T05:28:05+0530
 version: 1.1.1
 @end
 
@@ -111,6 +111,7 @@ version: 1.1.1
 
   We can generate the DFT matrix in a straightforward manner using two for loops:
 
+  %dft_python/dftMatrixTwoLoopMethod.py%
   #tangle dftMatrixTwoLoopMethod.py
   @code python
   # pass
@@ -118,6 +119,7 @@ version: 1.1.1
 
   One for loop can be eliminated if we define `k` as an array:
 
+  %dft_python/dftMatrixOneLoopMethod.py%
   #tangle dftMatrixOneLoopMethod.py
   @code python
   # pass
@@ -129,6 +131,7 @@ version: 1.1.1
   And verify the answer using the `scipy.fft.fft()` function which implements
   the fast FFT algorithm for DFT computation:
 
+  %dft_python/dftMatrixMatrixMethod.py%
   #tangle dftMatrixMatrixMethod.py
   @code python
   # pass
@@ -139,6 +142,7 @@ version: 1.1.1
   Compute the DFT of the sequence in above section by direct evaluation of the
   DFT equation.
 
+  %dft_python/dftMatrixEquationMethod.py%
   #tangle dftMatrixEquationMethod.py
   @code python
   # pass
@@ -149,6 +153,7 @@ version: 1.1.1
   Compare the computation time for the three methods using the `%%timeit` cell
   magic in Jupyter notebook.
 
+  %dft_python/dftMatrixTiming.py%
   #tangle dftMatrixTiming.py
   @code python
   # pass
@@ -159,6 +164,7 @@ version: 1.1.1
   Compute a $64$ point DFT matrix and plot it's real and imaginary parts using
   `plt.imshow(D.real)` and `plt.imshow(D.imag)`.
 
+  %dft_python/dftMatrixSixtyFourPoint.py%
   #tangle dftMatrixSixtyFourPoint.py
   @code python
   # pass
@@ -184,6 +190,7 @@ version: 1.1.1
   process is repeated until the first sample of inner circle lines up with the first
   sample of the exterior circle again.
 
+  %dft_python/circConvWithoutPadding.py%
   #tangle circConvWithoutPadding.py
   @code python
   # pass
@@ -195,6 +202,7 @@ version: 1.1.1
   length. Modify the function such that if the two sequences are not of the same length,
   the shorter sequence is padded with zeros and circular convolution is computed.
 
+  %dft_python/circConvWithPadding.py%
   #tangle circConvWithPadding.py
   @code python
   # pass
@@ -205,6 +213,7 @@ version: 1.1.1
   Using your function, compute the circular convolution of two sequences
   $g[n] = \\{1, 2, 3, 4, 5\\}$ and $h[n] = \\{2, 2, 0, 1, 1\\}$ and
 
+  %dft_python/moreCircConvComp.py%
   #tangle moreCircConvComp.py
   @code python
   # pass
@@ -225,6 +234,7 @@ version: 1.1.1
   Use `fft.fft()` and `fft.ifft()` functions in the `scipy` module to compute the DFTs
   and IDFT.
 
+  %dft_python/circConvWithProperty.py%
   #tangle circConvWithProperty.py
   @code python
   # pass
@@ -259,6 +269,7 @@ version: 1.1.1
   \end{pNiceMatrix}
   @end
 
+  %dft_python/circConvWithMatrix.py%
   #tangle circConvWithMatrix.py
   @code python
   # pass
@@ -275,6 +286,7 @@ version: 1.1.1
 
   The code below verifies the relation for a sequence $g[n]$:
 
+  %dft_python/parsevalsRelation.py%
   #tangle parsevalsRelation.py
   @code python
   # pass
@@ -285,6 +297,7 @@ version: 1.1.1
   Generate a randoom complex sequence of $500$ values. Verify Parseval's relation for
   the sequence.
 
+  %dft_python/verifyParsevalsRelation.py%
   #tangle verifyParsevalsRelation.py
   @code python
   # pass
