@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-15T18:08:53+0530
+updated: 2024-08-15T20:09:46+0530
 version: 1.1.1
 @end
 
@@ -699,11 +699,42 @@ version: 1.1.1
 
   The code below verifies the relation for a sequence $g[n]$:
 
-  %dft_python/parsevalsRelation.py%
-  #tangle parsevalsRelation.py
-  @code python
-  # pass
-  @end
+** Python Implementation
+
+   %dft_python/parsevalsRelation.py%
+   #tangle parsevalsRelation.py
+   @code python
+   import numpy as np
+   from scipy import fft
+
+   g = np.concatenate([np.arange(128), np.arange(128, -1, -1)])
+
+   LHS = np.sum(g ** 2)
+
+   G = fft.fft(g)
+
+   RHS = 1 / G.size * np.sum(np.abs(G) ** 2)
+
+   print("LHS:")
+   print(LHS)
+
+   print("")
+
+   print("LHS:")
+   print(RHS)
+   @end
+
+*** Output
+
+    @code
+    LHS:
+    1398144
+
+    LHS:
+    1398143.9999999993
+    @end
+
+    ---
 
 * Verifying Parseval'S Relation For a Sequence.
 
