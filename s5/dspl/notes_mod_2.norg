@@ -8,7 +8,7 @@ categories: [
 ]
 numbersections: true
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-16T03:10:16+0530
+updated: 2024-08-16T03:50:23+0530
 version: 1.1.1
 @end
 
@@ -196,40 +196,40 @@ version: 1.1.1
 
 ** Python Implementation
 
-    %dft_python/dftMatrixMatrixMethod.py%
-    #tangle dftMatrixMatrixMethod.py
-    @code python
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from scipy import fft
+   %dft_python/dftMatrixMatrixMethod.py%
+   #tangle dftMatrixMatrixMethod.py
+   @code python
+   import numpy as np
+   import matplotlib.pyplot as plt
+   from scipy import fft
 
-    N = 4
-    D = np.empty((N, N), dtype = np.cdouble)
+   N = 4
+   D = np.empty((N, N), dtype = np.cdouble)
 
-    W = np.exp(-1j * 2 * np.pi / N)
-    k = np.arange(N)
+   W = np.exp(-1j * 2 * np.pi / N)
+   k = np.arange(N)
 
-    for n in np.arange(N):
-        D[:, n] = W ** (k * n)
+   for n in np.arange(N):
+       D[:, n] = W ** (k * n)
 
-    np.round(D)
+   np.round(D)
 
-    x = np.array([[1, 2, 3, 4]]).T
-    X = D @ x
+   x = np.array([[1, 2, 3, 4]]).T
+   X = D @ x
 
-    np.round(X)
+   np.round(X)
 
-    print("DFT using matrix method:")
-    print(X)
-    print("")
+   print("DFT using matrix method:")
+   print(X)
+   print("")
 
-    # verifying using scipy.fft.fft()
+   # verifying using scipy.fft.fft()
 
-    SX = fft.fft(x, axis = 0)
+   SX = fft.fft(x, axis = 0)
 
-    print("DFT using scipy:")
-    print(SX)
-    @end
+   print("DFT using scipy:")
+   print(SX)
+   @end
 
 *** Output
 
@@ -254,45 +254,47 @@ version: 1.1.1
   Compute the DFT of the sequence in above section by direct evaluation of the
   DFT equation.
 
-  %dft_python/dftMatrixEquationMethod.py%
-  #tangle dftMatrixEquationMethod.py
-  @code python
-  import matplotlib.pyplot as plt
-  import numpy as np
+** Python Implementation
 
-  global np
+   %dft_python/dftMatrixEquationMethod.py%
+   #tangle dftMatrixEquationMethod.py
+   @code python
+   import matplotlib.pyplot as plt
+   import numpy as np
 
-  N = 4
+   global np
 
-  def dft_func (k, n):
-      global N
-      return np.exp(-1j * 2 * np.pi / N * k * n)
+   N = 4
 
-  D = np.empty((N, N), dtype = np.cdouble)
+   def dft_func (k, n):
+       global N
+       return np.exp(-1j * 2 * np.pi / N * k * n)
 
-  for k in range(N):
-      for n in range(N):
-          D[k, n] = dft_func(k, n)
+   D = np.empty((N, N), dtype = np.cdouble)
 
-  np.round(D)
+   for k in range(N):
+       for n in range(N):
+           D[k, n] = dft_func(k, n)
 
-  print(D)
-  @end
+   np.round(D)
 
-** Output
-
-   @code
-   [[ 1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j
-      1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
-    [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
-     -1.0000000e+00-1.2246468e-16j -1.8369702e-16+1.0000000e+00j]
-    [ 1.0000000e+00+0.0000000e+00j -1.0000000e+00-1.2246468e-16j
-      1.0000000e+00+2.4492936e-16j -1.0000000e+00-3.6739404e-16j]
-    [ 1.0000000e+00+0.0000000e+00j -1.8369702e-16+1.0000000e+00j
-     -1.0000000e+00-3.6739404e-16j  5.5109106e-16-1.0000000e+00j]]
+   print(D)
    @end
 
-   ---
+*** Output
+
+    @code
+    [[ 1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j
+       1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
+     [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
+      -1.0000000e+00-1.2246468e-16j -1.8369702e-16+1.0000000e+00j]
+     [ 1.0000000e+00+0.0000000e+00j -1.0000000e+00-1.2246468e-16j
+       1.0000000e+00+2.4492936e-16j -1.0000000e+00-3.6739404e-16j]
+     [ 1.0000000e+00+0.0000000e+00j -1.8369702e-16+1.0000000e+00j
+      -1.0000000e+00-3.6739404e-16j  5.5109106e-16-1.0000000e+00j]]
+    @end
+
+    ---
 
 * Comparing The Computation Time for Each Method
 
