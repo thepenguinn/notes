@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-15T05:58:59+0530
+updated: 2024-08-15T06:14:52+0530
 version: 1.1.1
 @end
 
@@ -55,57 +55,59 @@ version: 1.1.1
   W_{N} = e^{\bigg(\dfrac{ - j 2 \pi }{N}\bigg)}
   @end
 
-  It is possible to view the DFT equation as a linear transformation on the sequence $x[n]$
-  as,
+** DFT Equation as a Linear Transform
 
-  @math
-  \mathbf{ X = D_{N} \cdot x }
-  @end
+   It is possible to view the DFT equation as a linear transformation on the sequence $x[n]$
+   as,
 
-  Where:
+   @math
+   \mathbf{ X = D_{N} \cdot x }
+   @end
 
-  - $\\mathbf{X}$: is the vector composed of $N$ DFT samples,
+   Where:
 
-  @math
-  X = \big[
-  X[0], X[1], \ldots X[N - 1]
-  \big]^{T}
-  @end
+   - $\\mathbf{X}$: is the vector composed of $N$ DFT samples,
 
-  - $\\mathbf{x}$: is the vector of $N$ input samples,
+   @math
+   X = \big[
+   X[0], X[1], \ldots X[N - 1]
+   \big]^{T}
+   @end
 
-  @math
-  x = \big[
-  x[0], x[1], \ldots x[N - 1]
-  \big]^{T}
-  @end
+   - $\\mathbf{x}$: is the vector of $N$ input samples,
 
-  - $\\mathbf{D_{N}}$: is the $N \\times N$ DFT matrix given by,
+   @math
+   x = \big[
+   x[0], x[1], \ldots x[N - 1]
+   \big]^{T}
+   @end
 
-  @math
-  D_{N} =
-  \begin{pNiceMatrix}[columns-width=auto]
-  1      &               1 &               1 & \ldots &                      1 \\
-  1      &       W_{N}^{1} &       W_{N}^{2} & \ldots &        W_{N}^{(N - 1)} \\
-  1      &       W_{N}^{2} &       W_{N}^{4} & \ldots &      W_{N}^{2 (N - 1)} \\
-  \vdots &          \vdots &          \vdots &  \cdot &                 \vdots \\
-  1      & W_{N}^{(N - 1)} & W_{N}^{(N - 1)} & \ldots & W_{N}^{(N - 1)(N - 1)} \\
-  \end{pNiceMatrix}
-  @end
+   - $\\mathbf{D_{N}}$: is the $N \\times N$ DFT matrix given by,
 
-  To understand how this is correct, consider a general linear transformation of the form
-  $y = Ax$. We can write this matrix equation in scalar form as $y_{i} = \\sum_{j} a_{ij} x_{j}$.
-  If we rearrange the DFT equation as,
+   @math
+   D_{N} =
+   \begin{pNiceMatrix}[columns-width=auto]
+   1      &               1 &               1 & \ldots &                      1 \\
+   1      &       W_{N}^{1} &       W_{N}^{2} & \ldots &        W_{N}^{(N - 1)} \\
+   1      &       W_{N}^{2} &       W_{N}^{4} & \ldots &      W_{N}^{2 (N - 1)} \\
+   \vdots &          \vdots &          \vdots &  \cdot &                 \vdots \\
+   1      & W_{N}^{(N - 1)} & W_{N}^{(N - 1)} & \ldots & W_{N}^{(N - 1)(N - 1)} \\
+   \end{pNiceMatrix}
+   @end
 
-  @math
-  X[k] =
-  \sum_{n = 0}^{N - 1}
-  W_{N}^{kn} \; x[n]
-  @end
+   To understand how this is correct, consider a general linear transformation of the form
+   $y = Ax$. We can write this matrix equation in scalar form as $y_{i} = \\sum_{j} a_{ij} x_{j}$.
+   If we rearrange the DFT equation as,
 
-  we see that the two are similar in form. Just as the $(i, j)\\mbox{th}$ element of $A$ is $a_{ij}$,
-  the $(k, n)\\mbox{th}$ element (counting from 0) of $D_{N}$ is $W_{N}^{kn}$. This is exactly how the
-  matrix $D_{N}$ is arranged.
+   @math
+   X[k] =
+   \sum_{n = 0}^{N - 1}
+   W_{N}^{kn} \; x[n]
+   @end
+
+   we see that the two are similar in form. Just as the $(i, j)\\mbox{th}$ element of $A$ is $a_{ij}$,
+   the $(k, n)\\mbox{th}$ element (counting from 0) of $D_{N}$ is $W_{N}^{kn}$. This is exactly how the
+   matrix $D_{N}$ is arranged.
 
 * Computing DFT Matrix Using Loops
 
@@ -136,13 +138,13 @@ version: 1.1.1
 
     @code
     [[ 1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j
-    1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
-    [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
-    -1.0000000e+00-1.2246468e-16j -1.8369702e-16+1.0000000e+00j]
-    [ 1.0000000e+00+0.0000000e+00j -1.0000000e+00-1.2246468e-16j
-    1.0000000e+00+2.4492936e-16j -1.0000000e+00-3.6739404e-16j]
-    [ 1.0000000e+00+0.0000000e+00j -1.8369702e-16+1.0000000e+00j
-    -1.0000000e+00-3.6739404e-16j  5.5109106e-16-1.0000000e+00j]]
+       1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
+     [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
+      -1.0000000e+00-1.2246468e-16j -1.8369702e-16+1.0000000e+00j]
+     [ 1.0000000e+00+0.0000000e+00j -1.0000000e+00-1.2246468e-16j
+       1.0000000e+00+2.4492936e-16j -1.0000000e+00-3.6739404e-16j]
+     [ 1.0000000e+00+0.0000000e+00j -1.8369702e-16+1.0000000e+00j
+      -1.0000000e+00-3.6739404e-16j  5.5109106e-16-1.0000000e+00j]]
     @end
 
     ---
