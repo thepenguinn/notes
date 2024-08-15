@@ -295,6 +295,9 @@ version: 1.1.1
 
 * Comparing The Computation Time for Each Method
 
+  %TODO: either create a funcion to execute each in a loop, or just copy the%
+  %output from Jupyter%
+
   Compare the computation time for the three methods using the `%%timeit` cell
   magic in Jupyter notebook.
 
