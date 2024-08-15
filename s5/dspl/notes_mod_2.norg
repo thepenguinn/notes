@@ -526,62 +526,64 @@ version: 1.1.1
   Use `fft.fft()` and `fft.ifft()` functions in the `scipy` module to compute the DFTs
   and IDFT.
 
-  %dft_python/circConvWithProperty.py%
-  #tangle circConvWithProperty.py
-  @code python
-  import numpy as np
-  from scipy import fft
+** Python Implementation
 
-  def circonv(g, h):
+   %dft_python/circConvWithProperty.py%
+   #tangle circConvWithProperty.py
+   @code python
+   import numpy as np
+   from scipy import fft
 
-      if g.size > h.size:
-          h = np.concatenate([h, np.zeros(g.size - h.size)])
-      elif g.size < h.size:
-          g = np.concatenate([g, np.zeros(h.size - g.size)])
+   def circonv(g, h):
 
-      N = g.size
-      htr = np.concatenate([[h[0]], h[:0:-1]], dtype = np.cdouble)
+       if g.size > h.size:
+           h = np.concatenate([h, np.zeros(g.size - h.size)])
+       elif g.size < h.size:
+           g = np.concatenate([g, np.zeros(h.size - g.size)])
 
-      y = np.zeros(N, dtype = np.cdouble)
+       N = g.size
+       htr = np.concatenate([[h[0]], h[:0:-1]], dtype = np.cdouble)
 
-      for n in np.arange(N):
-          y[n] = np.sum(g * htr)
-          htr = np.roll(htr, 1)
+       y = np.zeros(N, dtype = np.cdouble)
 
-      return y, g, h
+       for n in np.arange(N):
+           y[n] = np.sum(g * htr)
+           htr = np.roll(htr, 1)
 
-  g = np.array([1, 2, 3, 4, 5], dtype = np.cdouble)
-  h = np.array([2, 2, 0, 1, 1], dtype = np.cdouble)
+       return y, g, h
 
-  y, g, h = circonv(g, h)
+   g = np.array([1, 2, 3, 4, 5], dtype = np.cdouble)
+   h = np.array([2, 2, 0, 1, 1], dtype = np.cdouble)
 
-  G = fft.fft(g, axis = 0)
-  H = fft.fft(h, axis = 0)
+   y, g, h = circonv(g, h)
 
-  Y = G * H
+   G = fft.fft(g, axis = 0)
+   H = fft.fft(h, axis = 0)
 
-  sy = fft.ifft(Y)
+   Y = G * H
 
-  print("Convolution obtained through performing circular convolution:" )
-  print(y)
+   sy = fft.ifft(Y)
 
-  print("")
+   print("Convolution obtained through performing circular convolution:" )
+   print(y)
 
-  print("Convolution obtained through property:" )
-  print(sy)
-  @end
+   print("")
 
-** Output
-
-   @code
-   Convolution obtained through performing circular convolution:
-   [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
-
-   Convolution obtained through property:
-   [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+   print("Convolution obtained through property:" )
+   print(sy)
    @end
 
-   ---
+*** Output
+
+    @code
+    Convolution obtained through performing circular convolution:
+    [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+
+    Convolution obtained through property:
+    [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+    @end
+
+    ---
 
 * Circular Convolution Using Matrix Method
 
@@ -618,71 +620,73 @@ version: 1.1.1
   The argument `c` is the first column of the matrix. Verify the circular convolution
   result using the matrix method.
 
-  %dft_python/circConvWithMatrix.py%
-  #tangle circConvWithMatrix.py
-  @code python
-  import numpy as np
-  from scipy.linalg import circulant
+** Python Implementation
 
-  def circonv(g, h):
+   %dft_python/circConvWithMatrix.py%
+   #tangle circConvWithMatrix.py
+   @code python
+   import numpy as np
+   from scipy.linalg import circulant
 
-      if g.size > h.size:
-          h = np.concatenate([h, np.zeros(g.size - h.size)])
-      elif g.size < h.size:
-          g = np.concatenate([g, np.zeros(h.size - g.size)])
+   def circonv(g, h):
 
-      N = g.size
-      htr = np.concatenate([[h[0]], h[:0:-1]], dtype = np.cdouble)
+       if g.size > h.size:
+           h = np.concatenate([h, np.zeros(g.size - h.size)])
+       elif g.size < h.size:
+           g = np.concatenate([g, np.zeros(h.size - g.size)])
 
-      y = np.zeros(N, dtype = np.cdouble)
+       N = g.size
+       htr = np.concatenate([[h[0]], h[:0:-1]], dtype = np.cdouble)
 
-      for n in np.arange(N):
-          y[n] = np.sum(g * htr)
-          htr = np.roll(htr, 1)
+       y = np.zeros(N, dtype = np.cdouble)
 
-      return y, g, h
+       for n in np.arange(N):
+           y[n] = np.sum(g * htr)
+           htr = np.roll(htr, 1)
 
-  g = np.array([1, 2, 3, 4, 5], dtype = np.cdouble)
-  h = np.array([2, 2, 0, 1, 1], dtype = np.cdouble)
+       return y, g, h
 
-  y, g, h = circonv(g, h)
+   g = np.array([1, 2, 3, 4, 5], dtype = np.cdouble)
+   h = np.array([2, 2, 0, 1, 1], dtype = np.cdouble)
 
-  circ_mat = circulant(h)
+   y, g, h = circonv(g, h)
 
-  my = circ_mat @ g
+   circ_mat = circulant(h)
 
-  print("Circulant matrix of h[n]:")
-  print(circ_mat)
+   my = circ_mat @ g
 
-  print("")
+   print("Circulant matrix of h[n]:")
+   print(circ_mat)
 
-  print("Convolution obtained through performing circular convolution:" )
-  print(y)
+   print("")
 
-  print("")
+   print("Convolution obtained through performing circular convolution:" )
+   print(y)
 
-  print("Convolution obtained through matrix method:" )
-  print(my)
-  @end
+   print("")
 
-** Output
-
-   @code
-   Circulant matrix of h[n]:
-   [[2.+0.j 1.+0.j 1.+0.j 0.+0.j 2.+0.j]
-    [2.+0.j 2.+0.j 1.+0.j 1.+0.j 0.+0.j]
-    [0.+0.j 2.+0.j 2.+0.j 1.+0.j 1.+0.j]
-    [1.+0.j 0.+0.j 2.+0.j 2.+0.j 1.+0.j]
-    [1.+0.j 1.+0.j 0.+0.j 2.+0.j 2.+0.j]]
-
-   Convolution obtained through performing circular convolution:
-   [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
-
-   Convolution obtained through matrix method:
-   [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+   print("Convolution obtained through matrix method:" )
+   print(my)
    @end
 
-   ---
+*** Output
+
+    @code
+    Circulant matrix of h[n]:
+    [[2.+0.j 1.+0.j 1.+0.j 0.+0.j 2.+0.j]
+     [2.+0.j 2.+0.j 1.+0.j 1.+0.j 0.+0.j]
+     [0.+0.j 2.+0.j 2.+0.j 1.+0.j 1.+0.j]
+     [1.+0.j 0.+0.j 2.+0.j 2.+0.j 1.+0.j]
+     [1.+0.j 1.+0.j 0.+0.j 2.+0.j 2.+0.j]]
+
+    Convolution obtained through performing circular convolution:
+    [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+
+    Convolution obtained through matrix method:
+    [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+    @end
+
+    ---
 
 * Parseval'S Relations
 
