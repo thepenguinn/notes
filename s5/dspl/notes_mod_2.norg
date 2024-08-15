@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-15T06:14:52+0530
+updated: 2024-08-15T18:08:53+0530
 version: 1.1.1
 @end
 
@@ -330,8 +330,16 @@ version: 1.1.1
        D[:, n] = W ** (k * n)
 
    np.round(D)
-   plt.imsave("../dft_plots/dftMatrixSixtyFourPointReal.pdf", D.real, dpi = 20)
-   plt.imsave("../dft_plots/dftMatrixSixtyFourPointImaginary.pdf", D.imag, dpi = 20)
+   real = plt.imshow(D.real)
+   real.set_cmap("gist_earth")
+   plt.savefig("../dft_plots/dftMatrixSixtyFourPointReal.pdf", bbox_inches = "tight")
+
+   plt.clf()
+   imag = plt.imshow(D.imag)
+   imag.set_cmap("gist_earth")
+   plt.savefig("../dft_plots/dftMatrixSixtyFourPointImaginary.pdf", bbox_inches = "tight")
+   # plt.imsave("../dft_plots/dftMatrixSixtyFourPointReal.pdf", D.real, dpi = 20)
+   # plt.imsave("../dft_plots/dftMatrixSixtyFourPointImaginary.pdf", D.imag, dpi = 20)
    @end
 
 *** Plots
@@ -391,86 +399,166 @@ version: 1.1.1
   length. Modify the function such that if the two sequences are not of the same length,
   the shorter sequence is padded with zeros and circular convolution is computed.
 
-  %dft_python/circConvWithPadding.py%
-  #tangle circConvWithPadding.py
-  @code python
-  import matplotlib.pyplot as plt
-  import numpy as np
+** Python Implementation
 
-  def circonv(g, h):
+   %dft_python/circConvWithPadding.py%
+   #tangle circConvWithPadding.py
+   @code python
+   import matplotlib.pyplot as plt
+   import numpy as np
 
-      if g.size > h.size:
-          h = np.concatenate([h, np.zeros(g.size - h.size)])
-      elif g.size < h.size:
-          g = np.concatenate([g, np.zeros(h.size - g.size)])
+   def circonv(g, h):
 
-      N = g.size
-      htr = np.concatenate([[h[0]], h[:0:-1]])
+       if g.size > h.size:
+           h = np.concatenate([h, np.zeros(g.size - h.size)])
+       elif g.size < h.size:
+           g = np.concatenate([g, np.zeros(h.size - g.size)])
 
-      y = np.zeros(N)
+       N = g.size
+       htr = np.concatenate([[h[0]], h[:0:-1]])
 
-      for n in np.arange(N):
-          y[n] = np.sum(g * htr)
-          htr = np.roll(htr, 1)
+       y = np.zeros(N)
 
-      return y, g, h
+       for n in np.arange(N):
+           y[n] = np.sum(g * htr)
+           htr = np.roll(htr, 1)
 
-  h = np.arange(5)
-  g = np.arange(3)
+       return y, g, h
 
-  y, g, h = circonv(g, h)
+   g = np.arange(5)
+   h = np.arange(3)
 
-  plt.figure(figsize = (10, 15))
+   y, g, h = circonv(g, h)
 
-  plt.subplot(3, 1, 1)
-  plt.stem(g, label = "g[n]")
-  plt.xlabel("n")
-  plt.ylabel("g[n]")
-  plt.legend()
+   plt.figure(figsize = (10, 13))
 
-  plt.subplot(3, 1, 2)
-  plt.stem(h, label = "h[n]")
-  plt.xlabel("n")
-  plt.ylabel("h[n]")
-  plt.legend()
+   plt.subplot(3, 1, 1)
+   plt.stem(g, label = "g[n]")
+   plt.xlabel("n")
+   plt.ylabel("g[n]")
+   plt.legend()
 
-  plt.subplot(3, 1, 3)
-  plt.stem(y, label = "$g[n] \otimes h[n]$")
-  plt.xlabel("n")
-  plt.ylabel("$y[n] = g[n] \otimes h[n]$")
-  plt.legend()
+   plt.subplot(3, 1, 2)
+   plt.stem(h, label = "h[n]")
+   plt.xlabel("n")
+   plt.ylabel("h[n]")
+   plt.legend()
 
-  print(h)
-  print(g)
-  print(y)
+   plt.subplot(3, 1, 3)
+   plt.stem(y, label = "$g[n] \circledcirc h[n]$")
+   plt.xlabel("n")
+   plt.ylabel("$y[n] = g[n] \circledcirc h[n]$")
+   plt.legend()
 
-  plt.savefig("../dft_plots/circConvWithPadding.pdf")
-  @end
+   print("g[n] = ", end = "")
+   print(g)
 
-** Output
+   print("h[n] = ", end = "")
+   print(h)
 
-   @code
-   [0 1 2 3 4]
-   [0. 1. 2. 0. 0.]
-   [10.  8.  1.  4.  7.]
+   print("y[n] = ", end = "")
+   print(y)
+
+   plt.savefig("../dft_plots/circConvWithPadding.pdf")
    @end
 
-   ---
+*** Output
 
-** Plots
+    @code
+    g[n] = [0 1 2 3 4]
+    h[n] = [0. 1. 2. 0. 0.]
+    y[n] = [10.  8.  1.  4.  7.]
+    @end
 
-   {dft_plots/circConvWithPadding.pdf}[Two Functions and Their Convolution]
+    ---
+
+*** Plots
+
+    {dft_plots/circConvWithPadding.pdf}[Two Functions and Their Convolution]
 
 * More Circular Convolution
 
   Using your function, compute the circular convolution of two sequences
   $g[n] = \\{1, 2, 3, 4, 5\\}$ and $h[n] = \\{2, 2, 0, 1, 1\\}$ and
 
-  %dft_python/moreCircConvComp.py%
-  #tangle moreCircConvComp.py
-  @code python
-  # pass
-  @end
+** Python Implementation
+
+   %dft_python/moreCircConvComp.py%
+   #tangle moreCircConvComp.py
+   @code python
+   import matplotlib.pyplot as plt
+   import numpy as np
+
+   def circonv(g, h):
+
+       if g.size > h.size:
+           h = np.concatenate([h, np.zeros(g.size - h.size)])
+       elif g.size < h.size:
+           g = np.concatenate([g, np.zeros(h.size - g.size)])
+
+       N = g.size
+       htr = np.concatenate([[h[0]], h[:0:-1]])
+
+       y = np.zeros(N)
+
+       for n in np.arange(N):
+           y[n] = np.sum(g * htr)
+           htr = np.roll(htr, 1)
+
+       return y, g, h
+
+   g = np.array([1, 2, 3, 4, 5])
+   h = np.array([2, 2, 0, 1, 1])
+
+   y, g, h = circonv(g, h)
+
+   plt.figure(figsize = (10, 13))
+
+   plt.subplot(3, 1, 1)
+   plt.stem(g, label = "g[n]")
+   plt.xlabel("n")
+   plt.ylabel("g[n]")
+   plt.legend()
+
+   plt.subplot(3, 1, 2)
+   plt.stem(h, label = "h[n]")
+   plt.xlabel("n")
+   plt.ylabel("h[n]")
+   plt.legend()
+
+   plt.subplot(3, 1, 3)
+   plt.stem(y, label = "$g[n] \circledcirc h[n]$")
+   plt.xlabel("n")
+   plt.ylabel("$y[n] = g[n] \circledcirc h[n]$")
+   plt.legend()
+
+
+   print("g[n] = ", end = "")
+   print(g)
+
+   print("h[n] = ", end = "")
+   print(h)
+
+   print("y[n] = ", end = "")
+   print(y)
+
+   plt.savefig("../dft_plots/moreCircConvComp.pdf")
+   @end
+
+*** Output
+
+    @code
+    g[n] = [1 2 3 4 5]
+    h[n] = [2 2 0 1 1]
+    y[n] = [17. 13. 19. 20. 21.]
+    @end
+
+    ---
+
+*** Plots
+
+    {dft_plots/moreCircConvComp.pdf}[More Functions and Their Convolution]
+
 
 * Verifying Circular Convolution with Property
 
