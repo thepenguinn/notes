@@ -425,56 +425,7 @@ version: 1.1.1
 
        return y, g, h
 
-   g = np.arange(5)
-   h = np.arange(3)
-
-   y, g, h = circonv(g, h)
-
-   plt.figure(figsize = (10, 13))
-
-   plt.subplot(3, 1, 1)
-   plt.stem(g, label = "g[n]")
-   plt.xlabel("n")
-   plt.ylabel("g[n]")
-   plt.legend()
-
-   plt.subplot(3, 1, 2)
-   plt.stem(h, label = "h[n]")
-   plt.xlabel("n")
-   plt.ylabel("h[n]")
-   plt.legend()
-
-   plt.subplot(3, 1, 3)
-   plt.stem(y, label = "$g[n] \circledcirc h[n]$")
-   plt.xlabel("n")
-   plt.ylabel("$y[n] = g[n] \circledcirc h[n]$")
-   plt.legend()
-
-   print("g[n] = ", end = "")
-   print(g)
-
-   print("h[n] = ", end = "")
-   print(h)
-
-   print("y[n] = ", end = "")
-   print(y)
-
-   plt.savefig("../dft_plots/circConvWithPadding.pdf")
    @end
-
-*** Output
-
-    @code
-    g[n] = [0 1 2 3 4]
-    h[n] = [0. 1. 2. 0. 0.]
-    y[n] = [10.  8.  1.  4.  7.]
-    @end
-
-    ---
-
-*** Plots
-
-    {dft_plots/circConvWithPadding.pdf}[Two Functions and Their Convolution]
 
 * More Circular Convolution
 
