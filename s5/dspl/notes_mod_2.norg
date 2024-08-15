@@ -256,8 +256,42 @@ version: 1.1.1
   %dft_python/dftMatrixEquationMethod.py%
   #tangle dftMatrixEquationMethod.py
   @code python
-  # pass
+  import matplotlib.pyplot as plt
+  import numpy as np
+
+  global np
+
+  N = 4
+
+  def dft_func (k, n):
+      global N
+      return np.exp(-1j * 2 * np.pi / N * k * n)
+
+  D = np.empty((N, N), dtype = np.cdouble)
+
+  for k in range(N):
+      for n in range(N):
+          D[k, n] = dft_func(k, n)
+
+  np.round(D)
+
+  print(D)
   @end
+
+** Output
+
+   @code
+   [[ 1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j
+      1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
+    [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
+     -1.0000000e+00-1.2246468e-16j -1.8369702e-16+1.0000000e+00j]
+    [ 1.0000000e+00+0.0000000e+00j -1.0000000e+00-1.2246468e-16j
+      1.0000000e+00+2.4492936e-16j -1.0000000e+00-3.6739404e-16j]
+    [ 1.0000000e+00+0.0000000e+00j -1.8369702e-16+1.0000000e+00j
+     -1.0000000e+00-3.6739404e-16j  5.5109106e-16-1.0000000e+00j]]
+   @end
+
+   ---
 
 * Comparing The Computation Time for Each Method
 
