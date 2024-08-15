@@ -7,7 +7,7 @@ categories: [
     notes
 ]
 created: 2024-08-06T04:43:03+0530
-updated: 2024-08-15T20:09:46+0530
+updated: 2024-08-15T20:34:42+0530
 version: 1.1.1
 @end
 
@@ -741,8 +741,41 @@ version: 1.1.1
   Generate a randoom complex sequence of $500$ values. Verify Parseval's relation for
   the sequence.
 
-  %dft_python/verifyParsevalsRelation.py%
-  #tangle verifyParsevalsRelation.py
-  @code python
-  # pass
-  @end
+** Python Implementation
+
+   %dft_python/verifyParsevalsRelation.py%
+   #tangle verifyParsevalsRelation.py
+   @code python
+   import numpy as np
+   from scipy import fft
+
+   N = 500
+
+   g = np.random.random_sample(N) + 1j * np.random.random_sample(N)
+
+   LHS = np.sum(np.abs(g) ** 2)
+
+   G = fft.fft(g)
+
+   RHS = 1 / G.size * np.sum(np.abs(G) ** 2)
+
+   print("LHS:")
+   print(LHS)
+
+   print("")
+
+   print("LHS:")
+   print(RHS)
+   @end
+
+*** Output
+
+    @code
+    LHS:
+    335.1103705554265
+
+    LHS:
+    335.1103705554266
+    @end
+
+    ---
