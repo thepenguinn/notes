@@ -514,7 +514,7 @@ version: 1.1.1
 * Verifying Circular Convolution with Property
 
   If $y[n]$ is the $N$ point circular convolution of the sequences $g[n]$ and
-  $h[n]$ defined as $y[n] = g[n] \\otimes h[n]$, then $Y[k] = G[k] \\cdot H[k]$,
+  $h[n]$ defined as $y[n] = g[n] \\circledcirc h[n]$, then $Y[k] = G[k] \\cdot H[k]$,
   where $Y[k]$, $G[k]$, $H[k]$ are the $N$ point DFTs of $y[n]$, $g[n]$ and $h[n]$.
   We can use this property to compute circular convolution as:
 
@@ -529,8 +529,59 @@ version: 1.1.1
   %dft_python/circConvWithProperty.py%
   #tangle circConvWithProperty.py
   @code python
-  # pass
+  import numpy as np
+  from scipy import fft
+
+  def circonv(g, h):
+
+      if g.size > h.size:
+          h = np.concatenate([h, np.zeros(g.size - h.size)])
+      elif g.size < h.size:
+          g = np.concatenate([g, np.zeros(h.size - g.size)])
+
+      N = g.size
+      htr = np.concatenate([[h[0]], h[:0:-1]], dtype = np.cdouble)
+
+      y = np.zeros(N, dtype = np.cdouble)
+
+      for n in np.arange(N):
+          y[n] = np.sum(g * htr)
+          htr = np.roll(htr, 1)
+
+      return y, g, h
+
+  g = np.array([1, 2, 3, 4, 5], dtype = np.cdouble)
+  h = np.array([2, 2, 0, 1, 1], dtype = np.cdouble)
+
+  y, g, h = circonv(g, h)
+
+  G = fft.fft(g, axis = 0)
+  H = fft.fft(h, axis = 0)
+
+  Y = G * H
+
+  sy = fft.ifft(Y)
+
+  print("Convolution obtained through performing circular convolution:" )
+  print(y)
+
+  print("")
+
+  print("Convolution obtained through property:" )
+  print(sy)
   @end
+
+** Output
+
+   @code
+   Convolution obtained through performing circular convolution:
+   [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+
+   Convolution obtained through property:
+   [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+   @end
+
+   ---
 
 * Circular Convolution Using Matrix Method
 
