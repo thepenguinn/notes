@@ -1,0 +1,5 @@
+Convolution obtained through performing circular convolution:
+[17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+
+Convolution obtained through property:
+[17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]

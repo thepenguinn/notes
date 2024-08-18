@@ -1,0 +1,12 @@
+Circulant matrix of h[n]:
+[[2.+0.j 1.+0.j 1.+0.j 0.+0.j 2.+0.j]
+ [2.+0.j 2.+0.j 1.+0.j 1.+0.j 0.+0.j]
+ [0.+0.j 2.+0.j 2.+0.j 1.+0.j 1.+0.j]
+ [1.+0.j 0.+0.j 2.+0.j 2.+0.j 1.+0.j]
+ [1.+0.j 1.+0.j 0.+0.j 2.+0.j 2.+0.j]]
+
+Convolution obtained through performing circular convolution:
+[17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
+
+Convolution obtained through matrix method:
+[17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
