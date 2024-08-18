@@ -54,5 +54,5 @@ print(h)
 print("y[n] = ", end = "")
 print(y)
 
-plt.savefig("../dft_plots/moreCircConvComp.pdf")
+plt.savefig("../dft_plots/moreCircConvComp.pdf", bbox_inches = "tight")
 
