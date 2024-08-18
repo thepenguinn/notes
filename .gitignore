@@ -5,4 +5,7 @@
 *.svg
 */**/ebook/
 *.tstp
+*.log
+*.aux
+*.toc
 _minted*/
