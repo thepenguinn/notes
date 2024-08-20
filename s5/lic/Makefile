@@ -1,12 +1,26 @@
 # a simple Makefile
 
-run: course.pdf view
+SENDER = termux-share -a send
+VIEWER = viewpdf
 
-course.pdf: course.tex chapter_1/chapter.tex chapter_1/syllabus.tex \
-	chapter_2/chapter.tex chapter_2/syllabus.tex
+CHAPTERS := $(wildcard chapter_*/chapter.tex)
+SYLLABUS := $(wildcard chapter_*/syllabus.tex)
+
+SECTIONS := $(wildcard chapter_*/section_*/section.tex)
+
+build: course.pdf view
+
+force:
+	pdflatex -shell-escape -halt-on-error course.tex
+	$(VIEWER) course.pdf
+
+course.pdf: course.tex preamble.tex $(CHAPTERS) $(SYLLABUS) $(SECTIONS)
 	pdflatex -shell-escape -halt-on-error course.tex
 
 view:
-	viewpdf course.pdf
+	$(VIEWER) course.pdf
 
-.PHONY: viewn run
+send:
+	$(SENDER) course.pdf
+
+.PHONY: view build force
