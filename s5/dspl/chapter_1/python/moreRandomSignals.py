@@ -11,4 +11,5 @@ plt.ylabel("Amplitude")
 print("Mean of the random signal: " + str(np.mean(x)))
 print("Variance of the random signal: " + str(np.var(x)))
 
-plt.savefig("../plot/moreRandomSignals.pdf")
+plt.savefig("../plots/moreRandomSignals.pdf")
+

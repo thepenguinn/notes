@@ -117,7 +117,7 @@ We can generate the DFT matrix in a straightforward manner using two for loops:
 \subsection{Python Implementation using Two Loops}
 
 %python/dftMatrixTwoLoopMethod.py%
-\begin{minted} [breaklines] {python}
+\begin{minted} [breaklines, autogobble] {python}
     import numpy as np
     import matplotlib.pyplot as plt
 
@@ -136,7 +136,7 @@ We can generate the DFT matrix in a straightforward manner using two for loops:
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     [[ 1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j
        1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
      [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
@@ -152,7 +152,7 @@ We can generate the DFT matrix in a straightforward manner using two for loops:
 One for loop can be eliminated if we define \mintinline[]{python}{k} as an array:
 
 %python/dftMatrixOneLoopMethod.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
     import matplotlib.pyplot as plt
 
@@ -171,7 +171,7 @@ One for loop can be eliminated if we define \mintinline[]{python}{k} as an array
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     [[ 1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j
        1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
      [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
@@ -191,7 +191,7 @@ which implements the fast FFT algorithm for DFT computation:
 \subsection{Python Implementation}
 
 %python/dftMatrixMatrixMethod.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
     import matplotlib.pyplot as plt
     from scipy import fft
@@ -226,7 +226,7 @@ which implements the fast FFT algorithm for DFT computation:
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     DFT using matrix method:
     [[10.+0.00000000e+00j]
      [-2.+2.00000000e+00j]
@@ -248,7 +248,7 @@ DFT equation.
 \subsection{Python Implementation}
 
 %python/dftMatrixEquationMethod.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -274,7 +274,7 @@ DFT equation.
 \paragraph{Output}
 
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     [[ 1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j
        1.0000000e+00+0.0000000e+00j  1.0000000e+00+0.0000000e+00j]
      [ 1.0000000e+00+0.0000000e+00j  6.1232340e-17-1.0000000e+00j
@@ -296,14 +296,14 @@ Compare the computation time for the three methods using the
 \subsection{Python Implementation using Jupyter}
 
 %python/dftMatrixTimingJupyter.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     # pass
 \end{minted}
 
 \subsection{Python Implementation using timeit}
 
 %python/dftMatrixTimingTimeit.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     # pass
 \end{minted}
 
@@ -316,7 +316,7 @@ Compute a $64$ point DFT matrix and plot it's real and imaginary parts using
 \subsection{Python Implementation}
 
 %python/dftMatrixSixtyFourPoint.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
     import matplotlib.pyplot as plt
 
@@ -378,7 +378,7 @@ exterior circle again.
 \subsection{Python Implementation}
 
 %python/circConvWithoutPadding.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
 
     def circonv(g, h):
@@ -408,7 +408,7 @@ is computed.
 \subsection{Python Implementation}
 
 %python/circConvWithPadding.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -439,7 +439,7 @@ Using your function, compute the circular convolution of two sequences $g[n] =
 \subsection{Python Implementation}
 
 %python/moreCircConvComp.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -479,7 +479,7 @@ Using your function, compute the circular convolution of two sequences $g[n] =
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     g[n] = [1 2 3 4 5]
     h[n] = [2 2 0 1 1]
     y[n] = [17. 13. 19. 20. 21.]
@@ -513,7 +513,7 @@ IDFT.
 \subsection{Python Implementation}
 
 %python/circConvWithProperty.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
     from scipy import fft
 
@@ -558,7 +558,7 @@ IDFT.
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     Convolution obtained through performing circular convolution:
     [17.+0.j 13.+0.j 19.+0.j 20.+0.j 21.+0.j]
 
@@ -605,7 +605,7 @@ the matrix method.
 \subsection{Python Implementation}
 
 %python/circConvWithMatrix.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
     from scipy.linalg import circulant
 
@@ -652,7 +652,7 @@ the matrix method.
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     Circulant matrix of h[n]:
     [[2.+0.j 1.+0.j 1.+0.j 0.+0.j 2.+0.j]
      [2.+0.j 2.+0.j 1.+0.j 1.+0.j 0.+0.j]
@@ -681,7 +681,7 @@ The code below verifies the relation for a sequence $g[n]$:
 \subsection{Python Implementation}
 
 %python/parsevalsRelation.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
     from scipy import fft
 
@@ -704,7 +704,7 @@ The code below verifies the relation for a sequence $g[n]$:
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     LHS:
     1398144
 
@@ -720,7 +720,7 @@ for the sequence.
 \subsection{Python Implementation}
 
 %python/verifyParsevalsRelation.py%
-\begin{minted}[breaklines] {python}
+\begin{minted}[breaklines, autogobble] {python}
     import numpy as np
     from scipy import fft
 
@@ -745,7 +745,7 @@ for the sequence.
 
 \paragraph{Output}
 
-\begin{minted}[breaklines] {text}
+\begin{minted}[breaklines, autogobble] {text}
     LHS:
     340.555977018618
 
