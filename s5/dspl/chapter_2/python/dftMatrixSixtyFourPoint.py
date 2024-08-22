@@ -11,14 +11,10 @@ for n in np.arange(N):
     D[:, n] = W ** (k * n)
 
 np.round(D)
-real = plt.imshow(D.real)
-real.set_cmap("gist_earth")
-plt.savefig("../dft_plots/dftMatrixSixtyFourPointReal.pdf", bbox_inches = "tight")
+plt.imshow(D.real)
+plt.savefig("../plots/dftMatrixSixtyFourPointReal.pdf", bbox_inches = "tight")
 
 plt.clf()
-imag = plt.imshow(D.imag)
-imag.set_cmap("gist_earth")
-plt.savefig("../dft_plots/dftMatrixSixtyFourPointImaginary.pdf", bbox_inches = "tight")
-# plt.imsave("../dft_plots/dftMatrixSixtyFourPointReal.pdf", D.real, dpi = 20)
-# plt.imsave("../dft_plots/dftMatrixSixtyFourPointImaginary.pdf", D.imag, dpi = 20)
+plt.imshow(D.imag)
+plt.savefig("../plots/dftMatrixSixtyFourPointImaginary.pdf", bbox_inches = "tight")
 

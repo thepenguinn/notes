@@ -24,27 +24,6 @@ h = np.array([2, 2, 0, 1, 1])
 
 y, g, h = circonv(g, h)
 
-plt.figure(figsize = (10, 13))
-
-plt.subplot(3, 1, 1)
-plt.stem(g, label = "g[n]")
-plt.xlabel("n")
-plt.ylabel("g[n]")
-plt.legend()
-
-plt.subplot(3, 1, 2)
-plt.stem(h, label = "h[n]")
-plt.xlabel("n")
-plt.ylabel("h[n]")
-plt.legend()
-
-plt.subplot(3, 1, 3)
-plt.stem(y, label = "$g[n] \circledcirc h[n]$")
-plt.xlabel("n")
-plt.ylabel("$y[n] = g[n] \circledcirc h[n]$")
-plt.legend()
-
-
 print("g[n] = ", end = "")
 print(g)
 
@@ -54,5 +33,4 @@ print(h)
 print("y[n] = ", end = "")
 print(y)
 
-plt.savefig("../dft_plots/moreCircConvComp.pdf", bbox_inches = "tight")
 

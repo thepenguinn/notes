@@ -14,6 +14,6 @@ print(LHS)
 
 print("")
 
-print("LHS:")
+print("RHS:")
 print(RHS)
 
