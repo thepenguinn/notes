@@ -1,0 +1,4 @@
+return {
+    ["touch"] = true,
+    ["pics.skip"] = true,
+}
