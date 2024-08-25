@@ -1,11 +1,16 @@
 *.md
 *.sdr
 *.epub
-*.pdf
 *.svg
 */**/ebook/
 *.tstp
 *.log
 *.aux
 *.toc
+*/**/tikzpics/*.pdf
+*/**/course.pdf
+*/**/chapter.pdf
+*/**/work.pdf
+*/**/section.pdf
+*/**/.lunatikz/dep_cache
 _minted*/
