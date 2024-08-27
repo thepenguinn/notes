@@ -29,32 +29,29 @@ And these signals will range from $0$ to $\frac{\pi}{4}$.
 
 Therefore these signals will be:
 
-\begin{itemize} [label=]
-    \item
-        \begin{align}
-            x_{1}(t) =
-            \begin{cases}
-                \sin(2 \pi 28 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
-            \end{cases}
-        \end{align}
+\begin{align}
+    x_{1}(t) =
+    \begin{cases}
+        \sin(2 \pi 28 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+    \end{cases}
+    \label{eqn:seqx1}
+\end{align}
 
-    \item
-        \begin{align}
-            x_{2}(t) =
-            \begin{cases}
-                \sin(2 \pi 56 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
-            \end{cases}
-        \end{align}
+\begin{align}
+    x_{2}(t) =
+    \begin{cases}
+        \sin(2 \pi 56 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+    \end{cases}
+    \label{eqn:seqx2}
+\end{align}
 
-    \item
-        \begin{align}
-            x_{3}(t) =
-            \begin{cases}
-                \sin(2 \pi 56.1 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
-            \end{cases}
-        \end{align}
-
-\end{itemize}
+\begin{align}
+    x_{3}(t) =
+    \begin{cases}
+        \sin(2 \pi 56.1 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+    \end{cases}
+    \label{eqn:seqx3}
+\end{align}
 
 \subsection{Python Implementation}
 
@@ -78,7 +75,9 @@ Therefore these signals will be:
         }
     )
 
-    data.to_csv("../data/three_sequences.csv", sep = " ", index_label = "time")
+    data.to_csv(
+        "../data/three_sequences.csv", sep = " ", index_label = "time"
+    )
     print(data)
 
 \end{minted}
@@ -109,7 +108,7 @@ Therefore these signals will be:
     \adjustbox{max width = \textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX1.pdf}
     }
-    \captionof{figure} {Sine signal with frequency 28}
+    \captionof{figure} {Sine Signal with Frequency 28}
     \label{plt:seqx1}
 \end{figure}
 
@@ -118,7 +117,7 @@ Therefore these signals will be:
     \adjustbox{max width = \textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX2.pdf}
     }
-    \captionof{figure} {Sine signal with frequency 56}
+    \captionof{figure} {Sine Signal with Frequency 56}
     \label{plt:seqx2}
 \end{figure}
 
@@ -127,7 +126,7 @@ Therefore these signals will be:
     \adjustbox{max width = \textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX3.pdf}
     }
-    \captionof{figure} {Sine signal with frequency 56.1}
+    \captionof{figure} {Sine Signal with Frequency 56.1}
     \label{plt:seqx3}
 \end{figure}
 
