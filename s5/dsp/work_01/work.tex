@@ -1,0 +1,49 @@
+\documentclass[../course]{subfiles}
+
+\input{work_header.tex}
+
+\def\author{Daniel V Mathew}
+\def\supervisor{Prof. Premson Y}
+\def\title{FREQUECNCY ANALYSIS OF SIGNALS}
+\def\subtitle{DIGITAL SIGNAL PROCESSING}
+\def\subsubtitle{SIMULATION ASSIGNMENT}
+
+\def\authordesc {
+    Roll No: 28 \\
+    Semester: 5 \\
+    Department of Electronics and Communication \\
+    {\bfseries Rajiv Gandhi Institute of Technology} \\
+}
+
+\def\supervisordesc {
+    Assistant Professor \\
+    Department of Electronics and Communication \\
+    {\bfseries Rajiv Gandhi Institute of Technology} \\
+}
+
+\def\abstractcontent {
+    Generate $3$ frequencies, $X$, $2X$ and $2X.1$. Then find the DFT and DTFT of
+    the combined signal and identify the frequency components. Try with $4$
+    different sampling frequencies. One is $4X$, other one slightly greater than
+    $4X$, one much greater than $4X$ and one much less than $4X$. For the DFT,
+    select $N = 32$. In the sampled signal, with $N = 32$, zero pad with another 32
+    zeroes and find the 64 point DFT and DTFT. Write your comments about frequency
+    analysis from the results. $X$ will be your class number. Python or Matlab can
+    be used for this assignment.
+}
+
+\begin{document}
+
+\ifSubfilesClassLoaded {
+    \input{abstract.tex}
+} {
+    \chapter{Frequecncy Analysis of Signals} \label{chp:wrkFrequencyAnalysis}
+}
+
+%Introduction%
+\subfile{section_01/section.tex}
+
+%Generating Sequences%
+\subfile{section_02/section.tex}
+
+\end{document}
