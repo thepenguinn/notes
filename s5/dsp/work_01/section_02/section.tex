@@ -6,103 +6,101 @@
 
 \section{Generating Sequences} \label{sec:wrkGeneratingSeqcuences}
 
-%python/gen_sequences.py%
+First of all we need to generate these three sequences, with frequences of:
+
+\begin{align}
+    f_{1} &= 28 \si{Hz}                         \label{eqn:freq1} \\
+    f_{2} &= 2 \times 28         = 56   \si{Hz} \label{eqn:freq2} \\
+    f_{3} &= (2 \times 28) + 0.1 = 56.1 \si{Hz} \label{eqn:freq3}
+\end{align}
+
+Now we need to decide whether we need to generate a \emph{sine} signal or one with
+$90 \degree$ phase shift, ie, the \emph{cosine} signal. If we mix\footnote{like, real
+part and imaginary part having a phase difference} \emph{sine} and \emph{cosine} we may
+get a different kind of \emph{complex} sequence than if we mix \emph{sine} to \emph{sine}
+or \emph{cosine} to \emph{cosine}. For our analysis, let's stick with having zero phase
+shift between the signals that we are mixing. So let's just mix \emph{sine} signals with
+the above frequencies.
+
+
+To get the continous feel of these sequences let's generate them with $1000$ samples.
+And these signals will range from $0$ to $\frac{\pi}{4}$.
+
+
+Therefore these signals will be:
+
+\begin{itemize} [label=]
+    \item
+        \begin{align}
+            x_{1}(t) =
+            \begin{cases}
+                \sin(2 \pi 28 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+            \end{cases}
+        \end{align}
+
+    \item
+        \begin{align}
+            x_{2}(t) =
+            \begin{cases}
+                \sin(2 \pi 56 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+            \end{cases}
+        \end{align}
+
+    \item
+        \begin{align}
+            x_{3}(t) =
+            \begin{cases}
+                \sin(2 \pi 56.1 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+            \end{cases}
+        \end{align}
+
+\end{itemize}
+
+%python/three_sequences.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
-    import matplotlib.pyplot as plt
     import numpy as np
     import pandas as pd
-    from scipy import fft
 
-    X = 28
+    F = 28
     t = np.linspace(0, np.pi / 4, 1000)
 
-    fst_seq = np.cos( 2 * np.pi * X * t)
-    sec_seq = np.cos( 2 * np.pi * 2 * X * t)
-    trd_seq = np.cos( 2 * np.pi * (2 * X + 0.1) * t)
+    x1 = np.sin( 2 * np.pi * F * t)
+    x2 = np.sin( 2 * np.pi * 2 * F * t)
+    x3 = np.sin( 2 * np.pi * (2 * F + 0.1) * t)
 
-    three_seq = [fst_seq, sec_seq, trd_seq]
-
-    csv = pd.DataFrame(
+    data = pd.DataFrame(
         {
-            "fst_seq": fst_seq,
-            "sec_seq": sec_seq,
-            "trd_seq": trd_seq,
+            "x1": x1,
+            "x2": x2,
+            "x3": x3,
         }
     )
 
-    combined = []
-
-    for i in three_seq:
-        for j in three_seq:
-            combined.append(i + 1j * j)
-
-    plt.figure(figsize = (20, 10))
-
-    f = fft.fft(combined[6])
-
-    plt.subplot(4, 1, 1)
-    plt.stem(three_seq[2])
-
-    plt.subplot(4, 1, 2)
-    plt.stem(three_seq[0])
-
-    plt.subplot(4, 1, 3)
-    plt.stem(f.real)
-
-    plt.subplot(4, 1, 4)
-    plt.stem(f.imag)
-
-    plt.savefig("../plots/test.pdf", bbox_inches = "tight")
-
-    # $-------------$
-    # $\sum_{n} x[n]$
-    # $-------------$
-    ## csv.to_csv("../data/three_sequences.csv")
-
-    ## plt.figure(figsize = (60, 12))
-
-    ## plt.subplot(3, 1, 1)
-    ## plt.plot(t, first_seq)
-
-    ## plt.subplot(3, 1, 2)
-    ## plt.plot(t, sec_seq)
-
-    ## plt.subplot(3, 1, 3)
-    ## plt.plot(t, trd_seq)
-
-    ## plt.savefig("../plots/three_sequences.pdf", bbox_inches = "tight")
-    print(csv)
+    data.to_csv("../data/three_sequences.csv")
+    print(data)
 
 \end{minted}
 
 \paragraph{Output}
 
 \begin{minted}[breaklines, autogobble] {text}
-          fst_seq   sec_seq   trd_seq
-    0    1.000000  1.000000  1.000000
-    1    0.990450  0.961983  0.961847
-    2    0.961983  0.850821  0.850301
-    3    0.915141  0.674967  0.673873
-    4    0.850821  0.447792  0.446024
+               x1        x2        x3
+    0    0.000000  0.000000  0.000000
+    1    0.137872  0.273111  0.273586
+    2    0.273111  0.525456  0.526296
+    3    0.403133  0.737848  0.738848
+    4    0.525456  0.894138  0.895021
     ..        ...       ...       ...
-    995  0.820297  0.345774  0.747684
-    996  0.891317  0.588894  0.900834
-    997  0.945314  0.787237  0.985246
-    998  0.981255  0.925722  0.994479
-    999  0.998454  0.993820  0.927828
+    995 -0.571938 -0.938318 -0.664054
+    996 -0.453380 -0.808210 -0.434163
+    997 -0.326162 -0.616651 -0.171142
+    998 -0.192715 -0.378204  0.104937
+    999 -0.055586 -0.111001  0.373009
 
     [1000 rows x 3 columns]
 \end{minted}
 
 \paragraph{Plots}
-
-%% \begin{figure}
-%%     \centering
-%%     \adjustbox{max width = 0.9\textwidth} {
-%%         \includegraphics[height = 0.8\textheight] {plots/three_sequences.pdf}
-%%     }
-%%     \captionof {figure} {Generated Sequences}
-%% \end{figure}
 
 
 \end{document}
