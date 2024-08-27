@@ -13,4 +13,6 @@
 */**/work.pdf
 */**/section.pdf
 */**/.lunatikz/dep_cache
+*/**/_standalone_main.tex
+*/**/_standalone_sub.tex
 _minted*/
