@@ -56,6 +56,8 @@ Therefore these signals will be:
 
 \end{itemize}
 
+\subsection{Python Implementation}
+
 %python/three_sequences.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
     import numpy as np
@@ -76,7 +78,7 @@ Therefore these signals will be:
         }
     )
 
-    data.to_csv("../data/three_sequences.csv")
+    data.to_csv("../data/three_sequences.csv", sep = " ", index_label = "time")
     print(data)
 
 \end{minted}
@@ -100,7 +102,33 @@ Therefore these signals will be:
     [1000 rows x 3 columns]
 \end{minted}
 
-\paragraph{Plots}
+\subsubsection{Plots}
 
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = \textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX1.pdf}
+    }
+    \captionof{figure} {Sine signal with frequency 28}
+    \label{plt:seqx1}
+\end{figure}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = \textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX2.pdf}
+    }
+    \captionof{figure} {Sine signal with frequency 56}
+    \label{plt:seqx2}
+\end{figure}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = \textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX3.pdf}
+    }
+    \captionof{figure} {Sine signal with frequency 56.1}
+    \label{plt:seqx3}
+\end{figure}
 
 \end{document}
