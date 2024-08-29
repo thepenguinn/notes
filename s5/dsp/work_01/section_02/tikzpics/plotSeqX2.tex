@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+    \begin{axis} [
+            height = 4cm,
+            width = 7in,
+            xlabel = Time,
+            ylabel = Amplitude,
+            xtick = {0, 312.5, ..., 2500},
+            grid = both,
+            xticklabel style = {font = \small},
+            xticklabels = {$0$, $\dfrac{\pi} {32}$, $\dfrac{\pi} {16}$, $\dfrac{3\pi} {32}$, $\dfrac{\pi} {8}$, $\dfrac{5\pi} {32}$, $\dfrac{3\pi} {16}$, $\dfrac{7\pi} {32}$, $\dfrac{\pi} {4}$, }
+        ]
+        \addplot[
+            color = black!90!white
+        ]
+        table [y = x2]{data/three_sequences.csv};
+    \end{axis}
+\end{tikzpicture}

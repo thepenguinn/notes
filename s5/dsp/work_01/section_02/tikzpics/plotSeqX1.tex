@@ -1,0 +1,49 @@
+\begin{tikzpicture}
+    \begin{axis} [
+            height = 4cm,
+            width = 7in,
+            xlabel = Time,
+            ylabel = Amplitude,
+            xtick = {0, 312.5, ..., 2500},
+            grid = both,
+            xticklabel style = {font = \small},
+            xticklabels = {$0$, $\dfrac{\pi} {32}$, $\dfrac{\pi} {16}$, $\dfrac{3\pi} {32}$, $\dfrac{\pi} {8}$, $\dfrac{5\pi} {32}$, $\dfrac{3\pi} {16}$, $\dfrac{7\pi} {32}$, $\dfrac{\pi} {4}$, }
+        ]
+        \addplot[
+            color = black!90!white
+        ]
+        table [y = x1]{data/three_sequences.csv};
+    \end{axis}
+\end{tikzpicture}
+
+%%  \begin{figure}[H]
+%%  \begin{tikzpicture}
+%%          \begin{axis}[
+%%          height = 10cm, % standard 10cm
+%%          width = 15cm,  % standard 10cm
+%%          xlabel = {$N$},
+%%          ylabel = {$e_h$},
+%%          grid=both,
+%%          major grid style={black!50},
+%%          xmode=log, ymode=log,
+%%          xmin=1e0, xmax=1e4,
+%%          ymin=1e-3, ymax=1e1,
+%%          yticklabel style={
+%%              /pgf/number format/fixed,
+%%              /pgf/number format/precision=0,
+%%              /pgf/number format/fixed zerofill
+%%          },
+%%          scaled y ticks=false,
+%%          xticklabel style={
+%%              /pgf/number format/fixed,
+%%              /pgf/number format/precision=0,
+%%              /pgf/number format/fixed zerofill
+%%          },
+%%          scaled y ticks=false,
+%%          cycle list name=my black white
+%%          ]
+%%          \addplot table [x=N, y = eh, col sep=comma] {Plots/results2.txt};
+%%          \legend{$e_h$}
+%%          \end{axis}
+%%  \end{tikzpicture}
+%%  \end{figure}
