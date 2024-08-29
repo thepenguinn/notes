@@ -80,48 +80,82 @@ subsections we will see each of these combinations in detail.
 
 \begin{figure} [H]
     \centering
-    \renewcommand{\arraystretch}{1}
 
+    %% \renewcommand{\arraystretch}{1.2}
     \begin{tabularx} {\textwidth} {
             *{1}{>{\centering\arraybackslash}X}
-            *{1}{>{\centering\arraybackslash}m{0.3\textwidth}}
         }
 
-        { \begin{tabularx} {0.65\textwidth} {
-                    *{4}{>{\centering\arraybackslash}X}
-                }
-                \toprule
-                \textsc{Combination Name} & \textsc{Real Part} & \textsc{Imaginary Part} & \textsc{Complex Sequence} \\
-                \midrule
-                \textsc{Comb A} & $x_{1}$ & $x_{1}$ & $x_{1} + j x_{1}$  \\
-                \textsc{Comb B} & $x_{1}$ & $x_{2}$ & $x_{1} + j x_{2}$  \\
-                \textsc{Comb C} & $x_{1}$ & $x_{3}$ & $x_{1} + j x_{3}$  \\
-                \cmidrule(lr){1-4}
-                \textsc{Comb E} & $x_{2}$ & $x_{2}$ & $x_{2} + j x_{2}$  \\
-                \textsc{Comb D} & $x_{2}$ & $x_{1}$ & $x_{2} + j x_{1}$  \\
-                \textsc{Comb F} & $x_{2}$ & $x_{3}$ & $x_{2} + j x_{3}$  \\
-                \cmidrule(lr){1-4}
-                \textsc{Comb G} & $x_{3}$ & $x_{1}$ & $x_{3} + j x_{1}$  \\
-                \textsc{Comb H} & $x_{3}$ & $x_{2}$ & $x_{3} + j x_{2}$  \\
-                \textsc{Comb I} & $x_{3}$ & $x_{3}$ & $x_{3} + j x_{3}$  \\
-                \bottomrule
-            \end{tabularx} }
+        \\
 
-            &
-
-            \captionof {table} {
-                Different combinations of \emph{Complex Sequences} and there respective
-                \emph{Real} and \emph{Imaginary} parts.
+        { \begin{tabularx} {\textwidth} {
+                *{6}{>{\centering\arraybackslash}X}
             }
 
-            \\
+            \toprule
+            \textsc{Combination Name} & \textsc{Complex Sequence} &
+            \textsc{Combination Name} & \textsc{Complex Sequence} &
+            \textsc{Combination Name} & \textsc{Complex Sequence} \\
+            \midrule
+
+            \textsc{Complex A} & $x_{1} + j x_{1}$ &
+            \textsc{Complex E} & $x_{2} + j x_{2}$ &
+            \textsc{Complex G} & $x_{3} + j x_{1}$ \\
+
+            \textsc{Complex B} & $x_{1} + j x_{2}$ &
+            \textsc{Complex D} & $x_{2} + j x_{1}$ &
+            \textsc{Complex H} & $x_{3} + j x_{2}$ \\
+
+            \textsc{Complex C} & $x_{1} + j x_{3}$ &
+            \textsc{Complex F} & $x_{2} + j x_{3}$ &
+            \textsc{Complex I} & $x_{3} + j x_{3}$ \\
+
+            \bottomrule
+
+        \end{tabularx} } \\
+
+        \captionof{table} {
+            $9$ different combinations of mixing of our three sequences into \emph{complex}
+            sequences.
+        }
+        \\
+
 
     \end{tabularx}
 
-
 \end{figure}
 
-\subsection{Gen}
+%% \subsection{Combination A}
+%% %% $x_{1} + j x_{1}$
+%%
+%% \begin{figure} [H]
+%%
+%%     \begin{tabularx} {\textwidth} {
+%%             *{1}
+%%         }
+%%
+%%     \end{tabularx}
+%%
+%% \end{figure}
+%%
+%%
+\subsection{Combination B}
+%% $x_{1} + j x_{2}$
+\subsection{Combination C}
+%% $x_{1} + j x_{3}$
+\subsection{Combination D}
+%% $x_{2} + j x_{2}$
+\subsection{Combination E}
+%% $x_{2} + j x_{1}$
+\subsection{Combination F}
+%% $x_{2} + j x_{3}$
+\subsection{Combination G}
+%% $x_{3} + j x_{1}$
+\subsection{Combination H}
+%% $x_{3} + j x_{2}$
+\subsection{Combination I}
+%% $x_{3} + j x_{3}$
+
 
 %% \begin{figure}
 %%     \centering
