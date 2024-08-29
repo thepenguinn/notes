@@ -18,9 +18,9 @@ more diverse \emph{complex} sequences ? This can be simply done by taking one of
 \emph{real valued} sequence as the \emph{real part} of the \emph{complex} sequence
 and another \emph{real valued} sequence as the \emph{imaginary part} of the
 \emph{complex} sequence. By doing so, one may encounter that there are many ways
-to arrange these sequences. Or so to say, there are many different combinations
-\footnote{of different real and imaginary sequences}, thus generating distict
-\emph{complex} sequences.
+to arrange these sequences. Or so to say, there are many different combinations\footnote{of
+different real and imaginary sequences}, thus generating there many distinct \emph{complex}
+sequences.
 
 
 \begin{figure} [H]
@@ -71,6 +71,53 @@ to arrange these sequences. Or so to say, there are many different combinations
         \label{fig:cplxCombThird}
 
     \end{tabularx}
+
+\end{figure}
+
+As we can see from figures \ref{fig:cplxCombFirst} to \ref{fig:cplxCombThird} there is a
+total of $3 \times 3 = 9$ different ways to combine these three signals. In the upcoming
+subsections we will see each of these combinations in detail.
+
+\begin{figure} [H]
+    \centering
+    \renewcommand{\arraystretch}{1}
+
+    \begin{tabularx} {\textwidth} {
+            *{1}{>{\centering\arraybackslash}X}
+            *{1}{>{\centering\arraybackslash}m{0.3\textwidth}}
+        }
+
+        { \begin{tabularx} {0.65\textwidth} {
+                    *{4}{>{\centering\arraybackslash}X}
+                }
+                \toprule
+                \textsc{Combination Name} & \textsc{Real Part} & \textsc{Imaginary Part} & \textsc{Complex Sequence} \\
+                \midrule
+                \textsc{Comb A} & $x_{1}$ & $x_{1}$ & $x_{1} + j x_{1}$  \\
+                \textsc{Comb B} & $x_{1}$ & $x_{2}$ & $x_{1} + j x_{2}$  \\
+                \textsc{Comb C} & $x_{1}$ & $x_{3}$ & $x_{1} + j x_{3}$  \\
+                \cmidrule(lr){1-4}
+                \textsc{Comb E} & $x_{2}$ & $x_{2}$ & $x_{2} + j x_{2}$  \\
+                \textsc{Comb D} & $x_{2}$ & $x_{1}$ & $x_{2} + j x_{1}$  \\
+                \textsc{Comb F} & $x_{2}$ & $x_{3}$ & $x_{2} + j x_{3}$  \\
+                \cmidrule(lr){1-4}
+                \textsc{Comb G} & $x_{3}$ & $x_{1}$ & $x_{3} + j x_{1}$  \\
+                \textsc{Comb H} & $x_{3}$ & $x_{2}$ & $x_{3} + j x_{2}$  \\
+                \textsc{Comb I} & $x_{3}$ & $x_{3}$ & $x_{3} + j x_{3}$  \\
+                \bottomrule
+            \end{tabularx} }
+
+            &
+
+            \captionof {table} {
+                Different combinations of \emph{Complex Sequences} and there respective
+                \emph{Real} and \emph{Imaginary} parts.
+            }
+
+            \\
+
+    \end{tabularx}
+
 
 \end{figure}
 
