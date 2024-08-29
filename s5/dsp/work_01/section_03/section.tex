@@ -76,7 +76,57 @@ sequences.
 
 As we can see from figures \ref{fig:cplxCombFirst} to \ref{fig:cplxCombThird} there is a
 total of $3 \times 3 = 9$ different ways to combine these three signals. In the upcoming
-subsections we will see each of these combinations in detail.
+subsections we will see each of these combinations in detail. Table \ref{tbl:cplxSeqs}
+shows the total list of \emph{complex} sequences we'll be generating.
+
+Before that, let's use python to combine our \emph{real} sequences into \emph{complex}
+sequences.
+
+\subsection{Combining Sequences using Python}
+
+%python/combine_sequences.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import numpy as np
+    import pandas as pd
+
+    F = 28
+    t = np.linspace(0, 1.25 * np.pi / 4, 2500)
+
+    x1 = np.sin( 2 * np.pi * F * t)
+    x2 = np.sin( 2 * np.pi * (F + 0.1) * t)
+    x3 = np.sin( 2 * np.pi * 2 * F * t)
+
+    real = [x1, x2, x3]
+    imag = [x1, x2, x3]
+
+    cplx_labels = [
+        "complex_a",
+        "complex_b",
+        "complex_c",
+        "complex_d",
+        "complex_e",
+        "complex_f",
+        "complex_g",
+        "complex_h",
+        "complex_i",
+    ]
+
+    cplx = []
+
+    for r in real:
+        for i in imag:
+            cplx.append(pd.DataFrame({
+                "real": r,
+                "imag": i,
+            }))
+
+    for i in range(len(cplx)):
+        cplx[i].to_csv(
+            "../data/" + cplx_labels[i] + ".csv", sep = " ", index_label = "time"
+        )
+
+\end{minted}
+
 
 \begin{figure} [H]
     \centering
@@ -118,10 +168,11 @@ subsections we will see each of these combinations in detail.
             $9$ different combinations of mixing of our three sequences into \emph{complex}
             sequences.
         }
+        \label{tbl:cplxSeqs}
         \\
 
-
     \end{tabularx}
+
 
 \end{figure}
 
@@ -139,21 +190,21 @@ subsections we will see each of these combinations in detail.
 %% \end{figure}
 %%
 %%
-\subsection{Combination B}
+\subsection{Complex B}
 %% $x_{1} + j x_{2}$
-\subsection{Combination C}
+\subsection{Complex C}
 %% $x_{1} + j x_{3}$
-\subsection{Combination D}
+\subsection{Complex D}
 %% $x_{2} + j x_{2}$
-\subsection{Combination E}
+\subsection{Complex E}
 %% $x_{2} + j x_{1}$
-\subsection{Combination F}
+\subsection{Complex F}
 %% $x_{2} + j x_{3}$
-\subsection{Combination G}
+\subsection{Complex G}
 %% $x_{3} + j x_{1}$
-\subsection{Combination H}
+\subsection{Complex H}
 %% $x_{3} + j x_{2}$
-\subsection{Combination I}
+\subsection{Complex I}
 %% $x_{3} + j x_{3}$
 
 
