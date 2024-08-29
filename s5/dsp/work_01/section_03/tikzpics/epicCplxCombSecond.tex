@@ -1,0 +1,15 @@
+\tikzset{>=stealth}
+
+\begin{tikzpicture} [every node/.style={draw}]
+    \draw [black!30!white] node (x1) at (0,0) {$x_{1}$};
+    \node [black, right = of x1] (x2) {$x_{2}$};
+    \node [black!30!white, right = of x2] (x3) {$x_{3}$};
+
+    \node [black, below = of x1] (jx1) {$j x_{1}$};
+    \node [black, below = of x2] (jx2) {$j x_{2}$};
+    \node [black, below = of x3] (jx3) {$j x_{3}$};
+
+    \draw [dashed, ->, shorten >= 3pt] (x2.south) -- (jx1.north east);
+    \draw [dashed, ->, shorten >= 3pt] (x2.south) -- (jx2.north);
+    \draw [dashed, ->, shorten >= 3pt] (x2.south) -- (jx3.north west);
+\end{tikzpicture}
