@@ -99,6 +99,14 @@ sequences.
     real = [x1, x2, x3]
     imag = [x1, x2, x3]
 
+    pd.DataFrame( {
+        "x1": x1[0:625],
+        "x2": x2[0:625],
+        "x3": x3[0:625],
+    }).to_csv(
+        "../data/short_sequences.csv", sep = " ", index_label = "time"
+    )
+
     cplx_labels = [
         "complex_a",
         "complex_b",
@@ -176,20 +184,82 @@ sequences.
 
 \end{figure}
 
-%% \subsection{Combination A}
-%% %% $x_{1} + j x_{1}$
-%%
-%% \begin{figure} [H]
-%%
-%%     \begin{tabularx} {\textwidth} {
-%%             *{1}
-%%         }
-%%
-%%     \end{tabularx}
-%%
-%% \end{figure}
-%%
-%%
+\subsection{Complex A}
+%% $x_{1} + j x_{1}$
+
+\begin{figure} [H]
+
+    \renewcommand{\arraystretch}{0.75}
+    \centering
+    \begin{NiceTabularX} {\textwidth} {
+            *{2}{>{\centering\arraybackslash}X}
+        }
+
+        \Block[c] {1-2} {
+            \adjustbox{max width = 2.0\textwidth} {
+                \includegraphics[height = \textheight] {tikzpics/plotComplexA.pdf}
+            }
+        }
+
+        &
+        \\
+
+        \Block[c] {1-2} {
+            \vbox{
+                \captionof{figure} {3D view of \emph{complex sequence} A.}
+                \label{plt:cmplxA}
+            }
+        }
+
+        &
+        \\
+
+        \Block[c] {1-1} {
+            \adjustbox{max width = \textwidth} {
+                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
+            }
+        }
+
+        &
+
+        \Block[c] {3-1} {
+            \adjustbox{max width = \textwidth} {
+                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexA.pdf}
+            }
+        }
+
+        \\
+
+        \captionof{figure} {\emph{Real} part of sequence A.}
+        \label{plt:realCmplxA}
+
+        &
+        \\
+
+        \Block[c] {1-1} {
+            \adjustbox{max width = \textwidth} {
+                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
+            }
+        }
+
+        &
+        \\
+
+        \captionof{figure} {\emph{Imaginary} part of sequence A.}
+        \label{plt:imagCmplxA}
+
+        &
+
+        \captionof{figure} {View with \emph{x axis} perpendicular.}
+        \label{plt:someLabel}
+
+        \\
+
+    \end{NiceTabularX}
+
+\end{figure}
+
+
 \subsection{Complex B}
 %% $x_{1} + j x_{2}$
 \subsection{Complex C}

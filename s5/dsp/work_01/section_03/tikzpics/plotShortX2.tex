@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+    \begin{axis} [
+            height = 1.76in,
+            width = 3.13in,
+            xlabel = Time,
+            ylabel = Amplitude,
+            xtick = {0, 156.25, ..., 625},
+            grid = both,
+            xticklabel style = {font = \small},
+            xticklabels = {$0$, $\dfrac{\pi}{64}$, $\dfrac{\pi}{32}$, $\dfrac{3 \pi}{64}$, $\dfrac{\pi}{16}$, }
+        ]
+        \addplot[
+            surf,
+        ]
+        table [y = x2]{data/short_sequences.csv};
+    \end{axis}
+\end{tikzpicture}
