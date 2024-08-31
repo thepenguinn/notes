@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+    \begin{axis} [
+            height = 3.92in,
+            width = 6.27in,
+            plot box ratio = 4 1.5 1,
+            %%
+            xlabel = Time,
+            xmin = -75,
+            xmax = 2575,
+            %%
+            ylabel = Real Part,
+            ymin = -1.25,
+            ymax = 1.25,
+            %%
+            zlabel = Imaginary Part,
+            zmin = -1.25,
+            zmax = 1.25,
+            %%
+            xtick = {0, 312.5, ..., 2500},
+            grid = both,
+            xticklabel style = {font = \small},
+            xticklabels = {$0$, $\dfrac{\pi}{32}$, $\dfrac{\pi}{16}$, $\dfrac{3 \pi}{32}$, $\dfrac{\pi}{8}$, $\dfrac{5 \pi}{32}$, $\dfrac{3 \pi}{16}$, $\dfrac{7 \pi}{32}$, $\dfrac{\pi}{4}$, }
+        ]
+        \addplot3[
+            surf,
+        ]
+        table [y = real, z = imag]{data/complex_g.csv};
+    \end{axis}
+\end{tikzpicture}
