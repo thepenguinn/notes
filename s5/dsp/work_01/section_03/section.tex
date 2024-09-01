@@ -4,6 +4,10 @@
 
 \begin{document}
 
+\def\freqXOne{28}
+\def\freqXTwo{28.1}
+\def\freqXThree{56}
+
 \section{Generating Complex Sequences} \label{sec:wrkGenCompSeqs}
 
 In section \ref{lst:threeSeqs} we generated three signals with three different
@@ -184,8 +188,20 @@ sequences.
 
 \end{figure}
 
+\pagebreak
+
 \subsection{Complex A}
 %% $x_{1} + j x_{1}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXOne t)$
+
+    \item \textbf{Inference:} Here, both the \emph{real part} and the \emph{imaginary part}
+        are the same, hence from front view they seem to oscillate back and forth between $(-1 -1j)$
+        and $(1 + 1j)$ through a straight line passing through the origin.
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -230,7 +246,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence A.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXOne t)$.}
         \label{plt:realCmplxA}
 
         &
@@ -245,7 +261,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence A.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
         \label{plt:imagCmplxA}
 
         &
@@ -262,6 +278,18 @@ sequences.
 
 \subsection{Complex B}
 %% $x_{1} + j x_{2}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXTwo t)$
+
+    \item \textbf{Inference:} Here the \emph{imaginary part} is higher in frequency than
+        that of the \emph{real part}. This is similar to that of \textsc{Complex A}k but
+        this slight frequency difference will deviate the signal ever so slightly from
+        oscillating through the straight line passing through the origin as viewed from
+        the front view, and making the front view as shown in Figure \ref{plt:frontViewCmplxB}.
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -306,7 +334,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence B.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXOne t)$.}
         \label{plt:realCmplxB}
 
         &
@@ -321,7 +349,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence B.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
         \label{plt:imagCmplxB}
 
         &
@@ -337,6 +365,17 @@ sequences.
 
 \subsection{Complex C}
 %% $x_{1} + j x_{3}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXThree t)$
+
+    \item \textbf{Inference:} Here the frequency of the \emph{imaginary part} is exactly the
+        double that of the \emph{real part}. Hence forming an infinity\footnote{in mathematics, it's
+        called a \emph{lemnicate} (see the \textbf{\href{https://en.m.wikipedia.org/wiki/Lemniscate_of_Bernoulli}
+        {Wikipedia article}}).} shape from the front view.
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -381,7 +420,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence C.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXOne t)$.}
         \label{plt:realCmplxC}
 
         &
@@ -396,7 +435,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence C.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXThree t)$.}
         \label{plt:imagCmplxC}
 
         &
@@ -412,6 +451,14 @@ sequences.
 
 \subsection{Complex D}
 %% $x_{2} + j x_{2}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXTwo t)$
+
+    \item \textbf{Inference:} <++>
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -456,7 +503,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence D.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXTwo t)$.}
         \label{plt:realCmplxD}
 
         &
@@ -471,7 +518,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence D.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
         \label{plt:imagCmplxD}
 
         &
@@ -487,6 +534,14 @@ sequences.
 
 \subsection{Complex E}
 %% $x_{2} + j x_{1}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXOne t)$
+
+    \item \textbf{Inference:} <++>
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -531,7 +586,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence E.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXTwo t)$.}
         \label{plt:realCmplxE}
 
         &
@@ -546,7 +601,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence E.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
         \label{plt:imagCmplxE}
 
         &
@@ -562,6 +617,14 @@ sequences.
 
 \subsection{Complex F}
 %% $x_{2} + j x_{3}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXThree t)$
+
+    \item \textbf{Inference:} <++>
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -606,7 +669,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence F.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXTwo t)$.}
         \label{plt:realCmplxF}
 
         &
@@ -621,7 +684,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence F.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXThree t)$.}
         \label{plt:imagCmplxF}
 
         &
@@ -637,6 +700,14 @@ sequences.
 
 \subsection{Complex G}
 %% $x_{3} + j x_{1}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXOne t)$
+
+    \item \textbf{Inference:} <++>
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -681,7 +752,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence G.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
         \label{plt:realCmplxG}
 
         &
@@ -696,7 +767,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence G.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
         \label{plt:imagCmplxG}
 
         &
@@ -712,6 +783,14 @@ sequences.
 
 \subsection{Complex H}
 %% $x_{3} + j x_{2}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXTwo t)$
+
+    \item \textbf{Inference:} <++>
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -756,7 +835,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence H.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
         \label{plt:realCmplxH}
 
         &
@@ -771,7 +850,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence H.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
         \label{plt:imagCmplxH}
 
         &
@@ -787,6 +866,14 @@ sequences.
 
 \subsection{Complex I}
 %% $x_{3} + j x_{3}$
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXThree t)$
+
+    \item \textbf{Inference:} <++>
+
+\end{itemize}
 
 \begin{figure} [H]
 
@@ -831,7 +918,7 @@ sequences.
 
         \\
 
-        \captionof{figure} {\emph{Real} part of sequence I.}
+        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
         \label{plt:realCmplxI}
 
         &
@@ -846,7 +933,7 @@ sequences.
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary} part of sequence I.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXThree t)$.}
         \label{plt:imagCmplxI}
 
         &
