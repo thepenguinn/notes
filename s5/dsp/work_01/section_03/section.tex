@@ -161,11 +161,11 @@ sequences.
             \midrule
 
             \textsc{Complex A} & $x_{1} + j x_{1}$ &
-            \textsc{Complex E} & $x_{2} + j x_{2}$ &
+            \textsc{Complex E} & $x_{2} + j x_{1}$ &
             \textsc{Complex G} & $x_{3} + j x_{1}$ \\
 
             \textsc{Complex B} & $x_{1} + j x_{2}$ &
-            \textsc{Complex D} & $x_{2} + j x_{1}$ &
+            \textsc{Complex D} & $x_{2} + j x_{2}$ &
             \textsc{Complex H} & $x_{3} + j x_{2}$ \\
 
             \textsc{Complex C} & $x_{1} + j x_{3}$ &
@@ -450,11 +450,11 @@ sequences.
 \end{figure}
 
 \subsection{Complex D}
-%% $x_{2} + j x_{2}$
+%% $x_{2} + j x_{1}$
 
 \begin{itemize} [label=]
 
-    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXTwo t)$
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXOne t)$
 
     \item \textbf{Inference:} <++>
 
@@ -511,14 +511,14 @@ sequences.
 
         \Block[c] {1-1} {
             \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
+                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
             }
         }
 
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
         \label{plt:imagCmplxD}
 
         &
@@ -533,11 +533,11 @@ sequences.
 \end{figure}
 
 \subsection{Complex E}
-%% $x_{2} + j x_{1}$
+%% $x_{2} + j x_{2}$
 
 \begin{itemize} [label=]
 
-    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXOne t)$
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXTwo t)$
 
     \item \textbf{Inference:} <++>
 
@@ -594,14 +594,14 @@ sequences.
 
         \Block[c] {1-1} {
             \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
+                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
             }
         }
 
         &
         \\
 
-        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
+        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
         \label{plt:imagCmplxE}
 
         &
