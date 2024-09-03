@@ -1,34 +1,42 @@
 \begin{tikzpicture} [
         transform shape,
-        scale = 2,
-        block/.style = {
-            rectangle,
-            draw = black,
-            rounded corners = 0.5cm,
-            inner sep = 0.5cm,
-        },
+        rounded corners = 0.3cm,
+        every path/.style = {thick, > = latex},
+        % scale = 4,
     ]
 
-    \node[block] (transmitter) {Transmitter};
-    \node[block, below=of transmitter, xshift = 2cm, yshift = -1cm] (channel) {Channel};
-    \node[block, above=of channel, xshift = 2cm, yshift = 1cm] (receiver) {Receiver};
+    \node[block]
+    (transmitter) {Transmitter};
+    \node[block, below=of transmitter, xshift = 2cm, yshift = -1cm]
+    (channel) {Channel};
+    \node[block, above=of channel, xshift = 2cm, yshift = 1cm]
+    (receiver) {Receiver};
 
-    \draw[thick, rounded corners = 0.5cm, ->, >=stealth] (transmitter.south) |- (channel.west)
-    node[midway, left = 0.5cm] {Transmitted signal};
+    \draw[->] (transmitter.south) |- (channel.west)
+    node[hai, midway, left = -0.25cm]
+    {Transmitted \\ signal};
 
-    \draw[thick, rounded corners = 0.5cm, ->, >=stealth] (channel.east) -| (receiver.south)
-    node[midway, right = 0.5cm] {Received signal};
+    \draw[->] (channel.east) -| (receiver.south)
+    node[hai, midway, right = -0.25cm]
+    {Received \\ signal};
 
     \node[block, left=of transmitter, yshift = -2cm]
-    (source) {Source of information};
+    (source)
+    {Source of \\ information};
 
     \node[block, right=of receiver, yshift = -2cm]
-    (user) {User of information};
+    (user) {User of \\ information};
 
-    \draw[thick, rounded corners = 0.5cm, ->, >=stealth] (source.north) |- (transmitter.west)
-    node[midway, above = 0.5cm] {Message signal};
+    \draw[->] (source.north) |- (transmitter.west)
+    node[hai, midway, above = 0.5cm]
+    {Message \\ signal};
 
-    \draw[thick, rounded corners = 0.5cm, ->, >=stealth] (receiver.east) -| (user.north)
-    node[midway, above = 0.5cm] {Estimate of message signal};
+    \draw[->] (receiver.east) -| (user.north)
+    node[hai, midway, above = 0.5cm]
+    {Estimate of \\ message signal};
+
+
+    \node[label, above = of channel, yshift = 3cm]
+    {\textsc{Communication System}};
 
 \end{tikzpicture}
