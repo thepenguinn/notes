@@ -1,8 +1,10 @@
 return {
+    ["chapter_01/section_03"] = "section.tex",
     ["chapter_01"] = "chapter.tex",
     ["chapter_05"] = "chapter.tex",
-    ["chapter_04"] = "chapter.tex",
-    [""] = "course.tex",
     ["chapter_03"] = "chapter.tex",
+    ["chapter_01/section_01"] = "section.tex",
+    [""] = "course.tex",
+    ["chapter_04"] = "chapter.tex",
     ["chapter_02"] = "chapter.tex",
 }

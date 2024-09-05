@@ -1,0 +1,11 @@
+return {
+    ["epicElemComSys"] = {
+        ["parent_dir"] = "chapter_01/section_01/tikzpics",
+    },
+    ["deleme"] = {
+        ["parent_dir"] = "chapter_01/section_01/tikzpics",
+    },
+    ["epicBlkWeaversMethod"] = {
+        ["parent_dir"] = "chapter_01/section_03/tikzpics",
+    },
+}
