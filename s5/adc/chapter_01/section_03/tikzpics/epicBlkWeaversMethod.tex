@@ -1,0 +1,123 @@
+\begin{tikzpicture} [
+        transform shape,
+        scale = 0.8,
+        rounded corners = 0.3cm,
+        every path/.style = {thick, > = latex},
+        node distance = 1cm,
+    ]
+
+    \def\hozgap{0.8cm}
+    \def\midgap{2.5cm}
+    \def\lbgap{1.25cm}
+    \def\extlbgap{0.7cm}
+
+    \node [block] (bm1) {Balanced Modulator $\mbox{BM}_{1}$};
+    \node [block, below = of bm1] (ps1) {$90 \degree$ Phase Shift};
+    \node [block, below = of ps1] (acosci) {Audio Carrier Oscillator};
+    \node [block, below = of acosci] (bm2) {Balanced Modulator $\mbox{BM}_{2}$};
+
+    \node [block, right = of bm1, xshift = \hozgap]
+    (alpf1) {Audio LPF $(\omega_{0})$};
+    \node [block, right = of alpf1, xshift = \hozgap]
+    (bm3) {Balanced Modulator $\mbox{BM}_{3}$};
+
+    \node [block, below = of bm3] (rfosci) {Crystal RF Carrier Oscillator};
+    \node [block, below = of rfosci] (ps2) {$90 \degree$ Phase Shift};
+    \node [block, below = of ps2] (bm4) {Balanced Modulator $\mbox{BM}_{4}$};
+
+    \node [block, right = of bm2, xshift = \hozgap]
+    (alpf2) {Audio LPF $(\omega_{0})$};
+
+    %% summing circuit
+
+    \draw ($(rfosci.south)!0.50!(ps2.north)$)
+    node (sumckt) [block, xshift = \midgap, anchor = west] {Summing Circuit};
+
+    %% input
+
+    \draw ($(acosci.north)!0.50!(ps1.south)$)
+    node (input) [block, xshift = -\midgap, anchor = east] {Audio Input};
+
+    %% output
+
+    \node [block, right = of sumckt] (output) {Output};
+    %% \node [block, right = of sumckt, xshift = \midgap] (output) {Output};
+
+    %% connections
+
+    \draw [->] (input) |- (bm1)
+    node [label, pos = 0.8, above = \extlbgap] {$\omega_{m}t$}
+    ;
+
+    \draw [->] (input) |- (bm2);
+
+    %% hoz up
+
+    \draw [->] (bm1) -- (alpf1)
+    node [label, midway, above = \lbgap] {$\omega_{0}t \pm 90 + \omega_{m}t$};
+
+    \draw [->] (alpf1) -- (bm3)
+    node [label, midway, above = \lbgap] {$\omega_{0}t + 90 - \omega_{m}t$};
+
+    %% hoz down
+
+    \draw [->] (bm2) -- (alpf2)
+    node [label, midway, below = \lbgap] {$(\omega_{0} \pm \omega_{m})t$};
+
+    \draw [->] (alpf2) -- (bm4)
+    node [label, midway, below = \lbgap] {$(\omega_{0} - \omega_{m})t$};
+
+    %% vert left
+
+    \draw [->] (acosci) -- (ps1)
+    node [label, midway, right] {$\omega_{0}t$}
+    ;
+
+    \draw [->] (acosci) -- (bm2)
+    node [label, midway, right] {$\omega_{0}t$}
+    ;
+
+    \draw [->] (ps1) -- (bm1)
+    node [label, midway, right] {$\omega_{0}t + 90$}
+    ;
+
+    %% vert right
+
+    \draw [->] (rfosci) -- (ps2)
+    node [label, midway, left] {}
+    ;
+
+    \draw [->] (rfosci) -- (bm3)
+    node [label, midway, left] {}
+    ;
+
+    \draw [->] (ps2) -- (bm4)
+    node [label, midway, left] {}
+    ;
+
+    %% summing
+
+    \draw [->] (bm3) -| (sumckt)
+    node [label, midway, above = \extlbgap, text width = 4cm] {
+        $(\omega_{1} + \omega_{0} - \omega_{m})t + 90$ \\
+        $(\omega_{1} - \omega_{0} + \omega_{m})t - 90$
+    }
+    ;
+
+    \draw [->] (bm4) -| (sumckt)
+    node [label, midway, below = \extlbgap, text width = 4cm] {
+        $(\omega_{1} + \omega_{0} - \omega_{m})t + 90$ \\
+        $(\omega_{1} - \omega_{0} + \omega_{m})t + 90$
+    }
+    ;
+
+    %% ouput connections
+
+    \draw [->] (sumckt) -- (output);
+
+    \node [label, below = of output, text width = 4cm] {
+        $(\omega_{1} + \omega_{0} - \omega_{m})t + 90$
+    }
+    ;
+
+\end{tikzpicture}
