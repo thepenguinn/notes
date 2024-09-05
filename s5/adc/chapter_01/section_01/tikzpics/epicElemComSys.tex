@@ -13,11 +13,11 @@
     (receiver) {Receiver};
 
     \draw[->] (transmitter.south) |- (channel.west)
-    node[hai, midway, left = -0.25cm]
+    node[label, midway, left = -0.25cm]
     {Transmitted \\ signal};
 
     \draw[->] (channel.east) -| (receiver.south)
-    node[hai, midway, right = -0.25cm]
+    node[label, midway, right = -0.25cm]
     {Received \\ signal};
 
     \node[block, left=of transmitter, yshift = -2cm]
@@ -28,11 +28,11 @@
     (user) {User of \\ information};
 
     \draw[->] (source.north) |- (transmitter.west)
-    node[hai, midway, above = 0.5cm]
+    node[label, midway, above = 0.5cm]
     {Message \\ signal};
 
     \draw[->] (receiver.east) -| (user.north)
-    node[hai, midway, above = 0.5cm]
+    node[label, midway, above = 0.5cm]
     {Estimate of \\ message signal};
 
 
