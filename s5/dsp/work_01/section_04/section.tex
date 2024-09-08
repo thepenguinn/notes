@@ -4,6 +4,94 @@
 
 \begin{document}
 
+\def\freqXOne{28}
+\def\freqXTwo{28.1}
+\def\freqXThree{56}
+
 \section{Taking DTFT of the Complex Sequences} \label{sec:wrkTakingDTFTCplxSeqs}
+
+In the previous section, we generated a bunch of \emph{Complex Sequences}. And
+picked $4$ sequences for further analysis. In this section we will be taking
+\textsc{DTFT} of these sequences. But before that, we need to take a look at what
+a \textsc{DTFT} is how to elagently compute it using python.
+
+\subsection{Discrete Time Fourier Transform}
+
+Discrete Time Fourier Transform, aka, \textsc{DTFT} transforms \emph{discrete time}
+samples into a \emph{continous} signal in the \emph{frequency} domain. \textsc{DTFT}
+is basically a special case of another transform known as \textsc{Z Transform}.
+
+
+\textsc{Z Transform} is mathematically described as,
+
+\begin{align}
+    X(z) = {\mathcal{Z}}\{x[n]\} = \sum_{n = - \infty}^{\infty} x[n] z^{-n}
+\end{align}
+
+where,
+
+\begin{itemize} [label=]
+
+    \item ${\mathcal{Z}}\{x[n]\}$: is the \textsc{Z Transform}.
+    \item $x[n]$: is the \emph{discrete time} input sequence.
+    \item $z$: is a complex number.
+
+        \begin{align}
+            z = A e^{-j \omega}
+        \end{align}
+
+        where,
+
+        \begin{itemize} [label=]
+            \item $A$: is the \emph{real part} or the \emph{amplitude}.
+            \item $\omega$: is the \emph{complex argument} in radians.
+        \end{itemize}
+
+\end{itemize}
+
+\textsc{DTFT} is a special case of \textsc{Z Transform}, where we take $A$
+as $1$. Mathematically, we can describe \textsc{DTFT} as,
+
+\begin{align}
+    X(e^{j \omega}) &= X(z) |_{z = e^{j \omega}} \\
+    &= \sum_{n = - \infty}^{\infty} x[n] z^{-n} \Big|_{z = e^{jw}} \\
+    &= \sum_{n = - \infty}^{\infty} x[n] e^{-j w n} \label{eqn:dtftOmega}
+\end{align}
+
+Where $\omega$ can be substituted with $2 \pi f$, then the \textsc{DTFT} becomes,
+
+\begin{align}
+    X(e^{j 2 \pi f}) &= \sum_{n = - \infty}^{\infty} x[n] e^{-j 2 \pi f n}
+\end{align}
+
+Now the Equation \ref{eqn:dtftOmega} becomes a function of \emph{frequency} $f$
+instead of \emph{angular frequency} $\omega$.
+
+\subsection{Implementing DTFT using Python}
+
+
+
+
+%%% A
+%%% $x_{1} + j x_{1}$
+%
+%\textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXOne t)$
+%
+%%% B
+%%% $x_{1} + j x_{2}$
+%
+%\textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXTwo t)$
+%
+%%% C
+%%% $x_{1} + j x_{3}$
+%
+%\textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXThree t)$
+%
+%%% F
+%%% $x_{2} + j x_{3}$
+%\textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXThree t)$
+%
+%%%  a, b, c, f
+
 
 \end{document}
