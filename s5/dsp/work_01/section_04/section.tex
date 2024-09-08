@@ -10,7 +10,7 @@ In the previous section, we have visualized the generated complex sequences. In 
 section we will be taking DTFT for them.
 
 \begin{align}
-    X(\omega) &= \sum_{n = 0}^{N - 1} x[n] e^{(-j \omega n)}
+    X(e^{j \omega}) &= \sum_{n = 0}^{N - 1} x[n] e^{(-j \omega n)}
 \end{align}
 
 \subsection{Taking DTFT using Python}
@@ -20,68 +20,266 @@ section we will be taking DTFT for them.
     import numpy as np
     import matplotlib.pyplot as plt
 
-    # F = 28
-    # t = np.linspace(0, np.pi / 16, 1000)
-    #
-    # x1 = np.sin( 2 * np.pi * F * t)
-    # x2 = np.sin( 2 * np.pi * (F + 0.1) * t)
-    # x3 = np.sin( 2 * np.pi * 2 * F * t)
-    #
-    # cplx_a = x1 + 1j * x1
-    # cplx_b = x1 + 1j * x2
-    # cplx_c = x1 + 1j * x3
-    # cplx_f = x2 + 1j * x3
+    plt.figure(figsize = (6, 2.5))
 
     def dtft_factory(x_signal):
 
-        def dtft(omega):
+        length = len(x_signal)
+        def dtft(freq):
             sum = 0
             for n in range(len(x_signal)):
-                sum = sum + x_signal[n] * np.exp(-1j * omega * n)
+                sum = sum + x_signal[n] * np.exp(-1j * 2 * np.pi * freq * n / length)
 
             return sum
 
-        return  dtft
+        return dtft
 
-    ## dtft = dtft_factory(cplx_a[0:10])
-    # dtft = dtft_factory(np.array([0, 1, 2, 3, 4, 4, 4, 4, 3, 2, 1, 0], dtype = np.cdouble))
-    time = np.linspace(0, 1, 1000)
-    sin = np.sin(2 * np.pi * 3 * time) + np.sin(2 * np.pi * 1 * time)
+    def sin_factory(freq):
+        return lambda t: np.cos(2 * np.pi * freq * t)
+
+    time = np.linspace(0, 1, 30)
+    sin = sin_factory(1)
+    sin_val = sin(time)
+
+    sin_dtft = dtft_factory(sin_val)
+
+    # plt.stem(time, sin_val)
+    # plt.savefig("../plots/test.pdf")
+
+    freq = np.linspace(0, 30, 30 * 30)
+
+    freq_val = sin_dtft(freq)
+
+    plt.stem(freq, freq_val)
+    plt.savefig("../plots/test.pdf")
+
+\end{minted}
+
+\subsection {Taking Fourier Transform}
+
+\begin{align}
+    F(\xi) &= \int_{- \infty}^{\infty} f(x) e^{(- j 2 \pi \xi x)} dx
+\end{align}
+
+%python/taking_fourier.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.integrate import quad
+
+    def ft_factory(x_fn, l_lim, u_lim):
+
+        def gen_int_fn(xi):
+            return lambda x: x_fn(x) * np.exp(-1j * 2 * np.pi * x * xi)
+
+        def ft(xi):
+            val = quad(gen_int_fn(xi), l_lim, u_lim, limlst = 1000)
+            return val[0]
+
+        return ft
+
+    def sin(t):
+        return (np.sin(2 * np.pi * 3 * t) + np.cos(2 * np.pi * 2 * t) + np.sin(2 * np.pi * 10 * t)) # + 1j * np.sin(2 * np.pi * 4 * t)
+
+    freq = np.linspace(8, 20, 300)
+    ft = ft_factory(sin, 0, 4)
+
+    ft_val = np.ndarray(len(freq), dtype = np.cdouble)
+
+    # ft_val[0] = (1, 1j)
+    # print(ft_val[0])
+
+    for i in range(len(freq)):
+        ft_val[i] = ft(freq[i])
+
+    # print(ft_val.real)
+
+    fn_val = sin(freq)
 
     plt.subplot(3, 1, 1)
-    plt.plot(time, sin)
-    plt.grid()
-
-    dtft = dtft_factory(sin)
-    freq = np.linspace(0, 1, 1000)
-    out = dtft(freq)
+    plt.plot(freq, fn_val)
 
     plt.subplot(3, 1, 2)
-    plt.plot(freq, out.real)
-    plt.grid()
+    plt.plot(freq, ft_val.real)
 
     plt.subplot(3, 1, 3)
-    plt.plot(freq, out.imag)
-    plt.grid()
+    plt.plot(freq, ft_val.imag)
 
-    plt.savefig("../plots/test.pdf")
-    # print(cplx_a)
+    plt.savefig("../plots/ft.pdf")
+
+\end{minted}
+
+%python/proper_dtft.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    plt.figure(figsize = (6, 2.5))
+
+    def dtft_factory(x_signal):
+
+        length = len(x_signal)
+        def dtft(freq):
+            sum = 0
+            for n in range(len(x_signal)):
+                sum = sum + x_signal[n] * np.exp(-1j * 2 * np.pi * freq * n / length)
+
+            return sum
+
+        return dtft
+
+    # 0 * (1 / samp_freq)
+    def disc_seq(samp_freq, freq):
+        samp_period = 1 / samp_freq
+        return lambda n: np.cos(2 * np.pi * freq * samp_period * n)
+
+    # i dont get this, shit im an idiot
+    seq = disc_seq(500, 30)
+    seq_val = []
+    for i in range(64):
+        seq_val.append(seq(i))
+
+    seq_val = np.array(seq_val)
+
+    dtft = dtft_factory(seq_val)
+
+    freq = np.linspace(0, 30, 31)
+
+    dtft_val = dtft(freq)
+
+    plt.stem(freq, dtft_val.real)
+    plt.savefig("../plots/proper_dtft.pdf")
+
+\end{minted}
+
+%python/real_dft.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy import fft
+
+    plt.figure(figsize = (6, 2.5))
+
+    def dft_factory(x_signal):
+        length = len(x_signal)
+
+        def dft(k):
+            sum = 0
+
+            for n, xn in enumerate(x_signal):
+                sum = sum + xn * np.exp(-1j * 2 * np.pi * k * n / length)
+
+            return sum
+
+        return dft
+
+    def sin_factory(freq):
+        return lambda t: np.cos(2 * np.pi * freq * t)
+
+    N = 500
+
+    time = np.linspace(0, 1, N)
+    sin = sin_factory(8)
+    sin_val = sin(time)
+
+    dft = dft_factory(sin_val)
+
+    dft_val = []
+    for i in range(N):
+        dft_val.append(dft(i))
+        if dft_val[i] > 4:
+            print(i)
 
 
+    plt.stem(dft_val)
+    plt.savefig("../plots/delme.pdf")
 
-    # A = fft.fft(cplx_a)
+\end{minted}
 
-    # plt.subplot(2, 1, 1)
-    # plt.plot(t, A.real)
-    # plt.grid()
-    #
-    # plt.subplot(2, 1, 2)
-    # plt.plot(t, A.imag)
-    #
-    # plt.savefig("../plots/test.pdf")
-    #
-    # print(numpy)
+\paragraph{Output}
 
+\begin{minted}[breaklines, autogobble] {text}
+    7
+    8
+    492
+    493
+\end{minted}
+
+%python/finally_dtft.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    plt.figure(figsize = (6, 2.5))
+
+    def dtft_factory(x_signal):
+
+        def dtft(freq):
+
+            sum = 0
+            for n in range(len(x_signal)):
+                sum = sum + x_signal[n] * np.exp(-1j * 2 * np.pi * n * freq)
+
+            return sum
+
+        return dtft
+
+    def sin_factory(freq):
+        return lambda t: np.cos(2 * np.pi * freq * t) + 1j * np.cos(2 * np.pi * 10 * freq * t)
+
+    N = 1000
+
+    time = np.linspace(0, 1, N)
+    sin = sin_factory(4)
+    sin_val = sin(time)
+
+    dtft = dtft_factory(sin_val)
+
+    freq = np.linspace(0, 1, 1000)
+
+    final = np.ndarray(len(freq), dtype = np.cdouble)
+
+    for i, f in enumerate(freq):
+
+        final[i] = dtft(f)
+        # print(final[i])
+        if final[i].real > 10:
+            print("Real", f * N)
+        if final[i].imag > 10:
+            print("Imaginary", f * N)
+
+    # plt.plot(freq * N, final.imag)
+    # plt.savefig("../plots/imdying.pdf")
+\end{minted}
+
+\paragraph{Output}
+
+\begin{minted}[breaklines, autogobble] {text}
+    Real 4.004004004004004
+    Imaginary 40.04004004004004
+    Imaginary 959.95995995996
+    Real 995.9959959959959
+\end{minted}
+
+%python/test.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    # stupid me.
+
+    def gen(n):
+        for i in range(n):
+            yield i
+
+    g = gen(3)
+
+    print(list(g))
+
+
+\end{minted}
+
+\paragraph{Output}
+
+\begin{minted}[breaklines, autogobble] {text}
+    [0, 1, 2]
 \end{minted}
 
 \end{document}
