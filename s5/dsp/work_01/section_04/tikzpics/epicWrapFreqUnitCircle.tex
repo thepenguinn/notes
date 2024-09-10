@@ -1,0 +1,114 @@
+\begin{tikzpicture} [
+        %transform shape,
+        %rounded corners = 0.3cm,
+        every path/.style = {line cap = round, > = stealth},
+    ]
+
+    \def\radius{1}
+    \def\fsLen{6}
+    \def\freqVrtAxeLen{2}
+    \def\freqMinorTickLen{0.05}
+    \def\freqMajorTickLen{0.1}
+    \def\polarAxisLen{1.5}
+
+    \draw []
+    (0,0) coordinate (unitCircleOrigin)
+    (unitCircleOrigin) ++ (4, 0) coordinate (freqOrigin)
+    ;
+
+    %% the unit circle
+    \draw []
+    (unitCircleOrigin) circle (\radius)
+    ;
+
+    \draw [->, black!35, dashdotted, domain= {2*pi:7.01}, smooth, variable=\t, samples = 200]
+    (unitCircleOrigin)
+    plot ({\t r:\radius*exp(0.08*\t)})
+    ;
+
+    \draw [thick, domain= {0:2*pi}, smooth, variable=\t, samples = 200]
+    (unitCircleOrigin)
+    plot ({\t r:\radius*exp(0.08*\t)})
+    ;
+
+    %% axis
+
+    \draw [black!35, ->]
+    (unitCircleOrigin) -- ++(\polarAxisLen, 0)
+    ;
+
+    \draw [black!35, ->]
+    (unitCircleOrigin) -- ++(-\polarAxisLen, 0)
+    ;
+
+    \draw [black!35, ->]
+    (unitCircleOrigin) -- ++(0, \polarAxisLen)
+    ;
+
+    \draw [black!35, ->]
+    (unitCircleOrigin) -- ++(0, -\polarAxisLen)
+    ;
+
+    %% minor ticks
+
+    \draw
+    (unitCircleOrigin) ++(120: {\radius * exp(0.08 * 2.094)}) node [ocirc] {}
+    ;
+
+    \draw
+    (unitCircleOrigin) ++(240: {\radius * exp(0.08 * 2 * 2.094)}) node [ocirc] {}
+    ;
+
+    %% frequency axes
+
+    %% frequency axes
+    \draw [->, black!35] (freqOrigin) -- ++(-1, 0) ;
+    \draw [->, black!35] (freqOrigin) -- ++(0,  \freqVrtAxeLen) ;
+    \draw [->, black!35] (freqOrigin) -- ++(0, -\freqVrtAxeLen) ;
+
+    \draw []
+    (freqOrigin) ++(\fsLen, 0) coordinate (freqFsamp)
+    ;
+
+    \draw [->, dashdotted, black!35]
+    (freqFsamp) -- ++(1, 0)
+    coordinate (freqInfinity)
+    ;
+
+    \draw [thick]
+    (freqOrigin) -- (freqFsamp)
+    ;
+
+    %% tikcs for frequency axes
+
+    %% major ticks
+    \draw [black!35] (freqFsamp)
+    ++(0, \freqMajorTickLen) -- ++(0, -{2 * \freqMajorTickLen})
+    ;
+
+    \draw [black!35] ($(freqOrigin)!0.5!(freqFsamp)$)
+    ++(0, \freqMajorTickLen) -- ++(0, -{2 * \freqMajorTickLen})
+    ;
+
+    %% minor ticks
+    \draw [black!35] ($(freqOrigin)!0.333!(freqFsamp)$)
+    ++(0, \freqMinorTickLen) -- ++(0, -{2 * \freqMinorTickLen})
+    ;
+
+    \draw [black!35] ($(freqOrigin)!0.666!(freqFsamp)$)
+    ++(0, \freqMinorTickLen) -- ++(0, -{2 * \freqMinorTickLen})
+    ;
+
+    %% labels for frequency axes
+
+    \node [below, font = \tiny] at (freqFsamp) {$f_{s}$} ;
+    \node [below, font = \tiny] at ($(freqOrigin)!0.5!(freqFsamp)$) {$f = \dfrac{f_{s}}{2}$} ;
+
+    \node [below, font = \tiny] at ($(freqOrigin)!0.333!(freqFsamp)$) {$\dfrac{f_{s}}{3}$} ;
+    \node [below, font = \tiny] at ($(freqOrigin)!0.666!(freqFsamp)$) {$\dfrac{2 f_{s}}{3}$} ;
+
+    \node [below = 4pt, font = \small] at (freqInfinity) {$\infty$} ;
+
+    \node [yshift = -4pt, anchor = north west, font = \small] at (freqOrigin) {$0$} ;
+
+\end{tikzpicture}
