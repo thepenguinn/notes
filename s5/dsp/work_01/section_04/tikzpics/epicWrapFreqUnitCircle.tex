@@ -10,6 +10,8 @@
     \def\freqMinorTickLen{0.05}
     \def\freqMajorTickLen{0.1}
     \def\polarAxisLen{1.5}
+    \def\majorTickPole{0.07}
+    \def\minorTickPole{0.055}
 
     \draw []
     (0,0) coordinate (unitCircleOrigin)
@@ -49,14 +51,28 @@
     (unitCircleOrigin) -- ++(0, -\polarAxisLen)
     ;
 
-    %% minor ticks
+    %% major ticks
 
-    \draw
-    (unitCircleOrigin) ++(120: {\radius * exp(0.08 * 2.094)}) node [ocirc] {}
+    \draw [fill = white]
+    (unitCircleOrigin) ++(0: {\radius}) circle (\majorTickPole)
     ;
 
-    \draw
-    (unitCircleOrigin) ++(240: {\radius * exp(0.08 * 2 * 2.094)}) node [ocirc] {}
+    \draw [fill = white]
+    (unitCircleOrigin) ++(180: {\radius * exp(0.08 * rad(180))}) circle (\majorTickPole)
+    ;
+
+    \draw [fill = white]
+    (unitCircleOrigin) ++(360: {\radius * exp(0.08 * rad(360))}) circle (\majorTickPole)
+    ;
+
+    %% minor ticks
+
+    \draw [fill = white]
+    (unitCircleOrigin) ++(120: {\radius * exp(0.08 * rad(120))}) circle (\minorTickPole)
+    ;
+
+    \draw [fill = white]
+    (unitCircleOrigin) ++(240: {\radius * exp(0.08 * rad(240))}) circle (\minorTickPole)
     ;
 
     %% frequency axes
@@ -82,21 +98,25 @@
     %% tikcs for frequency axes
 
     %% major ticks
-    \draw [black!35] (freqFsamp)
-    ++(0, \freqMajorTickLen) -- ++(0, -{2 * \freqMajorTickLen})
+    \draw [fill = white] (freqFsamp)
+    circle (\majorTickPole)
     ;
 
-    \draw [black!35] ($(freqOrigin)!0.5!(freqFsamp)$)
-    ++(0, \freqMajorTickLen) -- ++(0, -{2 * \freqMajorTickLen})
+    \draw [fill = white] (freqOrigin)
+    circle (\majorTickPole)
+    ;
+
+    \draw [fill = white] ($(freqOrigin)!0.5!(freqFsamp)$)
+    circle (\majorTickPole)
     ;
 
     %% minor ticks
-    \draw [black!35] ($(freqOrigin)!0.333!(freqFsamp)$)
-    ++(0, \freqMinorTickLen) -- ++(0, -{2 * \freqMinorTickLen})
+    \draw [fill = white] ($(freqOrigin)!0.333!(freqFsamp)$)
+    circle (\minorTickPole)
     ;
 
-    \draw [black!35] ($(freqOrigin)!0.666!(freqFsamp)$)
-    ++(0, \freqMinorTickLen) -- ++(0, -{2 * \freqMinorTickLen})
+    \draw [fill = white] ($(freqOrigin)!0.666!(freqFsamp)$)
+    circle (\minorTickPole)
     ;
 
     %% labels for frequency axes
