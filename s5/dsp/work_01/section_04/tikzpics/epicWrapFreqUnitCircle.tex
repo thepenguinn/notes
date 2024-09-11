@@ -20,26 +20,13 @@
     \def\arrowLowerStart{240}
     \def\arrowLowerEnd{300}
 
+    \def\majorTickAxesLen{2}
+    \def\minorTickAxesLen{1.8}
+    \def\fsTickAxesLen{1.4}
+
     \draw []
     (0,0) coordinate (unitCircleOrigin)
     (unitCircleOrigin) ++ (5, 0) coordinate (freqOrigin)
-    ;
-
-    %% the unit circle
-    \draw []
-    (unitCircleOrigin) circle (\radius)
-    ;
-
-    %% to infiniyit
-    \draw [->, black!35, dashdotted, domain= {2*pi:7.01}, smooth, variable=\t, samples = 200]
-    (unitCircleOrigin)
-    plot ({\t r:\radius*exp(0.08*\t)})
-    coordinate (unitInfinity)
-    ;
-
-    \draw [thick, domain= {0:2*pi}, smooth, variable=\t, samples = 200]
-    (unitCircleOrigin)
-    plot ({\t r:\radius*exp(0.08*\t)})
     ;
 
     %% axis
@@ -58,6 +45,22 @@
 
     \draw [black!35, ->]
     (unitCircleOrigin) -- ++(0, -\polarAxisLen)
+    ;
+    %% the unit circle
+    \draw []
+    (unitCircleOrigin) circle (\radius)
+    ;
+
+    %% to infiniyit
+    \draw [->, black!35, dashdotted, domain= {2*pi:7.01}, smooth, variable=\t, samples = 200]
+    (unitCircleOrigin)
+    plot ({\t r:\radius*exp(0.08*\t)})
+    coordinate (unitInfinity)
+    ;
+
+    \draw [thick, domain= {0:2*pi}, smooth, variable=\t, samples = 200]
+    (unitCircleOrigin)
+    plot ({\t r:\radius*exp(0.08*\t)})
     ;
 
     %% label
@@ -158,6 +161,34 @@
 
     %% tikcs for frequency axes
 
+    %% major axes
+
+    \draw [black!35, dashdotted] ($(freqOrigin)!0.5!(freqFsamp)$)
+    ++(0, \majorTickAxesLen) -- ++(0, -{2 * \majorTickAxesLen})
+    node [below, font = \tiny, black] {$f = \dfrac{f_{s}}{2}$}
+    ;
+
+    %% minor
+
+    \draw [black!35, dashdotted] ($(freqOrigin)!0.333!(freqFsamp)$)
+    ++(0, -\minorTickAxesLen) -- ++(0, {2 * \minorTickAxesLen})
+    node [above, font = \tiny, black] {$\dfrac{f_{s}}{3}$}
+    ;
+
+    \draw [black!35, dashdotted] ($(freqOrigin)!0.666!(freqFsamp)$)
+    ++(0, -\minorTickAxesLen) -- ++(0, {2 * \minorTickAxesLen})
+    node [above, font = \tiny, black] {$\dfrac{2 f_{s}}{3}$}
+    ;
+
+    %% fs axes
+
+    \draw [black!35, dashdotted] (freqFsamp)
+    ++(0, \fsTickAxesLen) -- ++(0, -{2 * \fsTickAxesLen})
+    node [below, font = \tiny, black] {$f_{s}$}
+    ;
+
+    %% labels
+
     %% major ticks
     \draw [fill = white] (freqFsamp)
     circle (\majorTickPole)
@@ -182,17 +213,11 @@
 
     %% labels for frequency axes
 
-    \node [below, font = \tiny] at (freqFsamp) {$f_{s}$} ;
-    \node [below, font = \tiny] at ($(freqOrigin)!0.5!(freqFsamp)$) {$f = \dfrac{f_{s}}{2}$} ;
-
-    \node [below, font = \tiny] at ($(freqOrigin)!0.333!(freqFsamp)$) {$\dfrac{f_{s}}{3}$} ;
-    \node [below, font = \tiny] at ($(freqOrigin)!0.666!(freqFsamp)$) {$\dfrac{2 f_{s}}{3}$} ;
-
     \node [below = 4pt, font = \small] at (freqInfinity) {$\infty$} ;
 
     \node [yshift = -4pt, anchor = north west, font = \small] at (freqOrigin) {$0$} ;
 
-    %% drawing the arrows
+    %% drawing the loop arrows
 
     \draw
     ($(freqOrigin)!0.50!(freqFsamp)$) coordinate (tmp)
