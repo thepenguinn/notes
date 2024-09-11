@@ -4,18 +4,25 @@
         every path/.style = {line cap = round, > = stealth},
     ]
 
-    \def\radius{1}
+    \def\radius{1.2}
     \def\fsLen{6}
-    \def\freqVrtAxeLen{2}
+    \def\freqVrtAxeLen{2.2}
     \def\freqMinorTickLen{0.05}
     \def\freqMajorTickLen{0.1}
-    \def\polarAxisLen{1.5}
+    \def\polarAxisLen{2.2}
     \def\majorTickPole{0.07}
-    \def\minorTickPole{0.055}
+    \def\minorTickPole{0.0575}
+    \def\loopArrowRadius{4}
+    \def\arrowMajorPole{0.09}
+    \def\arrowMinorPole{0.05}
+    \def\arrowUpperStart{60}
+    \def\arrowUpperEnd{120}
+    \def\arrowLowerStart{240}
+    \def\arrowLowerEnd{300}
 
     \draw []
     (0,0) coordinate (unitCircleOrigin)
-    (unitCircleOrigin) ++ (4, 0) coordinate (freqOrigin)
+    (unitCircleOrigin) ++ (5, 0) coordinate (freqOrigin)
     ;
 
     %% the unit circle
@@ -23,9 +30,11 @@
     (unitCircleOrigin) circle (\radius)
     ;
 
+    %% to infiniyit
     \draw [->, black!35, dashdotted, domain= {2*pi:7.01}, smooth, variable=\t, samples = 200]
     (unitCircleOrigin)
     plot ({\t r:\radius*exp(0.08*\t)})
+    coordinate (unitInfinity)
     ;
 
     \draw [thick, domain= {0:2*pi}, smooth, variable=\t, samples = 200]
@@ -50,6 +59,58 @@
     \draw [black!35, ->]
     (unitCircleOrigin) -- ++(0, -\polarAxisLen)
     ;
+
+    %% label
+
+    %% fs / 3
+    \draw [black!35, dashdotted]
+    (unitCircleOrigin) -- ++(120: {\radius * exp(0.08 * rad(120))})
+    (unitCircleOrigin) ++(0.2, 0) arc (0:120:0.2)
+
+    (unitCircleOrigin) ++(120: {\radius * exp(0.08 * rad(120))})
+    -- ++(120: {0.5 * \radius * exp(0.08 * rad(120))})
+    %-- ++(-1, 0) node [black, font = \tiny, left] {$f = \dfrac{f_{s}}{2}$}
+    -- ++(-1, 0) node [black, font = \tiny, left] {$\dfrac{f_{s}}{3}$}
+    ;
+
+    %% fs / 2
+    \draw [black!35, dashdotted]
+    %(unitCircleOrigin) -- ++(180: {\radius * exp(0.08 * rad(180))})
+    (unitCircleOrigin) ++(0.4, 0) arc (0:180:0.4)
+
+    (unitCircleOrigin) ++(180: {\radius * exp(0.08 * rad(180))})
+    -- ++(180: {0.1 * \radius * exp(0.08 * rad(180))})
+    -- ++(-1, 0) node [black, font = \tiny, left] {$f = \dfrac{f_{s}}{2}$}
+    ;
+
+    %% 2 fs / 3
+    \draw [black!35, dashdotted]
+    (unitCircleOrigin) -- ++(240: {\radius * exp(0.08 * rad(240))})
+    (unitCircleOrigin) ++(0.6, 0) arc (0:240:0.6)
+
+    (unitCircleOrigin) ++(240: {\radius * exp(0.08 * rad(240))})
+    -- ++(240: {0.5 * \radius * exp(0.08 * rad(240))})
+    -- ++(-1, 0) node [black, font = \tiny, left] {$\dfrac{2 f_{s}}{3}$}
+    ;
+
+    %% fs
+    \draw [black!35, dashdotted]
+    %(unitCircleOrigin) -- ++(360: {\radius * exp(0.08 * rad(360))})
+    (unitCircleOrigin) ++(0.8, 0) arc (0:360:0.8)
+
+    (unitCircleOrigin) ++(360: {\radius * exp(0.08 * rad(360))})
+    -- ++(360: {0.1 * \radius * exp(0.08 * rad(360))})
+    -- ++(1, 0) node [black, font = \tiny, right] {$f_{s}$}
+    ;
+
+    %% zero
+    \draw
+    (unitCircleOrigin) ++(\radius, 0)
+    node [yshift = -4pt, anchor = north west, font = \small] {$0$}
+    ;
+
+    %% infiniy
+    \node [right = 4pt, font = \small] at (unitInfinity) {$\infty$} ;
 
     %% major ticks
 
@@ -130,5 +191,44 @@
     \node [below = 4pt, font = \small] at (freqInfinity) {$\infty$} ;
 
     \node [yshift = -4pt, anchor = north west, font = \small] at (freqOrigin) {$0$} ;
+
+    %% drawing the arrows
+
+    \draw
+    ($(freqOrigin)!0.50!(freqFsamp)$) coordinate (tmp)
+    ($(unitCircleOrigin)!0.50!(tmp)$) coordinate (midCenter)
+    ;
+
+    \draw [black!35, domain = \arrowUpperStart:\arrowUpperEnd, variable = \t, smooth, samples = 200]
+
+    let \p{tmp} = (midCenter),
+    in
+    plot [xshift = \x{tmp}, yshift = \y{tmp}] ({\t:\loopArrowRadius})
+    ;
+
+    \draw [black!35, domain = \arrowLowerStart:\arrowLowerEnd, variable = \t, smooth, samples = 200]
+
+    let \p{tmp} = (midCenter),
+    in
+    plot [xshift = \x{tmp}, yshift = \y{tmp}] ({\t:\loopArrowRadius})
+    ;
+
+    \draw [fill = white]
+    (midCenter) ++(\arrowUpperStart:\loopArrowRadius)
+    circle (\arrowMinorPole)
+    (midCenter) ++(\arrowUpperEnd:\loopArrowRadius)
+    circle (\arrowMinorPole)
+    (midCenter) ++({\arrowUpperEnd-3}:\loopArrowRadius)
+    circle (\arrowMajorPole)
+    ;
+
+    \draw [fill = white]
+    (midCenter) ++(\arrowLowerStart:\loopArrowRadius)
+    circle (\arrowMinorPole)
+    (midCenter) ++(\arrowLowerEnd:\loopArrowRadius)
+    circle (\arrowMinorPole)
+    (midCenter) ++({\arrowLowerEnd-3}:\loopArrowRadius)
+    circle (\arrowMajorPole)
+    ;
 
 \end{tikzpicture}
