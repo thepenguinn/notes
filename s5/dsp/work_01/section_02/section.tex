@@ -4,14 +4,18 @@
 
 \begin{document}
 
+\def\freqXOne{28}
+\def\freqXTwo{56}
+\def\freqXThree{56.1}
+
 \section{Generating Sequences} \label{sec:wrkGenSeqs}
 
 First of all we need to generate these three sequences, with frequences of:
 
 \begin{align}
-    f_{1} &= 28 \si{Hz}                     \label{eqn:freq1} \\
-    f_{2} &= 28 + 0.1      = 28.1   \si{Hz} \label{eqn:freq2} \\
-    f_{3} &= (2 \times 28) = 56     \si{Hz} \label{eqn:freq3}
+    f_{1} &= \freqXOne \si{Hz}                                  \label{eqn:freq1} \\
+    f_{2} &= 2 \times \freqXOne         = \freqXTwo   \si{Hz}   \label{eqn:freq2} \\
+    f_{3} &= (2 \times \freqXOne) + 0.1 = \freqXThree \si{Hz}   \label{eqn:freq3}
 \end{align}
 
 Now we need to decide whether we need to generate a \emph{sine} signal or one with
@@ -32,7 +36,7 @@ Therefore these signals will be:
 \begin{align}
     x_{1}(t) =
     \begin{cases}
-        \sin(2 \pi 28 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+        \sin(2 \pi \freqXOne t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
     \end{cases}
     \label{eqn:seqx1}
 \end{align}
@@ -40,7 +44,7 @@ Therefore these signals will be:
 \begin{align}
     x_{2}(t) =
     \begin{cases}
-        \sin(2 \pi 28.1 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+        \sin(2 \pi \freqXTwo t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
     \end{cases}
     \label{eqn:seqx2}
 \end{align}
@@ -48,7 +52,7 @@ Therefore these signals will be:
 \begin{align}
     x_{3}(t) =
     \begin{cases}
-        \sin(2 \pi 56 t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
+        \sin(2 \pi \freqXThree t) & \text{; for} \; 0 \le t \le \dfrac{\pi}{4}
     \end{cases}
     \label{eqn:seqx3}
 \end{align}
@@ -60,12 +64,12 @@ Therefore these signals will be:
     import numpy as np
     import pandas as pd
 
-    F = 28
-    t = np.linspace(0, 1.25 * np.pi / 4, 2500)
+    X = 28
+    t = np.linspace(0, np.pi / 4, 2500)
 
-    x1 = np.sin( 2 * np.pi * F * t)
-    x2 = np.sin( 2 * np.pi * (F + 0.1) * t)
-    x3 = np.sin( 2 * np.pi * 2 * F * t)
+    x1 = np.sin( 2 * np.pi * X * t)
+    x2 = np.sin( 2 * np.pi * (2 * X) * t)
+    x3 = np.sin( 2 * np.pi * ((2 * X) + 0.1) * t)
 
     data = pd.DataFrame(
         {
@@ -76,7 +80,8 @@ Therefore these signals will be:
     )
 
     data.to_csv(
-        "../data/three_sequences.csv", sep = " ", index_label = "time"
+        "../data/three_sequences.csv",
+        sep = " ", index_label = "time"
     )
     print(data)
 
@@ -87,16 +92,16 @@ Therefore these signals will be:
 \begin{minted}[breaklines, autogobble] {text}
                 x1        x2        x3
     0     0.000000  0.000000  0.000000
-    1     0.069060  0.069306  0.137790
-    2     0.137790  0.138279  0.272951
-    3     0.205862  0.206587  0.402906
-    4     0.272951  0.273901  0.525174
+    1     0.055264  0.110359  0.110555
+    2     0.110359  0.219369  0.219754
+    3     0.165116  0.325699  0.326259
+    4     0.219369  0.428051  0.428765
     ...        ...       ...       ...
-    2495  0.339117 -0.266620 -0.638045
-    2496  0.273340 -0.332776 -0.525861
-    2497  0.206258 -0.397332 -0.403645
-    2498  0.138190 -0.459977 -0.273729
-    2499  0.069463 -0.520410 -0.138590
+    2495 -0.273262 -0.525724 -0.060838
+    2496 -0.219684 -0.428635  0.049885
+    2497 -0.165435 -0.326311  0.159997
+    2498 -0.110680 -0.220000  0.268147
+    2499 -0.055586 -0.111001  0.373009
 
     [2500 rows x 3 columns]
 \end{minted}
@@ -108,7 +113,7 @@ Therefore these signals will be:
     \adjustbox{max width = \textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX1.pdf}
     }
-    \captionof{figure} {Sine signal $x_{1}$ with frequency of $28 \si{Hz}$}
+    \captionof{figure} {Sine signal $x_{1}$ with frequency of $\freqXOne \si{Hz}$}
     \label{plt:seqx1}
 \end{figure}
 
@@ -117,7 +122,7 @@ Therefore these signals will be:
     \adjustbox{max width = \textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX2.pdf}
     }
-    \captionof{figure} {Sine signal $x_{2}$ with frequency of $28.1 \si{Hz}$}
+    \captionof{figure} {Sine signal $x_{2}$ with frequency of $\freqXTwo \si{Hz}$}
     \label{plt:seqx2}
 \end{figure}
 
@@ -126,7 +131,7 @@ Therefore these signals will be:
     \adjustbox{max width = \textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotSeqX3.pdf}
     }
-    \captionof{figure} {Sine signal $x_{3}$ with frequency of $56 \si{Hz}$}
+    \captionof{figure} {Sine signal $x_{3}$ with frequency of $\freqXThree \si{Hz}$}
     \label{plt:seqx3}
 \end{figure}
 
