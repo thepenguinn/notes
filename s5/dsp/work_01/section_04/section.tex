@@ -65,7 +65,7 @@ instead of \emph{angular frequency} $\omega$. One thing to \textsc{note} is that
 \emph{sweeping} $f$ in eq. (\ref{eqn:dtftFreq}) from $0$ to $1$ will result in same
 output as \emph{sweeping} $\omega$ in eq. (\ref{eqn:dtftOmega}) from $0$ to $2 \pi$.
 Another interesting thing about this \emph{transform} is that the $e^{-1j \pi f n}$ will
-\emph{scales} and \emph{wraps} the \emph{frequences} from $0$ to $\infty$ around
+\emph{scales} and \emph{wraps} the \emph{frequencies} from $0$ to $\infty$ around
 the \textsc{Unit Circle} in the $\mathcal{Z} \textsc{-plane}$. This will become
 important as we compute the \textsc{DTFT}s. The Figure \ref{fig:wrapFreqUnitCircle}
 attempts to visualizes this interesting concept.
@@ -86,7 +86,7 @@ attempts to visualizes this interesting concept.
 We essentially need to take \textsc{DTFT} of several\footnote{actually $4$, still
 more than $1$} sequences. So it will be handy to implement a \emph{factory}, that
 will take a \emph{sequence} and returns a \emph{dtft function} that can be called
-with different \emph{frequences} and returns it's corresponding value. Let us call
+with different \emph{frequencies} and returns it's corresponding value. Let us call
 this \emph{function} the \mintinline{python}{dtft_factory}.
 
 %python/dtft_factory.py%
@@ -124,7 +124,7 @@ and \emph{imaginary} parts. Let's call this \emph{function} \mintinline{python}{
 \end{minted}
 
 Let's implement yet another \emph{function} that will make our life easier by
-\emph{mixing} and \emph{generating} the \textsc{DTFT} for two given \emph{frequences}\footnote{one
+\emph{mixing} and \emph{generating} the \textsc{DTFT} for two given \emph{frequencies}\footnote{one
 as \emph{real} and one as \emph{complex}}. As depicted in Figure \ref{fig:wrapFreqUnitCircle}
 we only need to evaluate the dtft from $0$ to $1$ range\footnote{in the case
 of eq. (\ref{eqn:dtftFreq}).} and need to \emph{rescale} it back.
@@ -157,7 +157,7 @@ of eq. (\ref{eqn:dtftFreq}).} and need to \emph{rescale} it back.
 
 Now we could just call \mintinline{python}{gen_dtft_seq} with appropriate \emph{arguments}
 and it will return the \mintinline{python}{dtft_seq} and its corresponding \emph{frequencies}.
-Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequences}.
+Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequencies}.
 
 %python/taking_dtft.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -229,6 +229,61 @@ Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequences}.
 
             data.to_csv(
                 "../data/dtft_" + cplx["name"] + "_" + samp_freq + ".csv",
+                sep = " ", index_label = "freq"
+            )
+\end{minted}
+
+We have generated \textsc{DTFT}s for our \emph{sequences} with
+different \emph{sampling frequencies}, and \mintinline{python} {cplx_seqs}
+dictionary has all those generated \emph{input sequences}. Now we need
+to pad them with $32$ zeros and find the \textsc{DTFT}s of those sequences.
+Let's quickly implement another \emph{function} for that. Let it be
+\mintinline{python}{gen_dtft_seq_64}.
+
+%python/gen_dtft_seq_64.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    def gen_dtft_seq_64(
+        cplx_seq, samp_freq, dtft_samp_count
+        ):
+
+        cplx_seq = np.concatenate(
+            [cplx_seq, np.zeros(32, dtype = np.cdouble)]
+        )
+
+        freq = np.linspace(0, 1, dtft_samp_count)
+
+        dtft_fn = dtft_factory(cplx_seq = cplx_seq)
+        dtft_seq = dtft_fn(freq)
+
+        # scaling back the freq from ($0$ - $1$) to ($0$ - $f_{s}$)
+        return freq * samp_freq, dtft_seq, cplx_seq
+\end{minted}
+
+Now let's take the \textsc{DTFT}s of those sequences using this
+\mintinline{python}{gen_dtft_seq_64}.
+
+%python/taking_dtft_64.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    dtft_samp_count = 2000
+
+    for cplx in cplx_seqs:
+        for seq_name in cplx["sequences"]:
+            freq, dtft_seq, _ = gen_dtft_seq_64(
+                cplx_seq = cplx["sequences"][seq_name],
+                samp_freq = samp_freqs[seq_name],
+                dtft_samp_count = dtft_samp_count
+            )
+
+            data = pd.DataFrame(
+                data = {
+                    "real": dtft_seq.real,
+                    "imag": dtft_seq.imag,
+                },
+                index = freq
+            )
+
+            data.to_csv(
+                "../data/dtft_" + cplx["name"] + "_" + seq_name + "_64.csv",
                 sep = " ", index_label = "freq"
             )
 \end{minted}
