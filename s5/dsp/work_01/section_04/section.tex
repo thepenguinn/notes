@@ -8,6 +8,11 @@
 \def\freqXTwo{56}
 \def\freqXThree{56.1}
 
+\def\sampFreqMuchLess{\textbf{(a):} $f_{s} = \frac{4 \times 28}{2} = 56 \si{Hz}$}
+\def\sampFreqNorm{\textbf{(b):} $f_{s} = 4 \times 28 = 112 \si{Hz}$}
+\def\sampFreqSligGreat{\textbf{(c):} $f_{s} = (4 \times 28) + 10 = 122 \si{Hz}$}
+\def\sampFreqMuchGreat{\textbf{(d):} $f_{s} = 4 \times 28 \times 6 = 672 \si{Hz}$}
+
 \section{Taking DTFT of the Complex Sequences} \label{sec:wrkTakingDTFTCplxSeqs}
 
 In the previous section, we generated a bunch of \emph{Complex Sequences}. And
@@ -64,7 +69,7 @@ Now eq. (\ref{eqn:dtftOmega}) becomes a function of \emph{frequency} $f$
 instead of \emph{angular frequency} $\omega$. One thing to \textsc{note} is that,
 \emph{sweeping} $f$ in eq. (\ref{eqn:dtftFreq}) from $0$ to $1$ will result in same
 output as \emph{sweeping} $\omega$ in eq. (\ref{eqn:dtftOmega}) from $0$ to $2 \pi$.
-Another interesting thing about this \emph{transform} is that the $e^{-1j \pi f n}$ will
+Another interesting thing about this \emph{transform} is that the $e^{-j 2 \pi f n}$ will
 \emph{scales} and \emph{wraps} the \emph{frequencies} from $0$ to $\infty$ around
 the \textsc{Unit Circle} in the $\mathcal{Z} \textsc{-plane}$. This will become
 important as we compute the \textsc{DTFT}s. The Figure \ref{fig:wrapFreqUnitCircle}
@@ -195,8 +200,8 @@ Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequencies}.
 
     samp_freqs = {
         "normal":           int(4 * X),
-        "slightly_greater": int(4 * X + 6),
-        "much_greater":     int(4 * X * 10),
+        "slightly_greater": int(4 * X + 10),
+        "much_greater":     int(4 * X * 6),
         "much_lesser":      int(4 * X / 2),
     }
 
@@ -228,7 +233,7 @@ Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequencies}.
             )
 
             data.to_csv(
-                "../data/dtft_" + cplx["name"] + "_" + samp_freq + ".csv",
+                "../data/dtft_" + cplx["name"] + "_" + samp_freq + "_32.csv",
                 sep = " ", index_label = "freq"
             )
 \end{minted}
@@ -288,20 +293,88 @@ Now let's take the \textsc{DTFT}s of those sequences using this
             )
 \end{minted}
 
+\pagebreak
+
 \subsection{DTFT of Complex A} \label{ssec:dtftCplxA}
 
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXOne t)$
+
+\end{itemize}
+
 \subsubsection{DTFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item To much \emph{aliasing}, can barely distingush $\freqXOne \si{Hz}$.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item \emph{Real} and \emph{imaginary} parts have same frequency, therefore that \emph{bulge}
+                at the pulse near $\freqXOne$.
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item Similar to (b).
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item Similar to (b) and (c).
+        \end{itemize}
+
+    \item \textbf{Inference:} We can distingush almost two of the \emph{frequencies} from four
+        of the different \emph{sampling frequencies}.
+
+\end{itemize}
+
+\vfill
 
 \begin{figure} [H]
     \centering
     \adjustbox{max width = 1\textwidth} {
-        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexA.pdf}
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexA32.pdf}
     }
     \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex A} with different sampling frequencies}
     \label{plt:dtftComplexA}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Looks like this is similar to $32$ samples. The padding of $32$
+        zero didn't made any difference.
+
+\end{itemize}
+
+
+\vfill
 
 \begin{figure} [H]
     \centering
@@ -312,21 +385,90 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \label{plt:dtftComplexA}
 \end{figure}
 
+\pagebreak
 
 \subsection{DTFT of Complex B} \label{ssec:dtftCplxB}
 
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXTwo t)$
+
+\end{itemize}
+
 \subsubsection{DTFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item To much \emph{aliasing}, nothing can be inferred.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item We can see $\freqXOne \si{Hz}$ but no sign of $\freqXTwo \si{Hz}$
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item We can see both the frequencies. \emph{Real} frequency $\freqXOne \si{Hz}$
+                is at the \emph{zero crossing} of the first impulse, and the \emph{imaginary}
+                frequency $\freqXTwo \si{Hz}$ is at the \emph{tip} of the second pulse.
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item Similar to (c), but a bit hard to distingush.
+        \end{itemize}
+
+    \item \textbf{Inference:} It's looks like the frequency of \emph{sine} in the \emph{real}
+        part can be found as a \emph{zero crossing} \emph{N} shaped pulse. And a frequency of \emph{sine}
+        in \emph{imaginary} part can be found at the \emph{tip} of an \emph{impulse} shaped pulse.
+
+
+\end{itemize}
+
+\vfill
 
 \begin{figure} [H]
     \centering
     \adjustbox{max width = 1\textwidth} {
-        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexB.pdf}
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexB32.pdf}
     }
     \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex B} with different sampling frequencies}
     \label{plt:dtftComplexB}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Similar to $32$ point, padding made no difference.
+
+\end{itemize}
+
+
+\vfill
 
 \begin{figure} [H]
     \centering
@@ -337,21 +479,86 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \label{plt:dtftComplexB}
 \end{figure}
 
+\pagebreak
 
 \subsection{DTFT of Complex C} \label{ssec:dtftCplxC}
 
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXThree t)$
+
+\end{itemize}
+
 \subsubsection{DTFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item Too much \emph{aliasing}.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item Only $\freqXOne \si{Hz}$ can be inferred.
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item Both can be inferred, but maybe hard to pinpoint the exact frequency of \emph{imaginary}
+                part as $\freqXThree \si{Hz}$
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item Both can be inferred, kindof...
+        \end{itemize}
+
+    \item \textbf{Inference:} Similar to \textsc{Complex B}.
+
+\end{itemize}
+
+\vfill
 
 \begin{figure} [H]
     \centering
     \adjustbox{max width = 1\textwidth} {
-        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexC.pdf}
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexC32.pdf}
     }
     \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex C} with different sampling frequencies}
     \label{plt:dtftComplexC}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Similar as $32$ point.
+
+\end{itemize}
+
+
+\vfill
 
 \begin{figure} [H]
     \centering
@@ -362,21 +569,87 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \label{plt:dtftComplexC}
 \end{figure}
 
+\pagebreak
 
 \subsection{DTFT of Complex F} \label{ssec:dtftCplxF}
 
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXThree t)$
+
+\end{itemize}
+
 \subsubsection{DTFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item Too much \emph{aliasing}, causing to misidentify $1 \si{Hz}$ as one of the
+                frequency components.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item Has \emph{aliasing}, barely identify $\freqXTwo \si{Hz}$.
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item Can identify a bulging, but it would be hard to $\freqXThree \si{Hz}$ from $\freqXTwo \si{Hz}$.
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item Similar to (c).
+        \end{itemize}
+
+    \item \textbf{Inference:} Maybe we need much more \emph{samples} of the input sequence, to identify,
+        closer \emph{frequencies}.
+
+\end{itemize}
+
+\vfill
 
 \begin{figure} [H]
     \centering
     \adjustbox{max width = 1\textwidth} {
-        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexF.pdf}
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexF32.pdf}
     }
     \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex F} with different sampling frequencies}
     \label{plt:dtftComplexF}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Similar to $32$ point.
+
+\end{itemize}
+
+
+\vfill
 
 \begin{figure} [H]
     \centering
