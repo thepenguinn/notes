@@ -5,22 +5,22 @@
 \begin{document}
 
 \def\freqXOne{28}
-\def\freqXTwo{28.1}
-\def\freqXThree{56}
+\def\freqXTwo{56}
+\def\freqXThree{56.1}
 
 \section{Taking DTFT of the Complex Sequences} \label{sec:wrkTakingDTFTCplxSeqs}
 
 In the previous section, we generated a bunch of \emph{Complex Sequences}. And
 picked $4$ sequences for further analysis. In this section we will be taking
-\textsc{DTFT} of these sequences. But before that, we need to take a look at what
+\textsc{DTFT} of those sequences. But before that, we need to take a look at what
 a \textsc{DTFT} is and how to elagently compute it using python.
 
 \subsection{Discrete Time Fourier Transform}
 
 Discrete Time Fourier Transform, aka, \textsc{DTFT} transforms \emph{discrete time}
 samples into a \emph{continous} signal in the \emph{frequency} domain. \textsc{DTFT}
-is basically a special case of another transform known as \textsc{Z Transform}.
-\textsc{Z Transform} can be mathematically described as,
+is basically a special case of another transform known as $\mathcal{Z}$\textsc{-transform}.
+$\mathcal{Z}$\textsc{-transform} can be mathematically described as,
 
 \begin{align}
     X(z) = {\mathcal{Z}}\{x[n]\} = \sum_{n = - \infty}^{\infty} x[n] z^{-n}
@@ -30,7 +30,7 @@ where,
 
 \begin{itemize} [label=]
 
-    \item ${\mathcal{Z}}\{x[n]\}$: is the \textsc{Z Transform}.
+    \item ${\mathcal{Z}}\{x[n]\}$: is the $\mathcal{Z}$\textsc{-transform}.
     \item $x[n]$: is the input sequence, which was sampled with a
         particular \emph{sampling frequency}, $f_{s}$.
     \item $z$: is a \emph{complex number}, in the form $A e^{-j \omega}$.
@@ -44,7 +44,7 @@ where,
 
 \end{itemize}
 
-\textsc{DTFT} is a special case of \textsc{Z Transform}, where we take $A$
+\textsc{DTFT} is a special case of $\mathcal{Z}$\textsc{-transform}, where we take $A$
 as $1$. Mathematically, we can describe \textsc{DTFT} as,
 
 \begin{align}
@@ -64,9 +64,10 @@ Now eq. (\ref{eqn:dtftOmega}) becomes a function of \emph{frequency} $f$
 instead of \emph{angular frequency} $\omega$. One thing to \textsc{note} is that,
 \emph{sweeping} $f$ in eq. (\ref{eqn:dtftFreq}) from $0$ to $1$ will result in same
 output as \emph{sweeping} $\omega$ in eq. (\ref{eqn:dtftOmega}) from $0$ to $2 \pi$.
-Another interesting thing about \textsc{DTFT} is that the $e^{-1j \pi f n}$ will
+Another interesting thing about this \emph{transform} is that the $e^{-1j \pi f n}$ will
 \emph{scales} and \emph{wraps} the \emph{frequences} from $0$ to $\infty$ around
-the \textsc{Unit Circle} in the $\mathcal{Z} \textsc{plane}$. Figure \ref{fig:wrapFreqUnitCircle}
+the \textsc{Unit Circle} in the $\mathcal{Z} \textsc{-plane}$. This will become
+important as we compute the \textsc{DTFT}s. The Figure \ref{fig:wrapFreqUnitCircle}
 attempts to visualizes this interesting concept.
 
 \begin{figure}
@@ -75,12 +76,10 @@ attempts to visualizes this interesting concept.
         \includegraphics[height = 1\textheight] {tikzpics/epicWrapFreqUnitCircle.pdf}
     }
     \captionof{figure} {
-        Wrapping frequencies around the \textsc{Unit Circle} in $\mathcal{Z}-\textsc{plane}$
+        Wrapping frequencies around the \textsc{Unit Circle} in $\mathcal{Z}\textsc{-plane}$
     }
     \label{fig:wrapFreqUnitCircle}
 \end{figure}
-
-
 
 \subsection{Implementing DTFT using Python}
 
@@ -104,58 +103,16 @@ this \emph{function} the \mintinline{python}{dtft_factory}.
             return sum
 
         return dtft
-
-    seq = np.array([1, 1, 1, 1])
-    dtft = dtft_factory(seq)
-
-    print(type(dtft), end = "\n\n")
-
-    print(dtft(0))
-    print(dtft(1))
-
 \end{minted}
 
-\paragraph{Output}
+Now, let's implement another \emph{function} that will returns another
+\emph{function}\footnote{yes, ofcourse.} that can be called with $n = 0, 1, 2, ...$
+to generate the \emph{sequence} with specified \emph{sampling frequency}, \emph{real}
+and \emph{imaginary} parts. Let's call this \emph{function} \mintinline{python}{cplx_factory}
 
-\begin{minted}[breaklines, autogobble] {text}
-    <class 'function'>
-
-    (4+0j)
-    (4+1.4695761589768238e-15j)
-\end{minted}
-
-Now, let's implement another \emph{function} that will \emph{mix}
-and generate the \textsc{DTFT} for two given \emph{frequences}\footnote{one
-as \emph{real} and one as \emph{complex}}. Another thing to note
-is that the domain we need to evaluate. In the case of eq. (\ref{eqn:dtftOmega})
-the \emph{}
-
-% TODO: Finish this
-
-Since the \textsc{DTFT} is
-\emph{continous} in nature, let's take the sample count of the output
-be $2000$.
-
-
-%python/taking_dtft.py%
+%python/cplx_factory.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
     import numpy as np
-    import matplotlib.pyplot as plt
-
-    plt.figure(figsize = (6, 3))
-
-    def dtft_factory(cplx_seq):
-
-        def dtft(freq):
-            sum = 0
-            # see eq. ($\ref{eqn:dtftFreq}$)
-            for n, cplx in enumerate(cplx_seq):
-                sum = sum + cplx * np.exp(-1j * 2 * np.pi * freq * n)
-            return sum
-
-        return dtft
-
-    ## $x_{1} + j x_{1}$
 
     def cplx_factory(samp_freq, real_freq, imag_freq):
         samp_period = 1 / samp_freq
@@ -164,37 +121,127 @@ be $2000$.
         ) + 1j * np.sin(
             2 * np.pi * imag_freq * (n * samp_period)
         )
-
-
-    N = 4024
-    fs = 100
-    cplx_fn = cplx_factory(fs, 10, 10.1)
-    cplx_seq = np.ndarray(N, dtype = np.cdouble)
-
-    for i in range(N):
-        cplx_seq[i] = cplx_fn(i)
-
-    freq = np.linspace(0.09, 0.12, 1000)
-    dtft = dtft_factory(cplx_seq)
-    dtft_seq = dtft(freq)
-
-    plt.subplot(2, 1, 1)
-    plt.plot(freq * fs, dtft_seq.real)
-
-    plt.subplot(2, 1, 2)
-    plt.plot(freq * fs, dtft_seq.imag)
-
-    plt.savefig("../plots/deleme.pdf")
-
 \end{minted}
+
+Let's implement yet another \emph{function} that will make our life easier by
+\emph{mixing} and \emph{generating} the \textsc{DTFT} for two given \emph{frequences}\footnote{one
+as \emph{real} and one as \emph{complex}}. As depicted in Figure \ref{fig:wrapFreqUnitCircle}
+we only need to evaluate the dtft from $0$ to $1$ range\footnote{in the case
+of eq. (\ref{eqn:dtftFreq}).} and need to \emph{rescale} it back.
+
+%python/gen_dtft_seq.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    def gen_dtft_seq(
+        samp_count, samp_freq, real_freq, imag_freq, dtft_samp_count
+        ):
+
+        cplx_fn = cplx_factory(
+            samp_freq = samp_freq,
+            real_freq = real_freq,
+            imag_freq = imag_freq
+        )
+
+        cplx_seq = np.ndarray(samp_count, dtype = np.cdouble)
+
+        for i in range(samp_count):
+            cplx_seq[i] = cplx_fn(i)
+
+        freq = np.linspace(0, 1, dtft_samp_count)
+
+        dtft_fn = dtft_factory(cplx_seq = cplx_seq)
+        dtft_seq = dtft_fn(freq)
+
+        # scaling back the freq from ($0$ - $1$) to ($0$ - $f_{s}$)
+        return freq * samp_freq, dtft_seq, cplx_seq
+\end{minted}
+
+Now we could just call \mintinline{python}{gen_dtft_seq} with appropriate \emph{arguments}
+and it will return the \mintinline{python}{dtft_seq} and its corresponding \emph{frequencies}.
+Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequences}.
+
+%python/taking_dtft.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import pandas as pd
+
+    X = 28
+
+    cplx_seqs = [
+        {
+            "name": "complex_a",
+            "real_freq": X,
+            "imag_freq": X,
+            # we will fill this later, for taking 64 point DTFT
+            "sequences": {},
+        },
+        {
+            "name": "complex_b",
+            "real_freq": X,
+            "imag_freq": 2 * X,
+            "sequences": {},
+        },
+        {
+            "name": "complex_c",
+            "real_freq": X,
+            "imag_freq": (2 * X) + 0.1,
+            "sequences": {},
+        },
+        {
+            "name": "complex_f",
+            "real_freq": 2 + X,
+            "imag_freq": (2 * X) + 0.1,
+            "sequences": {},
+        },
+    ]
+
+    samp_freqs = {
+        "normal":           int(4 * X),
+        "slightly_greater": int(4 * X + 6),
+        "much_greater":     int(4 * X * 2),
+        "much_lesser":      int(4 * X / 2),
+    }
+
+    samp_count = 32
+
+    dtft_samp_count = 2000
+
+    for cplx in cplx_seqs:
+
+        for samp_freq in samp_freqs:
+
+            freq, dtft_seq, cplx_seq = gen_dtft_seq(
+                samp_count = samp_count,
+                samp_freq = samp_freqs[samp_freq],
+                real_freq = cplx["real_freq"],
+                imag_freq = cplx["imag_freq"],
+                dtft_samp_count = dtft_samp_count
+            )
+
+            # keeping generated sequences for taking 64 point DTFT
+            cplx["sequences"][samp_freq] = cplx_seq
+
+            data = pd.DataFrame(
+                data = {
+                    "real": dtft_seq.real,
+                    "imag": dtft_seq.imag,
+                },
+                index = freq
+            )
+
+            data.to_csv(
+                "../data/dtft_" + cplx["name"] + "_" + samp_freq + ".csv",
+                sep = " ", index_label = "freq"
+            )
+\end{minted}
+
+\subsection{DTFT of Complex A} \label{ssec:dtftCplxA}
 
 \begin{figure}
     \centering
     \adjustbox{max width = 1\textwidth} {
-        \includegraphics[height = 0.8\textheight] {plots/deleme.pdf}
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexA.pdf}
     }
-    \captionof{figure} {Some Figure}
-    \label{fig:neverMind}
+    \captionof{figure} {Plot of \textsc{DTFT} of \textsc{Complex A}}
+    \label{plt:dtftComplexA}
 \end{figure}
 
 
