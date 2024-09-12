@@ -187,7 +187,7 @@ Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequencies}.
         },
         {
             "name": "complex_f",
-            "real_freq": 2 + X,
+            "real_freq": 2 * X,
             "imag_freq": (2 * X) + 0.1,
             "sequences": {},
         },
@@ -196,7 +196,7 @@ Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequencies}.
     samp_freqs = {
         "normal":           int(4 * X),
         "slightly_greater": int(4 * X + 6),
-        "much_greater":     int(4 * X * 2),
+        "much_greater":     int(4 * X * 10),
         "much_lesser":      int(4 * X / 2),
     }
 
@@ -290,14 +290,104 @@ Now let's take the \textsc{DTFT}s of those sequences using this
 
 \subsection{DTFT of Complex A} \label{ssec:dtftCplxA}
 
-\begin{figure}
+\subsubsection{DTFT with 32 Samples}
+
+\begin{figure} [H]
     \centering
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexA.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT} of \textsc{Complex A}}
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex A} with different sampling frequencies}
     \label{plt:dtftComplexA}
 \end{figure}
+
+\subsubsection{DTFT with 64 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexA64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex A} with different sampling frequencies}
+    \label{plt:dtftComplexA}
+\end{figure}
+
+
+\subsection{DTFT of Complex B} \label{ssec:dtftCplxB}
+
+\subsubsection{DTFT with 32 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexB.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex B} with different sampling frequencies}
+    \label{plt:dtftComplexB}
+\end{figure}
+
+\subsubsection{DTFT with 64 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexB64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex B} with different sampling frequencies}
+    \label{plt:dtftComplexB}
+\end{figure}
+
+
+\subsection{DTFT of Complex C} \label{ssec:dtftCplxC}
+
+\subsubsection{DTFT with 32 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexC.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex C} with different sampling frequencies}
+    \label{plt:dtftComplexC}
+\end{figure}
+
+\subsubsection{DTFT with 64 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexC64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex C} with different sampling frequencies}
+    \label{plt:dtftComplexC}
+\end{figure}
+
+
+\subsection{DTFT of Complex F} \label{ssec:dtftCplxF}
+
+\subsubsection{DTFT with 32 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexF.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex F} with different sampling frequencies}
+    \label{plt:dtftComplexF}
+\end{figure}
+
+\subsubsection{DTFT with 64 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexF64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex F} with different sampling frequencies}
+    \label{plt:dtftComplexF}
+\end{figure}
+
+
 
 
 
