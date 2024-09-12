@@ -4,6 +4,15 @@
 
 \begin{document}
 
+\def\freqXOne{28}
+\def\freqXTwo{56}
+\def\freqXThree{56.1}
+
+\def\sampFreqMuchLess{\textbf{(a):} $f_{s} = \frac{4 \times 28}{2} = 56 \si{Hz}$}
+\def\sampFreqNorm{\textbf{(b):} $f_{s} = 4 \times 28 = 112 \si{Hz}$}
+\def\sampFreqSligGreat{\textbf{(c):} $f_{s} = (4 \times 28) + 10 = 122 \si{Hz}$}
+\def\sampFreqMuchGreat{\textbf{(d):} $f_{s} = 4 \times 28 \times 6 = 672 \si{Hz}$}
+
 \section{Taking DFT of the Complex Sequences} \label{sec:wrkTakingDFTCplxSeqs}
 
 In the previous Section, we took \textsc{DTFT}s of the \emph{sequences} we have
@@ -42,7 +51,7 @@ where,
 
 \end{itemize}
 
-\subsection{Implementing DTF using Python}
+\subsection{Implementing DFT using Python}
 
 Just like we did with \textsc{DTFT}s let's implement a similar \mintinline{python}{dtf_factory}
 that would take \emph{complex sequence} and returns a \emph{function} that can be called with
@@ -230,19 +239,148 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
             )
 \end{minted}
 
-\subsection{DFT of Complex A}
+\pagebreak
+
+\subsection{DTFT of Complex A} \label{ssec:dtftCplxA}
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXOne t)$
+
+\end{itemize}
 
 \subsubsection{DFT with 32 Samples}
+
+\vfill
 
 \begin{figure} [H]
     \centering
     \adjustbox{max width = 1\textwidth} {
-        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexA.pdf}
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexA32.pdf}
     }
-    \captionof{figure} {
-        Plot of \textsc{DFT}s of \textsc{Complex A} with different sampling frequencies
-    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex A} with different sampling frequencies}
     \label{plt:dftComplexA}
+\end{figure}
+
+\subsubsection{DFT with 64 Samples}
+
+\vfill
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexA64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex A} with different sampling frequencies}
+    \label{plt:dftComplexA}
+\end{figure}
+
+\pagebreak
+
+\subsection{DTFT of Complex B} \label{ssec:dtftCplxB}
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXTwo t)$
+
+\end{itemize}
+
+\subsubsection{DFT with 32 Samples}
+
+\vfill
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexB32.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex B} with different sampling frequencies}
+    \label{plt:dftComplexB}
+\end{figure}
+
+\subsubsection{DFT with 64 Samples}
+
+\vfill
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexB64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex B} with different sampling frequencies}
+    \label{plt:dftComplexB}
+\end{figure}
+
+\pagebreak
+
+\subsection{DTFT of Complex C} \label{ssec:dtftCplxC}
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXOne t) + j \sin(2 \pi \freqXThree t)$
+
+\end{itemize}
+
+\subsubsection{DFT with 32 Samples}
+
+\vfill
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexC32.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex C} with different sampling frequencies}
+    \label{plt:dftComplexC}
+\end{figure}
+
+\subsubsection{DFT with 64 Samples}
+
+\vfill
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexC64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex C} with different sampling frequencies}
+    \label{plt:dftComplexC}
+\end{figure}
+
+\pagebreak
+
+\subsection{DTFT of Complex F} \label{ssec:dtftCplxF}
+
+\begin{itemize} [label=]
+
+    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXThree t)$
+
+\end{itemize}
+
+\subsubsection{DFT with 32 Samples}
+
+\vfill
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexF32.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex F} with different sampling frequencies}
+    \label{plt:dftComplexF}
+\end{figure}
+
+\subsubsection{DFT with 64 Samples}
+
+\vfill
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexF64.pdf}
+    }
+    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex F} with different sampling frequencies}
+    \label{plt:dftComplexF}
 \end{figure}
 
 
