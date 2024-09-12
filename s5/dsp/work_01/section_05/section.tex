@@ -45,7 +45,8 @@ where,
 \subsection{Implementing DTF using Python}
 
 Just like we did with \textsc{DTFT}s let's implement a similar \mintinline{python}{dtf_factory}
-that would take
+that would take \emph{complex sequence} and returns a \emph{function} that can be called with
+$k$ for each of the values of \textsc{DFT}.
 
 %python/dft_factory.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -63,5 +64,140 @@ that would take
 
         return dft
 \end{minted}
+
+Now we need the \mintinline{python}{cplx_factory} from the previous section.
+
+%python/cplx_factory.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import numpy as np
+
+    def cplx_factory(samp_freq, real_freq, imag_freq):
+        samp_period = 1 / samp_freq
+        return lambda n: np.sin(
+            2 * np.pi * real_freq * (n * samp_period)
+        ) + 1j * np.sin(
+            2 * np.pi * imag_freq * (n * samp_period)
+        )
+\end{minted}
+
+Now let's implement a \emph{function} similar to that of \mintinline{python}{gen_dtft_seq}
+for \textsc{DFT} that will generate the \textsc{DFT} sequence for our \emph{complex sequences}.
+Let us call it..., you guessed it, yes, the \mintinline{python}{gen_dft_seq}!
+
+%python/gen_dft_seq.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    def gen_dft_seq(
+        samp_count, samp_freq, real_freq, imag_freq
+        ):
+
+        cplx_fn = cplx_factory(
+            samp_freq = samp_freq,
+            real_freq = real_freq,
+            imag_freq = imag_freq
+        )
+
+        cplx_seq = np.ndarray(samp_count, dtype = np.cdouble)
+
+        for i in range(samp_count):
+            cplx_seq[i] = cplx_fn(i)
+
+        freq = np.arange(samp_count)
+
+        dft_fn = dft_factory(cplx_seq = cplx_seq)
+        dft_seq = dft_fn(freq)
+
+        # we need to scale freq back
+        return freq * samp_freq / samp_count, dft_seq, cplx_seq
+\end{minted}
+
+Now we have \mintinline{python}{gen_dft_seq}, next we need a to compute $32$
+point \textsc{DFT}s using all of these functions.
+
+%python/taking_dft_32.py%
+\begin{minted}[breaklines, autogobble, mathescape] {python}
+    import pandas as pd
+
+    X = 28
+
+    cplx_seqs = [
+        {
+            "name": "complex_a",
+            "real_freq": X,
+            "imag_freq": X,
+            # we will fill this later, for taking 64 point DFT
+            "sequences": {},
+        },
+        {
+            "name": "complex_b",
+            "real_freq": X,
+            "imag_freq": 2 * X,
+            "sequences": {},
+        },
+        {
+            "name": "complex_c",
+            "real_freq": X,
+            "imag_freq": (2 * X) + 0.1,
+            "sequences": {},
+        },
+        {
+            "name": "complex_f",
+            "real_freq": 2 * X,
+            "imag_freq": (2 * X) + 0.1,
+            "sequences": {},
+        },
+    ]
+
+    samp_freqs = {
+        "normal":           int(4 * X),
+        "slightly_greater": int(4 * X + 6),
+        "much_greater":     int(4 * X * 10),
+        "much_lesser":      int(4 * X / 2),
+    }
+
+    samp_count = 32
+
+    for cplx in cplx_seqs:
+
+        for samp_freq in samp_freqs:
+
+            freq, dft_seq, cplx_seq = gen_dft_seq(
+                samp_count = samp_count,
+                samp_freq = samp_freqs[samp_freq],
+                real_freq = cplx["real_freq"],
+                imag_freq = cplx["imag_freq"]
+            )
+
+            # keeping generated sequences for taking 64 point DFT
+            cplx["sequences"][samp_freq] = cplx_seq
+
+            data = pd.DataFrame(
+                data = {
+                    "real": dft_seq.real,
+                    "imag": dft_seq.imag,
+                },
+                index = freq
+            )
+
+            data.to_csv(
+                "../data/dft_" + cplx["name"] + "_" + samp_freq + ".csv",
+                sep = " ", index_label = "freq"
+            )
+\end{minted}
+
+\subsection{DFT of Complex A}
+
+\subsubsection{DFT with 32 Samples}
+
+\begin{figure} [H]
+    \centering
+    \adjustbox{max width = 1\textwidth} {
+        \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexA.pdf}
+    }
+    \captionof{figure} {
+        Plot of \textsc{DFT}s of \textsc{Complex A} with different sampling frequencies
+    }
+    \label{plt:dftComplexA}
+\end{figure}
+
 
 \end{document}
