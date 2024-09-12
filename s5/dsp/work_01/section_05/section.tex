@@ -241,7 +241,7 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \pagebreak
 
-\subsection{DTFT of Complex A} \label{ssec:dtftCplxA}
+\subsection{DFT of Complex A} \label{ssec:dtftCplxA}
 
 \begin{itemize} [label=]
 
@@ -250,6 +250,34 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 \end{itemize}
 
 \subsubsection{DFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item There is no \emph{hope} in \emph{alias land}, we could see
+                something between $25$ $30$.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item We could see a spike at somewhat near the vicinity of $\freqXOne \si{Hz}$.
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item There is a little bit of buldge can be seen near $\freqXOne \si{Hz}$.
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item There is little bit buldge at the left end.
+        \end{itemize}
+
+    \item \textbf{Inference:} It seems like if we only increase the \emph{sampling frequency},
+        but keep the \emph{sample count} same, the \emph{uncertainity} also increases.
+
+\end{itemize}
 
 \vfill
 
@@ -264,6 +292,33 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \subsubsection{DFT with 64 Samples}
 
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Surprisingly, $64$ point increases the resolution to \emph{double}. And we
+        can now see more information from the \emph{spectrum}.
+
+\end{itemize}
+
 \vfill
 
 \begin{figure} [H]
@@ -277,7 +332,7 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \pagebreak
 
-\subsection{DTFT of Complex B} \label{ssec:dtftCplxB}
+\subsection{DFT of Complex B} \label{ssec:dtftCplxB}
 
 \begin{itemize} [label=]
 
@@ -286,6 +341,32 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 \end{itemize}
 
 \subsubsection{DFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item \emph{Alias land}, no hope.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item Could see some noise.
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item We can kind of see two of the frequencies.
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item Uncertainity increases.
+        \end{itemize}
+
+    \item \textbf{Inference:} Same as \textsc{Complex A}.
+
+\end{itemize}
 
 \vfill
 
@@ -300,6 +381,32 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \subsubsection{DFT with 64 Samples}
 
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Simliar to \textsc{Complex A}. Doubles the resolution.
+
+\end{itemize}
+
 \vfill
 
 \begin{figure} [H]
@@ -313,7 +420,7 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \pagebreak
 
-\subsection{DTFT of Complex C} \label{ssec:dtftCplxC}
+\subsection{DFT of Complex C} \label{ssec:dtftCplxC}
 
 \begin{itemize} [label=]
 
@@ -322,6 +429,32 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 \end{itemize}
 
 \subsubsection{DFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item Aliasing causing, misinformation.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item Cant's see $\freqXOne \si{Hz}$ but something is present near the $50$s ranges.
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item Can almost see both.
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item Similar as above.
+        \end{itemize}
+
+    \item \textbf{Inference:} Similar to above two \emph{sequences}.
+
+\end{itemize}
 
 \vfill
 
@@ -336,6 +469,32 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \subsubsection{DFT with 64 Samples}
 
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Resolution increases, so does if there is \emph{aliasing}.
+
+\end{itemize}
+
 \vfill
 
 \begin{figure} [H]
@@ -349,7 +508,7 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \pagebreak
 
-\subsection{DTFT of Complex F} \label{ssec:dtftCplxF}
+\subsection{DFT of Complex F} \label{ssec:dtftCplxF}
 
 \begin{itemize} [label=]
 
@@ -358,6 +517,32 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 \end{itemize}
 
 \subsubsection{DFT with 32 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item \emph{Aliasing}.
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item Unable to distingush between two of the similar frequencies.
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item Unable to distingush between two of the similar frequencies.
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item Same as above.
+        \end{itemize}
+
+    \item \textbf{Inference:} Similar to above sequences.
+
+\end{itemize}
 
 \vfill
 
@@ -371,6 +556,32 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 \end{figure}
 
 \subsubsection{DFT with 64 Samples}
+
+\begin{itemize} [label=]
+
+    \item \sampFreqMuchLess
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqNorm
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqSligGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \sampFreqMuchGreat
+        \begin{itemize} [label=]
+            \item
+        \end{itemize}
+
+    \item \textbf{Inference:} Resolution increases.
+
+\end{itemize}
 
 \vfill
 
