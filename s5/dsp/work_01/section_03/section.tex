@@ -190,6 +190,16 @@ sequences.
 
 \end{figure}
 
+We won't be analysing all of these signals, but will pick four of them and continue with
+our analysis. They will be:
+
+\begin{itemize}
+    \item \textsc{Complex A}
+    \item \textsc{Complex B}
+    \item \textsc{Complex C}
+    \item \textsc{Complex F}
+\end{itemize}
+
 \pagebreak
 
 \subsection{Complex A} \label{ssec:visCplxA}
@@ -457,178 +467,178 @@ sequences.
 
 \end{figure}
 
-\subsection{Complex D} \label{ssec:visCplxD}
-%% $x_{2} + j x_{1}$
-
-\begin{itemize} [label=]
-
-    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXOne t)$
-
-    \item \textbf{Inference:} This is similar to \textsc{Complex B} from Section \ref{ssec:visCplxB}.
-        The only difference is that the \emph{real part} and the \emph{imaginary part} are swapped.
-
-\end{itemize}
-
-\vfill
-
-\begin{figure} [H]
-
-    \renewcommand{\arraystretch}{0.75}
-    \centering
-    \begin{NiceTabularX} {\textwidth} {
-            *{2}{>{\centering\arraybackslash}X}
-        }
-
-        \Block[c] {1-2} {
-            \adjustbox{max width = 2.0\textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotComplexD.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-2} {
-            \vbox{
-                \captionof{figure} {3D view of \emph{complex sequence} D.}
-                \label{plt:cmplxD}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
-            }
-        }
-
-        &
-
-        \Block[c] {3-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexD.pdf}
-            }
-        }
-
-        \\
-
-        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXTwo t)$.}
-        \label{plt:realCmplxD}
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
-        \label{plt:imagCmplxD}
-
-        &
-
-        \captionof{figure} {View with \emph{x axis} perpendicular.}
-        \label{plt:frontViewCmplxD}
-
-        \\
-
-    \end{NiceTabularX}
-
-\end{figure}
-
-\subsection{Complex E} \label{ssec:visCplxE}
-%% $x_{2} + j x_{2}$
-
-\begin{itemize} [label=]
-
-    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXTwo t)$
-
-    \item \textbf{Inference:} This is similar to that of \textsc{Complex A} from Section
-        \ref{ssec:visCplxA}, here both the \emph{real} and \emph{imaginary} parts are the
-        same. Hence, causing an oscillation through a straight line.
-
-\end{itemize}
-
-\vfill
-
-\begin{figure} [H]
-
-    \renewcommand{\arraystretch}{0.75}
-    \centering
-    \begin{NiceTabularX} {\textwidth} {
-            *{2}{>{\centering\arraybackslash}X}
-        }
-
-        \Block[c] {1-2} {
-            \adjustbox{max width = 2.0\textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotComplexE.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-2} {
-            \vbox{
-                \captionof{figure} {3D view of \emph{complex sequence} E.}
-                \label{plt:cmplxE}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
-            }
-        }
-
-        &
-
-        \Block[c] {3-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexE.pdf}
-            }
-        }
-
-        \\
-
-        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXTwo t)$.}
-        \label{plt:realCmplxE}
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
-        \label{plt:imagCmplxE}
-
-        &
-
-        \captionof{figure} {View with \emph{x axis} perpendicular.}
-        \label{plt:frontViewCmplxE}
-
-        \\
-
-    \end{NiceTabularX}
-
-\end{figure}
+%\subsection{Complex D} \label{ssec:visCplxD}
+%%% $x_{2} + j x_{1}$
+%
+%\begin{itemize} [label=]
+%
+%    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXOne t)$
+%
+%    \item \textbf{Inference:} This is similar to \textsc{Complex B} from Section \ref{ssec:visCplxB}.
+%        The only difference is that the \emph{real part} and the \emph{imaginary part} are swapped.
+%
+%\end{itemize}
+%
+%\vfill
+%
+%\begin{figure} [H]
+%
+%    \renewcommand{\arraystretch}{0.75}
+%    \centering
+%    \begin{NiceTabularX} {\textwidth} {
+%            *{2}{>{\centering\arraybackslash}X}
+%        }
+%
+%        \Block[c] {1-2} {
+%            \adjustbox{max width = 2.0\textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotComplexD.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-2} {
+%            \vbox{
+%                \captionof{figure} {3D view of \emph{complex sequence} D.}
+%                \label{plt:cmplxD}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
+%            }
+%        }
+%
+%        &
+%
+%        \Block[c] {3-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexD.pdf}
+%            }
+%        }
+%
+%        \\
+%
+%        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXTwo t)$.}
+%        \label{plt:realCmplxD}
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
+%        \label{plt:imagCmplxD}
+%
+%        &
+%
+%        \captionof{figure} {View with \emph{x axis} perpendicular.}
+%        \label{plt:frontViewCmplxD}
+%
+%        \\
+%
+%    \end{NiceTabularX}
+%
+%\end{figure}
+%
+%\subsection{Complex E} \label{ssec:visCplxE}
+%%% $x_{2} + j x_{2}$
+%
+%\begin{itemize} [label=]
+%
+%    \item \textbf{Sequence:} $\sin(2 \pi \freqXTwo t) + j \sin(2 \pi \freqXTwo t)$
+%
+%    \item \textbf{Inference:} This is similar to that of \textsc{Complex A} from Section
+%        \ref{ssec:visCplxA}, here both the \emph{real} and \emph{imaginary} parts are the
+%        same. Hence, causing an oscillation through a straight line.
+%
+%\end{itemize}
+%
+%\vfill
+%
+%\begin{figure} [H]
+%
+%    \renewcommand{\arraystretch}{0.75}
+%    \centering
+%    \begin{NiceTabularX} {\textwidth} {
+%            *{2}{>{\centering\arraybackslash}X}
+%        }
+%
+%        \Block[c] {1-2} {
+%            \adjustbox{max width = 2.0\textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotComplexE.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-2} {
+%            \vbox{
+%                \captionof{figure} {3D view of \emph{complex sequence} E.}
+%                \label{plt:cmplxE}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
+%            }
+%        }
+%
+%        &
+%
+%        \Block[c] {3-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexE.pdf}
+%            }
+%        }
+%
+%        \\
+%
+%        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXTwo t)$.}
+%        \label{plt:realCmplxE}
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
+%        \label{plt:imagCmplxE}
+%
+%        &
+%
+%        \captionof{figure} {View with \emph{x axis} perpendicular.}
+%        \label{plt:frontViewCmplxE}
+%
+%        \\
+%
+%    \end{NiceTabularX}
+%
+%\end{figure}
 
 \subsection{Complex F} \label{ssec:visCplxF}
 %% $x_{2} + j x_{3}$
@@ -719,272 +729,272 @@ sequences.
 
 \end{figure}
 
-\subsection{Complex G} \label{ssec:visCplxG}
-%% $x_{3} + j x_{1}$
-
-\begin{itemize} [label=]
-
-    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXOne t)$
-
-    \item \textbf{Inference:} This case is similar to \textsc{Complex C} from Section
-        \ref{ssec:visCplxC}. The difference is the \emph{real} and \emph{imaginary} parts
-        are swapped.
-
-    %%% not needed
-    %\item \textbf{Inference:} This case is similar to \textsc{Complex C} from Section
-    %    \ref{ssec:visCplxC}. The difference is the \emph{real} and \emph{imaginary} parts
-    %    are swapped. And it results in the similar spiraling of the signal.
-
-\end{itemize}
-
-\vfill
-
-\begin{figure} [H]
-
-    \renewcommand{\arraystretch}{0.75}
-    \centering
-    \begin{NiceTabularX} {\textwidth} {
-            *{2}{>{\centering\arraybackslash}X}
-        }
-
-        \Block[c] {1-2} {
-            \adjustbox{max width = 2.0\textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotComplexG.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-2} {
-            \vbox{
-                \captionof{figure} {3D view of \emph{complex sequence} G.}
-                \label{plt:cmplxG}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
-            }
-        }
-
-        &
-
-        \Block[c] {3-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexG.pdf}
-            }
-        }
-
-        \\
-
-        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
-        \label{plt:realCmplxG}
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
-        \label{plt:imagCmplxG}
-
-        &
-
-        \captionof{figure} {View with \emph{x axis} perpendicular.}
-        \label{plt:frontViewCmplxG}
-
-        \\
-
-    \end{NiceTabularX}
-
-\end{figure}
-
-\subsection{Complex H} \label{ssec:visCplxH}
-%% $x_{3} + j x_{2}$
-
-\begin{itemize} [label=]
-
-    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXTwo t)$
-
-    \item \textbf{Inference:} This case is similar that of \textsc{Complex F} from Section
-        \ref{ssec:visCplxF}. The difference is that the \emph{real} and the \emph{imaginary}
-        parts are swapped.
-
-\end{itemize}
-
-\vfill
-
-\begin{figure} [H]
-
-    \renewcommand{\arraystretch}{0.75}
-    \centering
-    \begin{NiceTabularX} {\textwidth} {
-            *{2}{>{\centering\arraybackslash}X}
-        }
-
-        \Block[c] {1-2} {
-            \adjustbox{max width = 2.0\textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotComplexH.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-2} {
-            \vbox{
-                \captionof{figure} {3D view of \emph{complex sequence} H.}
-                \label{plt:cmplxH}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
-            }
-        }
-
-        &
-
-        \Block[c] {3-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexH.pdf}
-            }
-        }
-
-        \\
-
-        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
-        \label{plt:realCmplxH}
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
-        \label{plt:imagCmplxH}
-
-        &
-
-        \captionof{figure} {View with \emph{x axis} perpendicular.}
-        \label{plt:frontViewCmplxH}
-
-        \\
-
-    \end{NiceTabularX}
-
-\end{figure}
-
-\subsection{Complex I} \label{ssec:visCplxI}
-%% $x_{3} + j x_{3}$
-
-\begin{itemize} [label=]
-
-    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXThree t)$
-
-    \item \textbf{Inference:} This case is similar to that of \textsc{Complex A} and
-        \textsc{Complex E} from Sections \ref{ssec:visCplxA} and \ref{ssec:visCplxE}
-        respectively. Both the \emph{real} and \emph{imaginary} parts are the same,
-        hence the front view is a straight line as seen in Figure \ref{plt:frontViewCmplxI}.
-
-\end{itemize}
-
-\vfill
-
-\begin{figure} [H]
-
-    \renewcommand{\arraystretch}{0.75}
-    \centering
-    \begin{NiceTabularX} {\textwidth} {
-            *{2}{>{\centering\arraybackslash}X}
-        }
-
-        \Block[c] {1-2} {
-            \adjustbox{max width = 2.0\textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotComplexI.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-2} {
-            \vbox{
-                \captionof{figure} {3D view of \emph{complex sequence} I.}
-                \label{plt:cmplxI}
-            }
-        }
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
-            }
-        }
-
-        &
-
-        \Block[c] {3-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexI.pdf}
-            }
-        }
-
-        \\
-
-        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
-        \label{plt:realCmplxI}
-
-        &
-        \\
-
-        \Block[c] {1-1} {
-            \adjustbox{max width = \textwidth} {
-                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
-            }
-        }
-
-        &
-        \\
-
-        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXThree t)$.}
-        \label{plt:imagCmplxI}
-
-        &
-
-        \captionof{figure} {View with \emph{x axis} perpendicular.}
-        \label{plt:frontViewCmplxI}
-
-        \\
-
-    \end{NiceTabularX}
-
-\end{figure}
+%\subsection{Complex G} \label{ssec:visCplxG}
+%%% $x_{3} + j x_{1}$
+%
+%\begin{itemize} [label=]
+%
+%    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXOne t)$
+%
+%    \item \textbf{Inference:} This case is similar to \textsc{Complex C} from Section
+%        \ref{ssec:visCplxC}. The difference is the \emph{real} and \emph{imaginary} parts
+%        are swapped.
+%
+%    %%% not needed
+%    %\item \textbf{Inference:} This case is similar to \textsc{Complex C} from Section
+%    %    \ref{ssec:visCplxC}. The difference is the \emph{real} and \emph{imaginary} parts
+%    %    are swapped. And it results in the similar spiraling of the signal.
+%
+%\end{itemize}
+%
+%\vfill
+%
+%\begin{figure} [H]
+%
+%    \renewcommand{\arraystretch}{0.75}
+%    \centering
+%    \begin{NiceTabularX} {\textwidth} {
+%            *{2}{>{\centering\arraybackslash}X}
+%        }
+%
+%        \Block[c] {1-2} {
+%            \adjustbox{max width = 2.0\textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotComplexG.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-2} {
+%            \vbox{
+%                \captionof{figure} {3D view of \emph{complex sequence} G.}
+%                \label{plt:cmplxG}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
+%            }
+%        }
+%
+%        &
+%
+%        \Block[c] {3-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexG.pdf}
+%            }
+%        }
+%
+%        \\
+%
+%        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
+%        \label{plt:realCmplxG}
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX1.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXOne t)$.}
+%        \label{plt:imagCmplxG}
+%
+%        &
+%
+%        \captionof{figure} {View with \emph{x axis} perpendicular.}
+%        \label{plt:frontViewCmplxG}
+%
+%        \\
+%
+%    \end{NiceTabularX}
+%
+%\end{figure}
+%
+%\subsection{Complex H} \label{ssec:visCplxH}
+%%% $x_{3} + j x_{2}$
+%
+%\begin{itemize} [label=]
+%
+%    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXTwo t)$
+%
+%    \item \textbf{Inference:} This case is similar that of \textsc{Complex F} from Section
+%        \ref{ssec:visCplxF}. The difference is that the \emph{real} and the \emph{imaginary}
+%        parts are swapped.
+%
+%\end{itemize}
+%
+%\vfill
+%
+%\begin{figure} [H]
+%
+%    \renewcommand{\arraystretch}{0.75}
+%    \centering
+%    \begin{NiceTabularX} {\textwidth} {
+%            *{2}{>{\centering\arraybackslash}X}
+%        }
+%
+%        \Block[c] {1-2} {
+%            \adjustbox{max width = 2.0\textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotComplexH.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-2} {
+%            \vbox{
+%                \captionof{figure} {3D view of \emph{complex sequence} H.}
+%                \label{plt:cmplxH}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
+%            }
+%        }
+%
+%        &
+%
+%        \Block[c] {3-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexH.pdf}
+%            }
+%        }
+%
+%        \\
+%
+%        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
+%        \label{plt:realCmplxH}
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX2.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXTwo t)$.}
+%        \label{plt:imagCmplxH}
+%
+%        &
+%
+%        \captionof{figure} {View with \emph{x axis} perpendicular.}
+%        \label{plt:frontViewCmplxH}
+%
+%        \\
+%
+%    \end{NiceTabularX}
+%
+%\end{figure}
+%
+%\subsection{Complex I} \label{ssec:visCplxI}
+%%% $x_{3} + j x_{3}$
+%
+%\begin{itemize} [label=]
+%
+%    \item \textbf{Sequence:} $\sin(2 \pi \freqXThree t) + j \sin(2 \pi \freqXThree t)$
+%
+%    \item \textbf{Inference:} This case is similar to that of \textsc{Complex A} and
+%        \textsc{Complex E} from Sections \ref{ssec:visCplxA} and \ref{ssec:visCplxE}
+%        respectively. Both the \emph{real} and \emph{imaginary} parts are the same,
+%        hence the front view is a straight line as seen in Figure \ref{plt:frontViewCmplxI}.
+%
+%\end{itemize}
+%
+%\vfill
+%
+%\begin{figure} [H]
+%
+%    \renewcommand{\arraystretch}{0.75}
+%    \centering
+%    \begin{NiceTabularX} {\textwidth} {
+%            *{2}{>{\centering\arraybackslash}X}
+%        }
+%
+%        \Block[c] {1-2} {
+%            \adjustbox{max width = 2.0\textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotComplexI.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-2} {
+%            \vbox{
+%                \captionof{figure} {3D view of \emph{complex sequence} I.}
+%                \label{plt:cmplxI}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
+%            }
+%        }
+%
+%        &
+%
+%        \Block[c] {3-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotFrontViewComplexI.pdf}
+%            }
+%        }
+%
+%        \\
+%
+%        \captionof{figure} {\emph{Real part} $\sin(2 \pi \freqXThree t)$.}
+%        \label{plt:realCmplxI}
+%
+%        &
+%        \\
+%
+%        \Block[c] {1-1} {
+%            \adjustbox{max width = \textwidth} {
+%                \includegraphics[height = \textheight] {tikzpics/plotShortX3.pdf}
+%            }
+%        }
+%
+%        &
+%        \\
+%
+%        \captionof{figure} {\emph{Imaginary part} $\sin(2 \pi \freqXThree t)$.}
+%        \label{plt:imagCmplxI}
+%
+%        &
+%
+%        \captionof{figure} {View with \emph{x axis} perpendicular.}
+%        \label{plt:frontViewCmplxI}
+%
+%        \\
+%
+%    \end{NiceTabularX}
+%
+%\end{figure}
 
 
 

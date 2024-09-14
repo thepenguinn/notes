@@ -4,7 +4,7 @@
 
 \def\author{Daniel V Mathew}
 \def\supervisor{Prof. Premson Y}
-\def\title{FREQUECNCY ANALYSIS OF SIGNALS}
+\def\title{FREQUENCY ANALYSIS OF SIGNALS}
 \def\subtitle{DIGITAL SIGNAL PROCESSING}
 \def\subsubtitle{SIMULATION ASSIGNMENT}
 
@@ -22,14 +22,14 @@
 }
 
 \def\abstractcontent {
-    Generate $3$ frequencies, $X$, $2X$ and $2X.1$. Then find the DFT and DTFT of
-    the combined signal and identify the frequency components. Try with $4$
-    different sampling frequencies. One is $4X$, other one slightly greater than
-    $4X$, one much greater than $4X$ and one much less than $4X$. For the DFT,
-    select $N = 32$. In the sampled signal, with $N = 32$, zero pad with another 32
-    zeroes and find the 64 point DFT and DTFT. Write your comments about frequency
-    analysis from the results. $X$ will be your class number. Python or Matlab can
-    be used for this assignment.
+    Generated $3$ frequencies, $X$, $2X$ and $2X.1$. And found the DFT and DTFT of
+    the combined signal and identified their \emph{frequency components}. Tried with $4$
+    different \emph{sampling frequencies}. One is $4X$, other one \emph{slightly greater} than
+    $4X$, one \emph{much greater} than $4X$ and one \emph{much less} than $4X$. For the DFT,
+    selected $N = 32$. In the sampled signal, with $N = 32$, \emph{zero padded} with another $32$
+    \emph{zeroes} and found the $64$ point DFT and DTFT. And $X$ was taken as $28$. This
+    analysis is computed using \textsc{python} and the plots are plotted using \LaTeX's
+    \textsc{pgfplots} package.
 }
 
 \begin{document}
@@ -45,5 +45,17 @@
 
 %Generating Sequences%
 \subfile{section_02/section.tex}
+
+%Generating Complex Sequences%
+\subfile{section_03/section.tex}
+
+%Taking DTFT of the Complex Sequences%
+\subfile{section_04/section.tex}
+
+%Taking DFT of the Complex Sequences%
+\subfile{section_05/section.tex}
+
+%Conclusion%
+\subfile{section_06/section.tex}
 
 \end{document}
