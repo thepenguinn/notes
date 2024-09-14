@@ -18,12 +18,12 @@
 In the previous section, we generated a bunch of \emph{Complex Sequences}. And
 picked $4$ sequences for further analysis. In this section we will be taking
 \textsc{DTFT} of those sequences. But before that, we need to take a look at what
-a \textsc{DTFT} is and how to elagently compute it using python.
+a \textsc{DTFT} is and how to elegantly compute it using python.
 
 \subsection{Discrete Time Fourier Transform}
 
 Discrete Time Fourier Transform, aka, \textsc{DTFT} transforms \emph{discrete time}
-samples into a \emph{continous} signal in the \emph{frequency} domain. \textsc{DTFT}
+samples into a \emph{continuous} signal in the \emph{frequency} domain. \textsc{DTFT}
 is basically a special case of another transform known as $\mathcal{Z}$\textsc{-transform}.
 $\mathcal{Z}$\textsc{-transform} can be mathematically described as,
 
@@ -111,7 +111,7 @@ this \emph{function} the \mintinline{python}{dtft_factory}.
 \end{minted}
 
 Now, let's implement another \emph{function} that will returns another
-\emph{function}\footnote{yes, ofcourse.} that can be called with $n = 0, 1, 2, ...$
+\emph{function}\footnote{yes, of course.} that can be called with $n = 0, 1, 2, ...$
 to generate the \emph{sequence} with specified \emph{sampling frequency}, \emph{real}
 and \emph{imaginary} parts. Let's call this \emph{function} \mintinline{python}{cplx_factory}
 
@@ -131,7 +131,7 @@ and \emph{imaginary} parts. Let's call this \emph{function} \mintinline{python}{
 Let's implement yet another \emph{function} that will make our life easier by
 \emph{mixing} and \emph{generating} the \textsc{DTFT} for two given \emph{frequencies}\footnote{one
 as \emph{real} and one as \emph{complex}}. As depicted in Figure \ref{fig:wrapFreqUnitCircle}
-we only need to evaluate the dtft from $0$ to $1$ range\footnote{in the case
+we only need to evaluate the \textsc{DTFT} from $0$ to $1$ range\footnote{in the case
 of eq. (\ref{eqn:dtftFreq}).} and need to \emph{rescale} it back.
 
 %python/gen_dtft_seq.py%
@@ -309,7 +309,7 @@ Now let's take the \textsc{DTFT}s of those sequences using this
 
     \item \sampFreqMuchLess
         \begin{itemize} [label=]
-            \item To much \emph{aliasing}, can barely distingush $\freqXOne \si{Hz}$.
+            \item To much \emph{aliasing}, can barely distinguish $\freqXOne \si{Hz}$.
         \end{itemize}
 
     \item \sampFreqNorm
@@ -328,7 +328,7 @@ Now let's take the \textsc{DTFT}s of those sequences using this
             \item Similar to (b) and (c).
         \end{itemize}
 
-    \item \textbf{Inference:} We can distingush almost two of the \emph{frequencies} from four
+    \item \textbf{Inference:} We can distinguish almost two of the \emph{frequencies} from four
         of the different \emph{sampling frequencies}.
 
 \end{itemize}
@@ -418,7 +418,7 @@ Now let's take the \textsc{DTFT}s of those sequences using this
 
     \item \sampFreqMuchGreat
         \begin{itemize} [label=]
-            \item Similar to (c), but a bit hard to distingush.
+            \item Similar to (c), but a bit hard to distinguish.
         \end{itemize}
 
     \item \textbf{Inference:} It's looks like the frequency of \emph{sine} in the \emph{real}
@@ -511,7 +511,7 @@ Now let's take the \textsc{DTFT}s of those sequences using this
 
     \item \sampFreqMuchGreat
         \begin{itemize} [label=]
-            \item Both can be inferred, kindof...
+            \item Both can be inferred, kind of...
         \end{itemize}
 
     \item \textbf{Inference:} Similar to \textsc{Complex B}.

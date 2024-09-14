@@ -17,14 +17,14 @@
 
 In the previous Section, we took \textsc{DTFT}s of the \emph{sequences} we have
 generated. In this Section, we will be taking \textsc{DFT}s of those same signals
-and we can compare our findings. But before that let's take a look at what \textsc{DTF}s
+and we can compare our findings. But before that let's take a look at what \textsc{DFT}s
 are, and how to compute them.
 
 \subsection{Discrete Fourier Transform}
 
 Discrete Fourier Transforms or \textsc{DFT}s are just a special case of previously
 mentioned \textsc{DTFT}s. \textsc{DTFT}s take a \emph{discrete} input sequence and
-produces a \emph{continous} signal. In the case of \textsc{DFT}, they take \emph{discrete}
+produces a \emph{continuous} signal. In the case of \textsc{DFT}, they take \emph{discrete}
 input but produces a signal in the \emph{discrete} form itself. In other words, they
 if we \emph{sample} \textsc{DTFT} we will get \textsc{DFT}. Mathematically they can
 be described as,
@@ -266,16 +266,16 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
     \item \sampFreqSligGreat
         \begin{itemize} [label=]
-            \item There is a little bit of buldge can be seen near $\freqXOne \si{Hz}$.
+            \item There is a little bit of bulge can be seen near $\freqXOne \si{Hz}$.
         \end{itemize}
 
     \item \sampFreqMuchGreat
         \begin{itemize} [label=]
-            \item There is little bit buldge at the left end.
+            \item There is little bit bulge at the left end.
         \end{itemize}
 
     \item \textbf{Inference:} It seems like if we only increase the \emph{sampling frequency},
-        but keep the \emph{sample count} same, the \emph{uncertainity} also increases.
+        but keep the \emph{sample count} same, the \emph{uncertainty} also increases.
 
 \end{itemize}
 
@@ -361,7 +361,7 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
     \item \sampFreqMuchGreat
         \begin{itemize} [label=]
-            \item Uncertainity increases.
+            \item Uncertainty increases.
         \end{itemize}
 
     \item \textbf{Inference:} Same as \textsc{Complex A}.
@@ -403,7 +403,7 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
             \item
         \end{itemize}
 
-    \item \textbf{Inference:} Simliar to \textsc{Complex A}. Doubles the resolution.
+    \item \textbf{Inference:} Similar to \textsc{Complex A}. Doubles the resolution.
 
 \end{itemize}
 
@@ -527,12 +527,12 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
     \item \sampFreqNorm
         \begin{itemize} [label=]
-            \item Unable to distingush between two of the similar frequencies.
+            \item Unable to distinguish between two of the similar frequencies.
         \end{itemize}
 
     \item \sampFreqSligGreat
         \begin{itemize} [label=]
-            \item Unable to distingush between two of the similar frequencies.
+            \item Unable to distinguish between two of the similar frequencies.
         \end{itemize}
 
     \item \sampFreqMuchGreat
