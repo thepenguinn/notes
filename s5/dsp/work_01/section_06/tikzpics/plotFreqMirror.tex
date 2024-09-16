@@ -1,0 +1,110 @@
+\begin{tikzpicture}
+
+    \begin{groupplot} [
+            group style = {
+                group size = 1 by 1,
+                xlabels at = edge bottom,
+                ylabels at = edge left,
+                vertical sep = 0.25cm,
+                xticklabels at = edge bottom,
+            },
+            height = 3.5cm,
+            width = 5.5in,
+            grid = both,
+            name = this,
+            xlabel = {Frequency},
+        ]
+
+        \nextgroupplot
+        %% first half
+        \addplot [
+            color = black!90!white,
+        ]
+        table [
+            restrict x to domain = 0:61,
+            x = freq,
+            y = real,
+        ]{../section_04/data/dtft_complex_b_slightly_greater_32.csv};
+
+        %% second half
+        \addplot [
+            black!35,
+        ]
+        table [
+            restrict x to domain = 61:122,
+            x = freq,
+            y = real,
+        ]{../section_04/data/dtft_complex_b_slightly_greater_32.csv}
+        ;
+
+        \coordinate (origin) at (0,0);
+        \coordinate (endFreq) at (122,0);
+        \draw ($(origin)!0.50!(endFreq)$) coordinate (midFreq);
+
+        \coordinate (ltop) at (28,0);
+        \coordinate (htop) at (56,0);
+
+        %% reflected
+        \addplot [
+            black!50,
+            x filter/.expression={(-1 * x) + 122},
+        ]
+        table [
+            restrict x to domain = 0:61,
+            x = freq,
+            y = real,
+        ]{../section_04/data/dtft_complex_b_slightly_greater_32.csv}
+        ;
+
+    \end{groupplot}
+
+    %% just to make the width equal to other plots in this section
+    \node [left = 40pt, opacity = 0.0] at (group c1r1.west) {(a)};
+    \node [left = 20pt, font = \small] at (group c1r1.west) {\rotatebox{90}{Real Part}};
+
+    \draw (group c1r1.north) ++(0, 0.8) coordinate (tmp);
+
+    \coordinate (originalTopLeft) at (origin |- tmp);
+    \coordinate (originalTopRight) at (midFreq |- tmp);
+
+    \draw (group c1r1.south) ++(0, -0.8) coordinate (tmp);
+
+    \coordinate (originalBotLeft) at (origin |- tmp);
+    \coordinate (originalBotRight) at (midFreq |- tmp);
+
+    \draw (group c1r1.north) ++(0, -0.15) coordinate (tmp);
+
+    \coordinate (mirrorTopLeft) at (midFreq |- tmp);
+    \coordinate (mirrorTopRight) at (endFreq |- tmp);
+
+    \draw (group c1r1.south) ++(0, 0.15) coordinate (tmp);
+
+    \coordinate (mirrorBotLeft) at (midFreq |- tmp);
+    \coordinate (mirrorBotRight) at (endFreq |- tmp);
+
+
+    %\draw [ blockdef-above, ] (originalTopLeft) -- (originalTopRight) ;
+
+    \draw[black!80, dashdotted, rounded corners = 0.2cm]
+    (mirrorTopLeft) rectangle (mirrorBotRight)
+    ;
+
+    \draw [-<, > = stealth, dashdotted, black!80, domain = {40:140}, smooth, variable=\t, samples = 200]
+    let \p{tmp} = (midFreq),
+    in
+    plot [xshift = \x{tmp}, yshift = \y{tmp}] ({\t:2.5})
+    ;
+
+    \draw [dashdotted, black!70] (ltop |- group c1r1.north) -- (ltop |- group c1r1.south) ;
+    \draw [dashdotted, black!70] (htop |- group c1r1.north) -- (htop |- group c1r1.south) ;
+
+    %\draw [ blockdef-above, ] (mirrorTopLeft) -- (mirrorTopRight) ;
+    %
+    %\draw [ blockdef-below, ] (mirrorBotLeft) -- (mirrorBotRight) ;
+    %
+    %\draw [divider] (mirrorTopLeft) -- (mirrorBotLeft) ;
+    %\draw [divider] (mirrorTopRight) -- (mirrorBotRight) ;
+
+    %\node [below = 20pt, font = \small] at (group c1r1.south) {Frequency};
+
+\end{tikzpicture}
