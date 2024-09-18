@@ -21,24 +21,24 @@
 \pgfmathsetmacro{\endFreq}{((\freqXOne * 4) + 10)}
 \pgfmathsetmacro{\midFreq}{\endFreq / 2}
 
-\newcounter{whereFootNote}
-\newcounter{whatFootNote}
-
 \section{Conclusion} \label{sec:conclusion}
 
-In the previous sections we've generated a bunch of \emph{complex signals}. And
-we sampled and we've analysed their \emph{frequency spectrum}. We took the
-$32$ point \textsc{dtft}s and \textsc{dft}s. And we've also padded them with
+In the previous sections we have generated a bunch of \emph{complex signals}. And
+we have sampled them and analysed their \emph{frequency spectrum} with different
+\emph{sampling frequencies}. And we took the $32$ point \textsc{dtft}s and
+\textsc{dft}s for all of these \emph{sequences}. Then we have padded them with
 $32$ more zeros and found the corresponding \textsc{dtft}s and \textsc{dft}s.
-And we've observed some \emph{interesting} observations.
+And we've observed some \emph{interesting} observations. In this section, we
+will be seeing some of those observation.
 
 %\begin{itemize} [label=$\circ$]
 \begin{itemize} [label=]
 
     \item \textbf{Zero Padding:} In the case of \textsc{dtft}s, \emph{zero padding} is not that
         useful, but in the case of \textsc{dft}s \emph{zero padding} and essentially taking a
-        $64$ point \textsc{dft} seem to increase the \emph{resolution} of the
-        \emph{frequency spectrum}.
+        $64$ point \textsc{dft} seem to improve the \emph{frequency spectrum} in some sense.
+        And it seems like if we keep \emph{zero pad} more and more and take \emph{higher} point \textsc{dft},
+        the \textsc{dft} will slowly turn into the corresponding \textsc{dtft}.
 
         \begin{itemize} [label=]
 
@@ -52,7 +52,8 @@ And we've observed some \emph{interesting} observations.
                     }
                     \captionof{figure} {
                         Comparing $32$ point \textsc{dft} and $64$ point \textsc{dft} of \textsc{Complex B},
-                        both having \emph{sampling frequency} of \sampFreqNormJust.
+                        both having \emph{sampling frequency} of \sampFreqNormJust. Also the $64$ point
+                        \textsc{dtft} with the same \emph{sampling frequency} is given as a reference.
                         (a): $32$ point \textsc{dft} of \textsc{Complex B}.
                         (b): $64$ point \textsc{dft} of \textsc{Complex B}.
                     }
@@ -61,16 +62,17 @@ And we've observed some \emph{interesting} observations.
 
         \end{itemize}
 
-    \item \textbf{Mirroring of Frequencies:} Figure \ref{fig:wrapFreqUnitCircle} depicts an
-        interesting physical property of \textsc{dtft}s. \textsc{dtft}s and \textsc{dft}s
-        map the \emph{frequencies} in the $\mathcal{Z}\textsc{-plane}$
-        around the \textsc{Unit Circle}, essentially causing them to \emph{repeat} after
-        a \emph{period}. From all the \textsc{dtft}s and \textsc{dft}s it is evident that
-        the values got from \emph{sweeping} from $\pi$ to $2 \pi$ range\footnote{in the case
-        of $\omega$.} is essentially a \emph{mirror} of values obtained\footnote{not
+    \item \textbf{Mirroring of Frequencies:} Figure
+        \ref{fig:wrapFreqUnitCircle} depicts an interesting physical property
+        of \textsc{dtft}s. \textsc{dtft}s and \textsc{dft}s map the
+        \emph{frequencies} in the $\mathcal{Z}\textsc{-plane}$ around the
+        \textsc{Unit Circle}, essentially causing them to \emph{repeat} after a
+        \emph{period}. From all the \textsc{dtft}s and \textsc{dft}s that we
+        have taken, it is evident that the values got from \emph{sweeping} from
+        $\pi$ to $2 \pi$ range\footnote{in the case of $\omega$.} is
+        essentially a \emph{mirror} of values obtained\footnote{not
         \emph{always}, but the \emph{information content} will be the same.}
         from \emph{sweeping} $\omega$ from $0$ to $\pi$ range.
-
 
         \def\firstRange{$0 \si{Hz}$ to $\pgfmathprintnumber[precision = 0]{\midFreq}\si{Hz}$ }
         \def\secondRange{%
@@ -105,8 +107,10 @@ And we've observed some \emph{interesting} observations.
                 overlap. This is because in our case the \emph{input sequence} was not a
                 \emph{real sequence} instead it was a \emph{complex sequence}. If the
                 \emph{input} was a \emph{real sequence}, the \textsc{dtft} would have
-                shown so called a \emph{hermitian symmetry}\footnote{see <put the wiki
-                link>.}. Neither less, they convey the same \emph{information}. Or so
+                shown so called a \emph{hermitian symmetry}\footnote{symmetry that seen
+                in \emph{hermitian functions} (see the
+                \textbf{\href{https://en.m.wikipedia.org/wiki/Hermitian_function}
+                {Wikipedia article}}).}. Neither less, they convey the same \emph{information}. Or so
                 to say, the \emph{information content} in range \firstRange \emph{mirrors
                 into} \secondRange range.
 
@@ -169,27 +173,29 @@ And we've observed some \emph{interesting} observations.
                     \label{fig:compRealImagComp}
                 \end{minipage}
 
-            \item From Figure \ref{fig:compRealImagComp} we can see that we get
+            \item From Figure \ref{fig:compRealImagComp} we can see that we actually get
                 some sense about each of the \emph{frequency components} from
                 both the \emph{real} and \emph{imaginary} parts equally, but if
                 we want to know where each \emph{frequency}
                 belong\footnote{\label{fnt:whereBelong}like, to the \emph{real part} or the
                 \emph{imaginary part}.} or the \emph{phase} of these
                 \emph{frequency components}, we need to analyse both of them.
-                If we are only \emph{interested} in \emph{frequency
+                If we are only \emph{interested} in the \emph{frequency
                 components}, we could just take the \emph{absolute value} of
                 our \emph{frequency spectrum}. That would give us the
                 \emph{amplitude spectrum} of the \emph{frequency spectrum}.
-                \emph{Amplitude spectrum} will have \emph{clean pulses}
-                corresponding for each of the \emph{frequency components}.
+                \emph{Amplitude spectrum} will have \emph{clean pulses}\footnote{the
+                \emph{width} and the \emph{height} of these pulses will vary depending on the
+                \emph{sample count}, ie, if we take \emph{higher} point \textsc{dft}, the
+                \emph{pulses} will be sharp.} corresponding to each of the \emph{frequency
+                components}.
 
         \end{itemize}
 
-        \pagebreak
-
-    \item \textbf{Real Part Information:} From Figure \ref{plt:realPartInfo},
-        if we see any of the features\footnote{as in the \emph{circles}.} in
-        the \emph{frequency spectrum} in the \emph{real part} we can conclude
+    \item \textbf{Real Part Information:} If we see any of the
+        features\footnote{\label{fnt:infoMarkCircle}as inside the
+        \emph{marking circles}.} like in Figure \ref{plt:realPartInfo}, in
+        the \emph{real part} of the \emph{frequency spectrum}, we can conclude
         the \emph{existence} of that \emph{spectral components} in the
         \emph{input sequence}. But where\footnote{see footnote
         \ref{fnt:whereBelong}.} or what\footnote{\label{fnt:whatTheyAare}like,
@@ -217,9 +223,9 @@ And we've observed some \emph{interesting} observations.
 
         \end{itemize}
 
-    \item \textbf{Imaginary Part Information:} From Figure \ref{plt:realImagInfo},
-        if we see any of the features\footnote{as in the \emph{circles}.} in
-        the \emph{frequency spectrum} in the \emph{real part} we can conclude
+    \item \textbf{Imaginary Part Information:} If we see any of the features\footnote{see
+        footnote \ref{fnt:infoMarkCircle}} like in Figure \ref{plt:imagPartInfo}, in
+        the \emph{imaginary part} of the \emph{frequency spectrum}, we can conclude
         the \emph{existence} of that \emph{spectral components} in the
         \emph{input sequence}. But where\footnote{see footnote \ref{fnt:whereBelong}.}
         or what\footnote{see footnote \ref{fnt:whatTheyAare}.} they are can't be determined
@@ -247,11 +253,13 @@ And we've observed some \emph{interesting} observations.
         \end{itemize}
 
     \item \textbf{Way Higher Sampling Frequency:} In Figure \ref{plt:higherSampFreq} we can almost
-        see the two \emph{frequencies}. But if \emph{increase} \emph{sampling frequency} again
-        without \emph{increasing} \emph{sample count}\footnote{in our case it was $32$ and $64$.},
+        see the two \emph{frequencies}. But if we \emph{increase} the \emph{sampling frequency} again
+        without \emph{increasing} the \emph{sample count}\footnote{in our case it was $32$ and $64$.},
         the \textsc{dtft} or \textsc{dft} might lose those \emph{frequency information}.
-        It seems like the \emph{increase} the \emph{sample count} with \emph{sampling frequency}
-        in order to get a proper \emph{frequency spectrum}.
+        It seems like we need to \emph{increase} the \emph{sample count} as well as the
+        \emph{sampling frequency} in order to get a proper \emph{frequency spectrum}.
+
+        \pagebreak
 
         \begin{itemize} [label=]
 
@@ -292,7 +300,7 @@ And we've observed some \emph{interesting} observations.
                         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftCloseFreq.pdf}
                     }
                     \captionof{figure} {
-                        $\freqXTwo \si{Hz}$ and $\freqXThree \si{Hz}$ being undistinguishable from $32$
+                        $\freqXTwo \si{Hz}$ and $\freqXThree \si{Hz}$ being \emph{undistinguishable} from $32$
                         point \textsc{dtft} of \textsc{Complex F} having \emph{sampling frequency} of
                         \sampFreqSligGreatJust.
                     }
@@ -307,7 +315,7 @@ And we've observed some \emph{interesting} observations.
                         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftCloseFreq.pdf}
                     }
                     \captionof{figure} {
-                        $32$ point \textsc{dft} and $64$ point \textsc{dft} with corresponding $N$ point
+                        $32$ point \textsc{dft} and $64$ point \textsc{dft} with corresponding \textsc{N} point
                         \textsc{dtft}s of \textsc{Complex F} with \emph{sampling frequency} of \sampFreqSligGreatJust,
                         still having \emph{undistinguishable} \emph{frequency components}.
                         (a): $32$ point \textsc{dft} with $32$ point \textsc{dtft}.
@@ -319,7 +327,7 @@ And we've observed some \emph{interesting} observations.
             \item
                 As we can see from Figure \ref{plt:dtftCloseFreq} and \ref{plt:dftCloseFreq}, the
                 \emph{close frequencies} $\freqXTwo \si{Hz}$ and $\freqXThree \si{Hz}$ are
-                \emph{undistinguishable} from each other. As we can see from \ref{plt:dftCloseFreq}
+                \emph{undistinguishable} from each other. As we can see from Figure \ref{plt:dftCloseFreq}
                 the \emph{zero padding} doesn't seem to help much in this regard. Even if we
                 \emph{zero pad} to a \emph{higher length} and took the \textsc{dft}, we will only
                 going to get something similar to the \textsc{dtft} in Figure \ref{plt:dtftCloseFreq}.

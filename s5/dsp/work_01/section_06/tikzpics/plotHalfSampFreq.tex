@@ -47,19 +47,6 @@
         \coordinate (ltop) at (28,0);
         \coordinate (htop) at (56,0);
 
-        %% reflected
-        \addplot [
-            black!50,
-            x filter/.expression={(-1 * x) + 122},
-            line cap = round,
-        ]
-        table [
-            restrict x to domain = 0:61,
-            x = freq,
-            y = real,
-        ]{../section_04/data/dtft_complex_b_slightly_greater_32.csv}
-        ;
-
     \end{groupplot}
 
     %% just to make the width equal to other plots in this section
@@ -67,6 +54,18 @@
     \node [left = 40pt] at (group c1r1.west) {(a)};
     \node [left = 20pt, font = \small] at (group c1r1.west) {\rotatebox{90}{Real Part}};
 
+    %% original
+    \draw (group c1r1.north) ++(0, -0.15) coordinate (tmp);
+
+    \coordinate (originalTopLeft) at (origin |- tmp);
+    \coordinate (originalTopRight) at (midFreq |- tmp);
+
+    \draw (group c1r1.south) ++(0, 0.15) coordinate (tmp);
+
+    \coordinate (originalBotLeft) at (origin |- tmp);
+    \coordinate (originalBotRight) at (midFreq |- tmp);
+
+    %% mirror
     \draw (group c1r1.north) ++(0, -0.15) coordinate (tmp);
 
     \coordinate (mirrorTopLeft) at (midFreq |- tmp);
@@ -76,6 +75,11 @@
 
     \coordinate (mirrorBotLeft) at (midFreq |- tmp);
     \coordinate (mirrorBotRight) at (endFreq |- tmp);
+
+
+    \draw[black!60, dashdotted, rounded corners = 0.2cm]
+    (originalTopLeft) rectangle (originalBotRight)
+    ;
 
     \draw [dashdotted, black!70] (ltop |- group c1r1.north) -- (ltop |- group c1r1.south) ;
     \draw [dashdotted, black!70] (htop |- group c1r1.north) -- (htop |- group c1r1.south) ;

@@ -1,0 +1,86 @@
+\begin{tikzpicture}
+
+    \def\markRadius{0.8}
+
+    \begin{groupplot} [
+            group style = {
+                group size = 1 by 2,
+                xlabels at = edge bottom,
+                ylabels at = edge left,
+                vertical sep = 0.25cm,
+                xticklabels at = edge bottom,
+            },
+            height = 3.5cm,
+            width = 5.5in,
+            grid = both,
+            xlabel = {Frequency},
+        ]
+
+        \nextgroupplot
+
+        \addplot[
+            color = black!40!white,
+        ]
+        table [
+            x = freq, y = real
+        ]{../section_04/data/dtft_complex_f_slightly_greater_32.csv};
+
+        \addplot[
+            ycomb,
+            mark = *,
+            mark options = {fill = white},
+            color = black!90!white,
+        ]
+        table [
+            x = freq, y = real
+        ]{../section_05/data/dft_complex_f_slightly_greater_32.csv};
+
+        \coordinate (firstFreqMix) at (axis cs:56,6);
+
+        \coordinate (ltop) at (56,0);
+        \coordinate (htop) at (56.1,0);
+
+        \nextgroupplot
+
+        \addplot[
+            color = black!40!white,
+        ]
+        table [
+            x = freq, y = real
+        ]{../section_04/data/dtft_complex_f_slightly_greater_64.csv};
+
+        \addplot[
+            ycomb,
+            mark = *,
+            mark options = {fill = white},
+            color = black!90!white,
+        ]
+        table [
+            x = freq,
+            y = real,
+        ]{../section_05/data/dft_complex_f_slightly_greater_64.csv};
+
+        \coordinate (secondFreqMix) at (axis cs:56,6);
+
+        \coordinate (lbot) at (56,0);
+        \coordinate (hbot) at (56.1,0);
+
+    \end{groupplot}
+
+    \draw [dashdotted, black!70] (ltop |- group c1r1.north) -- (lbot |- group c1r2.south) ;
+    \draw [dashdotted, black!70] (htop |- group c1r1.north) -- (hbot |- group c1r2.south) ;
+
+    \node [left = 40pt] at (group c1r1.west) {(a)};
+    \node [left = 40pt] at (group c1r2.west) {(b)};
+
+    \node [left = 20pt, font = \small] at (group c1r1.west) {\rotatebox{90}{Real Part}};
+    \node [left = 20pt, font = \small] at (group c1r2.west) {\rotatebox{90}{Real Part}};
+
+    \draw [
+        black!35,
+    ]
+    (firstFreqMix) circle (\markRadius)
+    (secondFreqMix) circle (\markRadius)
+    ;
+
+\end{tikzpicture}
