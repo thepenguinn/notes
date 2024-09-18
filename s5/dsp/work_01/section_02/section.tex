@@ -8,9 +8,12 @@
 \def\freqXTwo{56}
 \def\freqXThree{56.1}
 
-\section{Generating Sequences} \label{sec:wrkGenSeqs}
+\section{Generating Real Sequences} \label{sec:wrkGenSeqs}
 
-First of all, we need to generate three sequences, with frequencies of:
+For our \emph{analysis} we need generate some \emph{complex sequences}, but before
+we generate these \emph{complex sequences} we need to decide the \emph{frequency
+components} that goes into the \emph{real} and \emph{imaginary} parts. So
+select some \emph{frequencies} for that. Let the following be those \emph{frequencies}.
 
 \begin{align}
     f_{1} &= \freqXOne \si{Hz}                                  \label{eqn:freq1} \\
@@ -20,7 +23,7 @@ First of all, we need to generate three sequences, with frequencies of:
 
 Now we need to decide whether we need to generate a \emph{sine} signal or one with
 $90 \degree$ phase shift, ie, the \emph{cosine} signal. If we mix\footnote{like, real
-part and imaginary part having a phase difference} \emph{sine} and \emph{cosine} we may
+part and imaginary part having a phase difference.} \emph{sine} and \emph{cosine} we may
 get a different kind of \emph{complex} sequence than if we mix \emph{sine} to \emph{sine}
 or \emph{cosine} to \emph{cosine}. For our analysis, let's stick with having zero phase
 shift between the signals that we are mixing. So let's just mix \emph{sine} signals with
@@ -57,7 +60,7 @@ Therefore these signals will be:
     \label{eqn:seqx3}
 \end{align}
 
-\subsection{Python Implementation} \label{lst:threeSeqs}
+\subsection{Generating Sequences using Python} \label{lst:threeSeqs}
 
 %python/three_sequences.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -84,7 +87,6 @@ Therefore these signals will be:
         sep = " ", index_label = "time"
     )
     print(data)
-
 \end{minted}
 
 \paragraph{Output}
@@ -106,7 +108,12 @@ Therefore these signals will be:
     [2500 rows x 3 columns]
 \end{minted}
 
-\subsubsection{Plots}
+\subsection{Real Sequences}
+
+Figures from \ref{plt:seqx1} to \ref{plt:seqx3} plots above generated \emph{real valued sequences}.
+Among them \ref{plt:seqx2} and \ref{plt:seqx3} almost seems exactly the same. But if we look
+closer at the $\frac{\pi}{4}$ mark, we can see the slight difference of $0.1$ in frequency causing them
+to deviate.
 
 \begin{figure} [H]
     \centering

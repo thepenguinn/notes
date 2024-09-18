@@ -17,8 +17,8 @@ data = pd.DataFrame(
 )
 
 data.to_csv(
-    "../data/three_sequences.csv", sep = " ", index_label = "time"
+    "../data/three_sequences.csv",
+    sep = " ", index_label = "time"
 )
 print(data)
-
 
