@@ -6,13 +6,51 @@
 
 \section{Introduction} \label{sec:wrkFrequencyAnalysisIntro}
 
-Generate $3$ frequencies, $X$, $2X$ and $2X.1$. Then find the DFT and DTFT of
-the combined signal and identify the frequency components. Try with $4$
-different sampling frequencies. One is $4X$, other one slightly greater than
-$4X$, one much greater than $4X$ and one much less than $4X$. For the DFT,
-select $N = 32$. In the sampled signal, with $N = 32$, zero pad with another 32
-zeroes and find the 64 point DFT and DTFT. Write your comments about frequency
-analysis from the results. $X$ will be your class number. Python or Matlab can
-be used for this assignment.
+This analysis aims to analyse bunch of \emph{complex signals}\footnote{with
+\emph{real sine signals} with different \emph{frequencies} as their \emph{real}
+and \emph{imaginary} parts.}, using \textsc{dtft} and \textsc{dft} in order to find
+their \emph{frequency components}. Thereby \emph{investigating} different \emph{parameters}
+that affect the \emph{computation} of \textsc{dtft}s and \textsc{dft}s.
+And to see how we can \emph{adjust} these \emph{parameters} to yield a usable
+\emph{frequency spectrum}. We will also \emph{investigate} how \emph{zero padding}
+affects the generated \textsc{dtft}s and \textsc{dft}s. We will also see the
+\emph{information content} of the \emph{real part} and the \emph{imaginary part}
+of the generated \textsc{dtft}s and \textsc{dft}s, and how they will
+help us to \emph{perfectly reconstruct}\footnote{we won't be \emph{reconstructing}
+them in this analysis though.} the \emph{input signal} by giving us the
+\emph{sufficient} \emph{spectral information} about the \emph{input signal}.
+
+\paragraph{Tools used:} For the \emph{computation} of the sequences and \textsc{dtft}s
+and \textsc{dft}s we will use \textsc{python} and we will save the these sequences as
+\emph{csv} files\footnote{they are not actually \emph{comma separated}, but are
+\emph{space separated}, they just have the
+\emph{.csv} extension.}. Then they can be \emph{plotted} using \LaTeX's \textsc{pgfplots}
+package. And all the \emph{figures} in this report are drawn using \LaTeX's Ti\emph{k}Z package,
+as this entire report is written using \LaTeX\footnote{for all \emph{source files},
+see \textbf{ \href{https://github.com/thepenguinn/notes/tree/master/s5/dsp/work_01}
+{https://github.com/thepenguinn/notes/tree/master/s5/dsp/work\_01}}.}.
+
+\paragraph{An overview:} First we will \emph{generate} some \emph{real}
+sequences. Then combine them into bunch of \emph{complex} sequences. Then we will take
+\textsc{dtft}s and \textsc{dft}s. Then we will \emph{zero pad} them, then again we will find the
+corresponding \textsc{dtft}s and \textsc{dft}s. And we will analyse them in their
+respective sections. And in the end we will conclude all of our \emph{interesting}
+observations.
+
+%\vspace{15pt}
+\vfill
+\startcontents[chapters]
+\printcontents[chapters]{}{1}{}
+\vfill
+%\vspace{15pt}
+
+%Generate $3$ frequencies, $X$, $2X$ and $2X.1$. Then find the DFT and DTFT of
+%the combined signal and identify the frequency components. Try with $4$
+%different sampling frequencies. One is $4X$, other one slightly greater than
+%$4X$, one much greater than $4X$ and one much less than $4X$. For the DFT,
+%select $N = 32$. In the sampled signal, with $N = 32$, zero pad with another 32
+%zeroes and find the 64 point DFT and DTFT. Write your comments about frequency
+%analysis from the results. $X$ will be your class number. Python or Matlab can
+%be used for this assignment.
 
 \end{document}
