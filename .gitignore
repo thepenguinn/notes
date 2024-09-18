@@ -7,7 +7,8 @@
 *.log
 *.aux
 *.toc
-*/**/tikzpics/*.pdf
+*.lof
+*.ptc
 */**/course.pdf
 */**/chapter.pdf
 */**/work.pdf
