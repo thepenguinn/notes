@@ -10,7 +10,6 @@ return {
     ["work_02/section_01"] = "section.tex",
     ["chapter_05"] = "chapter.tex",
     ["work_01/section_04"] = "section.tex",
-    ["work_01/section_07"] = "section.tex",
     ["work_01"] = "work.tex",
     ["chapter_01"] = "chapter.tex",
     ["work_01/section_05"] = "section.tex",
