@@ -15,15 +15,15 @@
 
 \section{Taking DTFT of the Complex Sequences} \label{sec:wrkTakingDTFTCplxSeqs}
 
-In the previous section, we generated a bunch of \emph{Complex Sequences}. And
+In the previous section, we generated a bunch of \emph{complex sequences}. And
 picked $4$ sequences for further analysis. In this section we will be taking
-\textsc{DTFT} of those sequences. But before that, we need to take a look at what
-a \textsc{DTFT} is and how to elegantly compute it using python.
+\textsc{dtft} of those sequences. But before that, we need to take a look at what
+a \textsc{dtft} is and how to compute them using \textsc{python}.
 
 \subsection{Discrete Time Fourier Transform}
 
-Discrete Time Fourier Transform, aka, \textsc{DTFT} transforms \emph{discrete time}
-samples into a \emph{continuous} signal in the \emph{frequency} domain. \textsc{DTFT}
+Discrete Time Fourier Transform, aka, \textsc{dtft} transforms \emph{discrete time}
+samples into a \emph{continuous} signal in the \emph{frequency} domain. \textsc{dtft}
 is basically a special case of another transform known as $\mathcal{Z}$\textsc{-transform}.
 $\mathcal{Z}$\textsc{-transform} can be mathematically described as,
 
@@ -49,8 +49,8 @@ where,
 
 \end{itemize}
 
-\textsc{DTFT} is a special case of $\mathcal{Z}$\textsc{-transform}, where we take $A$
-as $1$. Mathematically, we can describe \textsc{DTFT} as,
+\textsc{dtft} is a special case of $\mathcal{Z}$\textsc{-transform}, where we take $A$
+as $1$. Mathematically, we can describe \textsc{dtft} as,
 
 \begin{align}
     X(e^{j \omega}) &= X(z) |_{z = e^{j \omega}} \\
@@ -58,7 +58,7 @@ as $1$. Mathematically, we can describe \textsc{DTFT} as,
     &= \sum_{n = - \infty}^{\infty} x[n] e^{-j w n} \label{eqn:dtftOmega}
 \end{align}
 
-Where $\omega$ can be substituted with $2 \pi f$, then the \textsc{DTFT} becomes,
+Where $\omega$ can be substituted with $2 \pi f$, then the \textsc{dtft} becomes,
 
 \begin{align}
     X(e^{j 2 \pi f}) &= \sum_{n = - \infty}^{\infty} x[n] e^{-j 2 \pi f n}
@@ -72,7 +72,7 @@ output as \emph{sweeping} $\omega$ in eq. (\ref{eqn:dtftOmega}) from $0$ to $2 \
 Another interesting thing about this \emph{transform} is that the $e^{-j 2 \pi f n}$ will
 \emph{scales} and \emph{wraps} the \emph{frequencies} from $0$ to $\infty$ around
 the \textsc{Unit Circle} in the $\mathcal{Z} \textsc{-plane}$. This will become
-important as we compute the \textsc{DTFT}s. The Figure \ref{fig:wrapFreqUnitCircle}
+important as we compute the \textsc{dtft}s. The Figure \ref{fig:wrapFreqUnitCircle}
 attempts to visualizes this interesting concept.
 
 \begin{figure}
@@ -88,8 +88,8 @@ attempts to visualizes this interesting concept.
 
 \subsection{Implementing DTFT using Python}
 
-We essentially need to take \textsc{DTFT} of several\footnote{actually $4$, still
-more than $1$} sequences. So it will be handy to implement a \emph{factory}, that
+We essentially need to take \textsc{dtft} of several\footnote{actually $4$, still
+more than $1$.} sequences. So it will be handy to implement a \emph{factory}, that
 will take a \emph{sequence} and returns a \emph{dtft function} that can be called
 with different \emph{frequencies} and returns it's corresponding value. Let us call
 this \emph{function} the \mintinline{python}{dtft_factory}.
@@ -129,9 +129,9 @@ and \emph{imaginary} parts. Let's call this \emph{function} \mintinline{python}{
 \end{minted}
 
 Let's implement yet another \emph{function} that will make our life easier by
-\emph{mixing} and \emph{generating} the \textsc{DTFT} for two given \emph{frequencies}\footnote{one
-as \emph{real} and one as \emph{complex}}. As depicted in Figure \ref{fig:wrapFreqUnitCircle}
-we only need to evaluate the \textsc{DTFT} from $0$ to $1$ range\footnote{in the case
+\emph{mixing} and \emph{generating} the \textsc{dtft} for two given \emph{frequencies}\footnote{one
+as \emph{real} and one as \emph{imaginary}.}. As depicted in Figure \ref{fig:wrapFreqUnitCircle}
+we only need to evaluate the \textsc{dtft} from $0$ to $1$ range\footnote{in the case
 of eq. (\ref{eqn:dtftFreq}).} and need to \emph{rescale} it back.
 
 %python/gen_dtft_seq.py%
@@ -162,7 +162,7 @@ of eq. (\ref{eqn:dtftFreq}).} and need to \emph{rescale} it back.
 
 Now we could just call \mintinline{python}{gen_dtft_seq} with appropriate \emph{arguments}
 and it will return the \mintinline{python}{dtft_seq} and its corresponding \emph{frequencies}.
-Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequencies}.
+Let's take a bunch of \textsc{dtft}s with different \emph{sampling frequencies}.
 
 %python/taking_dtft.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -238,10 +238,10 @@ Let's take a bunch of \textsc{DTFT}s with different \emph{sampling frequencies}.
             )
 \end{minted}
 
-We have generated \textsc{DTFT}s for our \emph{sequences} with
+We have generated \textsc{dtft}s for our \emph{sequences} with
 different \emph{sampling frequencies}, and \mintinline{python} {cplx_seqs}
 dictionary has all those generated \emph{input sequences}. Now we need
-to pad them with $32$ zeros and find the \textsc{DTFT}s of those sequences.
+to pad them with $32$ zeros and find the \textsc{dtft}s of those sequences.
 Let's quickly implement another \emph{function} for that. Let it be
 \mintinline{python}{gen_dtft_seq_64}.
 
@@ -264,7 +264,7 @@ Let's quickly implement another \emph{function} for that. Let it be
         return freq * samp_freq, dtft_seq, cplx_seq
 \end{minted}
 
-Now let's take the \textsc{DTFT}s of those sequences using this
+Now let's take the \textsc{dtft}s of those sequences using this
 \mintinline{python}{gen_dtft_seq_64}.
 
 %python/taking_dtft_64.py%
@@ -340,8 +340,8 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexA32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex A} with different sampling frequencies}
-    \label{plt:dtftComplexA}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex A} with different sampling frequencies}
+    \label{plt:dtftCplxA32}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
@@ -369,7 +369,7 @@ Now let's take the \textsc{DTFT}s of those sequences using this
         \end{itemize}
 
     \item \textbf{Inference:} Looks like this is similar to $32$ samples. The padding of $32$
-        zero didn't made any difference.
+        zero didn't make any difference.
 
 \end{itemize}
 
@@ -381,8 +381,8 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexA64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex A} with different sampling frequencies}
-    \label{plt:dtftComplexA}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex A} with different sampling frequencies}
+    \label{plt:dtftCplxA64}
 \end{figure}
 
 \pagebreak
@@ -435,8 +435,8 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexB32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex B} with different sampling frequencies}
-    \label{plt:dtftComplexB}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex B} with different sampling frequencies}
+    \label{plt:dtftCplxB32}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
@@ -475,8 +475,8 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexB64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex B} with different sampling frequencies}
-    \label{plt:dtftComplexB}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex B} with different sampling frequencies}
+    \label{plt:dtftCplxB64}
 \end{figure}
 
 \pagebreak
@@ -525,8 +525,8 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexC32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex C} with different sampling frequencies}
-    \label{plt:dtftComplexC}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex C} with different sampling frequencies}
+    \label{plt:dtftCplxC32}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
@@ -565,8 +565,8 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexC64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex C} with different sampling frequencies}
-    \label{plt:dtftComplexC}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex C} with different sampling frequencies}
+    \label{plt:dtftCplxC64}
 \end{figure}
 
 \pagebreak
@@ -616,8 +616,8 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexF32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex F} with different sampling frequencies}
-    \label{plt:dtftComplexF}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex F} with different sampling frequencies}
+    \label{plt:dtftCplxF32}
 \end{figure}
 
 \subsubsection{DTFT with 64 Samples}
@@ -656,11 +656,11 @@ Now let's take the \textsc{DTFT}s of those sequences using this
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDtftComplexF64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DTFT}s of \textsc{Complex F} with different sampling frequencies}
-    \label{plt:dtftComplexF}
+    \captionof{figure} {Plot of \textsc{dtft}s of \textsc{Complex F} with different sampling frequencies}
+    \label{plt:dtftCplxF64}
 \end{figure}
 
-
+\pagebreak
 
 
 
