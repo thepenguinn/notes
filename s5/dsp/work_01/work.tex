@@ -22,20 +22,34 @@
 }
 
 \def\abstractcontent {
-    Generated $3$ frequencies, $X$, $2X$ and $2X.1$. And found the DFT and DTFT of
-    the combined signal and identified their \emph{frequency components}. Tried with $4$
-    different \emph{sampling frequencies}. One is $4X$, other one \emph{slightly greater} than
-    $4X$, one \emph{much greater} than $4X$ and one \emph{much less} than $4X$. For the DFT,
-    selected $N = 32$. In the sampled signal, with $N = 32$, \emph{zero padded} with another $32$
-    \emph{zeroes} and found the $64$ point DFT and DTFT. And $X$ was taken as $28$. This
-    analysis is computed using \textsc{python} and the plots are plotted using \LaTeX's
-    \textsc{pgfplots} package.
+    This paper analyse various \emph{parameters} that affect the \emph{generation}
+    of \textsc{dtft}s and \textsc{dft}s and tries to find an \emph{optimal} mix of
+    all of these \emph{parameters} in giving a good \emph{frequency spectrum} that
+    \emph{carries} the \emph{sufficient spectral information} to \emph{reconstruct}
+    or \emph{interpolate back} the \emph{original input signal}.
+
+    It is found that the \emph{zero padding} and taking a \emph{higher point}
+    \textsc{transform} does \emph{enhance} the \textsc{dft}s but \emph{not so much} in
+    the case of \textsc{dtft}s. In both the \textsc{transform}s, \emph{increasing}
+    the \emph{sample count} and taking a \emph{higher point} \textsc{transform} seems
+    to \emph{increase} the \emph{frequency resolution}.
+
+    It is also found that these \textsc{transform}s only \emph{carry} \emph{spectral
+    information} upto \emph{half} the \emph{sampling frequency}. The other half
+    \emph{mirrors} the first half. \emph{Increasing} just the \emph{sampling frequency}
+    can also \emph{negatively} affect the \textsc{transform} if \emph{sample count} is
+    not \emph{sufficient}.
+
+    The \emph{real} and the \emph{imaginary} parts of the \textsc{transform}s are
+    found to be crucial in \emph{reconstructing} the \emph{input signal}, as together they
+    carry the \emph{amplitude} and \emph{phase} information.
 }
 
 \begin{document}
 
 \ifSubfilesClassLoaded {
     \input{abstract.tex}
+    \thispagestyle{empty}
 } {
     \chapter{Frequency Analysis of Signals} \label{chp:wrkFrequencyAnalysis}
 }
@@ -43,7 +57,7 @@
 %Introduction%
 \subfile{section_01/section.tex}
 
-%Generating Sequences%
+%Generating Real Sequences%
 \subfile{section_02/section.tex}
 
 %Generating Complex Sequences%
@@ -57,5 +71,8 @@
 
 %Conclusion%
 \subfile{section_06/section.tex}
+
+%%Appendix%
+%\subfile{section_07/section.tex}
 
 \end{document}
