@@ -1,90 +1,129 @@
 return {
-    ["plotFrontViewComplexI"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
+    ["plotHigherSampFreq"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
     },
-    ["plotDtftComplexF64"] = {
+    ["plotDtftComplexF"] = {
         ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
-    ["plotDtftComplexB"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
-    ["plotRealComplexA"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotDtftComplexC64"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
-    ["epicCplxCombSecond"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotComplexI"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotFrontViewComplexA"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
     },
     ["plotDftComplexA64"] = {
         ["parent_dir"] = "work_01/section_05/tikzpics",
     },
-    ["plotShortX2"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["hai"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotDftComplexA32"] = {
-        ["parent_dir"] = "work_01/section_05/tikzpics",
-    },
-    ["plotDtftComplexA32"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
     ["plotComplexD"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotComplexE"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotDtftComplexF32"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
-    ["plotDftComplexA"] = {
-        ["parent_dir"] = "work_01/section_05/tikzpics",
-    },
-    ["plotComplexH"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotSeqX2"] = {
-        ["parent_dir"] = "work_01/section_02/tikzpics",
-    },
-    ["plotDftComplexF32"] = {
-        ["parent_dir"] = "work_01/section_05/tikzpics",
-    },
-    ["plotDftComplexF64"] = {
-        ["parent_dir"] = "work_01/section_05/tikzpics",
-    },
-    ["plotFrontViewComplexG"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotComplexB"] = {
+    ["epicCplxCombThird"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
     ["plotComplexF"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotFrontViewComplexB"] = {
+    ["plotFrontViewComplexH"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotShortX1"] = {
+    ["plotImagPartInfo"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
+    },
+    ["woo"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDtftComplexC32"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["plotComplexB"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["epicCplxCombSecond"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDtftComplexB32"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["plotDftComplexA"] = {
+        ["parent_dir"] = "work_01/section_05/tikzpics",
+    },
+    ["plotDtftComplexF32"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["plotSeqX1"] = {
+        ["parent_dir"] = "work_01/section_02/tikzpics",
+    },
+    ["plotShortX3"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDftComplexF32"] = {
+        ["parent_dir"] = "work_01/section_05/tikzpics",
+    },
+    ["plotCompDft32Dft64"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
+    },
+    ["plotDftComplexF64"] = {
+        ["parent_dir"] = "work_01/section_05/tikzpics",
+    },
+    ["plotDftComplexB32"] = {
+        ["parent_dir"] = "work_01/section_05/tikzpics",
+    },
+    ["plotFrontViewComplexD"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotSeqX2"] = {
+        ["parent_dir"] = "work_01/section_02/tikzpics",
+    },
+    ["plotComplexE"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
     ["plotFrontViewComplexC"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotDtftComplexF"] = {
+    ["plotShortX1"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDftComplexB64"] = {
+        ["parent_dir"] = "work_01/section_05/tikzpics",
+    },
+    ["plotSeqX3"] = {
+        ["parent_dir"] = "work_01/section_02/tikzpics",
+    },
+    ["plotDtftComplexF64"] = {
         ["parent_dir"] = "work_01/section_04/tikzpics",
     },
-    ["epicCplxCombFirst"] = {
+    ["plotDtftComplexB64"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["epicWrapFreqUnitCircle"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["unitCircle"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["plotFreqMirror"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
+    },
+    ["plotFrontViewComplexA"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDtftCloseFreq"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
+    },
+    ["plotComplexH"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotComplexC"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDftComplexC64"] = {
+        ["parent_dir"] = "work_01/section_05/tikzpics",
+    },
+    ["plotFrontViewComplexB"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotCompRealImagComp"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
+    },
+    ["plotDtftComplexC"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["plotRealPartInfo"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
     },
     ["testing"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
@@ -92,76 +131,64 @@ return {
     ["plotComplexG"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["woo"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotFrontViewComplexE"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotSeqX3"] = {
-        ["parent_dir"] = "work_01/section_02/tikzpics",
-    },
-    ["plotImaginaryComplexA"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotDtftComplexB32"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
     ["plotComplexA"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotDtftComplexB64"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
-    ["plotFrontViewComplexD"] = {
+    ["plotComplexI"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotDtftComplexC32"] = {
+    ["plotHalfSampFreq"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
+    },
+    ["plotRealComplexA"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDtftComplexA32"] = {
         ["parent_dir"] = "work_01/section_04/tikzpics",
     },
     ["plotDtftComplexA"] = {
         ["parent_dir"] = "work_01/section_04/tikzpics",
     },
-    ["epicWrapFreqUnitCircle"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
-    ["plotFrontViewComplexH"] = {
+    ["epicCplxCombFirst"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotDftComplexC32"] = {
-        ["parent_dir"] = "work_01/section_05/tikzpics",
-    },
-    ["unitCircle"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
-    },
-    ["epicCplxCombThird"] = {
+    ["hai"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
     },
-    ["plotDtftComplexC"] = {
-        ["parent_dir"] = "work_01/section_04/tikzpics",
+    ["plotDftCloseFreq"] = {
+        ["parent_dir"] = "work_01/section_06/tikzpics",
     },
-    ["plotDftComplexC64"] = {
+    ["plotDftComplexA32"] = {
         ["parent_dir"] = "work_01/section_05/tikzpics",
     },
-    ["plotDftComplexB64"] = {
-        ["parent_dir"] = "work_01/section_05/tikzpics",
-    },
-    ["plotComplexC"] = {
+    ["plotFrontViewComplexF"] = {
         ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotShortX2"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDtftComplexB"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
     },
     ["plotDtftComplexA64"] = {
         ["parent_dir"] = "work_01/section_04/tikzpics",
     },
-    ["plotDftComplexB32"] = {
+    ["plotFrontViewComplexG"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDtftComplexC64"] = {
+        ["parent_dir"] = "work_01/section_04/tikzpics",
+    },
+    ["plotFrontViewComplexE"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotFrontViewComplexI"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotImaginaryComplexA"] = {
+        ["parent_dir"] = "work_01/section_03/tikzpics",
+    },
+    ["plotDftComplexC32"] = {
         ["parent_dir"] = "work_01/section_05/tikzpics",
-    },
-    ["plotShortX3"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
-    },
-    ["plotSeqX1"] = {
-        ["parent_dir"] = "work_01/section_02/tikzpics",
-    },
-    ["plotFrontViewComplexF"] = {
-        ["parent_dir"] = "work_01/section_03/tikzpics",
     },
 }

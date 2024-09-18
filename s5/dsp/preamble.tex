@@ -26,13 +26,78 @@
 \usepackage{setspace}
 %\usepackage[skip=15pt plus1pt]{parskip}
 
+\usepackage{varwidth}
+\usepackage{titletoc}
+\usepackage{ifthen}
 \usepackage{gensymb}
 \usepackage{siunitx}
 \usepackage{pgfplots}
 
+%% custom packages
+\usepackage{cornercommands}
+
 \pgfplotsset{
     compat=newest,
     colormap={black}{rgb255=(0,0,0) rgb255=(0,0,0)},
+    FrontViewStyle/.style={
+        view = {90}{0},
+        height = 3.13in,
+        width = 3.13in,
+        %%
+        xlabel = Time,
+        %%
+        ylabel = Real Part,
+        ymin = -1.25,
+        ymax = 1.25,
+        %%
+        zlabel = Imaginary Part,
+        zmin = -1.25,
+        zmax = 1.25,
+        %%
+        grid = both,
+        xticklabel style = {font = \small},
+        yticklabel style = {font = \small},
+        zticklabel style = {font = \small},
+        %%
+        xlabel style = {font = \small},
+        ylabel style = {font = \small},
+        zlabel style = {font = \small},
+    },
+    PlotComplex3DStyle/.style={
+        height = 3.92in,
+        width = 6.27in,
+        plot box ratio = 4 1.5 1,
+        %%
+        xlabel = Time,
+        xmin = -75,
+        xmax = 2575,
+        %%
+        ylabel = Real Part,
+        ymin = -1.25,
+        ymax = 1.25,
+        %%
+        zlabel = Imaginary Part,
+        zmin = -1.25,
+        zmax = 1.25,
+        %%
+        xtick = {0, 312.5, ..., 2500},
+        grid = both,
+        xticklabel style = {font = \small},
+        yticklabel style = {font = \small},
+        zticklabel style = {font = \small},
+        xticklabels = {$0$, $\dfrac{\pi}{32}$, $\dfrac{\pi}{16}$, $\dfrac{3 \pi}{32}$, $\dfrac{\pi}{8}$, $\dfrac{5 \pi}{32}$, $\dfrac{3 \pi}{16}$, $\dfrac{7 \pi}{32}$, $\dfrac{\pi}{4}$, },
+    },
+    PlotShortXStyle/.style = {
+        height = 1.76in,
+        width = 3.13in,
+        xlabel = Time,
+        ylabel = Amplitude,
+        xtick = {0, 156.25, ..., 625},
+        grid = both,
+        xticklabel style = {font = \small},
+        yticklabel style = {font = \small},
+        xticklabels = {$0$, $\dfrac{\pi}{64}$, $\dfrac{\pi}{32}$, $\dfrac{3 \pi}{64}$, $\dfrac{\pi}{16}$, },
+    },
 }
 
 \usetikzlibrary{intersections}
