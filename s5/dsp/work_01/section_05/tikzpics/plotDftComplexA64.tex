@@ -1,0 +1,59 @@
+\begin{tikzpicture}
+
+    \begin{groupplot} [
+            group style = {
+                group size = 1 by 4,
+                xlabels at = edge bottom,
+                ylabels at = edge left,
+                vertical sep = 0.75cm,
+            },
+            height = 4cm,
+            width = 7in,
+            grid = both,
+            xlabel = {Frequency},
+        ]
+        \nextgroupplot
+        \addplot[
+            ycomb,
+            black,
+            mark = *,
+            mark options = {fill = white},
+        ]
+        table [x = freq, y = real]{data/dft_complex_a_much_lesser_64.csv};
+        \nextgroupplot
+        \addplot[
+            ycomb,
+            black,
+            mark = *,
+            mark options = {fill = white},
+        ]
+        table [x = freq, y = real]{data/dft_complex_a_normal_64.csv};
+        \nextgroupplot
+        \addplot[
+            ycomb,
+            black,
+            mark = *,
+            mark options = {fill = white},
+        ]
+        table [x = freq, y = real]{data/dft_complex_a_slightly_greater_64.csv};
+        \nextgroupplot
+        \addplot[
+            ycomb,
+            black,
+            mark = *,
+            mark options = {fill = white},
+        ]
+        table [x = freq, y = real]{data/dft_complex_a_much_greater_64.csv};
+    \end{groupplot}
+
+    \node [left = 40pt] at (group c1r1.west) {(a)};
+    \node [left = 40pt] at (group c1r2.west) {(b)};
+    \node [left = 40pt] at (group c1r3.west) {(c)};
+    \node [left = 40pt] at (group c1r4.west) {(d)};
+
+    \node [left = 20pt, font = \small] at (group c1r1.west) {\rotatebox{90}{Real Part}};
+    \node [left = 20pt, font = \small] at (group c1r2.west) {\rotatebox{90}{Real Part}};
+    \node [left = 20pt, font = \small] at (group c1r3.west) {\rotatebox{90}{Real Part}};
+    \node [left = 20pt, font = \small] at (group c1r4.west) {\rotatebox{90}{Real Part}};
+
+\end{tikzpicture}

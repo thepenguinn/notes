@@ -15,18 +15,18 @@
 
 \section{Taking DFT of the Complex Sequences} \label{sec:wrkTakingDFTCplxSeqs}
 
-In the previous Section, we took \textsc{DTFT}s of the \emph{sequences} we have
-generated. In this Section, we will be taking \textsc{DFT}s of those same signals
-and we can compare our findings. But before that let's take a look at what \textsc{DFT}s
+In the previous Section, we took \textsc{dtft}s of the \emph{sequences} we have
+generated. In this Section, we will be taking \textsc{dft}s of those same signals
+and we can compare our findings. But before that let's take a look at what \textsc{dft}s
 are, and how to compute them.
 
 \subsection{Discrete Fourier Transform}
 
-Discrete Fourier Transforms or \textsc{DFT}s are just a special case of previously
-mentioned \textsc{DTFT}s. \textsc{DTFT}s take a \emph{discrete} input sequence and
-produces a \emph{continuous} signal. In the case of \textsc{DFT}, they take \emph{discrete}
-input but produces a signal in the \emph{discrete} form itself. In other words, they
-if we \emph{sample} \textsc{DTFT} we will get \textsc{DFT}. Mathematically they can
+Discrete Fourier Transforms or \textsc{dft}s are just a special case of previously
+mentioned \textsc{dtft}s. \textsc{dtft}s take a \emph{discrete} input sequence and
+produces a \emph{continuous} signal. In the case of \textsc{dft}, they take \emph{discrete}
+input but produces a signal in the \emph{discrete} form itself. In other words,
+if we \emph{sample} \textsc{dtft} we will get \textsc{dft}. Mathematically they can
 be described as,
 
 \begin{align}
@@ -38,7 +38,7 @@ be described as,
 where,
 
 \begin{itemize} [label=]
-    \item $X[k]$: is the \textsc{DFT} itself.
+    \item $X[k]$: is the \textsc{dft} itself.
 
         where,
 
@@ -53,9 +53,9 @@ where,
 
 \subsection{Implementing DFT using Python}
 
-Just like we did with \textsc{DTFT}s let's implement a similar \mintinline{python}{dtf_factory}
+Just like we did with \textsc{dtft}s let's implement a similar \mintinline{python}{dtf_factory}
 that would take \emph{complex sequence} and returns a \emph{function} that can be called with
-$k$ for each of the values of \textsc{DFT}.
+$k$ for each of the values of \textsc{dft}.
 
 %python/dft_factory.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -88,8 +88,8 @@ Now we need the \mintinline{python}{cplx_factory} from the previous section.
 \end{minted}
 
 Now let's implement a \emph{function} similar to that of \mintinline{python}{gen_dtft_seq}
-for \textsc{DFT} that will generate the \textsc{DFT} sequence for our \emph{complex sequences}.
-Let us call it..., you guessed it, yes, the \mintinline{python}{gen_dft_seq}!
+for \textsc{dft} that will generate the \textsc{dft} sequence for our \emph{complex sequences}.
+Let us call it..., you guessed it, the \mintinline{python}{gen_dft_seq}!
 
 %python/gen_dft_seq.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -118,7 +118,7 @@ Let us call it..., you guessed it, yes, the \mintinline{python}{gen_dft_seq}!
 \end{minted}
 
 Now that we have \mintinline{python}{gen_dft_seq}, next we need a to compute $32$
-point \textsc{DFT}s using all of these functions.
+point \textsc{dft}s using all of these functions.
 
 %python/taking_dft_32.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -157,7 +157,7 @@ point \textsc{DFT}s using all of these functions.
     samp_freqs = {
         "normal":           int(4 * X),
         "slightly_greater": int(4 * X + 6),
-        "much_greater":     int(4 * X * 10),
+        "much_greater":     int(4 * X * 6),
         "much_lesser":      int(4 * X / 2),
     }
 
@@ -192,8 +192,8 @@ point \textsc{DFT}s using all of these functions.
 \end{minted}
 
 Next thing to do is to convert the above $32$ sized samples to $64$ sized samples
-by \emph{zero padding}. Then we need to find $64$ point \textsc{DFT}s. Let's quickly
-implement another \emph{function} called \mintinline{python}{gen_dft_seq_64}
+by \emph{zero padding}. Then we need to find $64$ point \textsc{dft}s. Let's quickly
+implement another \emph{function} called \mintinline{python}{gen_dft_seq_64}.
 
 %python/gen_dft_seq_64.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -214,7 +214,7 @@ implement another \emph{function} called \mintinline{python}{gen_dft_seq_64}
         return freq * samp_freq / 64, dft_seq, cplx_seq
 \end{minted}
 
-Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_dft_seq_64}.
+Now let's take the \textsc{dft}s of our sequences using \mintinline{python}{gen_dft_seq_64}.
 
 %python/taking_dft_64.py%
 \begin{minted}[breaklines, autogobble, mathescape] {python}
@@ -241,7 +241,7 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
 
 \pagebreak
 
-\subsection{DFT of Complex A} \label{ssec:dtftCplxA}
+\subsection{DFT of Complex A} \label{ssec:dftCplxA}
 
 \begin{itemize} [label=]
 
@@ -286,8 +286,8 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexA32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex A} with different sampling frequencies}
-    \label{plt:dftComplexA}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex A} with different sampling frequencies.}
+    \label{plt:dftCplxA32}
 \end{figure}
 
 \subsubsection{DFT with 64 Samples}
@@ -326,13 +326,13 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexA64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex A} with different sampling frequencies}
-    \label{plt:dftComplexA}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex A} with different sampling frequencies.}
+    \label{plt:dftCplxA64}
 \end{figure}
 
 \pagebreak
 
-\subsection{DFT of Complex B} \label{ssec:dtftCplxB}
+\subsection{DFT of Complex B} \label{ssec:dftCplxB}
 
 \begin{itemize} [label=]
 
@@ -375,8 +375,8 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexB32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex B} with different sampling frequencies}
-    \label{plt:dftComplexB}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex B} with different sampling frequencies.}
+    \label{plt:dftCplxB32}
 \end{figure}
 
 \subsubsection{DFT with 64 Samples}
@@ -414,13 +414,13 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexB64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex B} with different sampling frequencies}
-    \label{plt:dftComplexB}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex B} with different sampling frequencies.}
+    \label{plt:dftCplxB64}
 \end{figure}
 
 \pagebreak
 
-\subsection{DFT of Complex C} \label{ssec:dtftCplxC}
+\subsection{DFT of Complex C} \label{ssec:dftCplxC}
 
 \begin{itemize} [label=]
 
@@ -463,8 +463,8 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexC32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex C} with different sampling frequencies}
-    \label{plt:dftComplexC}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex C} with different sampling frequencies.}
+    \label{plt:dftCplxC32}
 \end{figure}
 
 \subsubsection{DFT with 64 Samples}
@@ -502,13 +502,13 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexC64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex C} with different sampling frequencies}
-    \label{plt:dftComplexC}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex C} with different sampling frequencies.}
+    \label{plt:dftCplxC64}
 \end{figure}
 
 \pagebreak
 
-\subsection{DFT of Complex F} \label{ssec:dtftCplxF}
+\subsection{DFT of Complex F} \label{ssec:dftCplxF}
 
 \begin{itemize} [label=]
 
@@ -551,8 +551,8 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexF32.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex F} with different sampling frequencies}
-    \label{plt:dftComplexF}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex F} with different sampling frequencies.}
+    \label{plt:dftCplxF32}
 \end{figure}
 
 \subsubsection{DFT with 64 Samples}
@@ -590,9 +590,10 @@ Now let's take the \textsc{DFT}s of our sequences using \mintinline{python}{gen_
     \adjustbox{max width = 1\textwidth} {
         \includegraphics[height = 0.8\textheight] {tikzpics/plotDftComplexF64.pdf}
     }
-    \captionof{figure} {Plot of \textsc{DFT}s of \textsc{Complex F} with different sampling frequencies}
-    \label{plt:dftComplexF}
+    \captionof{figure} {Plot of \textsc{dft}s of \textsc{Complex F} with different sampling frequencies.}
+    \label{plt:dftCplxF64}
 \end{figure}
 
+\pagebreak
 
 \end{document}
