@@ -1,7 +1,5 @@
-*.md
 *.sdr
 *.epub
-*.svg
 */**/ebook/
 *.tstp
 *.log
