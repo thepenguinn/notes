@@ -1,15 +1,30 @@
 \tikzset{>=stealth}
 
-\begin{tikzpicture} [every node/.style={draw}]
-    \draw [black!30!white] node (x1) at (0,0) {$x_{1}$};
-    \node [black!30!white, right = of x1] (x2) {$x_{2}$};
-    \node [black, right = of x2] (x3) {$x_{3}$};
+\begin{tikzpicture} [
+        block/.style={
+            rounded corners = 0.2cm,
+            rectangle,
+            minimum width= 1.4cm,
+            minimum height= 1cm,
+            draw = black,
+            thick,
+        },
+        label/.style={
+            black,
+        },
+    ]
+    \draw [black!30!white] node [block, black!30!white] (x1) at (0,0) {$x_{1}$};
+    \node [block, black!30!white, right = of x1] (x2) {$x_{2}$};
+    \node [block, black, right = of x2] (x3) {$x_{3}$};
 
-    \node [black, below = of x1] (jx1) {$j x_{1}$};
-    \node [black, below = of x2] (jx2) {$j x_{2}$};
-    \node [black, below = of x3] (jx3) {$j x_{3}$};
+    \node [block, black, below = of x1] (jx1) {$j x_{1}$};
+    \node [block, black, below = of x2] (jx2) {$j x_{2}$};
+    \node [block, black, below = of x3] (jx3) {$j x_{3}$};
 
-    \draw [dashed, ->, shorten >= 3pt] (x3.south) -- (jx1.north east);
-    \draw [dashed, ->, shorten >= 3pt] (x3.south) -- (jx2.north east);
-    \draw [dashed, ->, shorten >= 3pt] (x3.south) -- (jx3.north);
+    \draw [dashdotted, ->, shorten >= 3pt] (x3.south) -- (jx1.north east);
+    \draw [dashdotted, ->, shorten >= 3pt] (x3.south) -- (jx2.north east);
+    \draw [dashdotted, ->, shorten >= 3pt] (x3.south) -- (jx3.north);
+
+    \node [label, below = of jx2, yshift = 0.4cm] {(c)};
+
 \end{tikzpicture}

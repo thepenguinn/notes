@@ -13,77 +13,67 @@
 In section \ref{lst:threeSeqs} we generated three signals with three different
 frequencies. The important thing to notice is that, they all are real valued
 sequences. In this section, we will see how we can combine\footnote{as real and
-imaginary part of a complex sequence} these signals into \emph{complex} sequences.
+imaginary part of a complex sequence.} these signals into \emph{complex} sequences.
 
 \subsection{Mixing of Signals}
 
 We have three different distinct sequences, so how we can mix these signals into
-more diverse \emph{complex} sequences ? This can be simply done by taking one of our
+more diverse \emph{complex} sequences? This can be simply done by taking one of our
 \emph{real valued} sequence as the \emph{real part} of the \emph{complex} sequence
 and another \emph{real valued} sequence as the \emph{imaginary part} of the
 \emph{complex} sequence. By doing so, one may encounter that there are many ways
 to arrange these sequences. Or so to say, there are many different combinations\footnote{of
-different real and imaginary sequences}, thus generating there many distinct \emph{complex}
+different real and imaginary sequences.}, thus generating there many distinct \emph{complex}
 sequences.
 
+\begin{center}
 
-\begin{figure} [H]
-
-    \centering
-
-    \begin{tabularx} {\textwidth} {
+    \renewcommand{\arraystretch}{0.75}
+    \begin{NiceTabularX} {\textwidth} {
             *{3}{>{\centering\arraybackslash}X}
         }
 
-        & & \\
-
-        \adjustbox{max width = 0.3\textwidth} {
-            \includegraphics[height = 0.3\textheight] {tikzpics/epicCplxCombFirst.pdf}
+        \adjustbox{max width = \textwidth} {
+            \includegraphics[height = \textheight] {tikzpics/epicCplxCombFirst.pdf}
         }
 
         &
 
-        \adjustbox{max width = 0.3\textwidth} {
-            \includegraphics[height = 0.3\textheight] {tikzpics/epicCplxCombSecond.pdf}
+        \adjustbox{max width = \textwidth} {
+            \includegraphics[height = \textheight] {tikzpics/epicCplxCombSecond.pdf}
         }
 
         &
 
-        \adjustbox{max width = 0.3\textwidth} {
-            \includegraphics[height = 0.3\textheight] {tikzpics/epicCplxCombThird.pdf}
+        \adjustbox{max width = \textwidth} {
+            \includegraphics[height = \textheight] {tikzpics/epicCplxCombThird.pdf}
         }
 
         \\
 
-        \captionof{figure} {
-            Taking $x_{1}$ as real part and $x_{1}$, $x_{2}$, and $x_{3}$ as imaginary parts.
+        \Block[c]{1-3}{
+            \begin{varwidth} {3\textwidth}
+                \captionof{figure} {
+                    Different combinations of \emph{complex sequences}.
+                    (a): Taking $x_{1}$ as real part and $x_{1}$, $x_{2}$, and $x_{3}$ as imaginary parts.
+                    (b): Taking $x_{2}$ as real part and $x_{1}$, $x_{2}$, and $x_{3}$ as imaginary parts.
+                    (c): Taking $x_{3}$ as real part and $x_{1}$, $x_{2}$, and $x_{3}$ as imaginary parts.
+                }
+                \label{fig:cplxCombAll}
+            \end{varwidth}
         }
-        \label{fig:cplxCombFirst}
+        \\
 
-        &
+    \end{NiceTabularX}
 
-        \captionof{figure} {
-            Taking $x_{2}$ as real part and $x_{1}$, $x_{2}$, and $x_{3}$ as imaginary parts.
-        }
-        \label{fig:cplxCombSecond}
+\end{center}
 
-        &
+As we can see from Figure \ref{fig:cplxCombAll} there is a total of $3 \times 3
+= 9$ different ways to combine these three signals. We will pick some of them
+depending on how \emph{distinct} they look and we will see each of those selected
+ones in detail in the following sections before further analysis.
 
-        \captionof{figure} {
-            Taking $x_{3}$ as real part and $x_{1}$, $x_{2}$, and $x_{3}$ as imaginary parts.
-        }
-        \label{fig:cplxCombThird}
-
-    \end{tabularx}
-
-\end{figure}
-
-As we can see from figures \ref{fig:cplxCombFirst} to \ref{fig:cplxCombThird} there is a
-total of $3 \times 3 = 9$ different ways to combine these three signals. In the upcoming
-subsections we will see each of these combinations in detail. Table \ref{tbl:cplxSeqs}
-shows the total list of \emph{complex} sequences we'll be generating.
-
-Before that, let's use python to combine our \emph{real} sequences into \emph{complex}
+But before that, let's use python to combine our \emph{real} sequences into \emph{complex}
 sequences.
 
 \subsection{Combining Sequences using Python}
@@ -104,24 +94,16 @@ sequences.
     imag = [x1, x2, x3]
 
     pd.DataFrame( {
-        "x1": x1[0:625],
-        "x2": x2[0:625],
-        "x3": x3[0:625],
+        "x1": x1[0:625], "x2": x2[0:625], "x3": x3[0:625],
     }).to_csv(
         "../data/short_sequences.csv",
         sep = " ", index_label = "time"
     )
 
     cplx_labels = [
-        "complex_a",
-        "complex_b",
-        "complex_c",
-        "complex_d",
-        "complex_e",
-        "complex_f",
-        "complex_g",
-        "complex_h",
-        "complex_i",
+        "complex_a", "complex_b", "complex_c",
+        "complex_d", "complex_e", "complex_f",
+        "complex_g", "complex_h", "complex_i",
     ]
 
     cplx = []
@@ -138,40 +120,35 @@ sequences.
             "../data/" + cplx_labels[i] + ".csv",
             sep = " ", index_label = "time"
         )
-
 \end{minted}
 
+\begin{center}
 
-\begin{figure} [H]
-    \centering
-
-    %% \renewcommand{\arraystretch}{1.2}
+    \renewcommand{\arraystretch}{1.5}
     \begin{tabularx} {\textwidth} {
             *{1}{>{\centering\arraybackslash}X}
         }
 
-        \\
-
-        { \begin{tabularx} {\textwidth} {
-                *{6}{>{\centering\arraybackslash}X}
+        {\begin{tabularx} {\textwidth} {
+                *{6}{>{\color{black!50}\centering\arraybackslash}m{0.142\textwidth}}
             }
 
             \toprule
-            \textsc{Combination Name} & \textsc{Complex Sequence} &
-            \textsc{Combination Name} & \textsc{Complex Sequence} &
-            \textsc{Combination Name} & \textsc{Complex Sequence} \\
+            {\color{black}\textsc{Combination Name}} & {\color{black}\textsc{Complex Sequence}} &
+            {\color{black}\textsc{Combination Name}} & {\color{black}\textsc{Complex Sequence}} &
+            {\color{black}\textsc{Combination Name}} & {\color{black}\textsc{Complex Sequence}} \\
             \midrule
 
-            \textsc{Complex A} & $x_{1} + j x_{1}$ &
+            {\color{black}\textsc{Complex A}} & {\color{black}$x_{1} + j x_{1}$} &
             \textsc{Complex E} & $x_{2} + j x_{1}$ &
             \textsc{Complex G} & $x_{3} + j x_{1}$ \\
 
-            \textsc{Complex B} & $x_{1} + j x_{2}$ &
+            {\color{black}\textsc{Complex B}} & {\color{black}$x_{1} + j x_{2}$} &
             \textsc{Complex D} & $x_{2} + j x_{2}$ &
             \textsc{Complex H} & $x_{3} + j x_{2}$ \\
 
-            \textsc{Complex C} & $x_{1} + j x_{3}$ &
-            \textsc{Complex F} & $x_{2} + j x_{3}$ &
+            {\color{black}\textsc{Complex C}} & {\color{black}$x_{1} + j x_{3}$} &
+            {\color{black}\textsc{Complex F}} & {\color{black}$x_{2} + j x_{3}$} &
             \textsc{Complex I} & $x_{3} + j x_{3}$ \\
 
             \bottomrule
@@ -179,26 +156,27 @@ sequences.
         \end{tabularx} } \\
 
         \captionof{table} {
-            $9$ different combinations of mixing of our three sequences into \emph{complex}
-            sequences.
+            Different combinations of \emph{mixed} \emph{complex} sequences.
+            The selected sequences for further analysis can also be seen as \emph{highlighted}.
         }
         \label{tbl:cplxSeqs}
         \\
 
     \end{tabularx}
 
+\end{center}
 
-\end{figure}
-
-We won't be analysing all of these signals, but will pick four of them and continue with
-our analysis. They will be:
-
-\begin{itemize}
-    \item \textsc{Complex A}
-    \item \textsc{Complex B}
-    \item \textsc{Complex C}
-    \item \textsc{Complex F}
-\end{itemize}
+%Table \ref{tbl:cplxSeqs} shows the total list of \emph{complex sequences} that
+%we have generated. We won't be analysing all of them, but will pick four of
+%them and continue with our analysis. Let's pick the following four
+%\emph{sequences}:
+%
+%\begin{itemize}
+%    \item \textsc{Complex A}
+%    \item \textsc{Complex B}
+%    \item \textsc{Complex C}
+%    \item \textsc{Complex F}
+%\end{itemize}
 
 \pagebreak
 
@@ -219,7 +197,7 @@ our analysis. They will be:
 
 \begin{figure} [H]
 
-    \renewcommand{\arraystretch}{0.75}
+    \renewcommand{\arraystretch}{0.7}
     \centering
     \begin{NiceTabularX} {\textwidth} {
             *{2}{>{\centering\arraybackslash}X}
@@ -308,7 +286,7 @@ our analysis. They will be:
 
 \begin{figure} [H]
 
-    \renewcommand{\arraystretch}{0.75}
+    \renewcommand{\arraystretch}{0.7}
     \centering
     \begin{NiceTabularX} {\textwidth} {
             *{2}{>{\centering\arraybackslash}X}
@@ -397,7 +375,7 @@ our analysis. They will be:
 
 \begin{figure} [H]
 
-    \renewcommand{\arraystretch}{0.75}
+    \renewcommand{\arraystretch}{0.7}
     \centering
     \begin{NiceTabularX} {\textwidth} {
             *{2}{>{\centering\arraybackslash}X}
@@ -483,7 +461,7 @@ our analysis. They will be:
 %
 %\begin{figure} [H]
 %
-%    \renewcommand{\arraystretch}{0.75}
+%    \renewcommand{\arraystretch}{0.7}
 %    \centering
 %    \begin{NiceTabularX} {\textwidth} {
 %            *{2}{>{\centering\arraybackslash}X}
@@ -570,7 +548,7 @@ our analysis. They will be:
 %
 %\begin{figure} [H]
 %
-%    \renewcommand{\arraystretch}{0.75}
+%    \renewcommand{\arraystretch}{0.7}
 %    \centering
 %    \begin{NiceTabularX} {\textwidth} {
 %            *{2}{>{\centering\arraybackslash}X}
@@ -659,7 +637,7 @@ our analysis. They will be:
 
 \begin{figure} [H]
 
-    \renewcommand{\arraystretch}{0.75}
+    \renewcommand{\arraystretch}{0.7}
     \centering
     \begin{NiceTabularX} {\textwidth} {
             *{2}{>{\centering\arraybackslash}X}
@@ -751,7 +729,7 @@ our analysis. They will be:
 %
 %\begin{figure} [H]
 %
-%    \renewcommand{\arraystretch}{0.75}
+%    \renewcommand{\arraystretch}{0.7}
 %    \centering
 %    \begin{NiceTabularX} {\textwidth} {
 %            *{2}{>{\centering\arraybackslash}X}
@@ -838,7 +816,7 @@ our analysis. They will be:
 %
 %\begin{figure} [H]
 %
-%    \renewcommand{\arraystretch}{0.75}
+%    \renewcommand{\arraystretch}{0.7}
 %    \centering
 %    \begin{NiceTabularX} {\textwidth} {
 %            *{2}{>{\centering\arraybackslash}X}
@@ -926,7 +904,7 @@ our analysis. They will be:
 %
 %\begin{figure} [H]
 %
-%    \renewcommand{\arraystretch}{0.75}
+%    \renewcommand{\arraystretch}{0.7}
 %    \centering
 %    \begin{NiceTabularX} {\textwidth} {
 %            *{2}{>{\centering\arraybackslash}X}

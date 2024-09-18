@@ -12,24 +12,16 @@ real = [x1, x2, x3]
 imag = [x1, x2, x3]
 
 pd.DataFrame( {
-    "x1": x1[0:625],
-    "x2": x2[0:625],
-    "x3": x3[0:625],
+    "x1": x1[0:625], "x2": x2[0:625], "x3": x3[0:625],
 }).to_csv(
     "../data/short_sequences.csv",
     sep = " ", index_label = "time"
 )
 
 cplx_labels = [
-    "complex_a",
-    "complex_b",
-    "complex_c",
-    "complex_d",
-    "complex_e",
-    "complex_f",
-    "complex_g",
-    "complex_h",
-    "complex_i",
+    "complex_a", "complex_b", "complex_c",
+    "complex_d", "complex_e", "complex_f",
+    "complex_g", "complex_h", "complex_i",
 ]
 
 cplx = []
@@ -46,5 +38,4 @@ for i in range(len(cplx)):
         "../data/" + cplx_labels[i] + ".csv",
         sep = " ", index_label = "time"
     )
-
 
