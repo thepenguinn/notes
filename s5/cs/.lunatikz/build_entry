@@ -1,3 +1,9 @@
 return {
+    ["chapter_05"] = "chapter.tex",
+    ["chapter_01"] = "chapter.tex",
+    ["chapter_06"] = "chapter.tex",
+    ["chapter_04"] = "chapter.tex",
     [""] = "course.tex",
+    ["chapter_02"] = "chapter.tex",
+    ["chapter_03"] = "chapter.tex",
 }
