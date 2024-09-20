@@ -1,0 +1,48 @@
+\documentclass[../../course]{subfiles}
+
+\input{section_header.tex}
+
+\begin{document}
+
+\section{Introduction} \label{sec:ch06Intro}
+
+Before we talk about \lt, let's ask ourselves a question, what the heck is even a
+\textsc{transform}?
+
+\paragraph{Transforms:} A \textsc{transform} is \emph{something} that
+takes an \emph{input}\footnote{could be \emph{function}.} in a specific
+\emph{domain} and spits out a \emph{function} in another \emph{domain}.
+\lt is one such \textsc{transform} among many.
+
+\paragraph{Laplace Transform:} Now what is \lt? And what does it do to our
+\emph{input function}? \lt takes a \emph{function} in the \emph{time domain}
+and spits out another \emph{function} that has the entire \textsc{s-plane} as
+the \emph{domain}.
+
+\paragraph{Mathematical Definition:} Mathematically \lt can be described as,
+
+\begin{align}
+    \mathcal{L}\{f(t)\} &= \mathcal{F}(s) \\
+    &= \int_{0}^{\infty} f(t) e^{-st} dt
+\end{align}
+
+Where,
+
+\begin{itemize} [label=]
+    \item $\mathcal{L}\{f(t)\}$: is the \lt itself.
+
+    \item $f(t)$: is the \emph{input function}.
+
+    \item $s$: is a \emph{complex number} in the form $\alpha + j \omega$.
+
+    \item
+        Where,
+
+        \begin{itemize} [label=]
+            \item $\alpha$: is the \emph{real part}.
+            \item $\omega$: is the \emph{imaginary part}.
+        \end{itemize}
+\end{itemize}
+
+
+\end{document}
