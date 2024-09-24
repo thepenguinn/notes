@@ -21,7 +21,7 @@
         \nextgroupplot
 
         \addplot [
-            color = black!90!white,
+            color = fgcol!90!bgcol,
             line cap = round,
         ]
         table [
@@ -32,7 +32,7 @@
 
         %% for second Freq
         \addplot [
-            color = black!90!white,
+            color = fgcol!90!bgcol,
             line cap = round,
             opacity = 1,
         ]
@@ -83,14 +83,14 @@
     \coordinate (mirrorBotRight) at (endFreq |- tmp);
 
 
-    \draw [dashdotted, black!70] (ltop |- group c1r1.north) -- (ltop |- group c1r1.south) ;
-    \draw [dashdotted, black!70] (htop |- group c1r1.north) -- (htop |- group c1r1.south) ;
+    \draw [dashdotted, fgcol!70!bgcol] (ltop |- group c1r1.north) -- (ltop |- group c1r1.south) ;
+    \draw [dashdotted, fgcol!70!bgcol] (htop |- group c1r1.north) -- (htop |- group c1r1.south) ;
 
     %% mark radius
 
     \draw [
         %dashdotted,
-        black!35,
+        fgcol!35!bgcol,
     ]
     (firstFreq) circle (\markRadius)
 
@@ -106,14 +106,14 @@
 
     \draw [
         thick,
-        black!35,
+        fgcol!35!bgcol,
     ]
     (firstFreq) circle (\markSmallRadius)
     ;
 
     \draw [
         %dashdotted,
-        black!35,
+        fgcol!35!bgcol,
     ]
     (secondFreq) circle (\markRadius)
 
@@ -128,7 +128,7 @@
 
     \draw [
         thick,
-        black!35,
+        fgcol!35!bgcol,
     ]
     (secondFreq) circle (\markSmallRadius)
     ;

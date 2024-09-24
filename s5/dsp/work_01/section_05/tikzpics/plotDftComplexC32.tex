@@ -15,33 +15,33 @@
         \nextgroupplot
         \addplot[
             ycomb,
-            black,
+            fgcol,
             mark = *,
-            mark options = {fill = white},
+            mark options = {fill = bgcol},
         ]
         table [x = freq, y = real]{\subfix{data/dft_complex_c_much_lesser_32.csv}};
         \nextgroupplot
         \addplot[
             ycomb,
-            black,
+            fgcol,
             mark = *,
-            mark options = {fill = white},
+            mark options = {fill = bgcol},
         ]
         table [x = freq, y = real]{\subfix{data/dft_complex_c_normal_32.csv}};
         \nextgroupplot
         \addplot[
             ycomb,
-            black,
+            fgcol,
             mark = *,
-            mark options = {fill = white},
+            mark options = {fill = bgcol},
         ]
         table [x = freq, y = real]{\subfix{data/dft_complex_c_slightly_greater_32.csv}};
         \nextgroupplot
         \addplot[
             ycomb,
-            black,
+            fgcol,
             mark = *,
-            mark options = {fill = white},
+            mark options = {fill = bgcol},
         ]
         table [x = freq, y = real]{\subfix{data/dft_complex_c_much_greater_32.csv}};
     \end{groupplot}

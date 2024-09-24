@@ -16,15 +16,15 @@
         \nextgroupplot
 
         \addplot[
-            black!40,
+            fgcol!40!bgcol,
         ]
         table [x = freq, y = real]{\subfix{../section_04/data/dtft_complex_b_slightly_greater_64.csv}};
 
         \addplot[
             ycomb,
             mark = *,
-            mark options = {fill = white},
-            color = black!90!white,
+            mark options = {fill = bgcol},
+            color = fgcol!90!bgcol,
         ]
         table [x = freq, y = real]{\subfix{../section_05/data/dft_complex_b_slightly_greater_32.csv}};
 
@@ -34,15 +34,15 @@
         \nextgroupplot
 
         \addplot[
-            black!40,
+            fgcol!40!bgcol,
         ]
         table [x = freq, y = real]{\subfix{../section_04/data/dtft_complex_b_slightly_greater_64.csv}};
 
         \addplot[
             ycomb,
             mark = *,
-            mark options = {fill = white},
-            color = black!90!white,
+            mark options = {fill = bgcol},
+            color = fgcol!90!bgcol,
         ]
         table [x = freq, y = real]{\subfix{../section_05/data/dft_complex_b_slightly_greater_64.csv}};
 
@@ -51,8 +51,8 @@
 
     \end{groupplot}
 
-    \draw [dashdotted, black!70] (ltop |- group c1r1.north) -- (lbot |- group c1r2.south) ;
-    \draw [dashdotted, black!70] (htop |- group c1r1.north) -- (hbot |- group c1r2.south) ;
+    \draw [dashdotted, fgcol!70!bgcol] (ltop |- group c1r1.north) -- (lbot |- group c1r2.south) ;
+    \draw [dashdotted, fgcol!70!bgcol] (htop |- group c1r1.north) -- (hbot |- group c1r2.south) ;
 
     \node [left = 40pt] at (group c1r1.west) {(a)};
     \node [left = 40pt] at (group c1r2.west) {(b)};

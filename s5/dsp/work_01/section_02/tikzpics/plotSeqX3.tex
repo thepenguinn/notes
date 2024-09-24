@@ -10,7 +10,7 @@
             xticklabels = {$0$, $\dfrac{\pi} {32}$, $\dfrac{\pi} {16}$, $\dfrac{3\pi} {32}$, $\dfrac{\pi} {8}$, $\dfrac{5\pi} {32}$, $\dfrac{3\pi} {16}$, $\dfrac{7\pi} {32}$, $\dfrac{\pi} {4}$, }
         ]
         \addplot[
-            color = black!90!white
+            color = fgcol!90!bgcol
         ]
         table [y = x3]{\subfix{data/three_sequences.csv}};
     \end{axis}

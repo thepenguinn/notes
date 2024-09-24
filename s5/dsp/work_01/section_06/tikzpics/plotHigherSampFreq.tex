@@ -18,7 +18,7 @@
         \nextgroupplot
 
         \addplot[
-            color = black!90!white,
+            color = fgcol!90!bgcol,
         ]
         table [
             x = freq, y = real
@@ -34,8 +34,8 @@
         \addplot[
             ycomb,
             mark = *,
-            mark options = {fill = white},
-            color = black!90!white,
+            mark options = {fill = bgcol},
+            color = fgcol!90!bgcol,
         ]
         table [
             x = freq, y = real
@@ -48,8 +48,8 @@
 
     \end{groupplot}
 
-    \draw [dashdotted, black!70] (ltop |- group c1r1.north) -- (lbot |- group c1r2.south) ;
-    \draw [dashdotted, black!70] (htop |- group c1r1.north) -- (hbot |- group c1r2.south) ;
+    \draw [dashdotted, fgcol!70!bgcol] (ltop |- group c1r1.north) -- (lbot |- group c1r2.south) ;
+    \draw [dashdotted, fgcol!70!bgcol] (htop |- group c1r1.north) -- (hbot |- group c1r2.south) ;
 
     \node [left = 40pt] at (group c1r1.west) {(a)};
     \node [left = 40pt] at (group c1r2.west) {(b)};
@@ -58,7 +58,7 @@
     \node [left = 20pt, font = \small] at (group c1r2.west) {\rotatebox{90}{Real Part}};
 
     \draw [
-        black!35,
+        fgcol!35!bgcol,
     ]
     (firstFreqMix) circle (\markRadius)
     (secondFreqMix) circle (\markRadius)

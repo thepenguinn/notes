@@ -31,19 +31,19 @@
 
     %% axis
 
-    \draw [black!35, ->]
+    \draw [fgcol!35!bgcol, ->]
     (unitCircleOrigin) -- ++(\polarAxisLen, 0)
     ;
 
-    \draw [black!35, ->]
+    \draw [fgcol!35!bgcol, ->]
     (unitCircleOrigin) -- ++(-\polarAxisLen, 0)
     ;
 
-    \draw [black!35, ->]
+    \draw [fgcol!35!bgcol, ->]
     (unitCircleOrigin) -- ++(0, \polarAxisLen)
     ;
 
-    \draw [black!35, ->]
+    \draw [fgcol!35!bgcol, ->]
     (unitCircleOrigin) -- ++(0, -\polarAxisLen)
     ;
     %% the unit circle
@@ -52,7 +52,7 @@
     ;
 
     %% to infiniyit
-    \draw [->, black!35, dashdotted, domain= {2*pi:7.01}, smooth, variable=\t, samples = 200]
+    \draw [->, fgcol!35!bgcol, dashdotted, domain= {2*pi:7.01}, smooth, variable=\t, samples = 200]
     (unitCircleOrigin)
     plot ({\t r:\radius*exp(0.08*\t)})
     coordinate (unitInfinity)
@@ -66,44 +66,44 @@
     %% label
 
     %% fs / 3
-    \draw [black!35, dashdotted]
+    \draw [fgcol!35!bgcol, dashdotted]
     (unitCircleOrigin) -- ++(120: {\radius * exp(0.08 * rad(120))})
     (unitCircleOrigin) ++(0.2, 0) arc (0:120:0.2)
 
     (unitCircleOrigin) ++(120: {\radius * exp(0.08 * rad(120))})
     -- ++(120: {0.5 * \radius * exp(0.08 * rad(120))})
-    %-- ++(-1, 0) node [black, font = \tiny, left] {$f = \dfrac{f_{s}}{2}$}
-    -- ++(-1, 0) node [black, font = \tiny, left] {$\dfrac{f_{s}}{3}$}
+    %-- ++(-1, 0) node [fgcol, font = \tiny, left] {$f = \dfrac{f_{s}}{2}$}
+    -- ++(-1, 0) node [fgcol, font = \tiny, left] {$\dfrac{f_{s}}{3}$}
     ;
 
     %% fs / 2
-    \draw [black!35, dashdotted]
+    \draw [fgcol!35!bgcol, dashdotted]
     %(unitCircleOrigin) -- ++(180: {\radius * exp(0.08 * rad(180))})
     (unitCircleOrigin) ++(0.4, 0) arc (0:180:0.4)
 
     (unitCircleOrigin) ++(180: {\radius * exp(0.08 * rad(180))})
     -- ++(180: {0.1 * \radius * exp(0.08 * rad(180))})
-    -- ++(-1, 0) node [black, font = \tiny, left] {$f = \dfrac{f_{s}}{2}$}
+    -- ++(-1, 0) node [fgcol, font = \tiny, left] {$f = \dfrac{f_{s}}{2}$}
     ;
 
     %% 2 fs / 3
-    \draw [black!35, dashdotted]
+    \draw [fgcol!35!bgcol, dashdotted]
     (unitCircleOrigin) -- ++(240: {\radius * exp(0.08 * rad(240))})
     (unitCircleOrigin) ++(0.6, 0) arc (0:240:0.6)
 
     (unitCircleOrigin) ++(240: {\radius * exp(0.08 * rad(240))})
     -- ++(240: {0.5 * \radius * exp(0.08 * rad(240))})
-    -- ++(-1, 0) node [black, font = \tiny, left] {$\dfrac{2 f_{s}}{3}$}
+    -- ++(-1, 0) node [fgcol, font = \tiny, left] {$\dfrac{2 f_{s}}{3}$}
     ;
 
     %% fs
-    \draw [black!35, dashdotted]
+    \draw [fgcol!35!bgcol, dashdotted]
     %(unitCircleOrigin) -- ++(360: {\radius * exp(0.08 * rad(360))})
     (unitCircleOrigin) ++(0.8, 0) arc (0:360:0.8)
 
     (unitCircleOrigin) ++(360: {\radius * exp(0.08 * rad(360))})
     -- ++(360: {0.1 * \radius * exp(0.08 * rad(360))})
-    -- ++(1, 0) node [black, font = \tiny, right] {$f_{s}$}
+    -- ++(1, 0) node [fgcol, font = \tiny, right] {$f_{s}$}
     ;
 
     %% zero
@@ -117,40 +117,40 @@
 
     %% major ticks
 
-    \draw [fill = white]
+    \draw [fill = bgcol]
     (unitCircleOrigin) ++(0: {\radius}) circle (\majorTickPole)
     ;
 
-    \draw [fill = white]
+    \draw [fill = bgcol]
     (unitCircleOrigin) ++(180: {\radius * exp(0.08 * rad(180))}) circle (\majorTickPole)
     ;
 
-    \draw [fill = white]
+    \draw [fill = bgcol]
     (unitCircleOrigin) ++(360: {\radius * exp(0.08 * rad(360))}) circle (\majorTickPole)
     ;
 
     %% minor ticks
 
-    \draw [fill = white]
+    \draw [fill = bgcol]
     (unitCircleOrigin) ++(120: {\radius * exp(0.08 * rad(120))}) circle (\minorTickPole)
     ;
 
-    \draw [fill = white]
+    \draw [fill = bgcol]
     (unitCircleOrigin) ++(240: {\radius * exp(0.08 * rad(240))}) circle (\minorTickPole)
     ;
 
     %% frequency axes
 
     %% frequency axes
-    \draw [->, black!35] (freqOrigin) -- ++(-1, 0) ;
-    \draw [->, black!35] (freqOrigin) -- ++(0,  \freqVrtAxeLen) ;
-    \draw [->, black!35] (freqOrigin) -- ++(0, -\freqVrtAxeLen) ;
+    \draw [->, fgcol!35!bgcol] (freqOrigin) -- ++(-1, 0) ;
+    \draw [->, fgcol!35!bgcol] (freqOrigin) -- ++(0,  \freqVrtAxeLen) ;
+    \draw [->, fgcol!35!bgcol] (freqOrigin) -- ++(0, -\freqVrtAxeLen) ;
 
     \draw []
     (freqOrigin) ++(\fsLen, 0) coordinate (freqFsamp)
     ;
 
-    \draw [->, dashdotted, black!35]
+    \draw [->, dashdotted, fgcol!35!bgcol]
     (freqFsamp) -- ++(1, 0)
     coordinate (freqInfinity)
     ;
@@ -163,51 +163,51 @@
 
     %% major axes
 
-    \draw [black!35, dashdotted] ($(freqOrigin)!0.5!(freqFsamp)$)
+    \draw [fgcol!35!bgcol, dashdotted] ($(freqOrigin)!0.5!(freqFsamp)$)
     ++(0, \majorTickAxesLen) -- ++(0, -{2 * \majorTickAxesLen})
-    node [below, font = \tiny, black] {$f = \dfrac{f_{s}}{2}$}
+    node [below, font = \tiny, fgcol] {$f = \dfrac{f_{s}}{2}$}
     ;
 
     %% minor
 
-    \draw [black!35, dashdotted] ($(freqOrigin)!0.333!(freqFsamp)$)
+    \draw [fgcol!35!bgcol, dashdotted] ($(freqOrigin)!0.333!(freqFsamp)$)
     ++(0, -\minorTickAxesLen) -- ++(0, {2 * \minorTickAxesLen})
-    node [above, font = \tiny, black] {$\dfrac{f_{s}}{3}$}
+    node [above, font = \tiny, fgcol] {$\dfrac{f_{s}}{3}$}
     ;
 
-    \draw [black!35, dashdotted] ($(freqOrigin)!0.666!(freqFsamp)$)
+    \draw [fgcol!35!bgcol, dashdotted] ($(freqOrigin)!0.666!(freqFsamp)$)
     ++(0, -\minorTickAxesLen) -- ++(0, {2 * \minorTickAxesLen})
-    node [above, font = \tiny, black] {$\dfrac{2 f_{s}}{3}$}
+    node [above, font = \tiny, fgcol] {$\dfrac{2 f_{s}}{3}$}
     ;
 
     %% fs axes
 
-    \draw [black!35, dashdotted] (freqFsamp)
+    \draw [fgcol!35!bgcol, dashdotted] (freqFsamp)
     ++(0, \fsTickAxesLen) -- ++(0, -{2 * \fsTickAxesLen})
-    node [below, font = \tiny, black] {$f_{s}$}
+    node [below, font = \tiny, fgcol] {$f_{s}$}
     ;
 
     %% labels
 
     %% major ticks
-    \draw [fill = white] (freqFsamp)
+    \draw [fill = bgcol] (freqFsamp)
     circle (\majorTickPole)
     ;
 
-    \draw [fill = white] (freqOrigin)
+    \draw [fill = bgcol] (freqOrigin)
     circle (\majorTickPole)
     ;
 
-    \draw [fill = white] ($(freqOrigin)!0.5!(freqFsamp)$)
+    \draw [fill = bgcol] ($(freqOrigin)!0.5!(freqFsamp)$)
     circle (\majorTickPole)
     ;
 
     %% minor ticks
-    \draw [fill = white] ($(freqOrigin)!0.333!(freqFsamp)$)
+    \draw [fill = bgcol] ($(freqOrigin)!0.333!(freqFsamp)$)
     circle (\minorTickPole)
     ;
 
-    \draw [fill = white] ($(freqOrigin)!0.666!(freqFsamp)$)
+    \draw [fill = bgcol] ($(freqOrigin)!0.666!(freqFsamp)$)
     circle (\minorTickPole)
     ;
 
@@ -224,21 +224,21 @@
     ($(unitCircleOrigin)!0.50!(tmp)$) coordinate (midCenter)
     ;
 
-    \draw [black!35, domain = \arrowUpperStart:\arrowUpperEnd, variable = \t, smooth, samples = 200]
+    \draw [fgcol!35!bgcol, domain = \arrowUpperStart:\arrowUpperEnd, variable = \t, smooth, samples = 200]
 
     let \p{tmp} = (midCenter),
     in
     plot [xshift = \x{tmp}, yshift = \y{tmp}] ({\t:\loopArrowRadius})
     ;
 
-    \draw [black!35, domain = \arrowLowerStart:\arrowLowerEnd, variable = \t, smooth, samples = 200]
+    \draw [fgcol!35!bgcol, domain = \arrowLowerStart:\arrowLowerEnd, variable = \t, smooth, samples = 200]
 
     let \p{tmp} = (midCenter),
     in
     plot [xshift = \x{tmp}, yshift = \y{tmp}] ({\t:\loopArrowRadius})
     ;
 
-    \draw [fill = white]
+    \draw [fill = bgcol]
     (midCenter) ++(\arrowUpperStart:\loopArrowRadius)
     circle (\arrowMinorPole)
     (midCenter) ++(\arrowUpperEnd:\loopArrowRadius)
@@ -247,7 +247,7 @@
     circle (\arrowMajorPole)
     ;
 
-    \draw [fill = white]
+    \draw [fill = bgcol]
     (midCenter) ++(\arrowLowerStart:\loopArrowRadius)
     circle (\arrowMinorPole)
     (midCenter) ++(\arrowLowerEnd:\loopArrowRadius)

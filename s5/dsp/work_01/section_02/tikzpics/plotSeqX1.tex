@@ -10,7 +10,7 @@
             xticklabels = {$0$, $\dfrac{\pi} {32}$, $\dfrac{\pi} {16}$, $\dfrac{3\pi} {32}$, $\dfrac{\pi} {8}$, $\dfrac{5\pi} {32}$, $\dfrac{3\pi} {16}$, $\dfrac{7\pi} {32}$, $\dfrac{\pi} {4}$, }
         ]
         \addplot[
-            color = black!90!white
+            color = fgcol!90!bgcol
         ]
         table [y = x1]{\subfix{data/three_sequences.csv}};
     \end{axis}
@@ -24,7 +24,7 @@
 %%          xlabel = {$N$},
 %%          ylabel = {$e_h$},
 %%          grid=both,
-%%          major grid style={black!50},
+%%          major grid style={fgcol!50!bgcol},
 %%          xmode=log, ymode=log,
 %%          xmin=1e0, xmax=1e4,
 %%          ymin=1e-3, ymax=1e1,
@@ -40,7 +40,7 @@
 %%              /pgf/number format/fixed zerofill
 %%          },
 %%          scaled y ticks=false,
-%%          cycle list name=my black white
+%%          cycle list name=my fgcol bgcol
 %%          ]
 %%          \addplot table [x=N, y = eh, col sep=comma] {Plots/results2.txt};
 %%          \legend{$e_h$}
