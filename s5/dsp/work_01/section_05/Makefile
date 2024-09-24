@@ -12,7 +12,7 @@ force:
 	pdflatex -shell-escape -halt-on-error section.tex
 	$(VIEWER) section.pdf
 
-section.pdf: section.tex ../../preamble.tex $(TIKZPICS)
+section.pdf: section.tex ../../preamble.tex ../../colorscheme.sty $(TIKZPICS)
 	lunatikz build section.tex
 	pdflatex -shell-escape -halt-on-error section.tex
 
