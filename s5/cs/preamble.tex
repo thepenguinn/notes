@@ -20,15 +20,32 @@
 \usepackage{multicol}
 \usepackage{booktabs}
 \usepackage{titlesec}
+\usepackage{xspace}
+\usepackage{varwidth}
+\usepackage{titletoc}
+
+\usepackage[bottom]{footmisc}
+
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+
+\pgfplotsset{
+    compat=newest,
+    colormap={black}{rgb255=(0,0,0) rgb255=(0,0,0)}
+}
 
 \usetikzlibrary{intersections}
+\usetikzlibrary{positioning}
 \usetikzlibrary{calc}
-\usetikzlibrary{external}
+\usetikzlibrary{ext.topaths.arcthrough}
 
 \setlength{\arraycolsep}{0pt}
 \renewcommand\arraystretch{2}
 
-\usemintedstyle{monokailight}
+%% custom packages
+
+\usepackage{colorscheme}
 
 %% \makeatletter
 %% \def\maxwidth{\ifdim\Gin@nat@width>0.8\linewidth0.8\linewidth\else\Gin@nat@width\fi}
