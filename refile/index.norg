@@ -1,0 +1,13 @@
+@document.meta
+title: Refile File
+description: refile file ( refile, today, and temp )
+authors: Daniel
+categories: [
+    refile
+    today
+    temp
+]
+created: 2025-05-10T12:34:29+0530
+updated: 2025-05-10T12:34:51+0530
+version: 1.1.1
+@end
