@@ -1,0 +1,11 @@
+@document.meta
+title: Notes
+description: Home to all of my notes ( notes )
+authors: Daniel
+categories: [
+    notes
+]
+created: 2025-05-10T12:19:40+0530
+updated: 2025-05-10T12:19:40+0530
+version: 1.1.1
+@end
