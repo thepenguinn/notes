@@ -6,7 +6,7 @@ categories: [
     creed
 ]
 created: 2025-06-16T13:25:43+0530
-updated: 2025-06-17T10:21:06+0530
+updated: 2025-10-16T06:52:54+0530
 version: 1.1.1
 @end
 
@@ -14,11 +14,8 @@ version: 1.1.1
 
   - Always get up the moment you wake up.
   - Always fold your blanket as the first thing you do right after you wake up.
-  - Only disable the QRAlarm using the QR code.
   - Never ever miss your MRs and ERs.
   - Do MR as the first thing you do after you wake up.
-  - Never ever touch your phone until you finish your MR.
-  - Never ever touch your phone during MR and ER.
 
   - Only spend time on youtube if it is absolutely necessary.
   - Never spent more than 30 minutes on youtube a day.
@@ -38,6 +35,9 @@ version: 1.1.1
   - Always remember, every time you feel bad or feel like a shit, it's just your natural
     response to the external world, and you can actually control that response.
 
+  - If you feel anxious, just remember that your highly neurotic brain is simply making it up,
+    so never let it numb you, get at the hunt again.
+
   - Eat 5 times a day.
   - Always eat on time.
   - Focus on eating while you eat, nothing else can occupy your mind.
@@ -54,7 +54,7 @@ version: 1.1.1
 
   - Be sober in all the affairs.
   - Never get addicted to anything.
-  - Think before you type / act.
+  - Think before you type / speak / act.
 
   - Always respond to people in 10 minutes after you received their messages.
 
