@@ -1,0 +1,64 @@
+---
+title: Creed
+description: Take care of the Creed, for it will take care of you
+categories: 
+  - creed
+created: 2025-06-16T13:25:43+0530
+updated: 2025-11-12T10:23:09+0530
+version: 1.1.1
+---
+
+
+# Be Awake, Be Good
+
+
+> Congratulations, you have survived another day.
+> Be ready to tell yourself **to focus** a thousand times today.
+> Remember, what stands in the way becomes the way.
+> More power to you getting up the moment you wake up.
+
+> Never ever miss your MRs and ERs.
+> Do MR as the first thing you do after you wake up.
+
+> Social media are Skinner's boxes, so never ever doom scroll.
+
+> Never lie down on the bed unless you are going to sleep.
+> Never sleep until 9 PM, once you wake up.
+
+> Never ever shit talk.
+> Never ever speak in a group.
+> You talk to people one to one.
+> Don't spent time in groups.
+> You are good on your own.
+
+> Today will be worse than yesterday.
+> Tomorrow will be worse than today.
+> Yet, there exists all the things you need to make the best of today, within you.
+> Don't let your anxiety freeze you.
+> Remember moving makes clarity.
+> Realize that you can have control over your mind, and you will find strength in it.
+> We suffer more in our imagination than in reality.
+
+> Eat 5 times a day.
+> Always eat on time.
+> Focus on eating while you eat, nothing else can occupy your mind.
+
+> Go for a run at least once a week.
+> Take a walk at least twice a week.
+
+> Always schedule the day in.
+> Never ever trail off from the scheduling no matter what.
+> Always give your 100 percent and some at the task at hand, nothing else matters.
+
+> Read something every day.
+
+> Always wash your cloths on time.
+
+> Be sober in all the affairs.
+> Never get addicted to anything.
+> Freedom is the most valuable thing, never let anyone or anything take that away from you.
+> Think before you type.
+> Think before you speak.
+> Think before you act.
+
+> The happiness of your life depends upon the quality of your thoughts.
