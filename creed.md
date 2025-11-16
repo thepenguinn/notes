@@ -4,7 +4,7 @@ description: Take care of the Creed, for it will take care of you
 categories: 
   - creed
 created: 2025-06-16T13:25:43+0530
-updated: 2025-11-16T09:08:22+0530
+updated: 2025-11-16T13:12:19+0530
 version: 1.1.1
 ---
 
@@ -21,6 +21,7 @@ version: 1.1.1
 > Do MR as the first thing you do after you wake up.
 
 > Social media are Skinner's boxes, so never ever doom scroll.
+> YouTube is just another Skinner's box.
 
 > Never lie down on the bed unless you are going to sleep.
 > Never sleep until 10 PM, once you wake up.
@@ -34,14 +35,15 @@ version: 1.1.1
 
 > Today will be worse than yesterday.
 > Tomorrow will be worse than today.
-> Yet, within you there exists all the things you need to make the best of today.
+> Yet, within you there exists all the things you need to make the best of today and all the days to come.
 > Don't let your anxiety freeze you.
-> Remember movement makes clarity.
-> You have power over your mind -- not outside events.
+> Remember, movement makes clarity.
+> You have power over your mind --- not outside events.
 > Realize this, and you will find strength in it.
 > We suffer more in our imagination than in reality.
 
 > The happiness of your life depends upon the quality of your thoughts.
+> So don't let your thoughts wander. Keep them be tamed.
 
 > Eat 5 times a day.
 > Always eat on time.
@@ -65,7 +67,7 @@ version: 1.1.1
 > Think before you speak.
 > Think before you act.
 
-> Do you hear that sound? The sound that clocks make when they tick away. Do you know
+> Do you hear that sound? The sound that clock makes when it ticks away. Do you know
 > what that means? Gone, gone, gone, gone...
 
 > Concentrate every minute like a Roman --- like a man --- on doing what’s in front
@@ -75,6 +77,11 @@ version: 1.1.1
 > your life, and stop being aimless, stop letting your emotions override what
 > your mind tells you, stop being hypocritical, self-centered, irritable. You
 > see how few things you have to do to live a satisfying and reverent life?
-> If you can manage this, that’s all even the gods can ask of you
+> If you can manage this, that’s all even the gods can ask of you.
+
+> If someone asks about the Yamato spirit of Shikishima --- it is the flowers
+> of Yamazakura that are fragrant in the Asahi.
 
 > Your job is to stand straight, not to be held straight.
+> Your job is to run willingly, not to be dragged forcefully.
+> Your job is to burn bright, not to be burned down.
