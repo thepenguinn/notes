@@ -4,7 +4,7 @@ description: Take care of the Creed, for it will take care of you
 categories: 
   - creed
 created: 2025-06-16T13:25:43+0530
-updated: 2025-11-16T13:12:19+0530
+updated: 2025-11-29T06:32:16+0530
 version: 1.1.1
 ---
 
@@ -26,6 +26,14 @@ version: 1.1.1
 > Never lie down on the bed unless you are going to sleep.
 > Even if you are tired, do not lie down.
 > Never sleep until 10 PM, once you wake up.
+
+> There are two kinds of tiredness. One that caused by your body, and the other that
+> caused by your mind. One that requires rest, and the other requires work. One that
+> cured with stagnancy, and the other that gets worse with stagnancy.
+> One that requires you to lie down and sleep, and the other that requires you to get
+> up and moving. Be weary of the one, and be careful with the other. It is important
+> to distinguish one from the other. Because if you give the cure of one to the other,
+> the result would be fatal.
 
 > Never ever shit talk.
 > Never ever speak in groups.
