@@ -96,6 +96,14 @@ version: 1.1.1
 > If someone asks about the Yamato spirit of Shikishima --- it is the flowers
 > of Yamazakura that are fragrant in the Asahi.
 
+> --- it reaches out it reaches out it reaches out it reaches out --- One
+> hundred and thirteen times a second, nothing answers and it reaches out. It
+> is not conscious, though parts of it are. There are structures within it
+> that were once separate organisms; aboriginal, evolved, and complex. It is
+> designed to improvise, to use what is there and then move on. Good enough
+> is good enough, and so the artifacts are ignored or adapted. The conscious
+> parts try to make sense of the reaching out. Try to interpret it.
+
 > Your job is to stand straight, not to be held straight.
 > Your job is to run willingly, not to be dragged forcefully.
 > Your job is to burn bright, not to be burned down.
