@@ -124,4 +124,6 @@ version: 1.1.1
 
 > Remember, incompetence is disgusting. Do not be that incompetent fool.
 
+> Do what's necessary, even if you don't feel like it.
+
 > Save yourself while you can. Then you may as well save the rest of us.
