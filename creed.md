@@ -157,4 +157,6 @@ version: 1.1.1
 > boils down to how bad you want it. Now, how bad you want it, you son of a
 > gun?
 
+> Walk on your broken foot and leave no trace of your hand on anyone's shoulder.
+
 > Save yourself while you can. Then you may as well save the rest of us.
