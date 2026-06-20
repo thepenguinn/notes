@@ -174,3 +174,10 @@ version: 1.1.1
 > Walk on your broken foot and leave no trace of your hand on anyone's shoulder.
 
 > Save yourself while you can. Then you may as well save the rest of us.
+
+> I'm steady, calm. I slept well, no bad dreams. I am active and engaged. I'm
+> aware of my surroundings and those in my immediate sphere. I'm attentive. I
+> am focused on the essentials, to the exclusion of all else. I'm unsure of
+> the future but I'm not concerned. I will rely on those closest to me, and I
+> will share their burdens, as they share mine. I will live and love...
+> Submit.
